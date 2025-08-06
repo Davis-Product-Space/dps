@@ -10,6 +10,7 @@ const navLinks = [
   { name: "Home", href: "/" },
   { name: "About", href: "/about" },
   //{ name: "Apply", href: "/apply"}
+  { name: "Temp About", href: "/about_new"}
 ];
 
 export default function Navbar() {

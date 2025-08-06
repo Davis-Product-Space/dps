@@ -17,3 +17,8 @@ body {
   color: var(--foreground);
   font-family: var(--font-inter), sans-serif;
 }
+
+/* Font utilities */
+.font-m-plus-1 {
+  font-family: var(--font-m-plus-1), sans-serif;
+}

@@ -1,11 +1,17 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, M_PLUS_1 } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/NavBar"
 import Footer from "@/components/Footer"
 
 const inter = Inter({
   variable: "--font-inter",
+  subsets: ["latin"],
+  display: "swap",
+});
+
+const mPlus1 = M_PLUS_1({
+  variable: "--font-m-plus-1",
   subsets: ["latin"],
   display: "swap",
 });
@@ -28,7 +34,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={inter.variable}>
+    <html lang="en" className={`${inter.variable} ${mPlus1.variable}`}>
       <body className="bg-[#FDFAFF] text-[#3A3A3A] font-sans overflow-x-hidden">
           <Navbar />
         <main className="min-h-screen relative flex flex-col">
