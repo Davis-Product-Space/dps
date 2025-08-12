@@ -89,6 +89,25 @@ export default function AboutNewPage() {
       <section style={{ marginTop: '31px' }}>
           <ImageMarqueeDemo />
       </section>
+      
+      {/* New section 184px below marquee */}
+      <section style={{ marginTop: '184px' }}>
+        <div className="flex justify-center">
+          <div style={{ width: '1440px' }}>
+          <div className="text-left max-w-3xl space-y-4" style={{ paddingLeft: '203px', paddingRight: '202px' }}>
+            <h2 className="text-[24px] sm:text-[28px] md:text-[36px] font-semibold mb-8 whitespace-nowrap text-left w-full">
+              Meet the Board!
+            </h2>
+            <p className="text-[20px] font-medium leading-normal mb-8">Leadership</p>
+          </div>
+          <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-[25px] w-full" style={{ paddingLeft: '203px', paddingRight: '202px' }}>
+            {board.map((member, i) => (
+              <FlipProfile key={i} {...member} />
+            ))}
+          </div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
