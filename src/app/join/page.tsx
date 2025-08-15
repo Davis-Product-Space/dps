@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import Image from "next/image";
 import { ImageMarqueeDemo } from "@/components/AboutPage/Marquee/image-marquee";
 // Import the AnimatedProjects component from its file
 import { AnimatedProjects } from "@/components/AboutPage/AnimateProjects";
@@ -41,14 +41,151 @@ export default function JoinNewPage() {
           <span className="text-[#FAF6FC] text-center font-['M_PLUS_1'] text-[22.5px] font-normal leading-[22.5px]">
             Fellowship Applications Open!
           </span>
-          <img 
-            src="/assets/icons/click-arrow-right.svg" 
-            alt="Click arrow right"
-            className="w-[34.56px] h-[34.56px]"
-          />
+            <Image 
+              src="src/assets/icons/click-arrow-right.svg" 
+              alt="Click arrow right"
+              width={34.56}
+              height={34.56}
+              className="w-[34.56px] h-[34.56px]"
+            />
         </div>
       </section>
       
+      {/* Recruitment Process Section*/}
+      <section className="mt-[71px]">
+        <div 
+          className="inline-flex flex-col justify-center items-center"
+          style={{
+            padding: '0 188px',
+            gap: '30px'
+          }}
+        >
+          <h2 
+            className="text-center font-inter text-[40px] font-semibold leading-[48.75px]"
+            style={{ color: '#3A3A3A' }}
+          >
+            Recruitment Process
+          </h2>
+          {/* Process Details Section */}
+          <div 
+            className="flex flex-col items-start"
+            style={{
+              width: '1064px',
+              gap: '21px'
+            }}
+          >
+                         {/* Step List */}
+             <div 
+               className="flex flex-col items-center"
+               style={{
+                 marginTop: '30px',
+                 gap: '68px'
+               }}
+             >
+                               {/* Step 1 */}
+                <div className="flex items-start" style={{ width: '922px' }}>
+                  <h3 
+                    className="font-inter text-[32px] font-semibold leading-[48.75px]"
+                    style={{ 
+                      color: '#3A3A3A', 
+                      whiteSpace: 'nowrap',
+                      flexShrink: 0
+                    }}
+                  >
+                    Step 1: Questionnaire
+                  </h3>
+                  <p 
+                    className="font-['M_PLUS_1'] text-[22.5px] font-normal leading-[32px]"
+                    style={{ 
+                      color: '#3A3A3A',
+                      width: '644px',
+                      flexShrink: 0,
+                      marginLeft: '90px'
+                    }}
+                  >
+                    Answer 2 300 word questions on the application form here by DATE/XXX so we can get to know you! This should take about 30 minutes to complete.
+                  </p>
+                </div>
+
+                {/* Step 2 */}
+                <div className="flex items-start" style={{ width: '922px' }}>
+                  <h3 
+                    className="font-inter text-[32px] font-semibold leading-[48.75px]"
+                    style={{ 
+                      color: '#3A3A3A', 
+                      whiteSpace: 'nowrap',
+                      flexShrink: 0
+                    }}
+                  >
+                    Step 2: Product Pitch
+                  </h3>
+                  <p 
+                    className="font-['M_PLUS_1'] text-[22.5px] font-normal leading-[32px]"
+                    style={{ 
+                      color: '#3A3A3A',
+                      width: '644px',
+                      flexShrink: 0,
+                      marginLeft: '90px'
+                    }}
+                  >
+                    After reading your applications, we will invite you to an hour-long product pitch session where you&apos;ll get a preview of what you&apos;ll do during the fellowship!
+                  </p>
+                </div>
+
+                {/* Step 3 */}
+                <div className="flex items-start" style={{ width: '922px' }}>
+                  <h3 
+                    className="font-inter text-[32px] font-semibold leading-[48.75px]"
+                    style={{ 
+                      color: '#3A3A3A', 
+                      whiteSpace: 'nowrap',
+                      flexShrink: 0
+                    }}
+                  >
+                    Step 3: Interviews
+                  </h3>
+                  <p 
+                    className="font-['M_PLUS_1'] text-[22.5px] font-normal leading-[32px]"
+                    style={{ 
+                      color: '#3A3A3A',
+                      width: '644px',
+                      flexShrink: 0,
+                      marginLeft: '137px'
+                    }}
+                  >
+                    If we think you&apos;d be a good fit after the Product Pitch, you&apos;ll be asked to schedule a short interview as the final stage of the recruitment.
+                  </p>
+                </div>
+
+                {/* Step 4 */}
+                <div className="flex items-start" style={{ width: '922px' }}>
+                  <h3 
+                    className="font-inter text-[32px] font-semibold leading-[48.75px]"
+                    style={{ 
+                      color: '#3A3A3A', 
+                      whiteSpace: 'nowrap',
+                      flexShrink: 0
+                    }}
+                  >
+                    Step 4: Confirmation
+                  </h3>
+                  <p 
+                    className="font-['M_PLUS_1'] text-[22.5px] font-normal leading-[32px]"
+                    style={{ 
+                      color: '#3A3A3A',
+                      width: '644px',
+                      flexShrink: 0,
+                      marginLeft: '90px'
+                    }}
+                  >
+                    If you&apos;re accepted, you&apos;ll receive an email asking you to confirm your place in the fellowship. Reply to the email to officially join Product Space!
+                  </p>
+                </div>
+             </div>
+          </div>
+        </div>
+      </section>
+
       {/* hero Section */}
       <section className="md:min-h-screen relative w-full overflow-hidden">
         <img
