@@ -74,7 +74,7 @@ export default function JoinNewPage() {
               gap: '21px'
             }}
           >
-                         {/* Step List */}
+              {/* Step List */}
              <div 
                className="flex flex-col items-center"
                style={{
@@ -82,7 +82,7 @@ export default function JoinNewPage() {
                  gap: '68px'
                }}
              >
-                               {/* Step 1 */}
+                {/* Step 1 */}
                 <div className="flex items-start" style={{ width: '922px' }}>
                   <h3 
                     className="font-inter text-[32px] font-semibold leading-[48.75px]"
