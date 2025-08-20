@@ -82,7 +82,7 @@ export default function AboutNewPage() {
               marginTop: '10px'
             }}
           >
-            At Product Space, we're a national community of students with a mission to become the world's next generation of product leaders.
+            At Product Space, we`&apos;` re a national community of students with a mission to become the world`&apos;`s next generation of product leaders.
           </p>
         </div>
       </section>
@@ -92,7 +92,7 @@ export default function AboutNewPage() {
       
       {/* New section 184px below marquee */}
       <section style={{ marginTop: '184px' }}>
-        <div className="flex justify-center">
+        <div id="section3" className="flex justify-center">
           <div style={{ width: '1440px' }}>
           <div className="text-left max-w-3xl space-y-4" style={{ paddingLeft: '203px', paddingRight: '202px' }}>
             <h2 className="text-[24px] sm:text-[28px] md:text-[36px] font-semibold mb-8 whitespace-nowrap text-left w-full">
