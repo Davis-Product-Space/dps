@@ -14,7 +14,7 @@ export function TextReveal({
   return (
     <div ref={containerRef} className="relative h-[300vh] sm:h-[200vh]">
       <div className="sticky top-0 h-screen flex items-center justify-center">
-        <div className="w-full space-y-6 px-12 md:px-[7.5rem]">
+        <div className="w-full space-y-6 px-2 md:px-4">
           {/* animated heading if provided */}
           {heading && (
             <motion.div
@@ -29,11 +29,11 @@ export function TextReveal({
 
           {/* animated paragraph */}
           <div 
-            className="text-center space-y-4"
+            className="text-center space-y-4 flex flex-col items-center"
             style={{
               color: '#3A3A3A',
               textAlign: 'center',
-              fontFamily: '"M PLUS 1", sans-serif',
+              fontFamily: '"M PLUS 1"',
               fontSize: '32px',
               fontStyle: 'normal',
               fontWeight: 600,
@@ -44,7 +44,7 @@ export function TextReveal({
               if (typeof chunk === "string") {
                 const words = chunk.split(" ");
                 return (
-                  <div key={`line-${idx}`} className="block">
+                  <div key={`line-${idx}`} className="flex justify-center items-center w-full flex-wrap">
                     {words.map((word, i) => {
                       const baseStart = 0.2;
                       const offset = (idx * 20 + i) / 150; // Adjusted for line-based spacing
@@ -56,7 +56,7 @@ export function TextReveal({
                         <motion.span
                           key={`${word}-${i}`}
                           style={{ opacity }}
-                          className="mr-2"
+                          className={i < words.length - 1 ? "mr-2" : ""}
                         >
                           {word}
                         </motion.span>
@@ -68,7 +68,7 @@ export function TextReveal({
                 return (
                   <motion.div
                     key={`jsx-${idx}`}
-                    className="block text-center"
+                    className="flex justify-center items-center w-full"
                     style={{
                       opacity: useTransform(scrollYProgress, [0.85, 0.95], [0.3, 1]),
                     }}
