@@ -67,34 +67,112 @@ export default function JoinNewPage() {
             />
         </div>
       </section>
-      
-      {/* 2. Recruitment Process Section*/}
-      <section 
-        className="mt-[71px] mb-[71px] inline-flex flex-col justify-center items-center"
+
+      {/* 2. Recruitment Timeline Section*/}
+      <section
         style={{
-          padding: '0 188px',
-          gap: '30px'
+          display: 'flex',
+          padding: '150px 0',
+          flexDirection: 'column',
+          alignItems: 'center',
+          gap: '50px',
+          alignSelf: 'stretch',
+          background: '#FAF6FC'
         }}
       >
-        <h2 
-          className="text-center font-inter text-[40px] font-semibold leading-[48.75px]"
-          style={{ color: '#3A3A3A' }}
-        >
-          Recruitment Process
-        </h2>
-
-        {/* Process Details Section */}
-        <div 
-          className="flex flex-col items-start"
+        <div
           style={{
             display: 'flex',
-            width: '1064px',
             flexDirection: 'column',
-            alignItems: 'flex-start',
-            gap: '21px',
-            color: '#3a3a3a'
+            alignItems: 'center',
+            gap: '25px',
+            alignSelf: 'stretch'
           }}
         >
+          <h2
+            style={{
+              alignSelf: 'stretch',
+              color: '#3A3A3A',
+              textAlign: 'center',
+              fontFamily: 'Inter',
+              fontSize: '40px',
+              fontStyle: 'normal',
+              fontWeight: 600,
+              lineHeight: '48.75px'
+            }}
+          >
+            Recruitment Timeline
+          </h2>
+          
+          <p
+            style={{
+              width: '900px',
+              color: '#3A3A3A',
+              textAlign: 'center',
+              fontFamily: '"M PLUS 1"',
+              fontSize: '22.5px',
+              fontStyle: 'normal',
+              fontWeight: 400,
+              lineHeight: '32px'
+            }}
+          >
+            Interested in joining our fellowship? Something about check out the timeline below to see our recruitment week schedule but im really bad at writing these kind of text on the spot
+          </p>
+        </div>
+        
+        <div
+          style={{
+            height: '821px',
+            alignSelf: 'stretch'
+          }}
+        >
+          {/*TODOOO PAste the staircase vector here instead of THE IMAGE*/}
+          <img
+            src="/images/StaircaseVector.png"
+            alt="Recruitment Timeline Staircase"
+            className="w-full h-full object-contain"
+          />
+        </div>
+      </section>
+      
+      {/* 3. Recruitment Process Section*/}
+      <section 
+        className="mt-[71px] mb-[71px]"
+        style={{
+          padding: '0 88px'
+        }}
+      >
+        <div
+          style={{
+            display: 'flex',
+            padding: '50px 100px',
+            flexDirection: 'column',
+            alignItems: 'center',
+            gap: '25px',
+            borderRadius: '30px',
+            background: '#FAF6FC',
+            boxShadow: '0 6px 6px 0 rgba(0, 0, 0, 0.25)'
+          }}
+        >
+          <h2 
+            className="text-center font-inter text-[40px] font-semibold leading-[48.75px]"
+            style={{ color: '#3A3A3A' }}
+          >
+            Recruitment Process
+          </h2>
+
+          {/* Process Details Section */}
+          <div 
+            className="flex flex-col items-start"
+            style={{
+              display: 'flex',
+              width: '1064px',
+              flexDirection: 'column',
+              alignItems: 'flex-start',
+              gap: '21px',
+              color: '#3a3a3a'
+            }}
+          >
           {/* Step List Map*/}
           <RecruitmentStep 
             title="Step 1: Questionnaire"
@@ -115,6 +193,7 @@ export default function JoinNewPage() {
             title="Step 4: Confirmation"
             description="If you're accepted, you'll receive an email asking you to confirm your place in the fellowship. Reply to the email to officially join Product Space!"
           />
+        </div>
         </div>
       </section>
 

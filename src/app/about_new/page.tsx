@@ -82,7 +82,7 @@ export default function AboutNewPage() {
               marginTop: '10px'
             }}
           >
-            At Product Space, we`&apos;` re a national community of students with a mission to become the world`&apos;`s next generation of product leaders.
+            At Product Space, we're a national community of students with a mission to become the world's next generation of product leaders.
           </p>
         </div>
       </section>
