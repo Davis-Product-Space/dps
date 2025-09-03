@@ -197,7 +197,7 @@ export default function JoinNewPage() {
         </div>
       </section>
 
-      {/* 3. Middle of Page Image*/}
+      {/* 4. Middle of Page Image*/}
       <section>
         <img
           src="/images/join-mid-page-pic.png"
@@ -207,7 +207,7 @@ export default function JoinNewPage() {
 
       </section>
 
-      {/* 4. FAQ Section*/}
+      {/* 5. FAQ Section*/}
       <section
         className="mt-[60px]"
         style={{
