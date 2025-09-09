@@ -16,6 +16,7 @@ import { scrapsTeam } from "@/data/ProductSpace24-25/Fellows/TeamScraps";
 import FlipProfile from "@/components/AboutPage/FlipProfile";
 import StatsCard from "@/components/AboutPage/StatsCard";
 import ProfileGrid from "@/components/AboutPage/ProfileGrid";
+import Spring25Projects from "@/components/Spring25Projects";
 
 export default function AboutNewPage() {
   return (
@@ -92,22 +93,85 @@ export default function AboutNewPage() {
       
       {/* New section 184px below marquee */}
       <section style={{ marginTop: '184px' }}>
-        <div id="section3" className="flex justify-center">
-          <div style={{ width: '1440px' }}>
-          <div className="text-left max-w-3xl space-y-4" style={{ paddingLeft: '203px', paddingRight: '202px' }}>
-            <h2 className="text-[24px] sm:text-[28px] md:text-[36px] font-semibold mb-8 whitespace-nowrap text-left w-full">
+        <div className="flex justify-center">
+          <div style={{ width: '900px' }}>
+            <h2 
+              style={{
+                color: '#000000',
+                textAlign: 'center',
+                fontFamily: 'Inter',
+                fontSize: '36px',
+                fontStyle: 'normal',
+                fontWeight: 600,
+                lineHeight: '48.75px',
+                marginBottom: '71px'
+              }}
+            >
               Meet the Board!
             </h2>
-            <p className="text-[20px] font-medium leading-normal mb-8">Leadership</p>
           </div>
-          <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-[25px] w-full" style={{ paddingLeft: '203px', paddingRight: '202px' }}>
-            {board.map((member, i) => (
-              <FlipProfile key={i} {...member} />
-            ))}
-          </div>
+        </div>
+        <div className="flex justify-center">
+          <div style={{ width: '1440px' }}>
+            <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-[25px] w-full" style={{ paddingLeft: '203px', paddingRight: '202px' }}>
+              {board.map((member, i) => (
+                <FlipProfile key={i} {...member} />
+              ))}
+            </div>
           </div>
         </div>
       </section>
+      <section className="flex flex-col justify-between mb-[160px] mt-[180px]">
+        <div className="flex justify-center">
+          <div style={{ width: '900px' }}>
+            <h2 
+              style={{
+                color: '#3A3A3A',
+                textAlign: 'center',
+                fontFamily: 'Inter',
+                fontSize: '40px',
+                fontStyle: 'normal',
+                fontWeight: 600,
+                lineHeight: '48.75px',
+                marginBottom: '71px'
+              }}
+            >
+              Meet the Spring 2025 Fellows!
+            </h2>
+          </div>
+        </div>
+        <div className="flex justify-center">
+          <div style={{ width: '1440px' }}>
+            <div style={{ paddingLeft: '203px', paddingRight: '202px' }}>
+              <ProfileGrid
+                title="Team Preview"
+                data={previewTeam}
+                ProfileComponent={FlipProfile}
+              />
+              <ProfileGrid
+                title="Team Scraps"
+                data={scrapsTeam}
+                ProfileComponent={FlipProfile}
+              />
+              <ProfileGrid
+                title="Team Sync"
+                data={syncTeam}
+                ProfileComponent={FlipProfile}
+              />
+              <ProfileGrid
+                title="Team Curate"
+                data={curateTeam}
+                ProfileComponent={FlipProfile}
+              />
+            </div>
+          </div>
+        </div>
+        </section>
+        
+        {/* New section below Fellows */}
+        <section className="flex justify-center" style={{ marginTop: '180px' }}>
+          <Spring25Projects />
+        </section>
     </div>
   );
 }

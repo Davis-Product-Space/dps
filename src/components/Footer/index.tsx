@@ -1,72 +1,257 @@
 "use client";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
-import MailIcon from "@/assets/icons/mail.svg";
-import InstagramIcon from "@/assets/icons/instagram.svg";
-import LinkedInIcon from "@/assets/icons/linkedin.svg";
-
-const navLinks = [
-  { name: "Home", href: "/" },
-  { name: "About", href: "/about" },
-  // { name: "Apply", href: "/apply" },
-];
 
 export default function Footer() {
-  const pathname = usePathname();
-
   return (
-    <footer className="w-full absolute bottom-0 left-0 z-50 bg-transparent text-gray-800">
-      {/* Desktop layout */}
-      <div className="hidden md:flex items-center justify-between py-4 pl-[7.5rem] pr-[7.5rem] mt-8 mb-8">
-        {/* Social icons on left */}
-        <div className="flex items-center gap-[0.75rem] text-[18px]">
-          <a href="mailto:davisproductspace@email.com" aria-label="Email">
-            <MailIcon className="w-7 h-7" />
-          </a>
-          <a href="https://instagram.com/davisproductspace" target="_blank" aria-label="Instagram">
-            <InstagramIcon className="w-7 h-7" />
-          </a>
-          <a href="https://www.linkedin.com/company/davisproductspace" target="_blank" aria-label="LinkedIn">
-            <LinkedInIcon className="w-7 h-7 text-[#3A3A3A] relative -ml-[4px] -mt-[2px]" />
-          </a>
+    <footer className="w-full flex justify-center">
+      <div 
+        className="relative bg-white"
+        style={{
+          width: '1440px',
+          height: '348px'
+        }}
+      >
+        {/* Product Space Logo */}
+        <img
+          src="/images/black-logo.svg"
+          alt="Product Space Logo"
+          className="absolute"
+          style={{
+            top: '37px',
+            left: '56px'
+          }}
+        />
+        
+        {/* Product Space Text */}
+        <div
+          className="absolute"
+          style={{
+            top: '100px',
+            left: '56px',
+            color: '#3A3A3A',
+            textAlign: 'center',
+            fontFamily: '"M PLUS 1"',
+            fontSize: '22.5px',
+            fontStyle: 'normal',
+            fontWeight: 400,
+            lineHeight: '32px'
+          }}
+        >
+          Product Space
         </div>
-
-        {/* Nav links centered */}
-        <div className="absolute left-1/2 transform -translate-x-1/2 flex space-x-10 text-[18px]">
-          {navLinks.map(({ name, href }) => {
-            const isActive = pathname === href;
-
-            return (
-              <Link
-                key={name}
-                href={href}
-                className="group relative transition-all"
+        
+        {/* Catchphrase Text */}
+        <div
+          className="absolute"
+          style={{
+            top: '132px',
+            left: '56px',
+            color: '#3A3A3A',
+            fontFamily: '"M PLUS 1"',
+            fontSize: '18.5px',
+            fontStyle: 'normal',
+            fontWeight: 400,
+            lineHeight: '32px'
+          }}
+        >
+          Do we have a catchphrase
+        </div>
+        
+        {/* Copyright Text */}
+        <div
+          className="absolute"
+          style={{
+            top: '222px',
+            left: '56px',
+            color: '#3A3A3A',
+            fontFamily: '"M PLUS 1"',
+            fontSize: '18.5px',
+            fontStyle: 'normal',
+            fontWeight: 400,
+            lineHeight: '32px'
+          }}
+        >
+          @ 2025 Davis Product Space. All Rights Reserved
+        </div>
+        
+        {/* About Column */}
+        <div
+          className="absolute"
+          style={{
+            top: '38px',
+            left: '1008px'
+          }}
+        >
+          {/* About Title */}
+          <div
+            style={{
+              color: '#3A3A3A',
+              fontFamily: '"M PLUS 1"',
+              fontSize: '18.5px',
+              fontStyle: 'normal',
+              fontWeight: 700,
+              lineHeight: '32px'
+            }}
+          >
+            About
+          </div>
+          
+          {/* About Links List */}
+          <div className="flex flex-col space-y-4 mt-2">
+            <a href="/what-is-product-space" className="hover:opacity-70 transition-opacity">
+              <span
+                style={{
+                  color: '#3A3A3A',
+                  fontFamily: '"M PLUS 1"',
+                  fontSize: '18.5px',
+                  fontStyle: 'normal',
+                  fontWeight: 400,
+                  lineHeight: '32px'
+                }}
               >
-                <span
-                  className={`transition-all ${isActive ? "font-bold" : "group-hover:font-bold"}`}
-                >
-                  {name}
-                </span>
-                {isActive && (
-                  <span className="absolute left-1/2 -translate-x-1/2 -bottom-1 w-full h-[2px] bg-gray-800 transition-all duration-300"></span>
-                )}
-              </Link>
-            );
-          })}
+                What is Product Space?
+              </span>
+            </a>
+            <a href="/fellowship" className="hover:opacity-70 transition-opacity">
+              <span
+                style={{
+                  color: '#3A3A3A',
+                  fontFamily: '"M PLUS 1"',
+                  fontSize: '18.5px',
+                  fontStyle: 'normal',
+                  fontWeight: 400,
+                  lineHeight: '32px'
+                }}
+              >
+                Fellowship
+              </span>
+            </a>
+            <a href="/capstone" className="hover:opacity-70 transition-opacity">
+              <span
+                style={{
+                  color: '#3A3A3A',
+                  fontFamily: '"M PLUS 1"',
+                  fontSize: '18.5px',
+                  fontStyle: 'normal',
+                  fontWeight: 400,
+                  lineHeight: '32px'
+                }}
+              >
+                Capstone
+              </span>
+            </a>
+            <a href="/client" className="hover:opacity-70 transition-opacity">
+              <span
+                style={{
+                  color: '#3A3A3A',
+                  fontFamily: '"M PLUS 1"',
+                  fontSize: '18.5px',
+                  fontStyle: 'normal',
+                  fontWeight: 400,
+                  lineHeight: '32px'
+                }}
+              >
+                Client
+              </span>
+            </a>
+            <a href="/product" className="hover:opacity-70 transition-opacity">
+              <span
+                style={{
+                  color: '#3A3A3A',
+                  fontFamily: '"M PLUS 1"',
+                  fontSize: '18.5px',
+                  fontStyle: 'normal',
+                  fontWeight: 400,
+                  lineHeight: '32px'
+                }}
+              >
+                Product
+              </span>
+            </a>
+          </div>
         </div>
-      </div>
-
-      {/* mobile layout */}
-      <div className="flex md:hidden justify-center items-center gap-6 py-6">
-        <a href="mailto:davisproductspace@email.com" aria-label="Email">
-          <MailIcon className="w-6 h-6" />
-        </a>
-        <a href="https://instagram.com/davisproductspace" target="_blank" aria-label="Instagram">
-          <InstagramIcon className="w-6 h-6" />
-        </a>
-        <a href="https://www.linkedin.com/company/davisproductspace" target="_blank" aria-label="LinkedIn">
-          <LinkedInIcon className="w-6 h-6 text-[#3A3A3A]" />
-        </a>
+        
+        {/* Connect Column */}
+        <div
+          className="absolute"
+          style={{
+            top: '38px',
+            left: '1248px'
+          }}
+        >
+          {/* Connect Title */}
+          <div
+            style={{
+              color: '#3A3A3A',
+              fontFamily: '"M PLUS 1"',
+              fontSize: '18.5px',
+              fontStyle: 'normal',
+              fontWeight: 700,
+              lineHeight: '32px'
+            }}
+          >
+            Connect
+          </div>
+          
+          {/* Connect Links List */}
+          <div className="flex flex-col space-y-4 mt-2">
+            <a href="/email" className="hover:opacity-70 transition-opacity">
+              <span
+                style={{
+                  color: '#3A3A3A',
+                  fontFamily: '"M PLUS 1"',
+                  fontSize: '18.5px',
+                  fontStyle: 'normal',
+                  fontWeight: 400,
+                  lineHeight: '32px'
+                }}
+              >
+                Email
+              </span>
+            </a>
+            <a href="/instagram" className="hover:opacity-70 transition-opacity">
+              <span
+                style={{
+                  color: '#3A3A3A',
+                  fontFamily: '"M PLUS 1"',
+                  fontSize: '18.5px',
+                  fontStyle: 'normal',
+                  fontWeight: 400,
+                  lineHeight: '32px'
+                }}
+              >
+                Instagram
+              </span>
+            </a>
+            <a href="/linkedin" className="hover:opacity-70 transition-opacity">
+              <span
+                style={{
+                  color: '#3A3A3A',
+                  fontFamily: '"M PLUS 1"',
+                  fontSize: '18.5px',
+                  fontStyle: 'normal',
+                  fontWeight: 400,
+                  lineHeight: '32px'
+                }}
+              >
+                LinkedIn
+              </span>
+            </a>
+            <a href="/tiktok" className="hover:opacity-70 transition-opacity">
+              <span
+                style={{
+                  color: '#3A3A3A',
+                  fontFamily: '"M PLUS 1"',
+                  fontSize: '18.5px',
+                  fontStyle: 'normal',
+                  fontWeight: 400,
+                  lineHeight: '32px'
+                }}
+              >
+                TikTok
+              </span>
+            </a>
+          </div>
+        </div>
       </div>
     </footer>
   );
