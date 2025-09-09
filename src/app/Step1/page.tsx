@@ -2,6 +2,21 @@
 
 import Image from "next/image";
 import StepsStaircase from "@/components/StepsStaircase";
+import FlipProfile from "@/components/AboutPage/FlipProfile";
+
+
+import { declassifyTeam } from "@/data/ProductSpace24-25/Spring25Fellows/TeamDeClassify";
+import { heardTeam } from "@/data/ProductSpace24-25/Spring25Fellows/TeamHeard";
+import { honeTeam } from "@/data/ProductSpace24-25/Spring25Fellows/TeamHone";
+import { mooveTeam } from "@/data/ProductSpace24-25/Spring25Fellows/TeamMOOVE";
+
+import { curateTeam } from "@/data/ProductSpace24-25/Fall24Fellows/TeamCurate";
+import { previewTeam } from "@/data/ProductSpace24-25/Fall24Fellows/TeamPreview";
+import { scrapsTeam } from "@/data/ProductSpace24-25/Fall24Fellows/TeamScraps";
+import { syncTeam } from "@/data/ProductSpace24-25/Fall24Fellows/TeamSync";
+
+
+
 
 export default function Step1Page() {
   const weeklyWorkshops = [
@@ -14,6 +29,21 @@ export default function Step1Page() {
     { week: "Week 6", title: "Usability Testing & Iteration" },
     { week: "Week 7", title: "Go-to-Market Strategy & Marketing" }
   ];
+
+  const spring25Teams = [
+    { teamName: "DeClassify", members: declassifyTeam },
+    { teamName: "Heard", members: heardTeam },
+    { teamName: "Hone", members: honeTeam },
+    { teamName: "MOOVE", members: mooveTeam },
+  ];
+
+  const fall24Teams = [
+    { teamName: "Curate", members: curateTeam },
+    { teamName: "Preview", members: previewTeam },
+    { teamName: "Scraps", members: scrapsTeam },
+    { teamName: "Sync", members: syncTeam },
+  ];
+
   return (
     <main className="min-h-screen bg-[#FDFAFF] text-[#3a3a3a] flex flex-col items-center justify-center">
       
@@ -126,32 +156,32 @@ export default function Step1Page() {
         </div>
       </section>
 
-       {/*2. What is fellowship image section*/}
-       <section className="relative">
-         <img
-           src="/images/step1WhatIsFellowship.png"
-           alt="What is Fellowship"
-           className="w-full h-auto"
-         />
-         
-         {/* Text overlay on top of imagein bottom left corner */}
-         <div
-           className="absolute"
-           style={{
-             left: '20px',
-             bottom: '15px',
-             color: '#FFF',
-             textAlign: 'center',
-             fontFamily: 'Inter',
-             fontSize: '100px',
-             fontStyle: 'normal',
-             fontWeight: 600,
-             lineHeight: '97.5px'
-           }}
-         >
-           What is the Fellowship?
-         </div>
-       </section>
+      {/*2. What is fellowship image section*/}
+      <section className="relative">
+        <img
+          src="/images/step1WhatIsFellowship.png"
+          alt="What is Fellowship"
+          className="w-full h-auto"
+        />
+        
+        {/* Text overlay on top of imagein bottom left corner */}
+        <div
+          className="absolute"
+          style={{
+            left: '20px',
+            bottom: '15px',
+            color: '#FFF',
+            textAlign: 'center',
+            fontFamily: 'Inter',
+            fontSize: '100px',
+            fontStyle: 'normal',
+            fontWeight: 600,
+            lineHeight: '97.5px'
+          }}
+        >
+          What is the Fellowship?
+        </div>
+      </section>
 
         {/*3. Large Section all about Fellowship*/}
         <section
@@ -293,97 +323,25 @@ export default function Step1Page() {
                 </div>
             </div>
 
-            {/*3rd div*/}
-            <div
-             style={{
-                 display: 'flex',
-                 flexDirection: 'column',
-                 justifyContent: 'center',
-                 alignItems: 'flex-start',
-                 gap: '50px',
-                 alignSelf: 'stretch'
-             }}
-             >
-                 {/* First sub div */}
-                 <div
-                   style={{
-                     display: 'flex',
-                     flexDirection: 'column',
-                     alignItems: 'flex-start',
-                     gap: '25px',
-                     alignSelf: 'stretch'
-                   }}
-                 >
-                   <h3
-                     style={{
-                       color: '#3A3A3A',
-                       textAlign: 'center',
-                       fontFamily: 'Inter',
-                       fontSize: '40px',
-                       fontStyle: 'normal',
-                       fontWeight: 600,
-                       lineHeight: '48.75px'
-                     }}
-                   >
-                     Who You'll Learn From
-                   </h3>
-                   
-                   <p
-                     style={{
-                       alignSelf: 'stretch',
-                       color: '#3A3A3A',
-                       fontFamily: '"M PLUS 1"',
-                       fontSize: '22.5px',
-                       fontStyle: 'normal',
-                       fontWeight: 400,
-                       lineHeight: '32px'
-                     }}
-                   >
-                     You'll learn directly from people who do this work every day. Our workshop speakers and Capstone mentors are from the world's top technology companies. Our speakers lead workshops case-study style, walking you through real problems they've solved on the job. For the Capstone, you'll work closely with mentors who provide one-on-one guidance as you and your team bring your product to life.
-                   </p>
-                 </div>
-                 
-                 {/* Second sub div */}
-                 <div
-                   style={{
-                     display: 'flex',
-                     alignItems: 'flex-start',
-                     alignContent: 'flex-start',
-                     gap: '40px',
-                     alignSelf: 'stretch',
-                     flexWrap: 'wrap'
-                   }}
-                 >
-                   {/* 2x4 Grid of mentor images */}
-                   {Array.from({ length: 8 }, (_, index) => (
-                     <div key={index} style={{ width: '225px', height: '225px' }}>
-                       <svg xmlns="http://www.w3.org/2000/svg" width="225" height="225" viewBox="0 0 225 225" fill="none">
-                         <rect width="225" height="225" rx="7.5" fill="#BCBCBC"/>
-                         <rect x="162.5" y="12.5" width="50" height="50" rx="7.5" fill="#979797"/>
-                       </svg>
-                     </div>
-                   ))}
-                 </div>
-             </div>
-            
-            {/*4rd div*/}
-            <div
-               style={{
-                 display: 'flex',
-                 width: '900px',
-                 flexDirection: 'column',
-                 alignItems: 'center',
-                 gap: '50px'
-               }}
-             >
+          {/*3rd div*/}
+          <div
+           style={{
+               display: 'flex',
+               flexDirection: 'column',
+               justifyContent: 'center',
+               alignItems: 'flex-start',
+               gap: '50px',
+               alignSelf: 'stretch'
+           }}
+           >
                {/* First sub div */}
                <div
                  style={{
-                   width: '900px',
-                   height: '138px',
                    display: 'flex',
                    flexDirection: 'column',
-                   gap: '25px'
+                   alignItems: 'flex-start',
+                   gap: '25px',
+                   alignSelf: 'stretch'
                  }}
                >
                  <h3
@@ -397,14 +355,13 @@ export default function Step1Page() {
                      lineHeight: '48.75px'
                    }}
                  >
-                   Join Us!
+                   Who You'll Learn From
                  </h3>
                  
                  <p
                    style={{
-                     width: '900px',
+                     alignSelf: 'stretch',
                      color: '#3A3A3A',
-                     textAlign: 'center',
                      fontFamily: '"M PLUS 1"',
                      fontSize: '22.5px',
                      fontStyle: 'normal',
@@ -412,8 +369,7 @@ export default function Step1Page() {
                      lineHeight: '32px'
                    }}
                  >
-                   Fellowship applications open Week 1 of the Fall Quarter for all UC Davis students!<br />
-                   Keep an eye out for recruitment events on our Instagram @davisproductspace!
+                   You'll learn directly from people who do this work every day. Our workshop speakers and Capstone mentors are from the world's top technology companies. Our speakers lead workshops case-study style, walking you through real problems they've solved on the job. For the Capstone, you'll work closely with mentors who provide one-on-one guidance as you and your team bring your product to life.
                  </p>
                </div>
                
@@ -421,48 +377,232 @@ export default function Step1Page() {
                <div
                  style={{
                    display: 'flex',
-                   padding: '12px 20px',
-                   alignItems: 'center',
-                   gap: '15px',
-                   borderRadius: '20px',
-                   background: '#66417B'
+                   alignItems: 'flex-start',
+                   alignContent: 'flex-start',
+                   gap: '40px',
+                   alignSelf: 'stretch',
+                   flexWrap: 'wrap'
                  }}
                >
-                 <span
-                   style={{
-                     color: '#FAF6FC',
-                     textAlign: 'center',
-                     fontFamily: '"M PLUS 1"',
-                     fontSize: '22.5px',
-                     fontStyle: 'normal',
-                     fontWeight: 400,
-                     lineHeight: '22.5px'
-                   }}
-                 >
-                   Apply Now!
-                 </span>
-                 
-                 <Image
-                   src="/src/assets/icons/click-arrow-right.svg"
-                   alt="Apply now arrow"
-                   width={34.56}
-                   height={34.56}
-                 />
+                 {/* 2x4 Grid of mentor images */}
+                 {Array.from({ length: 8 }, (_, index) => (
+                   <div key={index} style={{ width: '225px', height: '225px' }}>
+                     <svg xmlns="http://www.w3.org/2000/svg" width="225" height="225" viewBox="0 0 225 225" fill="none">
+                       <rect width="225" height="225" rx="7.5" fill="#BCBCBC"/>
+                       <rect x="162.5" y="12.5" width="50" height="50" rx="7.5" fill="#979797"/>
+                     </svg>
+                   </div>
+                 ))}
                </div>
+          </div>
+          
+          {/*4rd div*/}
+          <div
+             style={{
+               display: 'flex',
+               width: '900px',
+               flexDirection: 'column',
+               alignItems: 'center',
+               gap: '50px'
+             }}
+           >
+             {/* First sub div */}
+             <div
+               style={{
+                 width: '900px',
+                 height: '138px',
+                 display: 'flex',
+                 flexDirection: 'column',
+                 gap: '25px'
+               }}
+             >
+               <h3
+                 style={{
+                   color: '#3A3A3A',
+                   textAlign: 'center',
+                   fontFamily: 'Inter',
+                   fontSize: '40px',
+                   fontStyle: 'normal',
+                   fontWeight: 600,
+                   lineHeight: '48.75px'
+                 }}
+               >
+                 Join Us!
+               </h3>
+               
+               <p
+                 style={{
+                   width: '900px',
+                   color: '#3A3A3A',
+                   textAlign: 'center',
+                   fontFamily: '"M PLUS 1"',
+                   fontSize: '22.5px',
+                   fontStyle: 'normal',
+                   fontWeight: 400,
+                   lineHeight: '32px'
+                 }}
+               >
+                 Fellowship applications open Week 1 of the Fall Quarter for all UC Davis students!<br />
+                 Keep an eye out for recruitment events on our Instagram @davisproductspace!
+               </p>
              </div>
              
-            </div>
-        </section>
+             {/* Second sub div */}
+             <div
+               style={{
+                 display: 'flex',
+                 padding: '12px 20px',
+                 alignItems: 'center',
+                 gap: '15px',
+                 borderRadius: '20px',
+                 background: '#66417B'
+               }}
+             >
+               <span
+                 style={{
+                   color: '#FAF6FC',
+                   textAlign: 'center',
+                   fontFamily: '"M PLUS 1"',
+                   fontSize: '22.5px',
+                   fontStyle: 'normal',
+                   fontWeight: 400,
+                   lineHeight: '22.5px'
+                 }}
+               >
+                 Apply Now!
+               </span>
+               
+               <Image
+                 src="/src/assets/icons/click-arrow-right.svg"
+                 alt="Apply now arrow"
+                 width={34.56}
+                 height={34.56}
+               />
+             </div>
+          </div>
+          
+        </div>
+      </section>
 
-       {/*4. Meet the spring 2025 fellows!*/}
-       <section>
+      {/*4. Meet the spring 2025 fellows!*/}
+      <section
+        style={{
+          display: 'flex',
+          padding: '150px 210px',
+          alignItems: 'center',
+          gap: '10px',
+          alignSelf: 'stretch'
+        }}
+      >
+          <div
+            style={{
+              display: 'flex',
+              width: '1020px',
+              flexDirection: 'column',
+              alignItems: 'center',
+              gap: '52px'
+            }}
+          >
+             <h2
+               style={{
+                 color: '#3A3A3A',
+                 textAlign: 'center',
+                 fontFamily: 'Inter',
+                 fontSize: '40px',
+                 fontStyle: 'normal',
+                 fontWeight: 600,
+                 lineHeight: '48.75px'
+               }}
+             >
+               Meet the Spring 2025 Fellows!
+             </h2>
+           
+           {spring25Teams.map((team, teamIndex) => (
+             <div key={teamIndex} style={{ alignSelf: 'stretch' }}>
+               <h3
+                 style={{
+                   color: '#3A3A3A',
+                   textAlign: 'center',
+                   fontFamily: '"M PLUS 1"',
+                   fontSize: '22.5px',
+                   fontStyle: 'normal',
+                   fontWeight: 600,
+                   lineHeight: '32px',
+                   marginBottom: '32px'
+                 }}
+               >
+                 Team {team.teamName}
+               </h3>
+               <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-[25px] w-full">
+                 {team.members.map((member: any, i: number) => (
+                   <FlipProfile key={`${team.teamName}-${i}`} {...member} />
+                 ))}
+               </div>
+             </div>
+           ))}
+          
+         </div>
+     </section>
 
-       </section>
-
-        {/*5. Meet the fall 2024 fellows!*/}
-        <section>
-        
-        </section>
+      {/*5. Meet the fall 2024 fellows!*/}
+      <section
+       style={{
+         display: 'flex',
+         padding: '150px 210px',
+         alignItems: 'center',
+         gap: '10px',
+         alignSelf: 'stretch'
+       }}
+     >
+         <div
+           style={{
+             display: 'flex',
+             width: '1020px',
+             flexDirection: 'column',
+             alignItems: 'center',
+             gap: '52px'
+           }}
+         >
+            <h2
+              style={{
+                color: '#3A3A3A',
+                textAlign: 'center',
+                fontFamily: 'Inter',
+                fontSize: '40px',
+                fontStyle: 'normal',
+                fontWeight: 600,
+                lineHeight: '48.75px'
+              }}
+            >
+              Meet the Fall 2024 Fellows!
+            </h2>
+          
+           {fall24Teams.map((team, teamIndex) => (
+             <div key={teamIndex} style={{ alignSelf: 'stretch' }}>
+               <h3
+                 style={{
+                   color: '#3A3A3A',
+                   textAlign: 'center',
+                   fontFamily: '"M PLUS 1"',
+                   fontSize: '22.5px',
+                   fontStyle: 'normal',
+                   fontWeight: 600,
+                   lineHeight: '32px',
+                   marginBottom: '32px'
+                 }}
+               >
+                 Team {team.teamName}
+               </h3>
+               <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-[25px] w-full">
+                 {team.members.map((member: any, i: number) => (
+                   <FlipProfile key={`${team.teamName}-${i}`} {...member} />
+                 ))}
+               </div>
+             </div>
+           ))}
+          
+         </div>
+     </section>
     </main>
   );
 }
