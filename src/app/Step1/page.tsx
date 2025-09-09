@@ -1,5 +1,7 @@
 "use client";
 
+import StepsStaircase from "@/components/StepsStaircase";
+
 export default function Step1Page() {
   return (
     <main className="min-h-screen bg-[#FDFAFF] text-[#3a3a3a] flex flex-col items-center justify-center">
@@ -12,6 +14,7 @@ export default function Step1Page() {
           alignSelf: 'stretch'
         }}
       >
+        {/*Step1: Fellowship*/}
         <div
           style={{
             display: 'inline-flex',
@@ -53,36 +56,15 @@ export default function Step1Page() {
           </div>
         </div>
 
-        <div
-          style={{
-            width: '587.988px',
-            height: '518.978px',
-            flexShrink: 0,
-            justifyContent: 'center'
-          }}
-        >
-          <img
-            src="/images/FellowshipStaircase.svg"
-            alt="Fellowship Staircase"
-            className="w-full h-full object-contain"
-          />
-        </div>
+        <StepsStaircase 
+          className="w-full h-full"
+          topSvgSrc="/images/StaircaseVector-step1.svg"
+          bottomSvgSrc="/images/FellowshipStaircase.svg"
+          topSvgAlt="Step 1 Staircase Vector"
+          bottomSvgAlt="Fellowship Staircase"
+        />
 
-        <div
-          style={{
-            //width: '1734.396px',
-            height: '712.434px',
-            alignSelf: 'stretch'
-            }}
-        >
-          <img
-            src="/images/StaircaseVector-step1.svg"
-            alt="Step 1 Staircase Vector"
-            className="w-full h-full object-contain"
-          />
-        </div>
       </section>
-
     </main>
   );
 }
