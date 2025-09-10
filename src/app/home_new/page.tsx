@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { TextReveal } from "@/components/landing/TextReveal";
+import { TimelineAnimation } from "@/components/landing/TimelineAnimation";
 
 export default function HomeNewPage() {
   return (
@@ -238,76 +239,58 @@ export default function HomeNewPage() {
         style={{
           position: 'relative', // Enable absolute positioning for children
           display: 'flex',
-          padding: '150px 0',
+          width: '1440px',
+          height: '1341px',
           flexDirection: 'column',
           alignItems: 'center',
-          gap: '50px',
-          alignSelf: 'stretch',
           background: '#FAF6FC',
-          marginTop: '50px' // 50px spacing from previous content
+          marginTop: '50px', // 50px spacing from previous content
+          marginLeft: 'auto',
+          marginRight: 'auto'
         }}
       >
-        {/* Recruitment Timeline Container with layered SVGs */}
-        <div 
+        {/* Recruitment Timeline Heading */}
+        <h2 
           style={{
-            position: 'relative',
-            maxWidth: '100%'
+            alignSelf: 'stretch',
+            color: '#3A3A3A',
+            textAlign: 'center',
+            fontFamily: 'Inter',
+            fontSize: '40px',
+            fontStyle: 'normal',
+            fontWeight: 600,
+            lineHeight: '48.75px',
+            position: 'absolute',
+            top: '150px',
+            left: '0',
+            right: '0',
+            margin: 0
           }}
         >
-          {/* Recruitment Timeline Glow SVG - Background Layer */}
-          <img 
-            src="/images/recruitment_timeline_glow.svg" 
-            alt="Recruitment Timeline Glow"
-            style={{
-              position: 'absolute',
-              top: 0,
-              left: 0,
-              maxWidth: '100%',
-              height: 'auto',
-              zIndex: 1
-            }}
-          />
-          
-          {/* Recruitment Timeline SVG - Foreground Layer */}
-          <img 
-            src="/images/recruitment_timline.svg" 
-            alt="Recruitment Timeline"
-            style={{
-              position: 'relative',
-              maxWidth: '100%',
-              height: 'auto',
-              zIndex: 2
-            }}
-          />
-        </div>
+          Recruitment Timeline
+        </h2>
         
-        {/* Triangle Glow SVG - Background Layer */}
-        <img 
-          src="/images/rt_triangle_glow.svg" 
-          alt="Triangle Glow"
+        {/* Recruitment Timeline Description */}
+        <p 
           style={{
+            width: '900px',
+            color: '#3A3A3A',
+            textAlign: 'center',
+            fontFamily: '"M PLUS 1"',
+            fontSize: '22.5px',
+            fontStyle: 'normal',
+            fontWeight: 400,
+            lineHeight: '32px',
             position: 'absolute',
-            left: '712px', // Same positioning as triangle
-            top: '204px',  // Same positioning as triangle
-            width: '170px',
-            height: '106px',
-            zIndex: 9 // Below the triangle
+            top: '223.75px', // 150px + 48.75px (heading line-height) + 25px gap
+            left: '50%',
+            transform: 'translateX(-50%)',
+            margin: 0
           }}
-        />
-        
-        {/* Triangle SVG positioned absolutely */}
-        <img 
-          src="/images/rt_triangle.svg" 
-          alt="Triangle"
-          style={{
-            position: 'absolute',
-            left: '712px', // 715px from left of screen
-            top: '204px',  // 165px from top of screen
-            width: '170px',
-            height: '106px',
-            zIndex: 10 // Ensures triangle appears above all other SVGs
-          }}
-        />
+        >
+          Interested in joining our fellowship? Something about check out the timeline below to see our recruitment week schedule but im really bad at writing these kind of text on the spot
+        </p>
+        <TimelineAnimation />
       </section>
     </div>
   );
