@@ -3,7 +3,7 @@
 import React from 'react';
 
 export function TimelineAnimation() {
-  const handlePrismHover = (isHovering: boolean, type: 'applications-due' | 'product-pitch') => {
+  const handlePrismHover = (isHovering: boolean, type: 'applications-due' | 'product-pitch' | 'interviews' | 'pm-panel' | 'info-sessions') => {
     if (type === 'applications-due') {
       const line4 = document.querySelector('.line-4') as HTMLElement;
       const prismContainer = document.querySelector('.prism-container') as HTMLElement;
@@ -85,6 +85,125 @@ export function TimelineAnimation() {
           productHoverParagraph.style.transform = 'translateY(0) translateX(-50%)';
         }
       }
+    } else if (type === 'interviews') {
+      const line6 = document.querySelector('.line-6') as HTMLElement;
+      const interviewsPrismContainer = document.querySelector('.interviews-prism-container') as HTMLElement;
+      const interviewsText = document.querySelector('.interviews-text') as HTMLElement;
+      const interviewsDate = document.querySelector('.interviews-date') as HTMLElement;
+      const interviewsInvite = document.querySelector('.interviews-invite') as HTMLElement;
+      const interviewsHoverParagraph = document.querySelector('.interviews-paragraph') as HTMLElement;
+      
+      if (line6) {
+        line6.style.opacity = isHovering ? '0' : '1';
+      }
+      
+      if (interviewsPrismContainer) {
+        if (isHovering) {
+          interviewsPrismContainer.style.opacity = '1';
+          interviewsPrismContainer.style.clipPath = 'inset(0% 0 0 0)';
+        } else {
+          interviewsPrismContainer.style.opacity = '0';
+          interviewsPrismContainer.style.clipPath = 'inset(100% 0 0 0)';
+        }
+      }
+      
+      if (interviewsText) {
+        interviewsText.style.transform = isHovering ? 'translateY(-200px) translateX(-50%)' : 'translateY(0) translateX(-50%)';
+      }
+      
+      if (interviewsDate) {
+        interviewsDate.style.transform = isHovering ? 'translateY(-200px) translateX(-50%)' : 'translateY(0) translateX(-50%)';
+      }
+      
+      if (interviewsInvite) {
+        interviewsInvite.style.transform = isHovering ? 'translateY(-200px) translateX(-50%)' : 'translateY(0) translateX(-50%)';
+      }
+      
+      if (interviewsHoverParagraph) {
+        if (isHovering) {
+          interviewsHoverParagraph.style.opacity = '1';
+          interviewsHoverParagraph.style.transform = 'translateY(-200px) translateX(-50%)';
+        } else {
+          interviewsHoverParagraph.style.opacity = '0';
+          interviewsHoverParagraph.style.transform = 'translateY(0) translateX(-50%)';
+        }
+      }
+    } else if (type === 'pm-panel') {
+      const line3 = document.querySelector('.line-3') as HTMLElement;
+      const pmPanelPrismContainer = document.querySelector('.pm-panel-prism-container') as HTMLElement;
+      const pmPanelText = document.querySelector('.pm-panel-text') as HTMLElement;
+      const pmPanelDate = document.querySelector('.pm-panel-date') as HTMLElement;
+      const pmPanelHoverParagraph = document.querySelector('.pm-panel-paragraph') as HTMLElement;
+      
+      if (line3) {
+        line3.style.opacity = isHovering ? '0' : '1';
+      }
+      
+      if (pmPanelPrismContainer) {
+        if (isHovering) {
+          pmPanelPrismContainer.style.opacity = '1';
+          pmPanelPrismContainer.style.clipPath = 'inset(0% 0 0 0)';
+        } else {
+          pmPanelPrismContainer.style.opacity = '0';
+          pmPanelPrismContainer.style.clipPath = 'inset(100% 0 0 0)';
+        }
+      }
+      
+      if (pmPanelText) {
+        pmPanelText.style.transform = isHovering ? 'translateY(-200px) translateX(-50%)' : 'translateY(0) translateX(-50%)';
+      }
+      
+      if (pmPanelDate) {
+        pmPanelDate.style.transform = isHovering ? 'translateY(-200px) translateX(-50%)' : 'translateY(0) translateX(-50%)';
+      }
+      
+      if (pmPanelHoverParagraph) {
+        if (isHovering) {
+          pmPanelHoverParagraph.style.opacity = '1';
+          pmPanelHoverParagraph.style.transform = 'translateY(-200px) translateX(-50%)';
+        } else {
+          pmPanelHoverParagraph.style.opacity = '0';
+          pmPanelHoverParagraph.style.transform = 'translateY(0) translateX(-50%)';
+        }
+      }
+    } else if (type === 'info-sessions') {
+      const line2 = document.querySelector('.line-2') as HTMLElement;
+      const infoSessionsPrismContainer = document.querySelector('.info-sessions-prism-container') as HTMLElement;
+      const infoSessionsText = document.querySelector('.info-sessions-text') as HTMLElement;
+      const infoSessionsDate = document.querySelector('.info-sessions-date') as HTMLElement;
+      const infoSessionsHoverParagraph = document.querySelector('.info-sessions-paragraph') as HTMLElement;
+      
+      if (line2) {
+        line2.style.opacity = isHovering ? '0' : '1';
+      }
+      
+      if (infoSessionsPrismContainer) {
+        if (isHovering) {
+          infoSessionsPrismContainer.style.opacity = '1';
+          infoSessionsPrismContainer.style.clipPath = 'inset(0% 0 0 0)';
+        } else {
+          infoSessionsPrismContainer.style.opacity = '0';
+          infoSessionsPrismContainer.style.clipPath = 'inset(100% 0 0 0)';
+        }
+      }
+      
+      if (infoSessionsText) {
+        infoSessionsText.style.transform = isHovering ? 'translateY(-200px) translateX(-50%)' : 'translateY(0) translateX(-50%)';
+      }
+      
+      if (infoSessionsDate) {
+        infoSessionsDate.style.transform = isHovering ? 'translateY(-200px) translateX(-50%)' : 'translateY(0) translateX(-50%)';
+      }
+      
+      if (infoSessionsHoverParagraph) {
+        if (isHovering) {
+          infoSessionsHoverParagraph.style.opacity = '1';
+          infoSessionsHoverParagraph.style.transform = 'translateY(-200px) translateX(-50%)';
+        } else {
+          infoSessionsHoverParagraph.style.opacity = '0';
+          infoSessionsHoverParagraph.style.transform = 'translateY(0) translateX(-50%)';
+        }
+      }
     }
   };
 
@@ -121,14 +240,22 @@ export function TimelineAnimation() {
             {/* Triangle Left Below Product Pitch */}
             <path d="M919 638.712C919 640.445 922.167 641.544 924.758 640.711L1088.1 585.611L918.999 528.182L919 638.712Z" fill="white" stroke="black" strokeWidth="1"/>
             
-            {/* Interviews */}
+            {/* Big Below Interviews */}
             <path d="M1480.39 452.944C1480.53 457.741 1475.66 462.062 1467.72 464.195L1299.05 509.617C1291.41 511.671 1282.08 511.383 1274.52 508.859L1117.84 456.075C1111.24 453.563 1105.6 449.229 1105.6 444.61L1105.61 343.108C1105.58 341.085 1109.74 339.922 1113.05 341.028L1289.52 399.968L1470.34 350.162C1474.7 348.905 1480.23 350.676 1480.31 353.352L1480.39 452.944Z" fill="white" stroke="black" strokeWidth="1"/>
             
             {/* Above Interviews Right */}
             <path d="M1458.38 338.991C1460.98 339.859 1461 341.834 1458.42 342.582L1291.94 388.516L1291.94 283.684L1458.38 338.991Z" fill="white" stroke="black" strokeWidth="1"/>
             
-            {/* Above Interviews Left */}
-            <path d="M1120.12 332.103L1279.76 288.257L1279.75 384.711L1120.12 332.103Z" fill="white" stroke="black" strokeWidth="1"/>
+            {/* Interviews - hover trigger only */}
+            <path 
+              d="M1120.12 332.103L1279.76 288.257L1279.75 384.711L1120.12 332.103Z" 
+              fill="white" 
+              stroke="black" 
+              strokeWidth="1"
+              className="cursor-pointer transition-opacity duration-300 hover:opacity-0"
+              onMouseEnter={() => handlePrismHover(true, 'interviews')}
+              onMouseLeave={() => handlePrismHover(false, 'interviews')}
+            />
             
             {/* Most Top on Right */}
             <path 
@@ -219,8 +346,16 @@ export function TimelineAnimation() {
             {/* Left Applications Due */}
             <path d="M543.116 375.102L702.757 331.256L702.751 427.71L543.116 375.102Z" fill="white" stroke="black" strokeWidth="1"/>
             
-            {/* Shape 12 - Middle Right Small Box Base */}
-            <path d="M696.376 320.132L523.736 367.587L351.096 309.92C347.522 308.726 347.502 306.006 351.059 304.979L499.788 263.834C509.071 261.155 520.628 261.426 529.955 264.542L696.376 320.132Z" fill="white" stroke="black" strokeWidth="1"/>
+            {/* PM Panel & Workshop - hover trigger only */}
+            <path 
+              d="M696.376 320.132L523.736 367.587L351.096 309.92C347.522 308.726 347.502 306.006 351.059 304.979L499.788 263.834C509.071 261.155 520.628 261.426 529.955 264.542L696.376 320.132Z" 
+              fill="white" 
+              stroke="black" 
+              strokeWidth="1"
+              className="cursor-pointer transition-opacity duration-300 hover:opacity-0"
+              onMouseEnter={() => handlePrismHover(true, 'pm-panel')}
+              onMouseLeave={() => handlePrismHover(false, 'pm-panel')}
+            />
             
             {/* Shape 13 - Middle Left Large Box */}
             <path d="M315.242 320.623C322.887 317.911 332.453 317.878 340.15 320.538L500.85 374.283C508.263 376.843 512.813 381.512 512.813 386.557V492.044C512.813 497.066 508.305 501.716 500.947 504.285L336.942 559.645C333.703 560.775 329.597 559.407 329.597 557.196L329.596 439.405L152.305 379.501C147.941 378.089 147.818 374.437 152.082 372.924L315.242 320.623Z" fill="white" stroke="black" strokeWidth="1"/>
@@ -243,8 +378,16 @@ export function TimelineAnimation() {
             {/* Shape 19 - Top Left Small Box Side */}
             <path d="M301.279 178.874L141.638 222.721L141.643 126.267L301.279 178.874Z" fill="white" stroke="black" strokeWidth="1"/>
             
-            {/* Shape 20 - Top Left Small Box Base */}
-            <path d="M148.019 233.845L320.658 186.389L493.299 244.057C496.872 245.251 496.893 247.971 493.336 248.997L344.607 290.143C335.323 292.822 323.767 292.55 314.44 289.435L148.019 233.845Z" fill="white" stroke="black" strokeWidth="1"/>
+            {/* Info Sessions - hover trigger only */}
+            <path 
+              d="M148.019 233.845L320.658 186.389L493.299 244.057C496.872 245.251 496.893 247.971 493.336 248.997L344.607 290.143C335.323 292.822 323.767 292.50 314.44 289.435L148.019 233.845Z" 
+              fill="white" 
+              stroke="black" 
+              strokeWidth="1"
+              className="cursor-pointer transition-opacity duration-300 hover:opacity-0"
+              onMouseEnter={() => handlePrismHover(true, 'info-sessions')}
+              onMouseLeave={() => handlePrismHover(false, 'info-sessions')}
+            />
             
             {/* Shape 21 - Bottom Left Large Box */}
             <path d="M-253.997 493.944C-254.131 498.741 -249.264 503.062 -241.325 505.195L-72.6583 550.617C-65.013 552.671 -55.6812 552.383 -48.124 549.859L108.555 497.075C115.157 494.563 120.794 490.229 120.794 485.61L120.786 384.108C120.816 382.085 116.656 380.922 113.345 382.028L-63.1276 440.968L-243.945 391.162C-248.302 389.905 -253.837 391.676 -253.911 394.352L-253.997 493.944Z" fill="white" stroke="black" strokeWidth="1"/>
@@ -291,7 +434,7 @@ export function TimelineAnimation() {
               {/* Top face of prism (extruded up by 300px) */}
               <path 
                 d="M918.999 219.191L1088.1 161.953L1088.1 46.705C1088.1 44.319 1083.74 42.808 1080.18 43.96L934.07 87.127C924.772 90.135 918.999 95.869 918.999 102.095L918.999 219.191Z" 
-                fill="#F8F4FF" 
+                fill="white" 
                 stroke="black" 
                 strokeWidth="1"
               />
@@ -315,6 +458,195 @@ export function TimelineAnimation() {
               {/* Back side face */}
               <path 
                 d="M918.999 519.191L918.999 219.191L1088.1 161.953L1088.1 461.953L918.999 519.191Z" 
+                fill="#9161AD" 
+                stroke="black" 
+                strokeWidth="1"
+              />
+            </g>
+          </svg>
+        </div>
+        
+        {/* Interviews 3D Prism - Separate container for proper z-index layering */}
+        <div 
+          className="absolute"
+          style={{
+            top: '550px',
+            left: '50%',
+            transform: 'translateX(-50%)',
+            zIndex: 1000,
+            pointerEvents: 'none'
+          }}
+        >
+          <svg width="1440" height="713" viewBox="0 0 1440 713" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g 
+              className="interviews-prism-container"
+              style={{
+                opacity: 0,
+                clipPath: 'inset(100% 0 0 0)',
+                transition: 'opacity 0.3s ease, clip-path 0.6s cubic-bezier(0.4, 0, 0.2, 1)'
+              }}
+            >
+              {/* Bottom face of prism */}
+              <path 
+                d="M1120.12 332.103L1279.76 288.257L1279.75 384.711L1120.12 332.103Z" 
+                fill="#B085D1" 
+                stroke="black" 
+                strokeWidth="1"
+              />
+              
+              {/* Top face of prism (extruded up by 250px) */}
+              <path 
+                d="M1120.12 82.103L1279.76 38.257L1279.75 134.711L1120.12 82.103Z" 
+                fill="white" 
+                stroke="black" 
+                strokeWidth="1"
+              />
+              
+              {/* Left side face */}
+              <path 
+                d="M1120.12 332.103L1120.12 82.103L1279.76 38.257L1279.76 288.257L1120.12 332.103Z" 
+                fill="white" 
+                stroke="black" 
+                strokeWidth="1"
+              />
+              
+              {/* Right side face */}
+              <path 
+                d="M1279.75 384.711L1279.75 134.711L1279.76 38.257L1279.76 288.257L1279.75 384.711Z" 
+                fill="#9B6BB9" 
+                stroke="black" 
+                strokeWidth="1"
+              />
+              
+              {/* Back side face */}
+              <path 
+                d="M1279.75 384.711L1279.75 134.711L1120.12 82.103L1120.12 332.103L1279.75 384.711Z" 
+                fill="#9161AD" 
+                stroke="black" 
+                strokeWidth="1"
+              />
+            </g>
+          </svg>
+        </div>
+        
+        {/* PM Panel & Workshop 3D Prism - Separate container for proper z-index layering */}
+        <div 
+          className="absolute"
+          style={{
+            top: '550px',
+            left: '50%',
+            transform: 'translateX(-50%)',
+            zIndex: 1000,
+            pointerEvents: 'none'
+          }}
+        >
+          <svg width="1440" height="713" viewBox="0 0 1440 713" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g 
+              className="pm-panel-prism-container"
+              style={{
+                opacity: 0,
+                clipPath: 'inset(100% 0 0 0)',
+                transition: 'opacity 0.3s ease, clip-path 0.6s cubic-bezier(0.4, 0, 0.2, 1)'
+              }}
+            >
+              {/* Bottom face of prism */}
+              <path 
+                d="M696.376 320.132L523.736 367.587L351.096 309.92C347.522 308.726 347.502 306.006 351.059 304.979L499.788 263.834C509.071 261.155 520.628 261.426 529.955 264.542L696.376 320.132Z" 
+                fill="#B085D1" 
+                stroke="white" 
+                strokeWidth="1"
+              />
+              
+              {/* Top face of prism (extruded up by 250px) */}
+              <path 
+                d="M696.376 70.132L523.736 117.587L351.096 59.92C347.522 58.726 347.502 56.006 351.059 54.979L499.788 13.834C509.071 11.155 520.628 11.426 529.955 14.542L696.376 70.132Z" 
+                fill="white" 
+                stroke="black" 
+                strokeWidth="1"
+              />
+              
+              {/* Left side face */}
+              <path 
+                d="M351.096 309.92L351.096 59.92L696.376 70.132L696.376 320.132L351.096 309.92Z" 
+                fill="white" 
+                stroke="white" 
+                strokeWidth="1"
+              />
+              
+              {/* Right side face */}
+              <path 
+                d="M696.376 320.132L696.376 70.132L523.736 117.587L523.736 367.587L696.376 320.132Z" 
+                fill="#9B6BB9" 
+                stroke="black" 
+                strokeWidth="1"
+              />
+              
+              {/* Back side face */}
+              <path 
+                d="M523.736 367.587L523.736 117.587L351.096 59.92L351.096 309.92L523.736 367.587Z" 
+                fill="#9161AD" 
+                stroke="black" 
+                strokeWidth="1"
+              />
+            </g>
+          </svg>
+        </div>
+        
+        {/* Info Sessions 3D Prism - Separate container for proper z-index layering */}
+        <div 
+          className="absolute"
+          style={{
+            top: '550px',
+            left: '50%',
+            transform: 'translateX(-50%)',
+            zIndex: 1000,
+            pointerEvents: 'none'
+          }}
+        >
+          <svg width="1440" height="713" viewBox="0 0 1440 713" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g 
+              className="info-sessions-prism-container"
+              style={{
+                opacity: 0,
+                clipPath: 'inset(100% 0 0 0)',
+                transition: 'opacity 0.3s ease, clip-path 0.6s cubic-bezier(0.4, 0, 0.2, 1)'
+              }}
+            >
+              {/* Bottom face of prism - exact copy of Info Sessions shape */}
+              <path 
+                d="M148.019 233.845L320.658 186.389L493.299 244.057C496.872 245.251 496.893 247.971 493.336 248.997L344.607 290.143C335.323 292.822 323.767 292.50 314.44 289.435L148.019 233.845Z" 
+                fill="#9161AD" 
+                stroke="black" 
+                strokeWidth="1"
+              />
+              
+              {/* Top face of prism (extruded up by 150px) */}
+              <path 
+                d="M148.019 83.845L320.658 36.389L493.299 94.057C496.872 95.251 496.893 97.971 493.336 98.997L344.607 140.143C335.323 142.822 323.767 142.50 314.44 139.435L148.019 83.845Z" 
+                fill="white" 
+                stroke="black" 
+                strokeWidth="1"
+              />
+              
+              {/* Left side face */}
+              <path 
+                d="M148.019 233.845L148.019 83.845L314.44 139.435L314.44 289.435L148.019 233.845Z" 
+                fill="#9161AD" 
+                stroke="black" 
+                strokeWidth="1"
+              />
+              
+              {/* Right side face */}
+              <path 
+                d="M493.299 244.057L493.299 94.057L493.336 98.997L493.336 248.997L493.299 244.057Z" 
+                fill="#9161AD" 
+                stroke="black" 
+                strokeWidth="1"
+              />
+              
+              {/* Curved back face */}
+              <path 
+                d="M493.336 248.997L493.336 98.997L344.607 140.143L344.607 290.143L493.336 248.997Z" 
                 fill="#9161AD" 
                 stroke="black" 
                 strokeWidth="1"
@@ -406,6 +738,7 @@ export function TimelineAnimation() {
            
            {/* Info Sessions Text - 17.5px above Line 2 */}
            <div 
+             className="info-sessions-text"
              style={{
                position: 'absolute',
                left: '-388px', // Same x position as Line 2
@@ -419,17 +752,20 @@ export function TimelineAnimation() {
                fontStyle: 'normal',
                fontWeight: 700,
                lineHeight: '32px',
-               whiteSpace: 'nowrap' // Prevents text wrapping
+               whiteSpace: 'nowrap', // Prevents text wrapping
+               transition: 'transform 0.6s cubic-bezier(0.4, 0, 0.2, 1)',
+               zIndex: 10
              }}
            >
              Info Sessions
            </div>
 
            <div 
+             className="info-sessions-date"
              style={{
                position: 'absolute',
-               left: '-388px', // Same x position as Line 6
-               top: '10px', // 3px above Interviews (230px - 3px)
+               left: '-388px', // Same x position as Line 2
+               top: '10px', // 3px above Info Sessions text
                transform: 'translateX(-50%)', // Centers the text div on the line
                alignSelf: 'stretch',
                color: '#3A3A3A',
@@ -439,30 +775,59 @@ export function TimelineAnimation() {
                fontStyle: 'normal',
                fontWeight: 400,
                lineHeight: 'normal',
-               whiteSpace: 'nowrap' // Prevents text wrapping
+               whiteSpace: 'nowrap', // Prevents text wrapping
+               transition: 'transform 0.6s cubic-bezier(0.4, 0, 0.2, 1)',
+               zIndex: 10
              }}
            >
              TBD
            </div>
 
+           {/* Info Sessions Hover Paragraph - appears during animation */}
+           <div 
+             className="info-sessions-paragraph"
+             style={{
+               position: 'absolute',
+               left: '-388px', // Same x position as Line 2
+               top: '55px', // Below the Info Sessions text
+               transform: 'translateX(-50%)',
+               width: '300px',
+               color: '#3A3A3A',
+               textAlign: 'center',
+               fontFamily: '"M PLUS 1"',
+               fontSize: '16px',
+               fontStyle: 'normal',
+               fontWeight: 400,
+               lineHeight: '22px',
+               opacity: 0,
+               transition: 'opacity 0.4s ease 0.2s, transform 0.6s cubic-bezier(0.4, 0, 0.2, 1)',
+               zIndex: 10
+             }}
+           >
+             Discover our community and learn about opportunities to develop your product management skills in an interactive setting.
+           </div>
+
            {/* Line 2 */}
            <div 
+             className="line-2"
              style={{
                position: 'absolute',
                left: '-388px', // x1="160" * 2
                top: '65px', // y2="139" * 2
                width: '1px',
                height: '211px', // (350.5-139) * 2
-               backgroundColor: 'black'
+               backgroundColor: 'black',
+               transition: 'opacity 0.5s ease'
              }}
            />
            
-           {/* Applications Due Text - 35px above Line 3 */}
+           {/* PM Panel & Workshop Text - 35px above Line 3 */}
            <div 
+             className="pm-panel-text"
              style={{
                position: 'absolute',
                left: '-197px', // Same x position as Line 3
-               top: '85px', // 35px above Line 3 (120px - 35px)
+               top: '75px', // 35px above Line 3 (120px - 35px)
                transform: 'translateX(-50%)', // Centers the text div on the line
                alignSelf: 'stretch',
                color: '#3A3A3A',
@@ -472,17 +837,20 @@ export function TimelineAnimation() {
                fontStyle: 'normal',
                fontWeight: 700,
                lineHeight: '32px',
-               whiteSpace: 'nowrap' // Prevents text wrapping
+               whiteSpace: 'nowrap', // Prevents text wrapping
+               transition: 'transform 0.6s cubic-bezier(0.4, 0, 0.2, 1)',
+               zIndex: 10
              }}
            >
              PM Panel & Workshop
            </div>
 
            <div 
+             className="pm-panel-date"
              style={{
                position: 'absolute',
-               left: '-197px', // Same x position as Line 6
-               top: '65px', // 3px above Interviews (230px - 3px)
+               left: '-197px', // Same x position as Line 3
+               top: '55px', // 3px above PM Panel text
                transform: 'translateX(-50%)', // Centers the text div on the line
                alignSelf: 'stretch',
                color: '#3A3A3A',
@@ -492,21 +860,49 @@ export function TimelineAnimation() {
                fontStyle: 'normal',
                fontWeight: 400,
                lineHeight: 'normal',
-               whiteSpace: 'nowrap' // Prevents text wrapping
+               whiteSpace: 'nowrap', // Prevents text wrapping
+               transition: 'transform 0.6s cubic-bezier(0.4, 0, 0.2, 1)',
+               zIndex: 10
              }}
            >
              TBD
            </div>
 
+           {/* PM Panel & Workshop Hover Paragraph - appears during animation */}
+           <div 
+             className="pm-panel-paragraph"
+             style={{
+               position: 'absolute',
+               left: '-197px', // Same x position as Line 3
+               top: '110px', // Below the PM Panel text
+               transform: 'translateX(-50%)',
+               width: '300px',
+               color: '#3A3A3A',
+               textAlign: 'center',
+               fontFamily: '"M PLUS 1"',
+               fontSize: '16px',
+               fontStyle: 'normal',
+               fontWeight: 400,
+               lineHeight: '22px',
+               opacity: 0,
+               transition: 'opacity 0.4s ease 0.2s, transform 0.6s cubic-bezier(0.4, 0, 0.2, 1)',
+               zIndex: 10
+             }}
+           >
+             Learn from industry leaders and sharpen your product management skills through hands-on workshops and panel discussions.
+           </div>
+
            {/* Line 3 */}
            <div 
+             className="line-3"
              style={{
                position: 'absolute',
                left: '-197px', // x1="353" * 2
                top: '120px', // y2="302.5" * 2
                width: '1px',
                height: '234px', // (427-302.5) * 2
-               backgroundColor: 'black'
+               backgroundColor: 'black',
+               transition: 'opacity 0.5s ease'
              }}
            />
            
@@ -515,7 +911,7 @@ export function TimelineAnimation() {
              className="applications-due-text"
              style={{
                position: 'absolute',
-               left: '62px', // Same x position as Line 4
+               left: '75px', // Same x position as Line 4
                top: '105px', // 35px above Line 4 (140px - 35px)
                transform: 'translateX(-50%)', // Centers the text div on the line
                alignSelf: 'stretch',
@@ -539,7 +935,7 @@ export function TimelineAnimation() {
              className="applications-due-tbd"
              style={{
                position: 'absolute',
-               left: '62px', // Same x position as Line 4
+               left: '75px', // Same x position as Line 4
                top: '85px', // Above the Applications Due text
                transform: 'translateX(-50%)', // Centers the text div on the line
                alignSelf: 'stretch',
@@ -563,7 +959,7 @@ export function TimelineAnimation() {
              className="applications-due-paragraph"
              style={{
                position: 'absolute',
-               left: '62px', // Same x position as Line 4
+               left: '75px', // Same x position as Line 4
                top: '140px', // Below the Applications Due text
                transform: 'translateX(-50%)',
                width: '300px',
@@ -586,7 +982,7 @@ export function TimelineAnimation() {
            <div 
              style={{
                position: 'absolute',
-               left: '62px', // x1="596" * 2
+               left: '75px', // x1="596" * 2
                top: '140px', // y2="186" * 2
                width: '1px',
                height: '284px', // (491-186) * 2
@@ -709,10 +1105,11 @@ export function TimelineAnimation() {
            
            {/* (By invite) Text - 35px above Line 6 */}
            <div 
+             className="interviews-invite"
              style={{
                position: 'absolute',
                left: '550px', // Same x position as Line 6
-               top: '235px', // 35px above Line 6 (270px - 35px)
+               top: '150px', // 35px above Line 6 (270px - 35px)
                transform: 'translateX(-50%)', // Centers the text div on the line
                alignSelf: 'stretch',
                color: '#3A3A3A',
@@ -722,7 +1119,9 @@ export function TimelineAnimation() {
                fontStyle: 'normal',
                fontWeight: 400,
                lineHeight: 'normal',
-               whiteSpace: 'nowrap' // Prevents text wrapping
+               whiteSpace: 'nowrap', // Prevents text wrapping
+               transition: 'transform 0.6s cubic-bezier(0.4, 0, 0.2, 1)',
+               zIndex: 10
              }}
            >
              (By invite)
@@ -730,10 +1129,11 @@ export function TimelineAnimation() {
 
            {/* Interviews Text - 5px above (By invite) */}
            <div 
+             className="interviews-text"
              style={{
                position: 'absolute',
                left: '550px', // Same x position as Line 6
-               top: '202px', // 5px above (By invite) (235px - 5px)
+               top: '117px', // 5px above (By invite) (235px - 5px)
                transform: 'translateX(-50%)', // Centers the text div on the line
                alignSelf: 'stretch',
                color: '#3A3A3A',
@@ -743,7 +1143,9 @@ export function TimelineAnimation() {
                fontStyle: 'normal',
                fontWeight: 700,
                lineHeight: '32px',
-               whiteSpace: 'nowrap' // Prevents text wrapping
+               whiteSpace: 'nowrap', // Prevents text wrapping
+               transition: 'transform 0.6s cubic-bezier(0.4, 0, 0.2, 1)',
+               zIndex: 10
              }}
            >
              Interviews
@@ -751,10 +1153,11 @@ export function TimelineAnimation() {
 
            {/* TBD Text - 3px above Interviews */}
            <div 
+             className="interviews-date"
              style={{
                position: 'absolute',
                left: '550px', // Same x position as Line 6
-               top: '182px', // 3px above Interviews (230px - 3px)
+               top: '97px', // 3px above Interviews (230px - 3px)
                transform: 'translateX(-50%)', // Centers the text div on the line
                alignSelf: 'stretch',
                color: '#3A3A3A',
@@ -764,21 +1167,49 @@ export function TimelineAnimation() {
                fontStyle: 'normal',
                fontWeight: 400,
                lineHeight: 'normal',
-               whiteSpace: 'nowrap' // Prevents text wrapping
+               whiteSpace: 'nowrap', // Prevents text wrapping
+               transition: 'transform 0.6s cubic-bezier(0.4, 0, 0.2, 1)',
+               zIndex: 10
              }}
            >
              TBD
            </div>
 
+           {/* Interviews Hover Paragraph - appears during animation */}
+           <div 
+             className="interviews-paragraph"
+             style={{
+               position: 'absolute',
+               left: '550px', // Same x position as Line 6
+               top: '175px', // Below the invite text
+               transform: 'translateX(-50%)',
+               width: '300px',
+               color: '#3A3A3A',
+               textAlign: 'center',
+               fontFamily: '"M PLUS 1"',
+               fontSize: '16px',
+               fontStyle: 'normal',
+               fontWeight: 400,
+               lineHeight: '22px',
+               opacity: 0,
+               transition: 'opacity 0.4s ease 0.2s, transform 0.6s cubic-bezier(0.4, 0, 0.2, 1)',
+               zIndex: 10
+             }}
+           >
+             Join our final round of interviews and demonstrate your passion for product management in a collaborative setting.
+           </div>
+
            {/* Line 6 */}
            <div 
+             className="line-6"
              style={{
                position: 'absolute',
                left: '550px', // x1="953" * 2
-               top: '270px', // y2="110" * 2
+               top: '185px', // y2="110" * 2
                width: '1px',
                height: '211px', // (377.5-110) * 2
-               backgroundColor: 'black'
+               backgroundColor: 'black',
+               transition: 'opacity 0.5s ease'
              }}
            />
          </div>
