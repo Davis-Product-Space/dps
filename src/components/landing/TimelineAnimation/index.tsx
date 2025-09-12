@@ -3,7 +3,7 @@
 import React from 'react';
 
 export function TimelineAnimation() {
-  const handlePrismHover = (isHovering: boolean, type: 'applications-due' | 'product-pitch' | 'interviews' | 'pm-panel' | 'info-sessions') => {
+  const handlePrismHover = (isHovering: boolean, type: 'applications-due' | 'applications-open' | 'product-pitch' | 'interviews' | 'pm-panel' | 'info-sessions') => {
     if (type === 'applications-due') {
       const line4 = document.querySelector('.line-4') as HTMLElement;
       const prismContainer = document.querySelector('.prism-container') as HTMLElement;
@@ -40,6 +40,45 @@ export function TimelineAnimation() {
         } else {
           hoverParagraph.style.opacity = '0';
           hoverParagraph.style.transform = 'translateY(0) translateX(-50%)';
+        }
+      }
+    } else if (type === 'applications-open') {
+      const line1 = document.querySelector('.line-1') as HTMLElement;
+      const line2 = document.querySelector('.line-2') as HTMLElement;
+      const applicationsOpenPrismContainer = document.querySelector('.applications-open-prism-container') as HTMLElement;
+      const applicationsOpenText = document.querySelector('.applications-open-text') as HTMLElement;
+      const applicationsOpenTbd = document.querySelector('.applications-open-tbd') as HTMLElement;
+      const applicationsOpenHoverParagraph = document.querySelector('.applications-open-paragraph') as HTMLElement;
+      
+      if (line1) {
+        line1.style.opacity = isHovering ? '0' : '1';
+      }
+      
+      if (applicationsOpenPrismContainer) {
+        if (isHovering) {
+          applicationsOpenPrismContainer.style.opacity = '1';
+          applicationsOpenPrismContainer.style.clipPath = 'inset(0% 0 0 0)';
+        } else {
+          applicationsOpenPrismContainer.style.opacity = '0';
+          applicationsOpenPrismContainer.style.clipPath = 'inset(100% 0 0 0)';
+        }
+      }
+      
+      if (applicationsOpenText) {
+        applicationsOpenText.style.transform = isHovering ? 'translateY(-100px) translateX(-50%)' : 'translateY(0) translateX(-50%)';
+      }
+      
+      if (applicationsOpenTbd) {
+        applicationsOpenTbd.style.transform = isHovering ? 'translateY(-100px) translateX(-50%)' : 'translateY(0) translateX(-50%)';
+      }
+      
+      if (applicationsOpenHoverParagraph) {
+        if (isHovering) {
+          applicationsOpenHoverParagraph.style.opacity = '1';
+          applicationsOpenHoverParagraph.style.transform = 'translateY(-90px) translateX(-50%)';
+        } else {
+          applicationsOpenHoverParagraph.style.opacity = '0';
+          applicationsOpenHoverParagraph.style.transform = 'translateY(0) translateX(-50%)';
         }
       }
     } else if (type === 'product-pitch') {
@@ -167,14 +206,29 @@ export function TimelineAnimation() {
         }
       }
     } else if (type === 'info-sessions') {
+      const line1 = document.querySelector('.line-1') as HTMLElement;
       const line2 = document.querySelector('.line-2') as HTMLElement;
+      const applicationsOpenText = document.querySelector('.applications-open-text') as HTMLElement;
+      const applicationsOpenTbd = document.querySelector('.applications-open-tbd') as HTMLElement;
       const infoSessionsPrismContainer = document.querySelector('.info-sessions-prism-container') as HTMLElement;
       const infoSessionsText = document.querySelector('.info-sessions-text') as HTMLElement;
       const infoSessionsDate = document.querySelector('.info-sessions-date') as HTMLElement;
       const infoSessionsHoverParagraph = document.querySelector('.info-sessions-paragraph') as HTMLElement;
       
+      if (line1) {
+        line1.style.opacity = isHovering ? '0' : '1';
+      }
+      
       if (line2) {
         line2.style.opacity = isHovering ? '0' : '1';
+      }
+      
+      if (applicationsOpenText) {
+        applicationsOpenText.style.opacity = isHovering ? '0' : '1';
+      }
+      
+      if (applicationsOpenTbd) {
+        applicationsOpenTbd.style.opacity = isHovering ? '0' : '1';
       }
       
       if (infoSessionsPrismContainer) {
@@ -188,17 +242,17 @@ export function TimelineAnimation() {
       }
       
       if (infoSessionsText) {
-        infoSessionsText.style.transform = isHovering ? 'translateY(-200px) translateX(-50%)' : 'translateY(0) translateX(-50%)';
+        infoSessionsText.style.transform = isHovering ? 'translateY(-100px) translateX(-50%)' : 'translateY(0) translateX(-50%)';
       }
       
       if (infoSessionsDate) {
-        infoSessionsDate.style.transform = isHovering ? 'translateY(-200px) translateX(-50%)' : 'translateY(0) translateX(-50%)';
+        infoSessionsDate.style.transform = isHovering ? 'translateY(-100px) translateX(-50%)' : 'translateY(0) translateX(-50%)';
       }
       
       if (infoSessionsHoverParagraph) {
         if (isHovering) {
           infoSessionsHoverParagraph.style.opacity = '1';
-          infoSessionsHoverParagraph.style.transform = 'translateY(-200px) translateX(-50%)';
+          infoSessionsHoverParagraph.style.transform = 'translateY(-90px) translateX(-50%)';
         } else {
           infoSessionsHoverParagraph.style.opacity = '0';
           infoSessionsHoverParagraph.style.transform = 'translateY(0) translateX(-50%)';
@@ -375,8 +429,79 @@ export function TimelineAnimation() {
             {/* Shape 18 - Top Left Small Box Top */}
             <path d="M-36.987 171.986C-39.5827 171.119 -39.6018 169.144 -37.0217 168.395L129.453 122.461L129.457 227.293L-36.987 171.986Z" fill="white" stroke="black" strokeWidth="1"/>
             
-            {/* Shape 19 - Top Left Small Box Side */}
-            <path d="M301.279 178.874L141.638 222.721L141.643 126.267L301.279 178.874Z" fill="white" stroke="black" strokeWidth="1"/>
+            {/* Applications Open - with 3D prism hover effect */}
+            <g id="applications-open-prism">
+              {/* Original flat shape - hover trigger */}
+              <path 
+                d="M301.279 178.874L141.638 222.721L141.643 126.267L301.279 178.874Z" 
+                fill="white" 
+                stroke="black" 
+                strokeWidth="1"
+                className="cursor-pointer transition-opacity duration-300 hover:opacity-0"
+                onMouseEnter={() => handlePrismHover(true, 'applications-open')}
+                onMouseLeave={() => handlePrismHover(false, 'applications-open')}
+              />
+              
+              {/* 3D Triangular Prism - rises from bottom with clip-path animation */}
+              <g 
+                className="applications-open-prism-container pointer-events-none"
+                style={{
+                  opacity: 0,
+                  clipPath: 'inset(100% 0 0 0)', // Start completely clipped from bottom
+                  transition: 'opacity 0.3s ease, clip-path 0.6s cubic-bezier(0.4, 0, 0.2, 1)',
+                  zIndex: 50
+                }}
+              >
+                {/* Bottom face of prism */}
+                <path 
+                  d="M301.279 178.874L141.638 222.721L141.643 126.267L301.279 178.874Z" 
+                  fill="#B085D1" 
+                  stroke="black" 
+                  strokeWidth="1"
+                />
+                
+                {/* Top face of prism (extruded up by 120px - stays within viewBox) */}
+                <path 
+                  d="M301.279 58.874L141.638 102.721L141.643 6.267L301.279 58.874Z" 
+                  fill="#F8F4FF" 
+                  stroke="black" 
+                  strokeWidth="1"
+                />
+                
+                {/* Left side face */}
+                <path 
+                  d="M141.643 126.267L141.643 6.267L301.279 58.874L301.279 178.874L141.643 126.267Z" 
+                  fill="white" 
+                  stroke="black" 
+                  strokeWidth="1"
+                />
+                
+                {/* Right side face */}
+                <path 
+                  d="M301.279 178.874L301.279 58.874L141.638 102.721L141.638 222.721L301.279 178.874Z" 
+                  fill="#9B6BB9" 
+                  stroke="black" 
+                  strokeWidth="1"
+                />
+                
+                {/* Back side face */}
+                <path 
+                  d="M141.638 222.721L141.638 102.721L301.279 58.874L301.279 178.874L141.638 222.721Z" 
+                  fill="#9161AD" 
+                  stroke="black" 
+                  strokeWidth="1"
+                />
+                
+                {/* Glow effect */}
+                <filter id="applicationsOpenPrismGlow">
+                  <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+                  <feMerge> 
+                    <feMergeNode in="coloredBlur"/>
+                    <feMergeNode in="SourceGraphic"/>
+                  </feMerge>
+                </filter>
+              </g>
+            </g>
             
             {/* Info Sessions - hover trigger only */}
             <path 
@@ -644,12 +769,12 @@ export function TimelineAnimation() {
                 strokeWidth="1"
               />
               
-              {/* Curved back face */}
+              {/* Extended curved back face that wraps around corner */}
               <path 
-                d="M493.336 248.997L493.336 98.997L344.607 140.143L344.607 290.143L493.336 248.997Z" 
+                d="M493.336 248.997L493.336 98.997L344.607 140.143L344.607 290.143L493.336 248.997Z M344.607 290.143C335.323 292.822 323.767 292.50 314.44 289.435L314.44 139.435C323.767 142.50 335.323 142.822 344.607 140.143Z M314.44 289.435C305.157 286.757 193.6 247.611 148.019 233.845L148.019 83.845C193.6 97.611 305.157 136.757 314.44 139.435Z" 
                 fill="#9161AD" 
                 stroke="black" 
-                strokeWidth="1"
+                strokeWidth="0"
               />
             </g>
           </svg>
@@ -685,10 +810,11 @@ export function TimelineAnimation() {
          >
            {/* Applications Open Text - 17.5px above Line 1 */}
            <div 
+             className="applications-open-text"
              style={{
                position: 'absolute',
                left: '-547.5px', // Same x position as Line 1
-               top: '-35px', // 17.5px above Line 1 (0px - 17.5px)
+               top: '-10px', // 17.5px above Line 1 (0px - 17.5px)
                transform: 'translateX(-50%)', // Centers the text div on the line
                alignSelf: 'stretch',
                color: '#3A3A3A',
@@ -698,17 +824,19 @@ export function TimelineAnimation() {
                fontStyle: 'normal',
                fontWeight: 700,
                lineHeight: '32px',
-               whiteSpace: 'nowrap' // Prevents text wrapping
+               whiteSpace: 'nowrap', // Prevents text wrapping
+               transition: 'transform 0.6s cubic-bezier(0.4, 0, 0.2, 1)'
              }}
            >
              Applications Open
            </div>
 
            <div 
+             className="applications-open-tbd"
              style={{
                position: 'absolute',
                left: '-547.5px', // Same x position as Line 6
-               top: '-55px', // 3px above Interviews (230px - 3px)
+               top: '-30px', // 3px above Interviews (230px - 3px)
                transform: 'translateX(-50%)', // Centers the text div on the line
                alignSelf: 'stretch',
                color: '#3A3A3A',
@@ -718,21 +846,48 @@ export function TimelineAnimation() {
                fontStyle: 'normal',
                fontWeight: 400,
                lineHeight: 'normal',
-               whiteSpace: 'nowrap' // Prevents text wrapping
+               whiteSpace: 'nowrap', // Prevents text wrapping
+               transition: 'transform 0.6s cubic-bezier(0.4, 0, 0.2, 1)'
              }}
            >
              TBD
            </div>
 
+           {/* Applications Open Hover Paragraph - appears during animation */}
+           <div 
+             className="applications-open-paragraph"
+             style={{
+               position: 'absolute',
+               left: '-547.5px', // Same x position as Line 1
+               top: '15px', // Below the Applications Open text
+               transform: 'translateX(-50%)',
+               width: '300px',
+               color: '#3A3A3A',
+               textAlign: 'center',
+               fontFamily: '"M PLUS 1"',
+               fontSize: '16px',
+               fontStyle: 'normal',
+               fontWeight: 400,
+               lineHeight: '22px',
+               opacity: 0,
+               transition: 'opacity 0.4s ease 0.2s, transform 0.6s cubic-bezier(0.4, 0, 0.2, 1)',
+               zIndex: 10
+             }}
+           >
+             Begin your journey into product management. Apply now to join our community and explore opportunities to grow your skills and network.
+           </div>
+
            {/* Line 1 - leftmost - Now you can move by exact pixels */}
            <div 
+             className="line-1"
              style={{
                position: 'absolute',
                left: '-547.5px', // Equivalent to x1="470.5" * 2 (scaled)
-               top: '0px', // Equivalent to y2="17.5" * 2 (scaled)
+               top: '25px', // Equivalent to y2="17.5" * 2 (scaled)
                width: '1px',
-               height: '340.5px', // Height calculated from y1-y2 scaled
-               backgroundColor: 'black'
+               height: '200px', // Height calculated from y1-y2 scaled
+               backgroundColor: 'black',
+               transition: 'opacity 0.5s ease'
              }}
            />
            

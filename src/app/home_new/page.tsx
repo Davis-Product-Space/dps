@@ -3,6 +3,7 @@
 import React from 'react';
 import { TextReveal } from "@/components/landing/TextReveal";
 import { TimelineAnimation } from "@/components/landing/TimelineAnimation";
+import { WhatWeOffer } from "@/components/landing/WhatWeOffer";
 
 export default function HomeNewPage() {
   return (
@@ -240,7 +241,7 @@ export default function HomeNewPage() {
           position: 'relative', // Enable absolute positioning for children
           display: 'flex',
           width: '1440px',
-          height: '1341px',
+          height: '1411px',
           flexDirection: 'column',
           alignItems: 'center',
           background: '#FAF6FC',
@@ -291,6 +292,39 @@ export default function HomeNewPage() {
           Interested in joining our fellowship? Something about check out the timeline below to see our recruitment week schedule but im really bad at writing these kind of text on the spot
         </p>
         <TimelineAnimation />
+      </section>
+      
+      {/* What we Offer Section */}
+      <section 
+        className="relative mx-auto"
+        style={{
+          width: '1440px',
+          height: '3097px'
+        }}
+      >
+        {/* What we Offer Heading */}
+        <h2 
+          style={{
+            alignSelf: 'stretch',
+            color: '#3A3A3A',
+            textAlign: 'center',
+            fontFamily: 'Inter',
+            fontSize: '40px',
+            fontStyle: 'normal',
+            fontWeight: 600,
+            lineHeight: '48.75px',
+            position: 'absolute',
+            top: '150px',
+            left: '0',
+            right: '0',
+            margin: 0
+          }}
+        >
+          What We Offer
+        </h2>
+        
+        {/* WhatWeOffer Component */}
+        <WhatWeOffer />
       </section>
     </div>
   );

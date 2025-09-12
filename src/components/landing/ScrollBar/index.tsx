@@ -4,9 +4,10 @@ import { useState } from "react";
 
 interface ScrollBarProps {
   targetRef: React.RefObject<HTMLElement | null>;
+  totalItems?: number;
 }
 
-export default function ScrollBar({ targetRef }: ScrollBarProps) {
+export default function ScrollBar({ targetRef, totalItems = 3 }: ScrollBarProps) {
   const { scrollYProgress } = useScroll({
     target: targetRef,
     offset: ["start start", "end end"],
@@ -16,9 +17,21 @@ export default function ScrollBar({ targetRef }: ScrollBarProps) {
   const [activeIndex, setActiveIndex] = useState(0);
 
   useMotionValueEvent(scrollYProgress, "change", (latest) => {
-    if (latest < 0.65) setActiveIndex(0);
-    else if (latest < 0.75) setActiveIndex(1);
-    else setActiveIndex(2);
+    // Calculate dynamic thresholds based on total items
+    const step = 1 / totalItems;
+    let newIndex = 0;
+    
+    for (let i = 0; i < totalItems; i++) {
+      if (latest >= i * step && latest < (i + 1) * step) {
+        newIndex = i;
+        break;
+      } else if (latest >= (totalItems - 1) * step) {
+        newIndex = totalItems - 1;
+        break;
+      }
+    }
+    
+    setActiveIndex(newIndex);
   });
 
   return (
@@ -35,7 +48,7 @@ export default function ScrollBar({ targetRef }: ScrollBarProps) {
       </div>
 
       {/* total cards */}
-      <div className="text-[#765df2]">03</div>
+      <div className="text-[#765df2]">{String(totalItems).padStart(2, "0")}</div>
     </div>
   );
 }
