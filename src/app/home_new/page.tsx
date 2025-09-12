@@ -2,6 +2,8 @@
 
 import React from 'react';
 import { TextReveal } from "@/components/landing/TextReveal";
+import { TimelineAnimation } from "@/components/landing/TimelineAnimation";
+import { WhatWeOffer } from "@/components/landing/WhatWeOffer";
 
 export default function HomeNewPage() {
   return (
@@ -107,7 +109,7 @@ export default function HomeNewPage() {
         className="relative mx-auto"
         style={{
           width: '1440px',
-          height: '2000px', // Give the section some height
+          height: '2250px', // Increased height to add more space below TextReveal
         }}
       >
         <div 
@@ -154,6 +156,175 @@ export default function HomeNewPage() {
             />
           </div>
         </div>
+        
+        {/* Fixed Centered Box at bottom of page */}
+        <div 
+          className="absolute left-1/2 transform -translate-x-1/2"
+          style={{
+            bottom: '50px', // 50px from bottom of viewport
+            zIndex: 10 // Ensure it appears above other content
+          }}
+        >
+          <div
+            style={{
+              borderRadius: '30px',
+              background: '#FAF6FC',
+              boxShadow: '0 6px 6px 0 rgba(0, 0, 0, 0.25)',
+              display: 'flex',
+              padding: '50px',
+              flexDirection: 'column',
+              alignItems: 'center',
+              gap: '25px',
+              alignSelf: 'stretch'
+            }}
+          >
+            {/* Our Mission Title */}
+            <h2 
+              style={{
+                alignSelf: 'stretch',
+                color: '#3A3A3A',
+                textAlign: 'center',
+                fontFamily: 'Inter',
+                fontSize: '40px',
+                fontStyle: 'normal',
+                fontWeight: 600,
+                lineHeight: '48.75px',
+                margin: 0
+              }}
+            >
+              Our Mission
+            </h2>
+            
+            {/* Mission Description */}
+            <p 
+              style={{
+                alignSelf: 'stretch',
+                color: '#3A3A3A',
+                textAlign: 'center',
+                fontFamily: '"M PLUS 1"',
+                fontSize: '22.5px',
+                fontStyle: 'normal',
+                fontWeight: 400,
+                lineHeight: '32px',
+                margin: 0
+              }}
+            >
+              At Product Space, we're a national community of students with a mission to become the world's next generation of product leaders.
+            </p>
+            
+            {/* Meet the Team Link */}
+            <a 
+              href="/about_new"
+              style={{
+                alignSelf: 'stretch',
+                color: '#3A3A3A',
+                textAlign: 'center',
+                fontFamily: '"M PLUS 1"',
+                fontSize: '18.5px',
+                fontStyle: 'normal',
+                fontWeight: 700,
+                lineHeight: '32px',
+                textDecoration: 'none',
+                cursor: 'pointer',
+                margin: 0
+              }}
+            >
+              Meet the Team &gt;
+            </a>
+          </div>
+        </div>
+      </section>
+      
+      {/* New Section - 50px below the box */}
+      <section 
+        style={{
+          position: 'relative', // Enable absolute positioning for children
+          display: 'flex',
+          width: '1440px',
+          height: '1411px',
+          flexDirection: 'column',
+          alignItems: 'center',
+          background: '#FAF6FC',
+          marginTop: '50px', // 50px spacing from previous content
+          marginLeft: 'auto',
+          marginRight: 'auto'
+        }}
+      >
+        {/* Recruitment Timeline Heading */}
+        <h2 
+          style={{
+            alignSelf: 'stretch',
+            color: '#3A3A3A',
+            textAlign: 'center',
+            fontFamily: 'Inter',
+            fontSize: '40px',
+            fontStyle: 'normal',
+            fontWeight: 600,
+            lineHeight: '48.75px',
+            position: 'absolute',
+            top: '150px',
+            left: '0',
+            right: '0',
+            margin: 0
+          }}
+        >
+          Recruitment Timeline
+        </h2>
+        
+        {/* Recruitment Timeline Description */}
+        <p 
+          style={{
+            width: '900px',
+            color: '#3A3A3A',
+            textAlign: 'center',
+            fontFamily: '"M PLUS 1"',
+            fontSize: '22.5px',
+            fontStyle: 'normal',
+            fontWeight: 400,
+            lineHeight: '32px',
+            position: 'absolute',
+            top: '223.75px', // 150px + 48.75px (heading line-height) + 25px gap
+            left: '50%',
+            transform: 'translateX(-50%)',
+            margin: 0
+          }}
+        >
+          Interested in joining our fellowship? Something about check out the timeline below to see our recruitment week schedule but im really bad at writing these kind of text on the spot
+        </p>
+        <TimelineAnimation />
+      </section>
+      
+      {/* What we Offer Section */}
+      <section 
+        className="relative mx-auto"
+        style={{
+          width: '1440px',
+          height: '3097px'
+        }}
+      >
+        {/* What we Offer Heading */}
+        <h2 
+          style={{
+            alignSelf: 'stretch',
+            color: '#3A3A3A',
+            textAlign: 'center',
+            fontFamily: 'Inter',
+            fontSize: '40px',
+            fontStyle: 'normal',
+            fontWeight: 600,
+            lineHeight: '48.75px',
+            position: 'absolute',
+            top: '150px',
+            left: '0',
+            right: '0',
+            margin: 0
+          }}
+        >
+          What We Offer
+        </h2>
+        
+        {/* WhatWeOffer Component */}
+        <WhatWeOffer />
       </section>
     </div>
   );
