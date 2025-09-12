@@ -2,11 +2,18 @@
 
 export default function Footer() {
   return (
-    <footer className="w-full flex justify-center">
+    <footer className="w-full">
+      {/* Top border line */}
       <div 
-        className="relative bg-white"
         style={{
-          width: '1440px',
+          width: '100%',
+          height: '1px',
+          backgroundColor: '#000000'
+        }}
+      />
+      <div 
+        className="relative bg-white w-full"
+        style={{
           height: '348px'
         }}
       >
