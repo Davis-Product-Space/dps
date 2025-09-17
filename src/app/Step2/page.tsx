@@ -19,33 +19,33 @@ import { syncTeam } from "@/data/ProductSpace24-25/Fall24Fellows/TeamSync";
 export default function Step2Page() {
   const springProjects = [
     {
-      svgSrc: "/images/HoneDisplay.svg",
+      svgSrc: "/images/Capstones/Spring25/HoneDisplay.svg",
       title: "Hone",
-      groupMembers: "Team Member 1, Team Member 2",
+      groupMembers: "Amelia Uytingco, Cindy Xing, Taiki Lowe, Zayd Musa",
       shortDescription: "Brief description of the project",
       onViewPitchDeck: () => console.log("View pitch deck"),
       onViewDesigns: () => console.log("View designs")
     },
     {
-      svgSrc: "/images/HoneDisplay.svg",
+      svgSrc: "/images/Capstones/Spring25/MooveDisplay.svg",
       title: "MOOVE",
-      groupMembers: "Team Member 1, Team Member 2",
+      groupMembers: "Anwesha Mohanty, Haolin Zhang, Isaac Villegas, Kavin Agarwal",
       shortDescription: "Brief description of the project",
       onViewPitchDeck: () => console.log("View pitch deck"),
       onViewDesigns: () => console.log("View designs")
     },
     {
-      svgSrc: "/images/HoneDisplay.svg",
+      svgSrc: "/images/Capstones/Spring25/DeclassifyDisplay.svg",
       title: "deCLASSify",
-      groupMembers: "Team Member 1, Team Member 2",
+      groupMembers: "Andy Tran, Elango Ketheesan, Sahana Narayan, Yash Pradhan",
       shortDescription: "Brief description of the project",
       onViewPitchDeck: () => console.log("View pitch deck"),
       onViewDesigns: () => console.log("View designs")
     },
     {
-      svgSrc: "/images/HoneDisplay.svg",
-      title: "Shopify",
-      groupMembers: "Team Member 1, Team Member 2",
+      svgSrc: "/images/Capstones/Spring25/HeardDisplay.svg",
+      title: "Heard",
+      groupMembers: "Adrian Rozo, Andrew Fojas, Ken Hoang, Sambhav Agarwal",
       shortDescription: "Brief description of the project",
       onViewPitchDeck: () => console.log("View pitch deck"),
       onViewDesigns: () => console.log("View designs")
@@ -55,33 +55,33 @@ export default function Step2Page() {
   const fallProjects = [
     {
       svgSrc: "/images/HoneDisplay.svg",
-      title: "Curify",
-      groupMembers: "Team Member 1, Team Member 2",
-      shortDescription: "Brief description of the project",
+      title: "Curate",
+      groupMembers: "Amber Zhang, Arshiya Banerjee, Clara Yin, John Missal",
+      shortDescription: "Explore content your friends have viewed and shared right in your feed.",
       onViewPitchDeck: () => console.log("View pitch deck"),
       onViewDesigns: () => console.log("View designs")
     },
     {
       svgSrc: "/images/HoneDisplay.svg",
-      title: "Smtg Else",
-      groupMembers: "Team Member 1, Team Member 2",
-      shortDescription: "Brief description of the project",
+      title: "Sync",
+      groupMembers: "Anita Thata, Caitlin Chan, Jason Zhang, Puja Devarasetty",
+      shortDescription: "The Instagram Stories you know, just with more voices.",
       onViewPitchDeck: () => console.log("View pitch deck"),
       onViewDesigns: () => console.log("View designs")
     },
     {
       svgSrc: "/images/HoneDisplay.svg",
-      title: "Stmeg elsssse",
-      groupMembers: "Team Member 1, Team Member 2",
-      shortDescription: "Brief description of the project",
+      title: "Scraps",
+      groupMembers: "Abirami Kathiresan, Krisha Bhat, Nicole Yanuaria, Sruthi Sridhar, Wing Lai",
+      shortDescription: "Showcase your moods and moments on Instagram - your way.",
       onViewPitchDeck: () => console.log("View pitch deck"),
       onViewDesigns: () => console.log("View designs")
     },
     {
       svgSrc: "/images/HoneDisplay.svg",
-      title: "some 4th proj",
-      groupMembers: "Team Member 1, Team Member 2",
-      shortDescription: "Brief description of the project",
+      title: "Preview",
+      groupMembers: "Alex Sunga, Divleen Lota, Gayatri Brijesh, Phuong Thy Nguyen",
+      shortDescription: "Plan and visualize your posts directly through Instagram.",
       onViewPitchDeck: () => console.log("View pitch deck"),
       onViewDesigns: () => console.log("View designs")
     }
@@ -391,7 +391,8 @@ export default function Step2Page() {
               justifyContent: 'center',
               alignItems: 'center',
               gap: '15px',
-              boxShadow: '0 8px 10px 0 rgba(0, 0, 0, 0.25)'
+              position: 'relative',
+              zIndex: 10
             }}
           >
             <ProjectCarousel 
@@ -446,8 +447,7 @@ export default function Step2Page() {
               height: '618px',
               justifyContent: 'center',
               alignItems: 'center',
-              gap: '15px',
-              boxShadow: '0 8px 10px 0 rgba(0, 0, 0, 0.25)'
+              gap: '15px'
             }}
           >
             <ProjectCarousel 

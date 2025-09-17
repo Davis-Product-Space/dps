@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 interface ProjectTileProps {
   svgSrc: string;
@@ -16,29 +16,65 @@ interface ProjectCarouselProps {
 }
 
 function ProjectTile({ svgSrc, title, groupMembers, shortDescription, onViewPitchDeck, onViewDesigns }: ProjectTileProps) {
+  const [imageDimensions, setImageDimensions] = useState({ width: 950, height: 618 });
+  const imgRef = useRef<HTMLImageElement>(null);
+
+  useEffect(() => {
+    const img = imgRef.current;
+    if (img) {
+      img.onload = () => {
+        const maxWidth = 950;
+        const maxHeight = 610;
+        const aspectRatio = img.naturalWidth / img.naturalHeight;
+        
+        let width = maxWidth;
+        let height = maxWidth / aspectRatio;
+        
+        if (height > maxHeight) {
+          height = maxHeight;
+          width = maxHeight * aspectRatio;
+        }
+        
+        setImageDimensions({ width, height });
+      };
+    }
+  }, [svgSrc]);
+
   return (
     <div
       style={{
         display: 'flex',
         flexDirection: 'column',
-        width: '950px',
-        height: 'auto',
+        width: `${imageDimensions.width}px`,
+        height: `${Math.min(imageDimensions.height + 293, 618)}px`,
         borderRadius: '15px',
         overflow: 'hidden',
-        position: 'relative'
+        position: 'relative',
+        boxShadow: '0 8px 10px 0 rgba(0, 0, 0, 0.25)',
+        //border: '2px solid #000000'
       }}
     >
       {/* SVG Image */}
       <div
         style={{
-          width: '950px',
-          height: 'auto',
+          width: `${imageDimensions.width}px`,
+          height: `${imageDimensions.height}px`,
           display: 'flex',
           justifyContent: 'center',
-          alignItems: 'center'
+          alignItems: 'center',
+          boxShadow: '0 8px 10px 0 rgba(0, 0, 0, 0.25)'
         }}
       >
-        <img src={svgSrc} alt={title} style={{ width: '950px' }} />
+        <img 
+          ref={imgRef}
+          src={svgSrc} 
+          alt={title} 
+          style={{ 
+            width: `${imageDimensions.width}px`,
+            height: `${imageDimensions.height}px`,
+            objectFit: 'contain'
+          }} 
+        />
       </div>
       
       {/* Overlay Component (overlaps bottom of SVG) */}
@@ -46,7 +82,7 @@ function ProjectTile({ svgSrc, title, groupMembers, shortDescription, onViewPitc
         style={{
           background: 'linear-gradient(180deg, rgba(255, 255, 255, 0.00) 6.31%, #FFF 25.1%, #FFF 68.25%)',
           display: 'flex',
-          width: '950px',
+          width: `${imageDimensions.width}px`,
           height: '293px',
           padding: '30px 50px',
           flexDirection: 'column',
@@ -216,11 +252,28 @@ function ProjectTile({ svgSrc, title, groupMembers, shortDescription, onViewPitc
 
 export default function ProjectCarousel({ projectTiles }: ProjectCarouselProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [tileWidths, setTileWidths] = useState<number[]>([]);
+  const tileRefs = useRef<(HTMLDivElement | null)[]>([]);
 
-  const tileWidthPx = 950;
   const tileGapPx = 78;
   const viewportWidthPx = 1440;
-  const centerOffsetPx = (viewportWidthPx - tileWidthPx) / 2; // ensures middle tile is centered
+  const maxTileWidthPx = 950;
+
+  // Calculate center offset based on current tile's actual width
+  const currentTileWidth = tileWidths[currentIndex] || maxTileWidthPx;
+  const centerOffsetPx = (viewportWidthPx - currentTileWidth) / 2;
+
+  // Update tile widths when they change
+  useEffect(() => {
+    const updateWidths = () => {
+      const widths = tileRefs.current.map(ref => ref?.offsetWidth || maxTileWidthPx);
+      setTileWidths(widths);
+    };
+    
+    updateWidths();
+    window.addEventListener('resize', updateWidths);
+    return () => window.removeEventListener('resize', updateWidths);
+  }, [projectTiles]);
 
   const goToPrevious = () => {
     setCurrentIndex((prevIndex) => 
@@ -243,7 +296,6 @@ export default function ProjectCarousel({ projectTiles }: ProjectCarouselProps) 
         justifyContent: 'center',
         alignItems: 'center',
         gap: '15px',
-        boxShadow: '0 8px 10px 0 rgba(0, 0, 0, 0.25)',
         position: 'relative',
         overflow: 'hidden'
       }}
@@ -257,7 +309,8 @@ export default function ProjectCarousel({ projectTiles }: ProjectCarouselProps) 
           justifyContent: 'center',
           alignItems: 'center',
           position: 'relative',
-          overflow: 'hidden'
+          overflow: 'hidden',
+          padding: '2px 0'
         }}
       >
         {/* SVG Container - wider to show partial views and extra gap past clickers */}
@@ -277,15 +330,16 @@ export default function ProjectCarousel({ projectTiles }: ProjectCarouselProps) 
               width: '100%',
               height: '100%',
               gap: `${tileGapPx}px`,
-              transform: `translateX(${centerOffsetPx - currentIndex * (tileWidthPx + tileGapPx)}px)`,
+              transform: `translateX(${centerOffsetPx - currentIndex * (maxTileWidthPx + tileGapPx)}px)`,
               transition: 'transform 0.3s ease-in-out'
             }}
           >
             {projectTiles.map((tile, index) => (
               <div
                 key={index}
+                ref={(el) => (tileRefs.current[index] = el)}
                 style={{
-                  width: '950px',
+                  width: 'auto',
                   height: '100%',
                   flexShrink: 0,
                   display: 'flex',
