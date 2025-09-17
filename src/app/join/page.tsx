@@ -1,9 +1,12 @@
 "use client";
 
 import Image from "next/image";
+import ArrowIcon from "@/assets/icons/arrow_function.svg";
 import Link from "next/link";
 import RecruitmentStep from "@/components/joinPage/RecruitmentStep";
 import FAQInstance from "@/components/joinPage/FAQInstance";
+import { TimelineAnimation } from "@/components/landing/TimelineAnimation";
+
 
 export default function JoinNewPage() {
   const faqs = [
@@ -34,7 +37,7 @@ export default function JoinNewPage() {
   ];
   
   return (
-    <main className="min-h-screen bg-[#FDFAFF] text-[#3a3a3a] flex flex-col items-center justify-center">
+    <main className="min-h-screen bg-[#FDFAFF] text-[#3a3a3a] flex flex-col items-center justify-center ">
       
       {/* 1. background image */}
       <section 
@@ -58,13 +61,7 @@ export default function JoinNewPage() {
           <span className="text-[#FAF6FC] text-center font-['M_PLUS_1'] text-[22.5px] font-normal leading-[22.5px]">
             Fellowship Applications Open!
           </span>
-            <Image 
-              src="src/assets/icons/click-arrow-right.svg" 
-              alt="Click arrow right"
-              width={34.56}
-              height={34.56}
-              className="w-[34.56px] h-[34.56px]"
-            />
+            <ArrowIcon className="w-8 h-8" style={{ minWidth: '32px', minHeight: '32px', transform: 'translateY(2px)' }} />
         </div>
       </section>
 
@@ -116,22 +113,19 @@ export default function JoinNewPage() {
               lineHeight: '32px'
             }}
           >
-            Interested in joining our fellowship? Something about check out the timeline below to see our recruitment week schedule but im really bad at writing these kind of text on the spot
+            Interested in joining our fellowship? Hover over our timeline steps to learn more!
           </p>
         </div>
         
         <div
           style={{
             height: '821px',
-            alignSelf: 'stretch'
+            alignSelf: 'stretch',
           }}
         >
-          {/*TODOOO PAste the staircase vector here instead of THE IMAGE*/}
-          <img
-            src="/images/StaircaseVector.png"
-            alt="Recruitment Timeline Staircase"
-            className="w-full h-full object-contain"
-          />
+          <div style={{ transform: 'translateY(-400px)' }}>
+            <TimelineAnimation />
+          </div>
         </div>
       </section>
       
@@ -204,20 +198,21 @@ export default function JoinNewPage() {
           alt="Join middle page image"
           className="w-full"
         />
-
       </section>
 
       {/* 5. FAQ Section*/}
       <section
-        className="mt-[60px]"
         style={{
           width: '1440px',
-          height: '972px',
           flexShrink: 0,
-          background: '#FAF6FC'
+          background: '#FAF6FC',
+          paddingBottom: '150px'
       }}>
         {/* Title */}
-        <h2 className="text-center font-inter text-[40px] font-semibold leading-[48.75px] text-[#3A3A3A]">
+        <h2 
+          className="text-center font-inter text-[40px] font-semibold leading-[48.75px] text-[#3A3A3A]"
+          style={{ paddingTop: '150px' }}
+        >
           Frequently Asked Questions
         </h2>
 
