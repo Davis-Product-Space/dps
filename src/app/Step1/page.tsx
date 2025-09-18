@@ -1,8 +1,9 @@
 "use client";
 
-import Image from "next/image";
-import StepsStaircase from "@/components/StepsStaircase";
+import Link from "next/link";
 import FlipProfile from "@/components/AboutPage/FlipProfile";
+import ArrowIcon from "@/assets/icons/arrow_function.svg";
+
 
 
 import { declassifyTeam } from "@/data/ProductSpace24-25/Spring25Fellows/TeamDeClassify";
@@ -14,6 +15,8 @@ import { curateTeam } from "@/data/ProductSpace24-25/Fall24Fellows/TeamCurate";
 import { previewTeam } from "@/data/ProductSpace24-25/Fall24Fellows/TeamPreview";
 import { scrapsTeam } from "@/data/ProductSpace24-25/Fall24Fellows/TeamScraps";
 import { syncTeam } from "@/data/ProductSpace24-25/Fall24Fellows/TeamSync";
+
+import { mentors } from "@/data/25-26Mentors";
 
 
 
@@ -247,7 +250,7 @@ export default function Step1Page() {
                       lineHeight: '48.75px'
                     }}
                   >
-                    What You'll Learn
+                    What You&apos;ll Learn
                   </h3>
                   
                   <p
@@ -355,7 +358,7 @@ export default function Step1Page() {
                      lineHeight: '48.75px'
                    }}
                  >
-                   Who You'll Learn From
+                   Who You&apos;ll Learn From
                  </h3>
                  
                  <p
@@ -369,28 +372,29 @@ export default function Step1Page() {
                      lineHeight: '32px'
                    }}
                  >
-                   You'll learn directly from people who do this work every day. Our workshop speakers and Capstone mentors are from the world's top technology companies. Our speakers lead workshops case-study style, walking you through real problems they've solved on the job. For the Capstone, you'll work closely with mentors who provide one-on-one guidance as you and your team bring your product to life.
+                   You&apos;ll learn directly from people who do this work every day. Our workshop speakers and Capstone mentors are from the world&apos;s top technology companies. Our speakers lead workshops case-study style, walking you through real problems they&apos;ve solved on the job. For the Capstone, you&apos;ll work closely with mentors who provide one-on-one guidance as you and your team bring your product to life.
                  </p>
                </div>
                
                {/* Second sub div */}
                <div
                  style={{
-                   display: 'flex',
-                   alignItems: 'flex-start',
-                   alignContent: 'flex-start',
-                   gap: '40px',
-                   alignSelf: 'stretch',
-                   flexWrap: 'wrap'
+                   display: 'grid',
+                   gridTemplateColumns: 'repeat(4, 1fr)',
+                   gap: '40px 40px',
+                   rowGap: '120px',
+                   alignSelf: 'stretch'
                  }}
                >
                  {/* 2x4 Grid of mentor images */}
-                 {Array.from({ length: 8 }, (_, index) => (
+                 {mentors.map((mentor, index) => (
                    <div key={index} style={{ width: '225px', height: '225px' }}>
-                     <svg xmlns="http://www.w3.org/2000/svg" width="225" height="225" viewBox="0 0 225 225" fill="none">
-                       <rect width="225" height="225" rx="7.5" fill="#BCBCBC"/>
-                       <rect x="162.5" y="12.5" width="50" height="50" rx="7.5" fill="#979797"/>
-                     </svg>
+                     <FlipProfile 
+                       name={mentor.name}
+                       title={`${mentor.title} at ${mentor.company}`}
+                       imageSrc={mentor.imageSrc}
+                       backImageSrc={mentor.backImageSrc}
+                     />
                    </div>
                  ))}
                </div>
@@ -442,21 +446,25 @@ export default function Step1Page() {
                    lineHeight: '32px'
                  }}
                >
-                 Fellowship applications open Week 1 of the Fall Quarter for all UC Davis students!<br />
+                 Fellowship applications open Week 1 of the Fall Quarter for all UC Davis students! <br />
                  Keep an eye out for recruitment events on our Instagram @davisproductspace!
                </p>
              </div>
              
              {/* Second sub div */}
-             <div
+             <Link
+               href="/application"
                style={{
                  display: 'flex',
                  padding: '12px 20px',
                  alignItems: 'center',
                  gap: '15px',
                  borderRadius: '20px',
-                 background: '#66417B'
+                 background: '#66417B',
+                 textDecoration: 'none',
+                 cursor: 'pointer'
                }}
+               className="hover:bg-[#5a3769] transition-colors"
              >
                <span
                  style={{
@@ -472,13 +480,8 @@ export default function Step1Page() {
                  Apply Now!
                </span>
                
-               <Image
-                 src="/src/assets/icons/click-arrow-right.svg"
-                 alt="Apply now arrow"
-                 width={34.56}
-                 height={34.56}
-               />
-             </div>
+               <ArrowIcon className="w-8 h-8" style={{ minWidth: '32px', minHeight: '32px', transform: 'translateY(2px)' }} />
+             </Link>
           </div>
           
         </div>
@@ -534,7 +537,7 @@ export default function Step1Page() {
                  Team {team.teamName}
                </h3>
                <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-[25px] w-full">
-                 {team.members.map((member: any, i: number) => (
+                 {team.members.map((member, i: number) => (
                    <FlipProfile key={`${team.teamName}-${i}`} {...member} />
                  ))}
                </div>
@@ -594,7 +597,7 @@ export default function Step1Page() {
                  Team {team.teamName}
                </h3>
                <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-[25px] w-full">
-                 {team.members.map((member: any, i: number) => (
+                 {team.members.map((member, i: number) => (
                    <FlipProfile key={`${team.teamName}-${i}`} {...member} />
                  ))}
                </div>

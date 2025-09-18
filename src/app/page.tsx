@@ -7,7 +7,7 @@ import WordCarousel from "@/components/landing/WordCarousel";
 import WhoWeAre from "@/components/landing/WhoWeAre";
 import MeetTheFellowship from "@/components/landing/MeetTheFellowship";
 import MentorProfile from "@/components/landing/MentorProfile";
-import { mentors } from "@/data/mentors";
+import { mentors } from "@/data/24-25Mentors";
 import Recruitment from "@/components/landing/Recruitment";
 
 export default function Page() {
