@@ -1,6 +1,37 @@
 "use client";
 
+import { usePathname } from 'next/navigation';
+
 export default function Footer() {
+  const pathname = usePathname();
+  
+  // Color constants
+  const LIGHT_PURPLE = '#FAF6FC';
+  const WHITE = '#FFFFFF';
+  
+  // Page-specific background colors
+  const getPageBackgroundColor = () => {
+    switch (pathname) {
+      case '/join':
+        return LIGHT_PURPLE; // Matches FAQ section background
+      case '/about':
+      case '/about_new':
+        return LIGHT_PURPLE; // Light purple background for about pages
+      case '/':
+      case '/home_new':
+        return WHITE; // White background for home
+      case '/Step1':
+        return LIGHT_PURPLE; // Light purple for step pages
+      case '/Step2':
+        return LIGHT_PURPLE; // Light purple for step pages
+      case '/Step3':
+        return LIGHT_PURPLE; // Light purple for step pages
+      default:
+        return LIGHT_PURPLE; // Default fallback color
+    }
+  };
+  
+  const pageBackgroundColor = getPageBackgroundColor();
   return (
     <footer className="w-full">
       {/* Top border line */}
@@ -12,9 +43,10 @@ export default function Footer() {
         }}
       />
       <div 
-        className="relative bg-white w-full"
+        className="relative w-full"
         style={{
-          height: '348px'
+          height: '348px',
+          backgroundColor: pageBackgroundColor
         }}
       >
         {/* Product Space Logo */}

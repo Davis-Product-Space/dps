@@ -16,11 +16,14 @@ import { scrapsTeam } from "@/data/ProductSpace24-25/Fall24Fellows/TeamScraps";
 import FlipProfile from "@/components/AboutPage/FlipProfile";
 import StatsCard from "@/components/AboutPage/StatsCard";
 import ProfileGrid from "@/components/AboutPage/ProfileGrid";
-import Spring25Projects from "@/components/Spring25Projects";
+
+import ProjectCarousel from "@/components/PathwaySteps/projectCarousel";
+import { springProjects } from "@/data/capstones/springProjects";
+
 
 export default function AboutNewPage() {
   return (
-    <div className="w-full bg-white">
+    <div className="w-full bg-[#FAF6FC]" style={{ paddingBottom: '150px' }}>
       <div className="relative w-full h-screen overflow-hidden">
         {/* Background Image */}
         <div 
@@ -169,8 +172,30 @@ export default function AboutNewPage() {
         </section>
         
         {/* New section below Fellows */}
-        <section className="flex justify-center" style={{ marginTop: '180px' }}>
-          <Spring25Projects />
+        <section className="flex flex-col justify-center" style={{ marginTop: '180px' }}>
+          <div className="flex justify-center">
+            <div style={{ width: '900px' }}>
+              <h2 
+                style={{
+                  color: '#3A3A3A',
+                  textAlign: 'center',
+                  fontFamily: 'Inter',
+                  fontSize: '40px',
+                  fontStyle: 'normal',
+                  fontWeight: 600,
+                  lineHeight: '48.75px',
+                  marginBottom: '71px'
+                }}
+              >
+                Here are the Spring Projects!
+              </h2>
+            </div>
+          </div>
+          <div className="flex justify-center">
+            <ProjectCarousel 
+                  projectTiles={springProjects}
+            /> 
+          </div>
         </section>
     </div>
   );

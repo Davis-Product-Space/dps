@@ -57,12 +57,15 @@ export default function JoinNewPage() {
             Join Product Space!
           </h1>
         </div>
-        <div className="absolute top-[312.125px] left-1/2 transform -translate-x-1/2 z-10 inline-flex px-5 py-3 items-center gap-[15px] rounded-[20px] bg-[#66417B]">
+        <Link 
+          href="/application"
+          className="absolute top-[312.125px] left-1/2 transform -translate-x-1/2 z-10 inline-flex px-5 py-3 items-center gap-[15px] rounded-[20px] bg-[#66417B] hover:bg-[#5a3769] transition-colors cursor-pointer"
+        >
           <span className="text-[#FAF6FC] text-center font-['M_PLUS_1'] text-[22.5px] font-normal leading-[22.5px]">
             Fellowship Applications Open!
           </span>
-            <ArrowIcon className="w-8 h-8" style={{ minWidth: '32px', minHeight: '32px', transform: 'translateY(2px)' }} />
-        </div>
+          <ArrowIcon className="w-8 h-8" style={{ minWidth: '32px', minHeight: '32px', transform: 'translateY(2px)' }} />
+        </Link>
       </section>
 
       {/* 2. Recruitment Timeline Section*/}
@@ -244,8 +247,8 @@ export default function JoinNewPage() {
             </Link>{" "}
             or send us a message through email or Instagram! We’ll get back to you
             within 24 hours and answer any concerns you may have. Coffee chats about the
-            application will be open from the beginning of Fall Quarter until Someday
-            XX/XX!
+            application will be open from the beginning of Fall Quarter until Wednesday
+            10/08!
           </p>
         </div>
       </section>

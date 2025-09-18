@@ -29,7 +29,7 @@ export default function Navbar() {
   }, [pathname]);
 
   // Check if we're on home, about, or join pages
-  const isTransparentNavbar = pathname === '/home_new' || pathname === '/about_new' || pathname === '/join';
+  const isTransparentNavbar = pathname === '/about_new' || pathname === '/join';
   // Check if we're specifically on the home page
   const isHomePage = pathname === '/home_new';
 
@@ -87,7 +87,7 @@ export default function Navbar() {
                       style={{
                         minWidth: '280px',
                         zIndex: 1000,
-                        backgroundColor: isHomePage ? 'white' : (isTransparentNavbar ? 'transparent' : 'white'),
+                        backgroundColor: isHomePage ? 'white' : (isTransparentNavbar ? '#3A3A3A' : 'white'),
                         borderRadius: isTransparentNavbar ? '12px' : '8px',
                         boxShadow: isHomePage ? '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)' : (isTransparentNavbar ? 'none' : '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)'),
                         border: isTransparentNavbar ? '1px solid #3A3A3A' : '1px solid #e5e7eb',
@@ -98,7 +98,7 @@ export default function Navbar() {
                         <div 
                           className="mb-4"
                           style={{
-                            color: '#3A3A3A',
+                            color: isHomePage ? '#2A2A2A' : (isTransparentNavbar ? 'white' : '#2A2A2A'),
                             fontFamily: '"M PLUS 1", sans-serif',
                             fontSize: '18px',
                             fontStyle: 'normal',
@@ -120,7 +120,7 @@ export default function Navbar() {
                             >
                               <div
                                 style={{
-                                  color: '#3A3A3A',
+                                  color: isTransparentNavbar ? 'white' : '#2A2A2A',
                                   fontFamily: '"M PLUS 1", sans-serif',
                                   fontSize: '18px',
                                   fontStyle: 'normal',
@@ -155,7 +155,7 @@ export default function Navbar() {
                             >
                               <div
                                 style={{
-                                  color: '#3A3A3A',
+                                  color: isTransparentNavbar ? 'white' : '#2A2A2A',
                                   fontFamily: '"M PLUS 1", sans-serif',
                                   fontSize: '18px',
                                   fontStyle: 'normal',
@@ -190,7 +190,7 @@ export default function Navbar() {
                             >
                               <div
                                 style={{
-                                  color: '#3A3A3A',
+                                  color: isTransparentNavbar ? 'white' : '#2A2A2A',
                                   fontFamily: '"M PLUS 1", sans-serif',
                                   fontSize: '18px',
                                   fontStyle: 'normal',
@@ -225,7 +225,7 @@ export default function Navbar() {
                             >
                               <div
                                 style={{
-                                  color: '#3A3A3A',
+                                  color: isTransparentNavbar ? 'white' : '#2A2A2A',
                                   fontFamily: '"M PLUS 1", sans-serif',
                                   fontSize: '18px',
                                   fontStyle: 'normal',

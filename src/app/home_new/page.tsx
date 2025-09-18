@@ -6,6 +6,7 @@ import { TimelineAnimation } from "@/components/landing/TimelineAnimation";
 import { WhatWeOffer } from "@/components/landing/WhatWeOffer";
 
 export default function HomeNewPage() {
+
   return (
     <div className="min-h-screen bg-white">
       {/* Header Section */}

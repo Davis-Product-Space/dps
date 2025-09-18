@@ -15,77 +15,11 @@ import { previewTeam } from "@/data/ProductSpace24-25/Fall24Fellows/TeamPreview"
 import { scrapsTeam } from "@/data/ProductSpace24-25/Fall24Fellows/TeamScraps";
 import { syncTeam } from "@/data/ProductSpace24-25/Fall24Fellows/TeamSync";
 
+import { springProjects } from "@/data/capstones/springProjects";
+import { fallProjects } from "@/data/capstones/fallProjects";
+
 
 export default function Step2Page() {
-  const springProjects = [
-    {
-      svgSrc: "/images/Capstones/Spring25/HoneDisplay.svg",
-      title: "Hone",
-      groupMembers: "Amelia Uytingco, Cindy Xing, Taiki Lowe, Zayd Musa",
-      shortDescription: "Brief description of the project",
-      onViewPitchDeck: () => console.log("View pitch deck"),
-      onViewDesigns: () => console.log("View designs")
-    },
-    {
-      svgSrc: "/images/Capstones/Spring25/MooveDisplay.svg",
-      title: "MOOVE",
-      groupMembers: "Anwesha Mohanty, Haolin Zhang, Isaac Villegas, Kavin Agarwal",
-      shortDescription: "Brief description of the project",
-      onViewPitchDeck: () => console.log("View pitch deck"),
-      onViewDesigns: () => console.log("View designs")
-    },
-    {
-      svgSrc: "/images/Capstones/Spring25/DeclassifyDisplay.svg",
-      title: "deCLASSify",
-      groupMembers: "Andy Tran, Elango Ketheesan, Sahana Narayan, Yash Pradhan",
-      shortDescription: "Brief description of the project",
-      onViewPitchDeck: () => console.log("View pitch deck"),
-      onViewDesigns: () => console.log("View designs")
-    },
-    {
-      svgSrc: "/images/Capstones/Spring25/HeardDisplay.svg",
-      title: "Heard",
-      groupMembers: "Adrian Rozo, Andrew Fojas, Ken Hoang, Sambhav Agarwal",
-      shortDescription: "Brief description of the project",
-      onViewPitchDeck: () => console.log("View pitch deck"),
-      onViewDesigns: () => console.log("View designs")
-    }
-  ];
-
-  const fallProjects = [
-    {
-      svgSrc: "/images/HoneDisplay.svg",
-      title: "Curate",
-      groupMembers: "Amber Zhang, Arshiya Banerjee, Clara Yin, John Missal",
-      shortDescription: "Explore content your friends have viewed and shared right in your feed.",
-      onViewPitchDeck: () => console.log("View pitch deck"),
-      onViewDesigns: () => console.log("View designs")
-    },
-    {
-      svgSrc: "/images/HoneDisplay.svg",
-      title: "Sync",
-      groupMembers: "Anita Thata, Caitlin Chan, Jason Zhang, Puja Devarasetty",
-      shortDescription: "The Instagram Stories you know, just with more voices.",
-      onViewPitchDeck: () => console.log("View pitch deck"),
-      onViewDesigns: () => console.log("View designs")
-    },
-    {
-      svgSrc: "/images/HoneDisplay.svg",
-      title: "Scraps",
-      groupMembers: "Abirami Kathiresan, Krisha Bhat, Nicole Yanuaria, Sruthi Sridhar, Wing Lai",
-      shortDescription: "Showcase your moods and moments on Instagram - your way.",
-      onViewPitchDeck: () => console.log("View pitch deck"),
-      onViewDesigns: () => console.log("View designs")
-    },
-    {
-      svgSrc: "/images/HoneDisplay.svg",
-      title: "Preview",
-      groupMembers: "Alex Sunga, Divleen Lota, Gayatri Brijesh, Phuong Thy Nguyen",
-      shortDescription: "Plan and visualize your posts directly through Instagram.",
-      onViewPitchDeck: () => console.log("View pitch deck"),
-      onViewDesigns: () => console.log("View designs")
-    }
-  ]
 
   return (
     <main className="min-h-screen bg-[#FDFAFF] text-[#3a3a3a] flex flex-col items-center justify-center">
