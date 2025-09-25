@@ -251,13 +251,21 @@ function ProjectTile({ svgSrc, title, groupMembers, shortDescription, onViewPitc
 }
 
 export default function ProjectCarousel({ projectTiles }: ProjectCarouselProps) {
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [currentIndex, setCurrentIndex] = useState(1); // Start at 1 because we add a duplicate at the beginning
   const [tileWidths, setTileWidths] = useState<number[]>([]);
+  const [isTransitioning, setIsTransitioning] = useState(false);
   const tileRefs = useRef<(HTMLDivElement | null)[]>([]);
 
   const tileGapPx = 78;
   const viewportWidthPx = 1440;
   const maxTileWidthPx = 950;
+
+  // Create infinite loop by duplicating tiles
+  const infiniteTiles = [
+    projectTiles[projectTiles.length - 1], // Last tile at the beginning
+    ...projectTiles, // Original tiles
+    projectTiles[0] // First tile at the end
+  ];
 
   // Calculate center offset based on current tile's actual width
   const currentTileWidth = tileWidths[currentIndex] || maxTileWidthPx;
@@ -273,18 +281,36 @@ export default function ProjectCarousel({ projectTiles }: ProjectCarouselProps) 
     updateWidths();
     window.addEventListener('resize', updateWidths);
     return () => window.removeEventListener('resize', updateWidths);
-  }, [projectTiles]);
+  }, [infiniteTiles]);
+
+  // Handle infinite loop transitions
+  useEffect(() => {
+    if (!isTransitioning) return;
+
+    const timer = setTimeout(() => {
+      if (currentIndex === 0) {
+        // If we're at the duplicate at the beginning, jump to the real last tile
+        setCurrentIndex(projectTiles.length);
+      } else if (currentIndex === infiniteTiles.length - 1) {
+        // If we're at the duplicate at the end, jump to the real first tile
+        setCurrentIndex(1);
+      }
+      setIsTransitioning(false);
+    }, 300); // Match the transition duration
+
+    return () => clearTimeout(timer);
+  }, [currentIndex, isTransitioning, projectTiles.length, infiniteTiles.length]);
 
   const goToPrevious = () => {
-    setCurrentIndex((prevIndex) => 
-      prevIndex === 0 ? projectTiles.length - 1 : prevIndex - 1
-    );
+    if (isTransitioning) return;
+    setIsTransitioning(true);
+    setCurrentIndex((prevIndex) => prevIndex - 1);
   };
 
   const goToNext = () => {
-    setCurrentIndex((prevIndex) => 
-      prevIndex === projectTiles.length - 1 ? 0 : prevIndex + 1
-    );
+    if (isTransitioning) return;
+    setIsTransitioning(true);
+    setCurrentIndex((prevIndex) => prevIndex + 1);
   };
 
   return (
@@ -331,13 +357,13 @@ export default function ProjectCarousel({ projectTiles }: ProjectCarouselProps) 
               height: '100%',
               gap: `${tileGapPx}px`,
               transform: `translateX(${centerOffsetPx - currentIndex * (maxTileWidthPx + tileGapPx)}px)`,
-              transition: 'transform 0.3s ease-in-out'
+              transition: isTransitioning ? 'transform 0.3s ease-in-out' : 'none'
             }}
           >
-            {projectTiles.map((tile, index) => (
+            {infiniteTiles.map((tile, index) => (
               <div
-                key={index}
-                ref={(el) => (tileRefs.current[index] = el)}
+                key={`${tile.title}-${index}`}
+                ref={(el) => { tileRefs.current[index] = el; }}
                 style={{
                   width: 'auto',
                   height: '100%',
