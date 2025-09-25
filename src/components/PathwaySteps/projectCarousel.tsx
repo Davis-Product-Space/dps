@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, useMemo } from 'react';
 
 interface ProjectTileProps {
   svgSrc: string;
@@ -261,27 +261,34 @@ export default function ProjectCarousel({ projectTiles }: ProjectCarouselProps) 
   const maxTileWidthPx = 950;
 
   // Create infinite loop by duplicating tiles
-  const infiniteTiles = [
-    projectTiles[projectTiles.length - 1], // Last tile at the beginning
-    ...projectTiles, // Original tiles
-    projectTiles[0] // First tile at the end
-  ];
+  // Memoize so the array identity is stable across renders
+  const infiniteTiles = useMemo(() => [
+    projectTiles[projectTiles.length - 1],
+    ...projectTiles,
+    projectTiles[0]
+  ], [projectTiles]);
 
   // Calculate center offset based on current tile's actual width
   const currentTileWidth = tileWidths[currentIndex] || maxTileWidthPx;
   const centerOffsetPx = (viewportWidthPx - currentTileWidth) / 2;
 
-  // Update tile widths when they change
+  // Update tile widths when tiles mount or on resize
   useEffect(() => {
     const updateWidths = () => {
       const widths = tileRefs.current.map(ref => ref?.offsetWidth || maxTileWidthPx);
-      setTileWidths(widths);
+      // Avoid unnecessary state updates to prevent render loops
+      const hasChanged =
+        widths.length !== tileWidths.length ||
+        widths.some((w, i) => w !== tileWidths[i]);
+      if (hasChanged) {
+        setTileWidths(widths);
+      }
     };
-    
+
     updateWidths();
     window.addEventListener('resize', updateWidths);
     return () => window.removeEventListener('resize', updateWidths);
-  }, [infiniteTiles]);
+  }, [projectTiles, tileWidths.length]);
 
   // Handle infinite loop transitions
   useEffect(() => {
