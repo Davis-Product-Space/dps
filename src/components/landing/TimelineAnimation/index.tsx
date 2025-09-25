@@ -3,7 +3,7 @@
 import React from 'react';
 
 export function TimelineAnimation() {
-  const handlePrismHover = (isHovering: boolean, type: 'applications-due' | 'applications-open' | 'product-pitch' | 'interviews' | 'pm-panel' | 'info-sessions' | 'ice-cream-social') => {
+  const handlePrismHover = (isHovering: boolean, type: 'applications-due' | 'applications-open' | 'second-social' | 'interviews' | 'pm-panel' | 'info-sessions' | 'ice-cream-social' | 'product-pitch') => {
     if (type === 'applications-due') {
       const line4 = document.querySelector('.line-4') as HTMLElement;
       const line7 = document.querySelector('.line-7') as HTMLElement;
@@ -96,16 +96,31 @@ export function TimelineAnimation() {
           applicationsOpenHoverParagraph.style.transform = 'translateY(0) translateX(-50%)';
         }
       }
-    } else if (type === 'product-pitch') {
+    } else if (type === 'second-social') {
       const line5 = document.querySelector('.line-5') as HTMLElement;
-      const productPrismContainer = document.querySelector('.product-pitch-prism-container') as HTMLElement;
-      const productPitchText = document.querySelector('.product-pitch-text') as HTMLElement;
-      const productPitchDate = document.querySelector('.product-pitch-date') as HTMLElement;
-      const productPitchInvite = document.querySelector('.product-pitch-invite') as HTMLElement;
-      const productHoverParagraph = document.querySelector('.product-pitch-paragraph') as HTMLElement;
+      const line8 = document.querySelector('.line-8') as HTMLElement;
+      const productPrismContainer = document.querySelector('.second-social-prism-container') as HTMLElement;
+      const productPitchText = document.querySelector('.second-social-text') as HTMLElement;
+      const productPitchDate = document.querySelector('.second-social-date') as HTMLElement;
+      const productPitchInvite = document.querySelector('.second-social-invite') as HTMLElement;
+      const productHoverParagraph = document.querySelector('.second-social-paragraph') as HTMLElement;
+      const actualProductPitchText = document.querySelector('.product-pitch-text') as HTMLElement;
+      const actualProductPitchDate = document.querySelector('.product-pitch-date') as HTMLElement;
       
       if (line5) {
         line5.style.opacity = isHovering ? '0' : '1';
+      }
+      
+      if (line8) {
+        line8.style.opacity = isHovering ? '0' : '1';
+      }
+      
+      if (actualProductPitchText) {
+        actualProductPitchText.style.opacity = isHovering ? '0' : '1';
+      }
+      
+      if (actualProductPitchDate) {
+        actualProductPitchDate.style.opacity = isHovering ? '0' : '1';
       }
       
       if (productPrismContainer) {
@@ -141,15 +156,31 @@ export function TimelineAnimation() {
       }
     } else if (type === 'interviews') {
       const line6 = document.querySelector('.line-6') as HTMLElement;
+      const line8 = document.querySelector('.line-8') as HTMLElement;
       const interviewsPrismContainer = document.querySelector('.interviews-prism-container') as HTMLElement;
       const interviewsText = document.querySelector('.interviews-text') as HTMLElement;
       const interviewsDate = document.querySelector('.interviews-date') as HTMLElement;
       const interviewsInvite = document.querySelector('.interviews-invite') as HTMLElement;
       const interviewsHoverParagraph = document.querySelector('.interviews-paragraph') as HTMLElement;
+      const productPitchText = document.querySelector('.product-pitch-text') as HTMLElement;
+      const productPitchDate = document.querySelector('.product-pitch-date') as HTMLElement;
       
       if (line6) {
         line6.style.opacity = isHovering ? '0' : '1';
       }
+      
+      if (line8) {
+        line8.style.opacity = isHovering ? '0' : '1';
+      }
+      
+      if (productPitchText) {
+        productPitchText.style.opacity = isHovering ? '0' : '1';
+      }
+      
+      if (productPitchDate) {
+        productPitchDate.style.opacity = isHovering ? '0' : '1';
+      }
+
       
       if (interviewsPrismContainer) {
         if (isHovering) {
@@ -308,6 +339,84 @@ export function TimelineAnimation() {
           pmPanelHoverParagraph.style.transform = 'translateY(0) translateX(-50%)';
         }
       }
+    } else if (type === 'product-pitch') {
+      const productPitchPrismContainer = document.querySelector('.product-pitch-prism-container') as HTMLElement;
+      const line8 = document.querySelector('.line-8') as HTMLElement;
+      const line6 = document.querySelector('.line-6') as HTMLElement;
+      const line5 = document.querySelector('.line-5') as HTMLElement;
+      const productPitchText = document.querySelector('.product-pitch-text') as HTMLElement;
+      const productPitchDate = document.querySelector('.product-pitch-date') as HTMLElement;
+      const productPitchHoverParagraph = document.querySelector('.product-pitch-paragraph') as HTMLElement;
+      const secondSocialText = document.querySelector('.second-social-text') as HTMLElement;
+      const secondSocialDate = document.querySelector('.second-social-date') as HTMLElement;
+      const secondSocialInvite = document.querySelector('.second-social-invite') as HTMLElement;
+      const interviewsText = document.querySelector('.interviews-text') as HTMLElement;
+      const interviewsDate = document.querySelector('.interviews-date') as HTMLElement;
+      const interviewsInvite = document.querySelector('.interviews-invite') as HTMLElement;
+      
+      if (line8) {
+        line8.style.opacity = isHovering ? '0' : '1';
+      }
+      
+      if (line6) {
+        line6.style.opacity = isHovering ? '0' : '1';
+      }
+      
+      if (line5) {
+        line5.style.opacity = isHovering ? '0' : '1';
+      }
+      
+      if (secondSocialText) {
+        secondSocialText.style.opacity = isHovering ? '0' : '1';
+      }
+      
+      if (secondSocialDate) {
+        secondSocialDate.style.opacity = isHovering ? '0' : '1';
+      }
+      
+      if (secondSocialInvite) {
+        secondSocialInvite.style.opacity = isHovering ? '0' : '1';
+      }
+      
+      if (interviewsText) {
+        interviewsText.style.opacity = isHovering ? '0' : '1';
+      }
+      
+      if (interviewsDate) {
+        interviewsDate.style.opacity = isHovering ? '0' : '1';
+      }
+      
+      if (interviewsInvite) {
+        interviewsInvite.style.opacity = isHovering ? '0' : '1';
+      }
+      
+      if (productPitchPrismContainer) {
+        if (isHovering) {
+          productPitchPrismContainer.style.opacity = '1';
+          productPitchPrismContainer.style.clipPath = 'inset(0% 0 0 0)';
+        } else {
+          productPitchPrismContainer.style.opacity = '0';
+          productPitchPrismContainer.style.clipPath = 'inset(100% 0 0 0)';
+        }
+      }
+      
+      if (productPitchText) {
+        productPitchText.style.transform = isHovering ? 'translateY(-150px) translateX(-50%)' : 'translateY(0) translateX(-50%)';
+      }
+      
+      if (productPitchDate) {
+        productPitchDate.style.transform = isHovering ? 'translateY(-150px) translateX(-50%)' : 'translateY(0) translateX(-50%)';
+      }
+      
+      if (productPitchHoverParagraph) {
+        if (isHovering) {
+          productPitchHoverParagraph.style.opacity = '1';
+          productPitchHoverParagraph.style.transform = 'translateY(-200px) translateX(-50%)';
+        } else {
+          productPitchHoverParagraph.style.opacity = '0';
+          productPitchHoverParagraph.style.transform = 'translateY(0) translateX(-50%)';
+        }
+      }
     } else if (type === 'info-sessions') {
       const line1 = document.querySelector('.line-1') as HTMLElement;
       const line2 = document.querySelector('.line-2') as HTMLElement;
@@ -380,21 +489,21 @@ export function TimelineAnimation() {
             {/* Big Bottom Right */}
             <path d="M1091.24 710.378C1098.89 713.089 1108.45 713.122 1116.15 710.462L1276.85 656.718C1284.26 654.157 1288.81 649.488 1288.81 644.443V538.956C1288.81 533.934 1284.3 529.284 1276.95 526.715L1112.94 471.356C1109.7 470.225 1105.6 471.593 1105.6 473.804L1105.6 591.595L928.305 651.499C923.941 652.911 923.818 656.563 928.082 658.076L1091.24 710.378Z" fill="white" stroke="black" strokeWidth="1"/>
             
-            {/* Product Pitch - hover trigger only */}
+            {/* Second Social - hover trigger only */}
             <path 
               d="M918.999 519.191L1088.1 461.953L1088.1 346.705C1088.1 344.319 1083.74 342.808 1080.18 343.96L934.07 387.127C924.772 390.135 918.999 395.869 918.999 402.095L918.999 519.191Z" 
               fill="white" 
               stroke="black" 
               strokeWidth="1"
               className="cursor-pointer transition-opacity duration-300 hover:opacity-0"
-              onMouseEnter={() => handlePrismHover(true, 'product-pitch')}
-              onMouseLeave={() => handlePrismHover(false, 'product-pitch')}
+              onMouseEnter={() => handlePrismHover(true, 'second-social')}
+              onMouseLeave={() => handlePrismHover(false, 'second-social')}
             />
             
-            {/* Triangle Right Below Product Pitch */}
+            {/* Triangle Right Below Second Social */}
             <path d="M1088.1 471.072L931.789 524.021L1088.1 576.209L1088.1 471.072Z" fill="white" stroke="black" strokeWidth="1"/>
             
-            {/* Triangle Left Below Product Pitch */}
+            {/* Triangle Left Below Second Social*/}
             <path d="M919 638.712C919 640.445 922.167 641.544 924.758 640.711L1088.1 585.611L918.999 528.182L919 638.712Z" fill="white" stroke="black" strokeWidth="1"/>
             
             {/* Big Below Interviews */}
@@ -414,13 +523,15 @@ export function TimelineAnimation() {
               onMouseLeave={() => handlePrismHover(false, 'interviews')}
             />
             
-            {/* Product Pitch */}
+            {/* Product Pitch - hover trigger only */}
             <path 
               d="M1273.38 277.132L1100.74 324.588L928.098 266.92C924.524 265.726 924.504 263.006 928.061 261.98L1076.79 220.834C1086.07 218.156 1097.63 218.427 1106.96 221.542L1273.38 277.132Z" 
               fill="white" 
               stroke="black" 
               strokeWidth="1"
-              style={{ zIndex: 300 }}
+              className="cursor-pointer transition-opacity duration-300 hover:opacity-0"
+              onMouseEnter={() => handlePrismHover(true, 'product-pitch')}
+              onMouseLeave={() => handlePrismHover(false, 'product-pitch')}
             />
             
             {/* Big under Applications Due */}
@@ -446,7 +557,7 @@ export function TimelineAnimation() {
                   opacity: 0,
                   clipPath: 'inset(100% 0 0 0)', // Start completely clipped from bottom
                   transition: 'opacity 0.3s ease, clip-path 0.6s cubic-bezier(0.4, 0, 0.2, 1)',
-                  zIndex: 50
+                  zIndex: 1000
                 }}
               >
                 {/* Bottom face of prism */}
@@ -639,7 +750,7 @@ export function TimelineAnimation() {
           </svg>
         </div>
         
-        {/* Product Pitch 3D Prism - Separate container for proper z-index layering */}
+        {/* Second Social 3D Prism - Separate container for proper z-index layering */}
         <div 
           className="absolute"
           style={{
@@ -652,7 +763,7 @@ export function TimelineAnimation() {
         >
           <svg width="1440" height="713" viewBox="0 0 1440 713" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g 
-              className="product-pitch-prism-container"
+              className="second-social-prism-container"
               style={{
                 opacity: 0,
                 clipPath: 'inset(100% 0 0 0)',
@@ -954,6 +1065,69 @@ export function TimelineAnimation() {
           </svg>
         </div>
         
+        {/* Product Pitch 3D Prism - Separate container for proper z-index layering */}
+        <div 
+          className="absolute"
+          style={{
+            top: '550px',
+            left: '50%',
+            transform: 'translateX(-50%)',
+            zIndex: 1000,
+            pointerEvents: 'none'
+          }}
+        >
+          <svg width="1440" height="713" viewBox="0 0 1440 713" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g 
+              className="product-pitch-prism-container"
+              style={{
+                opacity: 0,
+                clipPath: 'inset(100% 0 0 0)',
+                transition: 'opacity 0.3s ease, clip-path 0.6s cubic-bezier(0.4, 0, 0.2, 1)'
+              }}
+            >
+              {/* Bottom face of prism */}
+              <path 
+                d="M1273.38 277.132L1100.74 324.588L928.098 266.92C924.524 265.726 924.504 263.006 928.061 261.98L1076.79 220.834C1086.07 218.156 1097.63 218.427 1106.96 221.542L1273.38 277.132Z" 
+                fill="#B085D1" 
+                stroke="white" 
+                strokeWidth="1"
+              />
+              
+              {/* Top face of prism (extruded up by 200px) */}
+              <path 
+                d="M1273.38 77.132L1100.74 124.588L928.098 66.92C924.524 65.726 924.504 63.006 928.061 61.98L1076.79 20.834C1086.07 18.156 1097.63 18.427 1106.96 21.542L1273.38 77.132Z" 
+                fill="white" 
+                stroke="black" 
+                strokeWidth="1"
+              />
+              
+              {/* Left side face */}
+              <path 
+                d="M928.098 266.92L928.098 66.92L1273.38 77.132L1273.38 277.132L928.098 266.92Z" 
+                fill="white" 
+                stroke="white" 
+                strokeWidth="1"
+              />
+              
+              {/* Right side face */}
+              <path 
+                d="M1273.38 277.132L1273.38 77.132L1100.74 124.588L1100.74 324.588L1273.38 277.132Z" 
+                fill="#9B6BB9" 
+                stroke="black" 
+                strokeWidth="1"
+              />
+              
+              {/* Back side face */}
+              <path 
+                d="M1100.74 324.588L1100.74 124.588L928.098 66.92L928.098 266.92L1100.74 324.588Z" 
+                fill="#9161AD" 
+                stroke="black" 
+                strokeWidth="1"
+              />
+            </g>
+          </svg>
+        </div>
+        
         {/* Homepage Background Gradient SVG - Layer Above */}
         <div 
           className="absolute left-1/2 transform -translate-x-1/2"
@@ -1221,6 +1395,77 @@ export function TimelineAnimation() {
              Learn from industry leaders and sharpen your product management skills through hands-on workshops and panel discussions.
            </div>
 
+           {/* Product Pitch Text - positioned relative to Product Pitch path */}
+           <div 
+             className="product-pitch-text"
+             style={{
+               position: 'absolute',
+               left: '380px', // Positioned relative to Product Pitch path center
+               top: '25px', // Same vertical position as PM Panel text
+               transform: 'translateX(-50%)', // Centers the text div on the path
+               alignSelf: 'stretch',
+               color: '#3A3A3A',
+               textAlign: 'center',
+               fontFamily: '"M PLUS 1"',
+               fontSize: '22.5px',
+               fontStyle: 'normal',
+               fontWeight: 700,
+               lineHeight: '32px',
+               whiteSpace: 'nowrap', // Prevents text wrapping
+               transition: 'transform 0.6s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.5s ease',
+               zIndex: 10
+             }}
+           >
+             Product Pitch
+           </div>
+
+           <div 
+             className="product-pitch-date"
+             style={{
+               position: 'absolute',
+               left: '380px', // Same x position as Product Pitch text
+               top: '5px', // Same relative position as PM Panel date
+               transform: 'translateX(-50%)', // Centers the text div on the path
+               alignSelf: 'stretch',
+               color: '#3A3A3A',
+               textAlign: 'center',
+               fontFamily: '"M PLUS 1"',
+               fontSize: '16px',
+               fontStyle: 'normal',
+               fontWeight: 400,
+               lineHeight: 'normal',
+               whiteSpace: 'nowrap', // Prevents text wrapping
+               transition: 'transform 0.6s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.5s ease',
+               zIndex: 10
+             }}
+           >
+             TBD
+           </div>
+
+           {/* Product Pitch Hover Paragraph - appears during animation */}
+           <div 
+             className="product-pitch-paragraph"
+             style={{
+               position: 'absolute',
+               left: '380px', // Same x position as Product Pitch text
+               top: '110px', // Same relative position as PM Panel paragraph
+               transform: 'translateX(-50%)',
+               width: '300px',
+               color: '#3A3A3A',
+               textAlign: 'center',
+               fontFamily: '"M PLUS 1"',
+               fontSize: '16px',
+               fontStyle: 'normal',
+               fontWeight: 400,
+               lineHeight: '22px',
+               opacity: 0,
+               transition: 'opacity 0.4s ease 0.2s, transform 0.6s cubic-bezier(0.4, 0, 0.2, 1)',
+               zIndex: 10
+             }}
+           >
+             Present your innovative product ideas and receive valuable feedback from industry experts and fellow participants.
+           </div>
+
            {/* Line 3 */}
            <div 
              className="line-3"
@@ -1323,9 +1568,9 @@ export function TimelineAnimation() {
            />
            
 
-           {/* Product Pitch Text - 5px above (By invite) */}
+           {/* Second Social Text - 5px above (By invite) */}
            <div 
-             className="product-pitch-text"
+             className="second-social-text"
              style={{
                position: 'absolute',
                left: '285px', // Same x position as Line 5
@@ -1340,20 +1585,20 @@ export function TimelineAnimation() {
                fontWeight: 700,
                lineHeight: '32px',
                whiteSpace: 'nowrap', // Prevents text wrapping
-               transition: 'transform 0.6s cubic-bezier(0.4, 0, 0.2, 1)',
+               transition: 'transform 0.6s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.5s ease',
                zIndex: 10
              }}
            >
              Second Social
            </div>
 
-           {/* Date/Time Text - 3px above Product Pitch */}
+           {/* Date/Time Text - 3px above Second Social */}
            <div 
-             className="product-pitch-date"
+             className="second-social-date"
              style={{
                position: 'absolute',
                left: '285px', // Same x position as Line 5
-               top: '95px', // 3px above Product Pitch (143px - 3px)
+               top: '95px', // 3px above Second Social (143px - 3px)
                transform: 'translateX(-50%)', // Centers the text div on the line
                alignSelf: 'stretch',
                color: '#3A3A3A',
@@ -1364,20 +1609,20 @@ export function TimelineAnimation() {
                fontWeight: 400,
                lineHeight: 'normal',
                whiteSpace: 'nowrap', // Prevents text wrapping
-               transition: 'transform 0.6s cubic-bezier(0.4, 0, 0.2, 1)',
+               transition: 'transform 0.6s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.5s ease',
                zIndex: 10
              }}
            >
              TBD
            </div>
 
-           {/* Product Pitch (By invite) Text */}
+           {/* Second Social (By invite) Text */}
            <div 
-             className="product-pitch-invite"
+             className="second-social-invite"
              style={{
                position: 'absolute',
                left: '285px', // Same x position as Line 5
-               top: '148px', // Below Product Pitch text
+               top: '148px', // Below Second Social text
                transform: 'translateX(-50%)', // Centers the text div on the line
                alignSelf: 'stretch',
                color: '#3A3A3A',
@@ -1388,7 +1633,7 @@ export function TimelineAnimation() {
                fontWeight: 400,
                lineHeight: 'normal',
                whiteSpace: 'nowrap', // Prevents text wrapping
-               transition: 'transform 0.6s cubic-bezier(0.4, 0, 0.2, 1)',
+               transition: 'transform 0.6s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.5s ease',
                zIndex: 10
              }}
            >
@@ -1397,7 +1642,7 @@ export function TimelineAnimation() {
 
            {/* Second Social Hover Paragraph - appears during animation */}
            <div 
-             className="product-pitch-paragraph"
+             className="second-social-paragraph"
              style={{
                position: 'absolute',
                left: '285px', // Same x position as Line 5
@@ -1450,7 +1695,7 @@ export function TimelineAnimation() {
                fontWeight: 400,
                lineHeight: 'normal',
                whiteSpace: 'nowrap', // Prevents text wrapping
-               transition: 'transform 0.6s cubic-bezier(0.4, 0, 0.2, 1)',
+               transition: 'transform 0.6s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.5s ease',
                zIndex: 10
              }}
            >
@@ -1474,7 +1719,7 @@ export function TimelineAnimation() {
                fontWeight: 700,
                lineHeight: '32px',
                whiteSpace: 'nowrap', // Prevents text wrapping
-               transition: 'transform 0.6s cubic-bezier(0.4, 0, 0.2, 1)',
+               transition: 'transform 0.6s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.5s ease',
                zIndex: 10
              }}
            >
@@ -1498,7 +1743,7 @@ export function TimelineAnimation() {
                fontWeight: 400,
                lineHeight: 'normal',
                whiteSpace: 'nowrap', // Prevents text wrapping
-               transition: 'transform 0.6s cubic-bezier(0.4, 0, 0.2, 1)',
+               transition: 'transform 0.6s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.5s ease',
                zIndex: 10
              }}
            >
@@ -1634,9 +1879,9 @@ export function TimelineAnimation() {
              style={{
                position: 'absolute',
                left: '380px', // x1="814.5" * 2
-               top: '50px', // y2="328" * 2
+               top: '65px', // y2="328" * 2
                width: '1px',
-               height: '265px', // (546-328) * 2
+               height: '250px', // (546-328) * 2
                backgroundColor: 'black',
                transition: 'opacity 0.5s ease'
              }}
