@@ -7,7 +7,7 @@ import WordCarousel from "@/components/landing/WordCarousel";
 import WhoWeAre from "@/components/landing/WhoWeAre";
 import MeetTheFellowship from "@/components/landing/MeetTheFellowship";
 import MentorProfile from "@/components/landing/MentorProfile";
-import { mentors } from "@/data/24-25Mentors";
+import { mentors } from "@/data/24-25ProductSpace/Mentors";
 import Recruitment from "@/components/landing/Recruitment";
 
 export default function Page() {
@@ -87,7 +87,7 @@ export default function Page() {
       </section>
 
       {/* who we are – skip rendering on mobile */}
-      <section className="w-full hidden lg:block">
+      <section className="w-full hidden lg:block w-full">
         <WhoWeAre />
       </section>
 
