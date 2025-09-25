@@ -106,6 +106,7 @@ export function TimelineAnimation() {
       const productHoverParagraph = document.querySelector('.second-social-paragraph') as HTMLElement;
       const actualProductPitchText = document.querySelector('.product-pitch-text') as HTMLElement;
       const actualProductPitchDate = document.querySelector('.product-pitch-date') as HTMLElement;
+      const actualProductPitchInvite = document.querySelector('.product-pitch-invite') as HTMLElement;
       
       if (line5) {
         line5.style.opacity = isHovering ? '0' : '1';
@@ -121,6 +122,10 @@ export function TimelineAnimation() {
       
       if (actualProductPitchDate) {
         actualProductPitchDate.style.opacity = isHovering ? '0' : '1';
+      }
+      
+      if (actualProductPitchInvite) {
+        actualProductPitchInvite.style.opacity = isHovering ? '0' : '1';
       }
       
       if (productPrismContainer) {
@@ -164,6 +169,7 @@ export function TimelineAnimation() {
       const interviewsHoverParagraph = document.querySelector('.interviews-paragraph') as HTMLElement;
       const productPitchText = document.querySelector('.product-pitch-text') as HTMLElement;
       const productPitchDate = document.querySelector('.product-pitch-date') as HTMLElement;
+      const productPitchInvite = document.querySelector('.product-pitch-invite') as HTMLElement;
       
       if (line6) {
         line6.style.opacity = isHovering ? '0' : '1';
@@ -179,6 +185,10 @@ export function TimelineAnimation() {
       
       if (productPitchDate) {
         productPitchDate.style.opacity = isHovering ? '0' : '1';
+      }
+
+      if (productPitchInvite) {
+        productPitchInvite.style.opacity = isHovering ? '0' : '1';
       }
 
       
@@ -353,6 +363,7 @@ export function TimelineAnimation() {
       const interviewsText = document.querySelector('.interviews-text') as HTMLElement;
       const interviewsDate = document.querySelector('.interviews-date') as HTMLElement;
       const interviewsInvite = document.querySelector('.interviews-invite') as HTMLElement;
+      const productPitchInvite = document.querySelector('.product-pitch-invite') as HTMLElement;
       
       if (line8) {
         line8.style.opacity = isHovering ? '0' : '1';
@@ -401,17 +412,21 @@ export function TimelineAnimation() {
       }
       
       if (productPitchText) {
-        productPitchText.style.transform = isHovering ? 'translateY(-150px) translateX(-50%)' : 'translateY(0) translateX(-50%)';
+        productPitchText.style.transform = isHovering ? 'translateY(-127px) translateX(-50%)' : 'translateY(0) translateX(-50%)';
       }
       
       if (productPitchDate) {
-        productPitchDate.style.transform = isHovering ? 'translateY(-150px) translateX(-50%)' : 'translateY(0) translateX(-50%)';
+        productPitchDate.style.transform = isHovering ? 'translateY(-127px) translateX(-50%)' : 'translateY(0) translateX(-50%)';
+      }
+
+      if (productPitchInvite) {
+        productPitchInvite.style.transform = isHovering ? 'translateY(-127px) translateX(-50%)' : 'translateY(0) translateX(-50%)';
       }
       
       if (productPitchHoverParagraph) {
         if (isHovering) {
           productPitchHoverParagraph.style.opacity = '1';
-          productPitchHoverParagraph.style.transform = 'translateY(-200px) translateX(-50%)';
+          productPitchHoverParagraph.style.transform = 'translateY(-185px) translateX(-50%)';
         } else {
           productPitchHoverParagraph.style.opacity = '0';
           productPitchHoverParagraph.style.transform = 'translateY(0) translateX(-50%)';
@@ -1401,7 +1416,7 @@ export function TimelineAnimation() {
              style={{
                position: 'absolute',
                left: '380px', // Positioned relative to Product Pitch path center
-               top: '25px', // Same vertical position as PM Panel text
+               top: '-8px', // Same vertical position as PM Panel text
                transform: 'translateX(-50%)', // Centers the text div on the path
                alignSelf: 'stretch',
                color: '#3A3A3A',
@@ -1424,7 +1439,7 @@ export function TimelineAnimation() {
              style={{
                position: 'absolute',
                left: '380px', // Same x position as Product Pitch text
-               top: '5px', // Same relative position as PM Panel date
+               top: '-28px', // Same relative position as PM Panel date
                transform: 'translateX(-50%)', // Centers the text div on the path
                alignSelf: 'stretch',
                color: '#3A3A3A',
@@ -1440,6 +1455,29 @@ export function TimelineAnimation() {
              }}
            >
              TBD
+           </div>
+
+           <div 
+             className="product-pitch-invite"
+             style={{
+               position: 'absolute',
+               left: '380px', // Same x position as Product Pitch text
+               top: '25px', // Same relative position as PM Panel date
+               transform: 'translateX(-50%)', // Centers the text div on the path
+               alignSelf: 'stretch',
+               color: '#3A3A3A',
+               textAlign: 'center',
+               fontFamily: '"M PLUS 1"',
+               fontSize: '16px',
+               fontStyle: 'normal',
+               fontWeight: 400,
+               lineHeight: 'normal',
+               whiteSpace: 'nowrap', // Prevents text wrapping
+               transition: 'transform 0.6s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.5s ease',
+               zIndex: 10
+             }}
+           >
+             (By invite)
            </div>
 
            {/* Product Pitch Hover Paragraph - appears during animation */}
