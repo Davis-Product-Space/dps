@@ -5,17 +5,17 @@ import { ImageMarqueeDemo } from "@/components/AboutPage/Marquee_new/image-marqu
 // Import the AnimatedProjects component from its file
 import { AnimatedProjects } from "@/components/AboutPage/AnimateProjects";
 // Import the projects data from your data file
-import { projects } from "@/data/ProductSpace24-25/projects-info";
+import { projects } from "@/data/24-25ProductSpace/projects-info";
 
-import { board } from "@/data/ProductSpace24-25/board";
-import { previewTeam } from "@/data/ProductSpace24-25/Fall24Fellows/TeamPreview";
-import { syncTeam } from "@/data/ProductSpace24-25/Fall24Fellows/TeamSync";
-import { curateTeam } from "@/data/ProductSpace24-25/Fall24Fellows/TeamCurate";
-import { scrapsTeam } from "@/data/ProductSpace24-25/Fall24Fellows/TeamScraps";
-import { declassifyTeam } from "@/data/ProductSpace24-25/Spring25Fellows/TeamDeClassify";
-import { heardTeam } from "@/data/ProductSpace24-25/Spring25Fellows/TeamHeard";
-import { honeTeam } from "@/data/ProductSpace24-25/Spring25Fellows/TeamHone";
-import { mooveTeam } from "@/data/ProductSpace24-25/Spring25Fellows/TeamMOOVE";
+import { board } from "@/data/25-26ProductSpace/board";
+import { previewTeam } from "@/data/24-25ProductSpace/Fall24Fellows/TeamPreview";
+import { syncTeam } from "@/data/24-25ProductSpace/Fall24Fellows/TeamSync";
+import { curateTeam } from "@/data/24-25ProductSpace/Fall24Fellows/TeamCurate";
+import { scrapsTeam } from "@/data/24-25ProductSpace/Fall24Fellows/TeamScraps";
+import { declassifyTeam } from "@/data/24-25ProductSpace/Spring25Fellows/TeamDeClassify";
+import { heardTeam } from "@/data/24-25ProductSpace/Spring25Fellows/TeamHeard";
+import { honeTeam } from "@/data/24-25ProductSpace/Spring25Fellows/TeamHone";
+import { mooveTeam } from "@/data/24-25ProductSpace/Spring25Fellows/TeamMOOVE";
 
 import FlipProfile from "@/components/AboutPage/FlipProfile";
 import StatsCard from "@/components/AboutPage/StatsCard";

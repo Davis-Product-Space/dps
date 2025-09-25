@@ -5,15 +5,15 @@ import StepsStaircase from "@/components/StepsStaircase";
 import FlipProfile from "@/components/AboutPage/FlipProfile";
 import ProjectCarousel from "@/components/PathwaySteps/projectCarousel";
 
-import { declassifyTeam } from "@/data/ProductSpace24-25/Spring25Fellows/TeamDeClassify";
-import { heardTeam } from "@/data/ProductSpace24-25/Spring25Fellows/TeamHeard";
-import { honeTeam } from "@/data/ProductSpace24-25/Spring25Fellows/TeamHone";
-import { mooveTeam } from "@/data/ProductSpace24-25/Spring25Fellows/TeamMOOVE";
+import { declassifyTeam } from "@/data/24-25ProductSpace/Spring25Fellows/TeamDeClassify";
+import { heardTeam } from "@/data/24-25ProductSpace/Spring25Fellows/TeamHeard";
+import { honeTeam } from "@/data/24-25ProductSpace/Spring25Fellows/TeamHone";
+import { mooveTeam } from "@/data/24-25ProductSpace/Spring25Fellows/TeamMOOVE";
 
-import { curateTeam } from "@/data/ProductSpace24-25/Fall24Fellows/TeamCurate";
-import { previewTeam } from "@/data/ProductSpace24-25/Fall24Fellows/TeamPreview";
-import { scrapsTeam } from "@/data/ProductSpace24-25/Fall24Fellows/TeamScraps";
-import { syncTeam } from "@/data/ProductSpace24-25/Fall24Fellows/TeamSync";
+import { curateTeam } from "@/data/24-25ProductSpace/Fall24Fellows/TeamCurate";
+import { previewTeam } from "@/data/24-25ProductSpace/Fall24Fellows/TeamPreview";
+import { scrapsTeam } from "@/data/24-25ProductSpace/Fall24Fellows/TeamScraps";
+import { syncTeam } from "@/data/24-25ProductSpace/Fall24Fellows/TeamSync";
 
 import { springProjects } from "@/data/capstones/springProjects";
 import { fallProjects } from "@/data/capstones/fallProjects";
