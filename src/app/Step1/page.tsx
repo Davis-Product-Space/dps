@@ -391,7 +391,7 @@ export default function Step1Page() {
                    <div key={index} style={{ width: '225px', height: '225px' }}>
                      <FlipProfile 
                        name={speaker.name}
-                       title={`${speaker.title} at ${speaker.company}`}
+                       title={`${speaker.title} @ ${speaker.company}`}
                        imageSrc={speaker.imageSrc}
                        backImageSrc={speaker.backImageSrc}
                      />
