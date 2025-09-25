@@ -3,9 +3,12 @@
 import React from 'react';
 
 export function TimelineAnimation() {
-  const handlePrismHover = (isHovering: boolean, type: 'applications-due' | 'applications-open' | 'product-pitch' | 'interviews' | 'pm-panel' | 'info-sessions') => {
+  const handlePrismHover = (isHovering: boolean, type: 'applications-due' | 'applications-open' | 'product-pitch' | 'interviews' | 'pm-panel' | 'info-sessions' | 'ice-cream-social') => {
     if (type === 'applications-due') {
       const line4 = document.querySelector('.line-4') as HTMLElement;
+      const line7 = document.querySelector('.line-7') as HTMLElement;
+      const iceCreamSocialText = document.querySelector('.ice-cream-social-text') as HTMLElement;
+      const iceCreamSocialDate = document.querySelector('.ice-cream-social-date') as HTMLElement;
       const prismContainer = document.querySelector('.prism-container') as HTMLElement;
       const appsDueText = document.querySelector('.applications-due-text') as HTMLElement;
       const tbdText = document.querySelector('.applications-due-tbd') as HTMLElement;
@@ -13,6 +16,18 @@ export function TimelineAnimation() {
       
       if (line4) {
         line4.style.opacity = isHovering ? '0' : '1';
+      }
+      
+      if (line7) {
+        line7.style.opacity = isHovering ? '0' : '1';
+      }
+      
+      if (iceCreamSocialText) {
+        iceCreamSocialText.style.opacity = isHovering ? '0' : '1';
+      }
+      
+      if (iceCreamSocialDate) {
+        iceCreamSocialDate.style.opacity = isHovering ? '0' : '1';
       }
       
       if (prismContainer) {
@@ -167,8 +182,84 @@ export function TimelineAnimation() {
           interviewsHoverParagraph.style.transform = 'translateY(0) translateX(-50%)';
         }
       }
+    } else if (type === 'ice-cream-social') {
+      const line7 = document.querySelector('.line-7') as HTMLElement;
+      const line3 = document.querySelector('.line-3') as HTMLElement;
+      const line4 = document.querySelector('.line-4') as HTMLElement;
+      const pmPanelText = document.querySelector('.pm-panel-text') as HTMLElement;
+      const pmPanelDate = document.querySelector('.pm-panel-date') as HTMLElement;
+      const applicationsDueText = document.querySelector('.applications-due-text') as HTMLElement;
+      const applicationsDueTbd = document.querySelector('.applications-due-tbd') as HTMLElement;
+      const iceCreamSocialPrismContainer = document.querySelector('.ice-cream-social-prism-container') as HTMLElement;
+      const iceCreamSocialText = document.querySelector('.ice-cream-social-text') as HTMLElement;
+      const iceCreamSocialDate = document.querySelector('.ice-cream-social-date') as HTMLElement;
+      const iceCreamSocialInvite = document.querySelector('.ice-cream-social-invite') as HTMLElement;
+      const iceCreamSocialHoverParagraph = document.querySelector('.ice-cream-social-paragraph') as HTMLElement;
+      
+      if (line7) {
+        line7.style.opacity = isHovering ? '0' : '1';
+      }
+      
+      if (line3) {
+        line3.style.opacity = isHovering ? '0' : '1';
+      }
+      
+      if (line4) {
+        line4.style.opacity = isHovering ? '0' : '1';
+      }
+      
+      if (pmPanelText) {
+        pmPanelText.style.opacity = isHovering ? '0' : '1';
+      }
+      
+      if (pmPanelDate) {
+        pmPanelDate.style.opacity = isHovering ? '0' : '1';
+      }
+      
+      if (applicationsDueText) {
+        applicationsDueText.style.opacity = isHovering ? '0' : '1';
+      }
+      
+      if (applicationsDueTbd) {
+        applicationsDueTbd.style.opacity = isHovering ? '0' : '1';
+      }
+      
+      if (iceCreamSocialPrismContainer) {
+        if (isHovering) {
+          iceCreamSocialPrismContainer.style.opacity = '1';
+          iceCreamSocialPrismContainer.style.clipPath = 'inset(0% 0 0 0)';
+        } else {
+          iceCreamSocialPrismContainer.style.opacity = '0';
+          iceCreamSocialPrismContainer.style.clipPath = 'inset(100% 0 0 0)';
+        }
+      }
+      
+      if (iceCreamSocialText) {
+        iceCreamSocialText.style.transform = isHovering ? 'translateY(-200px) translateX(-50%)' : 'translateY(0) translateX(-50%)';
+      }
+      
+      if (iceCreamSocialDate) {
+        iceCreamSocialDate.style.transform = isHovering ? 'translateY(-200px) translateX(-50%)' : 'translateY(0) translateX(-50%)';
+      }
+      
+      if (iceCreamSocialInvite) {
+        iceCreamSocialInvite.style.transform = isHovering ? 'translateY(-200px) translateX(-50%)' : 'translateY(0) translateX(-50%)';
+      }
+      
+      if (iceCreamSocialHoverParagraph) {
+        if (isHovering) {
+          iceCreamSocialHoverParagraph.style.opacity = '1';
+          iceCreamSocialHoverParagraph.style.transform = 'translateY(-200px) translateX(-50%)';
+        } else {
+          iceCreamSocialHoverParagraph.style.opacity = '0';
+          iceCreamSocialHoverParagraph.style.transform = 'translateY(0) translateX(-50%)';
+        }
+      }
     } else if (type === 'pm-panel') {
       const line3 = document.querySelector('.line-3') as HTMLElement;
+      const line7 = document.querySelector('.line-7') as HTMLElement;
+      const iceCreamSocialText = document.querySelector('.ice-cream-social-text') as HTMLElement;
+      const iceCreamSocialDate = document.querySelector('.ice-cream-social-date') as HTMLElement;
       const pmPanelPrismContainer = document.querySelector('.pm-panel-prism-container') as HTMLElement;
       const pmPanelText = document.querySelector('.pm-panel-text') as HTMLElement;
       const pmPanelDate = document.querySelector('.pm-panel-date') as HTMLElement;
@@ -176,6 +267,18 @@ export function TimelineAnimation() {
       
       if (line3) {
         line3.style.opacity = isHovering ? '0' : '1';
+      }
+      
+      if (line7) {
+        line7.style.opacity = isHovering ? '0' : '1';
+      }
+      
+      if (iceCreamSocialText) {
+        iceCreamSocialText.style.opacity = isHovering ? '0' : '1';
+      }
+      
+      if (iceCreamSocialDate) {
+        iceCreamSocialDate.style.opacity = isHovering ? '0' : '1';
       }
       
       if (pmPanelPrismContainer) {
@@ -311,7 +414,7 @@ export function TimelineAnimation() {
               onMouseLeave={() => handlePrismHover(false, 'interviews')}
             />
             
-            {/* Most Top on Right */}
+            {/* Product Pitch */}
             <path 
               d="M1273.38 277.132L1100.74 324.588L928.098 266.92C924.524 265.726 924.504 263.006 928.061 261.98L1076.79 220.834C1086.07 218.156 1097.63 218.427 1106.96 221.542L1273.38 277.132Z" 
               fill="white" 
@@ -397,8 +500,16 @@ export function TimelineAnimation() {
               </g>
             </g>
             
-            {/* Left Applications Due */}
-            <path d="M543.116 375.102L702.757 331.256L702.751 427.71L543.116 375.102Z" fill="white" stroke="black" strokeWidth="1"/>
+            {/* Ice Cream Social - hover trigger only */}
+            <path 
+              d="M543.116 375.102L702.757 331.256L702.751 427.71L543.116 375.102Z" 
+              fill="white" 
+              stroke="black" 
+              strokeWidth="1"
+              className="cursor-pointer transition-opacity duration-300 hover:opacity-0"
+              onMouseEnter={() => handlePrismHover(true, 'ice-cream-social')}
+              onMouseLeave={() => handlePrismHover(false, 'ice-cream-social')}
+            />
             
             {/* PM Panel & Workshop - hover trigger only */}
             <path 
@@ -449,7 +560,7 @@ export function TimelineAnimation() {
                   opacity: 0,
                   clipPath: 'inset(100% 0 0 0)', // Start completely clipped from bottom
                   transition: 'opacity 0.3s ease, clip-path 0.6s cubic-bezier(0.4, 0, 0.2, 1)',
-                  zIndex: 50
+                  zIndex: 100
                 }}
               >
                 {/* Bottom face of prism */}
@@ -780,6 +891,69 @@ export function TimelineAnimation() {
           </svg>
         </div>
         
+        {/* Ice Cream Social 3D Prism - Separate container for proper z-index layering */}
+        <div 
+          className="absolute"
+          style={{
+            top: '550px',
+            left: '50%',
+            transform: 'translateX(-50%)',
+            zIndex: 1000,
+            pointerEvents: 'none'
+          }}
+        >
+          <svg width="1440" height="713" viewBox="0 0 1440 713" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g 
+              className="ice-cream-social-prism-container"
+              style={{
+                opacity: 0,
+                clipPath: 'inset(100% 0 0 0)',
+                transition: 'opacity 0.3s ease, clip-path 0.6s cubic-bezier(0.4, 0, 0.2, 1)'
+              }}
+            >
+              {/* Bottom face of prism */}
+              <path 
+                d="M543.116 375.102L702.757 331.256L702.751 427.71L543.116 375.102Z" 
+                fill="#B085D1" 
+                stroke="black" 
+                strokeWidth="1"
+              />
+              
+              {/* Top face of prism (extruded up by 250px) */}
+              <path 
+                d="M543.116 125.102L702.757 81.256L702.751 177.71L543.116 125.102Z" 
+                fill="white" 
+                stroke="black" 
+                strokeWidth="1"
+              />
+              
+              {/* Left side face */}
+              <path 
+                d="M543.116 375.102L543.116 125.102L702.757 81.256L702.757 331.256L543.116 375.102Z" 
+                fill="white" 
+                stroke="black" 
+                strokeWidth="1"
+              />
+              
+              {/* Right side face */}
+              <path 
+                d="M702.751 427.71L702.751 177.71L702.757 81.256L702.757 331.256L702.751 427.71Z" 
+                fill="#9B6BB9" 
+                stroke="black" 
+                strokeWidth="1"
+              />
+              
+              {/* Back side face */}
+              <path 
+                d="M702.751 427.71L702.751 177.71L543.116 125.102L543.116 375.102L702.751 427.71Z" 
+                fill="#9161AD" 
+                stroke="black" 
+                strokeWidth="1"
+              />
+            </g>
+          </svg>
+        </div>
+        
         {/* Homepage Background Gradient SVG - Layer Above */}
         <div 
           className="absolute left-1/2 transform -translate-x-1/2"
@@ -825,7 +999,7 @@ export function TimelineAnimation() {
                fontWeight: 700,
                lineHeight: '32px',
                whiteSpace: 'nowrap', // Prevents text wrapping
-               transition: 'transform 0.6s cubic-bezier(0.4, 0, 0.2, 1)'
+               transition: 'transform 0.6s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.5s ease'
              }}
            >
              Applications Open
@@ -847,7 +1021,7 @@ export function TimelineAnimation() {
                fontWeight: 400,
                lineHeight: 'normal',
                whiteSpace: 'nowrap', // Prevents text wrapping
-               transition: 'transform 0.6s cubic-bezier(0.4, 0, 0.2, 1)'
+               transition: 'transform 0.6s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.5s ease'
              }}
            >
              TBD
@@ -993,7 +1167,7 @@ export function TimelineAnimation() {
                fontWeight: 700,
                lineHeight: '32px',
                whiteSpace: 'nowrap', // Prevents text wrapping
-               transition: 'transform 0.6s cubic-bezier(0.4, 0, 0.2, 1)',
+               transition: 'transform 0.6s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.5s ease',
                zIndex: 10
              }}
            >
@@ -1016,7 +1190,7 @@ export function TimelineAnimation() {
                fontWeight: 400,
                lineHeight: 'normal',
                whiteSpace: 'nowrap', // Prevents text wrapping
-               transition: 'transform 0.6s cubic-bezier(0.4, 0, 0.2, 1)',
+               transition: 'transform 0.6s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.5s ease',
                zIndex: 10
              }}
            >
@@ -1078,7 +1252,7 @@ export function TimelineAnimation() {
                fontWeight: 700,
                lineHeight: '32px',
                whiteSpace: 'nowrap', // Prevents text wrapping
-               transition: 'transform 0.6s cubic-bezier(0.4, 0, 0.2, 1)',
+               transition: 'transform 0.6s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.5s ease',
                zIndex: 10
              }}
            >
@@ -1102,7 +1276,7 @@ export function TimelineAnimation() {
                fontWeight: 400,
                lineHeight: 'normal',
                whiteSpace: 'nowrap', // Prevents text wrapping
-               transition: 'transform 0.6s cubic-bezier(0.4, 0, 0.2, 1)',
+               transition: 'transform 0.6s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.5s ease',
                zIndex: 10
              }}
            >
@@ -1142,7 +1316,8 @@ export function TimelineAnimation() {
                width: '1px',
                height: '284px', // (491-186) * 2
                backgroundColor: 'black',
-               transition: 'opacity 0.5s ease'
+               transition: 'opacity 0.5s ease',
+               zIndex: 0
              }}
              className="line-4"
            />
@@ -1169,7 +1344,7 @@ export function TimelineAnimation() {
                zIndex: 10
              }}
            >
-             Product Pitch
+             Second Social
            </div>
 
            {/* Date/Time Text - 3px above Product Pitch */}
@@ -1193,7 +1368,7 @@ export function TimelineAnimation() {
                zIndex: 10
              }}
            >
-             Sat, 8/11 @ 11am
+             TBD
            </div>
 
            {/* Product Pitch (By invite) Text */}
@@ -1217,10 +1392,10 @@ export function TimelineAnimation() {
                zIndex: 10
              }}
            >
-             (By invite)
+             TLC ####
            </div>
 
-           {/* Product Pitch Hover Paragraph - appears during animation */}
+           {/* Second Social Hover Paragraph - appears during animation */}
            <div 
              className="product-pitch-paragraph"
              style={{
@@ -1241,7 +1416,7 @@ export function TimelineAnimation() {
                zIndex: 10
              }}
            >
-             Present your product idea to our panel of experts and showcase your product management skills in action.
+             Get to know the board members blah blah blah.
            </div>
 
            {/* Line 5 */}
@@ -1363,6 +1538,105 @@ export function TimelineAnimation() {
                top: '185px', // y2="110" * 2
                width: '1px',
                height: '211px', // (377.5-110) * 2
+               backgroundColor: 'black',
+               transition: 'opacity 0.5s ease'
+             }}
+           />
+
+           {/* Line 7 - ice cream social */}
+           <div 
+             style={{
+               position: 'absolute',
+               left: '-50px', // x1="596" * 2
+               top: '224px', // y2="186" * 2
+               width: '1px',
+               height: '200px', // (491-186) * 2
+               backgroundColor: 'black',
+               transition: 'opacity 0.5s ease'
+             }}
+             className="line-7"
+           />
+
+           {/* Ice Cream Social Text - positioned near the Ice Cream Social shape */}
+           <div 
+             className="ice-cream-social-text"
+             style={{
+               position: 'absolute',
+               left: '-50px', // Positioned near the Ice Cream Social shape
+               top: '180px', // Positioned near the Ice Cream Social shape
+               transform: 'translateX(-50%)', // Centers the text div
+               alignSelf: 'stretch',
+               color: '#3A3A3A',
+               textAlign: 'center',
+               fontFamily: '"M PLUS 1"',
+               fontSize: '22.5px',
+               fontStyle: 'normal',
+               fontWeight: 700,
+               lineHeight: '32px',
+               whiteSpace: 'nowrap', // Prevents text wrapping
+               transition: 'transform 0.6s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.5s ease',
+               zIndex: 10
+             }}
+           >
+             Ice Cream Social
+           </div>
+
+           <div 
+             className="ice-cream-social-date"
+             style={{
+               position: 'absolute',
+               left: '-50px', // Same x position as Ice Cream Social text
+               top: '160px', // Above the Ice Cream Social text
+               transform: 'translateX(-50%)', // Centers the text div
+               alignSelf: 'stretch',
+               color: '#3A3A3A',
+               textAlign: 'center',
+               fontFamily: '"M PLUS 1"',
+               fontSize: '16px',
+               fontStyle: 'normal',
+               fontWeight: 400,
+               lineHeight: 'normal',
+               whiteSpace: 'nowrap', // Prevents text wrapping
+               transition: 'transform 0.6s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.5s ease',
+               zIndex: 10
+             }}
+           >
+             TBD
+           </div>
+
+           {/* Ice Cream Social Hover Paragraph - appears during animation */}
+           <div 
+             className="ice-cream-social-paragraph"
+             style={{
+               position: 'absolute',
+               left: '-50px', // Same x position as Ice Cream Social text
+               top: '220px', // Below the invite text
+               transform: 'translateX(-50%)',
+               width: '300px',
+               color: '#3A3A3A',
+               textAlign: 'center',
+               fontFamily: '"M PLUS 1"',
+               fontSize: '16px',
+               fontStyle: 'normal',
+               fontWeight: 400,
+               lineHeight: '22px',
+               opacity: 0,
+               transition: 'opacity 0.4s ease 0.2s, transform 0.6s cubic-bezier(0.4, 0, 0.2, 1)',
+               zIndex: 10
+             }}
+           >
+             Connect with fellow product enthusiasts over ice cream and build lasting relationships in our community.
+           </div>
+
+           {/* Line 8 */}
+           <div 
+             className="line-8"
+             style={{
+               position: 'absolute',
+               left: '380px', // x1="814.5" * 2
+               top: '50px', // y2="328" * 2
+               width: '1px',
+               height: '265px', // (546-328) * 2
                backgroundColor: 'black',
                transition: 'opacity 0.5s ease'
              }}
