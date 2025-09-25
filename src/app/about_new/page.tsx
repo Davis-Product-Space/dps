@@ -12,6 +12,10 @@ import { previewTeam } from "@/data/ProductSpace24-25/Fall24Fellows/TeamPreview"
 import { syncTeam } from "@/data/ProductSpace24-25/Fall24Fellows/TeamSync";
 import { curateTeam } from "@/data/ProductSpace24-25/Fall24Fellows/TeamCurate";
 import { scrapsTeam } from "@/data/ProductSpace24-25/Fall24Fellows/TeamScraps";
+import { declassifyTeam } from "@/data/ProductSpace24-25/Spring25Fellows/TeamDeClassify";
+import { heardTeam } from "@/data/ProductSpace24-25/Spring25Fellows/TeamHeard";
+import { honeTeam } from "@/data/ProductSpace24-25/Spring25Fellows/TeamHone";
+import { mooveTeam } from "@/data/ProductSpace24-25/Spring25Fellows/TeamMOOVE";
 
 import FlipProfile from "@/components/AboutPage/FlipProfile";
 import StatsCard from "@/components/AboutPage/StatsCard";
@@ -22,6 +26,12 @@ import { springProjects } from "@/data/capstones/springProjects";
 
 
 export default function AboutNewPage() {
+  const spring25Teams = [
+    { teamName: "DeClassify", members: declassifyTeam },
+    { teamName: "Heard", members: heardTeam },
+    { teamName: "Hone", members: honeTeam },
+    { teamName: "MOOVE", members: mooveTeam },
+  ];
   return (
     <div className="w-full bg-[#FAF6FC]" style={{ paddingBottom: '150px' }}>
       <div className="relative w-full h-screen overflow-hidden">
@@ -124,52 +134,65 @@ export default function AboutNewPage() {
           </div>
         </div>
       </section>
-      <section className="flex flex-col justify-between mb-[160px] mt-[180px]">
-        <div className="flex justify-center">
-          <div style={{ width: '900px' }}>
-            <h2 
-              style={{
-                color: '#3A3A3A',
-                textAlign: 'center',
-                fontFamily: 'Inter',
-                fontSize: '40px',
-                fontStyle: 'normal',
-                fontWeight: 600,
-                lineHeight: '48.75px',
-                marginBottom: '71px'
-              }}
-            >
-              Meet the Spring 2025 Fellows!
-            </h2>
-          </div>
-        </div>
-        <div className="flex justify-center">
-          <div style={{ width: '1440px' }}>
-            <div style={{ paddingLeft: '203px', paddingRight: '202px' }}>
-              <ProfileGrid
-                title="Team Preview"
-                data={previewTeam}
-                ProfileComponent={FlipProfile}
-              />
-              <ProfileGrid
-                title="Team Scraps"
-                data={scrapsTeam}
-                ProfileComponent={FlipProfile}
-              />
-              <ProfileGrid
-                title="Team Sync"
-                data={syncTeam}
-                ProfileComponent={FlipProfile}
-              />
-              <ProfileGrid
-                title="Team Curate"
-                data={curateTeam}
-                ProfileComponent={FlipProfile}
-              />
-            </div>
-          </div>
-        </div>
-        </section>
+      <section
+        style={{
+          display: 'flex',
+          padding: '150px 210px',
+          alignItems: 'center',
+          gap: '10px',
+          alignSelf: 'stretch'
+        }}
+      >
+          <div
+            style={{
+              display: 'flex',
+              width: '1020px',
+              flexDirection: 'column',
+              alignItems: 'center',
+              gap: '52px'
+            }}
+          >
+             <h2
+               style={{
+                 color: '#3A3A3A',
+                 textAlign: 'center',
+                 fontFamily: 'Inter',
+                 fontSize: '40px',
+                 fontStyle: 'normal',
+                 fontWeight: 600,
+                 lineHeight: '48.75px'
+               }}
+             >
+               Meet the Spring 2025 Fellows!
+             </h2>
+           
+           {spring25Teams.map((team, teamIndex) => (
+             <div key={teamIndex} style={{ alignSelf: 'stretch' }}>
+               <h3
+                 style={{
+                   color: '#3A3A3A',
+                   textAlign: 'center',
+                   fontFamily: '"M PLUS 1"',
+                   fontSize: '22.5px',
+                   fontStyle: 'normal',
+                   fontWeight: 600,
+                   lineHeight: '32px',
+                   marginBottom: '32px'
+                 }}
+               >
+                 Team {team.teamName}
+               </h3>
+               <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-[25px] w-full">
+                 {team.members.map((member, i: number) => (
+                   <FlipProfile key={`${team.teamName}-${i}`} {...member} />
+                 ))}
+               </div>
+             </div>
+           ))}
+          
+         </div>
+     </section>
+
         
         {/* New section below Fellows */}
         <section className="flex flex-col justify-center" style={{ marginTop: '180px' }}>
@@ -200,4 +223,3 @@ export default function AboutNewPage() {
     </div>
   );
 }
-
