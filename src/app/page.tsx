@@ -87,7 +87,7 @@ export default function Page() {
       </section>
 
       {/* who we are – skip rendering on mobile */}
-      <section className="w-full hidden lg:block w-full">
+      <section className="w-full hidden lg:block">
         <WhoWeAre />
       </section>
 
