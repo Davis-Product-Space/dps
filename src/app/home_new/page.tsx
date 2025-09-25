@@ -110,7 +110,7 @@ export default function HomeNewPage() {
         className="relative mx-auto"
         style={{
           width: '1440px',
-          height: '2250px', // Increased height to add more space below TextReveal
+          height: '2000px', // Increased height to add more space below TextReveal
         }}
       >
         <div 

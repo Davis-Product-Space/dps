@@ -16,6 +16,9 @@ import { previewTeam } from "@/data/24-25ProductSpace/Fall24Fellows/TeamPreview"
 import { scrapsTeam } from "@/data/24-25ProductSpace/Fall24Fellows/TeamScraps";
 import { syncTeam } from "@/data/24-25ProductSpace/Fall24Fellows/TeamSync";
 
+//import { mentors } from "@/data/25-26Mentors";
+
+
 
 
 export default function Step1Page() {
