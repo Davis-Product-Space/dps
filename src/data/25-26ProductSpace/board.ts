@@ -103,4 +103,12 @@ export const board = [
     linkedinLink: "https://www.linkedin.com/in/amelia-uytingco-b07226209/",
     coffeechatLink: "",
 },
+{
+  name: "Akash Anand",
+  title: "Advisor",
+  imageSrc: "images/Board/Akash.png",
+  backImageSrc: "images/Funny/Board/Akash.png",
+  linkedinLink: "https://www.linkedin.com/in/yournextintern/",
+  coffeechatLink: "",
+},
 ];
