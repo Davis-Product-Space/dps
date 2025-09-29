@@ -136,7 +136,7 @@ export default function Footer() {
           
           {/* About Links List */}
           <div className="flex flex-col space-y-4 mt-2">
-            <a href="/what-is-product-space" className="hover:opacity-70 transition-opacity">
+            <a href="/about_new" className="hover:opacity-70 transition-opacity">
               <span
                 style={{
                   color: '#3A3A3A',
@@ -150,7 +150,7 @@ export default function Footer() {
                 What is Product Space?
               </span>
             </a>
-            <a href="/fellowship" className="hover:opacity-70 transition-opacity">
+            <a href="/Step1" className="hover:opacity-70 transition-opacity">
               <span
                 style={{
                   color: '#3A3A3A',
@@ -164,7 +164,7 @@ export default function Footer() {
                 Fellowship
               </span>
             </a>
-            <a href="/capstone" className="hover:opacity-70 transition-opacity">
+            <a href="/Step2" className="hover:opacity-70 transition-opacity">
               <span
                 style={{
                   color: '#3A3A3A',
@@ -178,7 +178,7 @@ export default function Footer() {
                 Capstone
               </span>
             </a>
-            <a href="/client" className="hover:opacity-70 transition-opacity">
+            <a href="/Step3" className="hover:opacity-70 transition-opacity">
               <span
                 style={{
                   color: '#3A3A3A',
@@ -192,7 +192,7 @@ export default function Footer() {
                 Client
               </span>
             </a>
-            <a href="/product" className="hover:opacity-70 transition-opacity">
+            <a href="/Step4" className="hover:opacity-70 transition-opacity">
               <span
                 style={{
                   color: '#3A3A3A',
@@ -233,7 +233,7 @@ export default function Footer() {
           
           {/* Connect Links List */}
           <div className="flex flex-col space-y-4 mt-2">
-            <a href="/email" className="hover:opacity-70 transition-opacity">
+            <a href="mailto:davisproductspace@gmail.com" aria-label="Email" className="hover:opacity-70 transition-opacity">
               <span
                 style={{
                   color: '#3A3A3A',
@@ -247,7 +247,7 @@ export default function Footer() {
                 Email
               </span>
             </a>
-            <a href="/instagram" className="hover:opacity-70 transition-opacity">
+            <a href="https://instagram.com/davisproductspace" target="_blank" aria-label="Instagram" className="hover:opacity-70 transition-opacity">
               <span
                 style={{
                   color: '#3A3A3A',
@@ -261,7 +261,7 @@ export default function Footer() {
                 Instagram
               </span>
             </a>
-            <a href="/linkedin" className="hover:opacity-70 transition-opacity">
+            <a href="https://www.linkedin.com/company/davisproductspace" target="_blank" aria-label="LinkedIn" className="hover:opacity-70 transition-opacity">
               <span
                 style={{
                   color: '#3A3A3A',
@@ -273,20 +273,6 @@ export default function Footer() {
                 }}
               >
                 LinkedIn
-              </span>
-            </a>
-            <a href="/tiktok" className="hover:opacity-70 transition-opacity">
-              <span
-                style={{
-                  color: '#3A3A3A',
-                  fontFamily: '"M PLUS 1"',
-                  fontSize: '18.5px',
-                  fontStyle: 'normal',
-                  fontWeight: 400,
-                  lineHeight: '32px'
-                }}
-              >
-                TikTok
               </span>
             </a>
           </div>

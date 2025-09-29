@@ -5,7 +5,7 @@ export const scrapsTeam = [
         imageSrc: "images/FallFellows/Scraps/Abirami.png",
         backImageSrc: "images/Funny/FallFellows/Scraps/Abirami.png",
         linkedinLink: "https://www.linkedin.com/in/abirami-kathiresan-289b9a262/",
-        coffeechatLink: "https://calendly.com/akathiresan-ucdavis/30min?",
+        coffeechatLink: "",
     },
     {
         name: "Krisha Bhat",
@@ -13,7 +13,7 @@ export const scrapsTeam = [
         imageSrc: "images/FallFellows/Scraps/Krisha.png",
         backImageSrc: "images/Funny/FallFellows/Scraps/Krisha.png",
         linkedinLink: "https://www.linkedin.com/in/krisha-bhat/",
-        coffeechatLink: "https://calendly.com/kribhat-ucdavis/30min?",
+        coffeechatLink: "",
     },
     {
         name: "Nicole Yanuaria",
@@ -21,7 +21,7 @@ export const scrapsTeam = [
         imageSrc: "images/FallFellows/Scraps/Nicole.png",
         backImageSrc: "images/Funny/FallFellows/Scraps/Nicole.png",
         linkedinLink: "https://www.linkedin.com/in/nicole-yanuaria-3558b2236/",
-        coffeechatLink: "https://calendly.com/ncyanuaria-ucdavis/30min",
+        coffeechatLink: "",
     },
     {
         name: "Sruthi Sridhar",
@@ -29,7 +29,7 @@ export const scrapsTeam = [
         imageSrc: "images/FallFellows/Scraps/Sruthi.png",
         backImageSrc: "images/Funny/FallFellows/Scraps/Sruthi.png",
         linkedinLink: "",
-        coffeechatLink: "https://calendly.com/srusridhar-ucdavis/30min",
+        coffeechatLink: "",
     },
     {
         name: "Wing Lai",
@@ -37,6 +37,6 @@ export const scrapsTeam = [
         imageSrc: "images/FallFellows/Scraps/Wing.png",
         backImageSrc: "images/Funny/FallFellows/Scraps/Wing.png",
         linkedinLink: "https://www.linkedin.com/in/wing-lai-7a8987271/",
-        coffeechatLink: "https://calendly.com/wingl9082",
+        coffeechatLink: "",
     },
 ];

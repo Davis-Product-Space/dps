@@ -21,7 +21,7 @@ export const previewTeam = [
         imageSrc: "images/FallFellows/Preview/Gayatri.png",
         backImageSrc: "images/Funny/FallFellows/Preview/Gayatri.png",
         linkedinLink: "https://www.linkedin.com/in/gayatri-brijesh/",
-        coffeechatLink: "https://calendly.com/gbrijesh-ucdavis/30min",
+        coffeechatLink: "",
     },
     {
         name: "Phoung Thy N.",
@@ -29,6 +29,6 @@ export const previewTeam = [
         imageSrc: "images/FallFellows/Preview/PhuongThy.png",
         backImageSrc: "images/Funny/FallFellows/Preview/PhuongThy.png",
         linkedinLink: "https://www.linkedin.com/in/phuong-thy-nguyen-81a5b429b/",
-        coffeechatLink: "https://calendly.com/ptynguyen-ucdavis/30min?",
+        coffeechatLink: "",
     },
 ];

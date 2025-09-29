@@ -173,7 +173,7 @@ export default function JoinNewPage() {
           {/* Step List Map*/}
           <RecruitmentStep 
             title="Step 1: Questionnaire"
-            description="Answer 2 300 word questions on the application form &quot;here&quot; by DATE/XXX so we can get to know you! This should take about 30 minutes to complete."
+            description="Answer 2 300 word questions on the application form by Oct 8th so we can get to know you! This should take about 30 minutes to complete."
           />
           
           <RecruitmentStep 

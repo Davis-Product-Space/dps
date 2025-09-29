@@ -5,7 +5,7 @@ export const syncTeam = [
         imageSrc: "images/FallFellows/Sync/Anita.png",
         backImageSrc: "images/Funny/FallFellows/Sync/Anita.png",
         linkedinLink: "https://www.linkedin.com/in/anita-thata/",
-        coffeechatLink: "https://calendly.com/asthata-ucdavis/30min?",
+        coffeechatLink: "",
     },
     {
         name: "Caitlin Chan",
@@ -21,7 +21,7 @@ export const syncTeam = [
         imageSrc: "images/FallFellows/Sync/Jason.png",
         backImageSrc: "images/Funny/FallFellows/Sync/jason.png",
         linkedinLink: "https://www.linkedin.com/in/jason-jiayu-zhang/",
-        coffeechatLink: "https://calendly.com/jason_jiayu_zhang/30min?",
+        coffeechatLink: "",
     },
     {
         name: "Puja Devarasetty",
@@ -29,6 +29,6 @@ export const syncTeam = [
         imageSrc: "images/FallFellows/Sync/Puja.png",
         backImageSrc: "images/Funny/FallFellows/Sync/Puja.png",
         linkedinLink: "https://www.linkedin.com/in/pujadevarasetty/",
-        coffeechatLink: "https://calendly.com/pdevarasetty-ucdavis/30min",
+        coffeechatLink: "",
     },
 ];

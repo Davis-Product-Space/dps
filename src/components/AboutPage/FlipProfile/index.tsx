@@ -81,19 +81,22 @@ export default function BoardCard({
           <LinkedInIcon className="w-[20px] sm:w-[24px] h-[20px] sm:h-[24.4px] text-[#3A3A3A] relative pl-[4px]" />
         </a>
       </div>
-      <div className="flex justify-between w-full items-center mb-1">
-        <p className="text-[12px] sm:text-[14px] font-normal mt-1 text-[#3A3A3A] leading-[24px] sm:leading-[30px]">
-          {title}
-        </p>
-        <a
-          href={coffeechatLink || "#"}
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Coffee"
-        >
-          <CoffeeIcon className="w-[20px] sm:w-[24.3px] h-[20px] sm:h-[24.8px] text-[#3A3A3A] relative pl-[4px]" />
-        </a>
-      </div>
+        <div className="flex justify-between w-full items-center mb-1">
+          <p className="text-[12px] sm:text-[14px] font-normal mt-1 text-[#3A3A3A] leading-[24px] sm:leading-[30px]">
+            {title}
+          </p>
+          {coffeechatLink && (
+            <a
+              href={coffeechatLink || "#"}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Coffee"
+            >
+              <CoffeeIcon className="w-[20px] sm:w-[24.3px] h-[20px] sm:h-[24.8px] text-[#3A3A3A] relative pl-[4px]" />
+            </a>
+          )}
+        </div>
+   
     </div>
   );
 }

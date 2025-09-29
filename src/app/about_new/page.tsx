@@ -8,10 +8,6 @@ import { AnimatedProjects } from "@/components/AboutPage/AnimateProjects";
 import { projects } from "@/data/24-25ProductSpace/projects-info";
 
 import { board } from "@/data/25-26ProductSpace/board";
-import { previewTeam } from "@/data/24-25ProductSpace/Fall24Fellows/TeamPreview";
-import { syncTeam } from "@/data/24-25ProductSpace/Fall24Fellows/TeamSync";
-import { curateTeam } from "@/data/24-25ProductSpace/Fall24Fellows/TeamCurate";
-import { scrapsTeam } from "@/data/24-25ProductSpace/Fall24Fellows/TeamScraps";
 import { declassifyTeam } from "@/data/24-25ProductSpace/Spring25Fellows/TeamDeClassify";
 import { heardTeam } from "@/data/24-25ProductSpace/Spring25Fellows/TeamHeard";
 import { honeTeam } from "@/data/24-25ProductSpace/Spring25Fellows/TeamHone";

@@ -5,7 +5,6 @@ export const declassifyTeam = [
         imageSrc: "images/SpringFellows/DeClassify/Sahana.png",
         backImageSrc: "",
         linkedinLink: "https://www.linkedin.com/in/sahana-narayan-641bb7241/",
-        coffeechatLink: "",
     },
     {
         name: "Elango Keethesan",
@@ -13,7 +12,6 @@ export const declassifyTeam = [
         imageSrc: "images/SpringFellows/DeClassify/Elango.png",
         backImageSrc: "",
         linkedinLink: "https://www.linkedin.com/in/elango-ketheesan/",
-        coffeechatLink: "",
     },
     {
         name: "Andy Tran",
@@ -21,7 +19,6 @@ export const declassifyTeam = [
         imageSrc: "images/SpringFellows/DeClassify/Andy.png",
         backImageSrc: "",
         linkedinLink: "https://www.linkedin.com/in/andy-tran-ucd5686/",
-        coffeechatLink: "",
     },
     {
         name: "Yash Pradhan",
@@ -29,6 +26,5 @@ export const declassifyTeam = [
         imageSrc: "images/SpringFellows/DeClassify/Yash.png",
         backImageSrc: "",
         linkedinLink: "https://www.linkedin.com/in/yashpradhan83/",
-        coffeechatLink: "",
     },
 ];
