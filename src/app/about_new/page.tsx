@@ -18,7 +18,7 @@ import StatsCard from "@/components/AboutPage/StatsCard";
 import ProfileGrid from "@/components/AboutPage/ProfileGrid";
 
 import ProjectCarousel from "@/components/PathwaySteps/projectCarousel";
-import { springProjects } from "@/data/capstones/springProjects";
+import { springProjects } from "@/data/24-25ProductSpace/capstones/springProjects";
 
 
 export default function AboutNewPage() {

@@ -1,22 +1,9 @@
 "use client";
 
-import Image from "next/image";
-import StepsStaircase from "@/components/StepsStaircase";
-import FlipProfile from "@/components/AboutPage/FlipProfile";
 import ProjectCarousel from "@/components/PathwaySteps/projectCarousel";
 
-import { declassifyTeam } from "@/data/24-25ProductSpace/Spring25Fellows/TeamDeClassify";
-import { heardTeam } from "@/data/24-25ProductSpace/Spring25Fellows/TeamHeard";
-import { honeTeam } from "@/data/24-25ProductSpace/Spring25Fellows/TeamHone";
-import { mooveTeam } from "@/data/24-25ProductSpace/Spring25Fellows/TeamMOOVE";
-
-import { curateTeam } from "@/data/24-25ProductSpace/Fall24Fellows/TeamCurate";
-import { previewTeam } from "@/data/24-25ProductSpace/Fall24Fellows/TeamPreview";
-import { scrapsTeam } from "@/data/24-25ProductSpace/Fall24Fellows/TeamScraps";
-import { syncTeam } from "@/data/24-25ProductSpace/Fall24Fellows/TeamSync";
-
-import { springProjects } from "@/data/capstones/springProjects";
-import { fallProjects } from "@/data/capstones/fallProjects";
+import { springProjects } from "@/data/24-25ProductSpace/capstones/springProjects";
+import { fallProjects } from "@/data/24-25ProductSpace/capstones/fallProjects";
 
 
 export default function Step2Page() {

@@ -1,6 +1,6 @@
 export const mooveTeam = [
     {
-        name: "Anwesha",
+        name: "Anwesha Mohanty",
         title: "2nd Year, Comp Sci",
         imageSrc: "images/SpringFellows/Moove/Anwesha.png",
         backImageSrc: "",
@@ -8,7 +8,7 @@ export const mooveTeam = [
         coffeechatLink: "",
     },
     {
-        name: "May (Haolin)",
+        name: "May (Haolin) Zhang",
         title: "2nd Year, Cog Sci",
         imageSrc: "images/SpringFellows/Moove/May.png",
         backImageSrc: "",
@@ -16,7 +16,7 @@ export const mooveTeam = [
         coffeechatLink: "",
     },
     {
-        name: "Kavin",
+        name: "Kavin Agarwal",
         title: "2nd Year, Comp Sci & Eng",
         imageSrc: "images/SpringFellows/Moove/Kavin.png",
         backImageSrc: "",
@@ -24,7 +24,7 @@ export const mooveTeam = [
         coffeechatLink: "",
     },
     {
-        name: "Isaac",
+        name: "Isaac Villegas",
         title: "2nd Year, Comp Eng",
         imageSrc: "images/SpringFellows/Moove/Isaac.png",
         backImageSrc: "",
