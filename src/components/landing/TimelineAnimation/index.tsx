@@ -1579,7 +1579,7 @@ export function TimelineAnimation() {
                zIndex: 10
              }}
            >
-             Present your innovative product ideas and receive valuable feedback from industry experts and fellow participants.
+             An hour long experience of what you’ll be introduced to during the Fellowship.
            </div>
 
            {/* Line 3 */}

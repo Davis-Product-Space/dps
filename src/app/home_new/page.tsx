@@ -13,7 +13,7 @@ export default function HomeNewPage() {
       <header 
         className="relative mx-auto"
         style={{
-          width: '1440px',
+          width: '100%',
           height: '1251px',
           maxWidth: '100vw'
         }}
@@ -60,7 +60,7 @@ export default function HomeNewPage() {
         >
           <img 
             src="/images/homepage_ps_logo.svg" 
-            alt="Product School Logo"
+            alt="Product Space Logo"
             style={{
               width: '688px',
               height: '627px'
