@@ -21,7 +21,7 @@ export const board = [
       imageSrc: "images/SpringFellows/DeClassify/Sahana.png",
       backImageSrc: "",
       linkedinLink: "https://www.linkedin.com/in/sahana-narayan-641bb7241/",
-      coffeechatLink: "",
+      coffeechatLink: "https://calendly.com/sahnarayan-ucdavis/new-meeting",
     },
     {
       name: "Caitlin Chan",
@@ -45,7 +45,7 @@ export const board = [
       imageSrc: "images/FallFellows/Scraps/Abirami.png",
       backImageSrc: "images/Funny/FallFellows/Scraps/Abirami.png",
       linkedinLink: "https://www.linkedin.com/in/abirami-kathiresan-289b9a262/",
-      coffeechatLink: "",
+      coffeechatLink: "https://calendly.com/akathiresan-ucdavis/product-space-coffee-chats-abirami",
 },
 {
       name: "Sruthi Sridhar",
