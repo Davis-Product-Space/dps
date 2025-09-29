@@ -177,48 +177,7 @@ export default function ContactForm() {
           />
         </div>
 
-        {/* Email Field */}
-        <div style={{ marginBottom: '24px' }}>
-          <label 
-            htmlFor="email"
-            style={{
-              color: '#3A3A3A',
-              fontFamily: '"M PLUS 1", sans-serif',
-              fontSize: '22.5px',
-              fontStyle: 'normal',
-              fontWeight: 400,
-              lineHeight: '32px',
-              display: 'block',
-              marginBottom: '8px'
-            }}
-          >
-            Email
-          </label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            value={formData.email}
-            onChange={handleInputChange}
-            placeholder="jane@gmail.com"
-            required
-            style={{
-              width: '100%',
-              padding: '12px 16px',
-              border: '1px solid #D8BFD8',
-              borderRadius: '6px',
-              backgroundColor: 'white',
-              fontSize: '16px',
-              fontFamily: '"M PLUS 1", sans-serif',
-              color: '#3A3A3A',
-              boxSizing: 'border-box',
-              outline: 'none',
-              transition: 'border-color 0.3s ease'
-            }}
-            onFocus={(e) => e.target.style.borderColor = '#9966B7'}
-            onBlur={(e) => e.target.style.borderColor = '#D8BFD8'}
-          />
-        </div>
+
 
         {/* Message Field */}
         <div style={{ marginBottom: '32px' }}>
