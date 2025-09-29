@@ -5,7 +5,7 @@ export const board = [
       imageSrc: "images/Board/Pranavi.png",
       backImageSrc: "",
       linkedinLink: "https://www.linkedin.com/in/pranavi-khanna/",
-      coffeechatLink: "",
+      coffeechatLink: "https://calendly.com/prakhanna-ucdavis/product-space-coffee-chats",
     },
     {
       name: "Raquib Alam",
@@ -13,7 +13,7 @@ export const board = [
       imageSrc: "images/Board/Raq.png",
       backImageSrc: "images/Funny/Board/raq.png",
       linkedinLink: "https://www.linkedin.com/in/raquib-alam/",
-      coffeechatLink: "",
+      coffeechatLink: "https://calendly.com/rmalam-ucdavis/product-space-coffee-chats-raquib-alam",
     },
     {
       name: "Sahana Narayan",
@@ -29,7 +29,7 @@ export const board = [
       imageSrc: "images/Board/Caitlin.png",
       backImageSrc: "images/Funny/Board/Caitlin.png",
       linkedinLink: "https://www.linkedin.com/in/caitlindchan/",
-      coffeechatLink: "",
+      coffeechatLink: "https://calendar.app.google/3q96Sg4QhN9XqxtE6",
     },
     {
       name: "Jason Zhang",
@@ -37,7 +37,7 @@ export const board = [
       imageSrc: "images/FallFellows/Sync/Jason.png",
       backImageSrc: "images/Funny/FallFellows/Sync/jason.png",
       linkedinLink: "https://www.linkedin.com/in/jason-jiayu-zhang/",
-      coffeechatLink: "https://calendly.com/pranavikhanna24/30min",
+      coffeechatLink: "https://calendly.com/jason_jiayu_zhang/fall-25-ps-coffee-chats-jason",
   },
   {
       name: "Abirami Kathiresan",
@@ -53,7 +53,7 @@ export const board = [
       imageSrc: "images/FallFellows/Scraps/Sruthi.png",
       backImageSrc: "images/Funny/FallFellows/Scraps/Sruthi.png",
       linkedinLink: "",
-      coffeechatLink: "",
+      coffeechatLink: "https://calendly.com/srusridhar-ucdavis/30min",
 },
 {
       name: "Cindy Xing",
@@ -61,7 +61,7 @@ export const board = [
       imageSrc: "images/SpringFellows/Hone/Cindy.png",
       backImageSrc: "",
       linkedinLink: "https://www.linkedin.com/in/cindy-xing-a429a8330/",
-      coffeechatLink: "",
+      coffeechatLink: "https://calendly.com/cinxing-ucdavis/psfallcoffee",
 },
 {
     name: "Ami Sheth",
@@ -69,7 +69,7 @@ export const board = [
     imageSrc: "",
     backImageSrc: "",
     linkedinLink: "",
-    coffeechatLink: "",
+    coffeechatLink: "https://calendly.com/ajsheth-ucdavis/30min",
 },  
 {
     name: "Zayd Musa",
@@ -77,7 +77,7 @@ export const board = [
     imageSrc: "images/SpringFellows/Hone/Zayd.png",
     backImageSrc: "",
     linkedinLink: "https://www.linkedin.com/in/zayd-musa/",
-    coffeechatLink: "",
+    coffeechatLink: "https://calendly.com/zamusa-ucdavis/new-meeting",
 },
 {
     name: "Andy Tran",
@@ -85,7 +85,7 @@ export const board = [
     imageSrc: "images/SpringFellows/DeClassify/Andy.png",
     backImageSrc: "",
     linkedinLink: "https://www.linkedin.com/in/andy-tran-ucd5686/",
-    coffeechatLink: "",
+    coffeechatLink: "https://calendly.com/anctran-ucdavis/30min",
 },
 {
     name: "Yash Pradhan",
@@ -93,7 +93,7 @@ export const board = [
     imageSrc: "images/SpringFellows/DeClassify/Yash.png",
     backImageSrc: "",
     linkedinLink: "https://www.linkedin.com/in/yashpradhan83/",
-    coffeechatLink: "",
+    coffeechatLink: "https://calendly.com/yspradhan/ps-coffee-chats",
 },
 {
     name: "Amelia Uytingco",
@@ -101,7 +101,7 @@ export const board = [
     imageSrc: "images/SpringFellows/Hone/Amelia.png",
     backImageSrc: "",
     linkedinLink: "https://www.linkedin.com/in/amelia-uytingco-b07226209/",
-    coffeechatLink: "",
+    coffeechatLink: "https://calendly.com/afuytingco-ucdavis/product-space-coffee-chats",
 },
 {
   name: "Akash Anand",
@@ -109,6 +109,6 @@ export const board = [
   imageSrc: "images/Board/Akash.png",
   backImageSrc: "images/Funny/Board/Akash.png",
   linkedinLink: "https://www.linkedin.com/in/yournextintern/",
-  coffeechatLink: "",
+  coffeechatLink: "https://www.linkedin.com/in/yournextintern/",
 },
 ];

@@ -209,7 +209,7 @@ export default function Step4Page() {
         <section 
           className="w-full"
           style={{
-            height: '538px',
+            height: '400px',
             background: 'white'
           }}
         >
@@ -242,7 +242,7 @@ export default function Step4Page() {
                 textAlign: 'center'
               }}
             >
-              Join a Community of Product
+              Start a Career in Product
             </h2>
             <p 
               style={{
@@ -254,7 +254,7 @@ export default function Step4Page() {
                 textAlign: 'center'
               }}
             >
-              Learn from industry professionals on how to start your career in product management, and meet students who have landed roles at top companies.
+              By learning from industry professionals on how to start your career in product management, we believe that we provide an essential springboard for successful Project career starts.
             </p>
           </div>
         </section>
