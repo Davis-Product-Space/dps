@@ -1,38 +1,25 @@
 'use client';
 
-import React, { useRef } from 'react';
-import ScrollBar from '@/components/landing/ScrollBar';
-import WhatWeOfferReveal from '@/components/landing/WhatWeOfferReveal';
+import React from 'react';
 import { whatWeOfferPhases } from '@/data/what-we-offer-cards';
 
 export function WhatWeOffer() {
-  const whatWeOfferScrollRef = useRef<HTMLDivElement>(null);
-
   return (
-    <section
-      ref={whatWeOfferScrollRef}
-      className="relative h-auto lg:h-[300vh] w-full"
-      style={{
-        position: 'absolute',
-        top: '223.75px', // 150px (heading top) + 48.75px (heading line-height) + 25px = 223.75px
-        left: '0',
-        right: '0'
-      }}
-    >
-      <div className="lg:sticky lg:top-0 lg:h-screen flex items-center justify-center">
-        {/* Main Container */}
-        <div 
-          style={{
-            position: 'relative',
-            width: '1440px',
-            height: '100%'
-          }}
-        >
+    <div className="relative w-full" style={{ paddingBottom: '150px' }}>
+      {/* Main Container */}
+      <div 
+        style={{
+          position: 'relative',
+          width: '1440px',
+          maxWidth: '100vw',
+          margin: '0 auto'
+        }}
+      >
         {/* Left Side - Fellowship Staircase */}
         <div style={{ 
           position: 'absolute',
-          left: '53px', // Right edge of logo (53px + 517px = 570px) is 100px from text boxes (670px)
-          top: '99px' // 32px (Fellowship title height) + 7px (extra spacing) + 60px = 99px
+          left: '53px',
+          top: '300px' // Move staircase further down
         }}>
           <img 
             src="/images/fellowship_staircase.svg" 
@@ -44,28 +31,144 @@ export function WhatWeOffer() {
           />
         </div>
 
-          {/* Right Side - What We Offer Content */}
-          <div style={{ 
-            position: 'absolute',
-            right: '100px',
-            top: '0',
-            display: 'flex',
-            alignItems: 'center',
-            gap: '2rem'
-          }}>
-            <WhatWeOfferReveal 
-              targetRef={whatWeOfferScrollRef} 
-              phases={whatWeOfferPhases} 
-            />
-            <div className="hidden lg:block" style={{ transform: 'translateY(300px)' }}>
-              <ScrollBar 
-                targetRef={whatWeOfferScrollRef} 
-                totalItems={whatWeOfferPhases.length} 
-              />
+        {/* Left Side - Capstone Staircase */}
+        <div style={{ 
+          position: 'absolute',
+          left: '53px',
+          top: '1020px' // 1000px + 20px = 1020px below Fellowship staircase
+        }}>
+          <img 
+            src="/images/CapstoneStaircase.svg" 
+            alt="Capstone Staircase"
+            style={{
+              width: '517px',
+              height: '427px'
+            }}
+          />
+        </div>
+
+        {/* Left Side - Client Staircase */}
+        <div style={{ 
+          position: 'absolute',
+          left: '53px',
+          top: '1720px' // Move way down + 20px
+        }}>
+          <img 
+            src="/images/Client_Staricase.png" 
+            alt="Client Staircase"
+            style={{
+              width: '517px',
+              height: '427px'
+            }}
+          />
+        </div>
+
+        {/* Left Side - Product Staircase */}
+        <div style={{ 
+          position: 'absolute',
+          left: '-20px', // Moved further left (past the left edge)
+          top: '2420px' // Moved down an additional 100px
+        }}>
+          <img 
+            src="/images/Product_Staricase.svg" 
+            alt="Product Staircase"
+            style={{
+              width: '620px', // Made bigger (increased from 517px)
+              height: '512px' // Made bigger (increased from 427px)
+            }}
+          />
+        </div>
+
+        {/* Right Side - Static Phases */}
+        <div style={{ 
+          position: 'absolute',
+          right: '100px',
+          top: '198.75px', // 150px (heading top) + 48.75px (heading line-height) = 198.75px
+          width: '670px', // 2 cards (325px each) + gap (20px) = 670px
+          textAlign: 'right'
+        }}>
+          {whatWeOfferPhases.map((phase, index) => (
+            <div 
+              key={phase.key}
+              style={{ 
+                marginBottom: index < whatWeOfferPhases.length - 1 ? '150px' : '0px'
+              }}
+            >
+              {/* Section Title */}
+              <h3 
+                style={{
+                  color: '#3A3A3A',
+                  fontFamily: 'Inter',
+                  fontSize: '32px',
+                  fontStyle: 'normal',
+                  fontWeight: 600,
+                  lineHeight: '39px',
+                  marginBottom: '25px',
+                  textAlign: 'center'
+                }}
+              >
+                {phase.sectionTitle}
+              </h3>
+
+              {/* Feature Cards Grid */}
+              <div 
+                style={{
+                  display: 'grid',
+                  gridTemplateColumns: '1fr 1fr',
+                  gap: '20px'
+                }}
+              >
+                {phase.cards.map((card) => (
+                  <div key={card.id} style={{
+                    display: 'flex',
+                    width: '325px',
+                    padding: '21px 25px',
+                    flexDirection: 'column',
+                    alignItems: 'center',
+                    gap: '11px',
+                    borderRadius: '10px',
+                    background: '#FAF6FC',
+                    textAlign: 'center'
+                  }}>
+                    <img 
+                      src={card.icon}
+                      alt={card.title}
+                      style={{
+                        width: '69px',
+                        height: '68px'
+                      }}
+                    />
+                    <h4 style={{
+                      color: '#3A3A3A',
+                      textAlign: 'center',
+                      fontFamily: '"M PLUS 1"',
+                      fontSize: '22.5px',
+                      fontStyle: 'normal',
+                      fontWeight: 700,
+                      lineHeight: '32px',
+                      margin: 0
+                    }}>
+                      {card.title}
+                    </h4>
+                    <p style={{
+                      color: '#3A3A3A',
+                      textAlign: 'center',
+                      fontFamily: '"M PLUS 1"',
+                      fontSize: '18px',
+                      fontStyle: 'normal',
+                      fontWeight: 400,
+                      lineHeight: 'normal',
+                      margin: 0
+                    }}>
+                      {card.description}
+                    </p>
+                  </div>
+                ))}
+              </div>
             </div>
-          </div>
+          ))}
         </div>
       </div>
-    </section>
+    </div>
   );
 }

@@ -294,15 +294,15 @@ export default function HomeNewPage() {
         </p>
         <TimelineAnimation />
       </section>
-      
-      {/* What we Offer Section */}
-      <section 
-        className="relative mx-auto"
-        style={{
-          width: '1440px',
-          height: '3097px'
-        }}
-      >
+
+              {/* What we Offer Section */}
+              <section 
+                className="relative mx-auto"
+                style={{
+                  width: '1440px',
+                  height: '3097px'
+                }}
+              >
         {/* What we Offer Heading */}
         <h2 
           style={{
@@ -326,6 +326,113 @@ export default function HomeNewPage() {
         
         {/* WhatWeOffer Component */}
         <WhatWeOffer />
+      </section>
+      
+      {/* Where We've Gone Section */}
+      <section 
+        className="relative w-full"
+        style={{
+          height: '675px',
+          background: '#FAF6FC',
+          display: 'flex',
+          padding: '150px 0',
+          flexDirection: 'column',
+          alignItems: 'flex-start',
+          gap: '25px',
+          alignSelf: 'stretch'
+        }}
+      >
+        {/* Where We've Gone Text */}
+        <div 
+          style={{
+            alignSelf: 'stretch',
+            color: '#3A3A3A',
+            textAlign: 'center',
+            fontFamily: 'Inter',
+            fontSize: '40px',
+            fontStyle: 'normal',
+            fontWeight: 600,
+            lineHeight: '48.75px'
+          }}
+        >
+          Where We've Gone
+        </div>
+        
+        {/* Company Logos Row */}
+        <div 
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            gap: '50px',
+            width: '100%',
+            marginTop: '65px'
+          }}
+        >
+          <img 
+            src="/images/CompanyLogos/tesla.png" 
+            alt="Tesla"
+            style={{ height: '75px', width: 'auto' }}
+          />
+          <img 
+            src="/images/CompanyLogos/northrop.png" 
+            alt="Northrop Grumman"
+            style={{ height: '50px', width: 'auto' }}
+          />
+          <img 
+            src="/images/CompanyLogos/amazon.png" 
+            alt="Amazon"
+            style={{ height: '50px', width: 'auto' }}
+          />
+          <img 
+            src="/images/CompanyLogos/oracle.png" 
+            alt="Oracle"
+            style={{ height: '50px', width: 'auto' }}
+          />
+          <img 
+            src="/images/CompanyLogos/servicenow.png" 
+            alt="ServiceNow"
+            style={{ height: '50px', width: 'auto' }}
+          />
+        </div>
+        
+        {/* Second Row Company Logos */}
+        <div 
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            gap: '50px',
+            width: '100%',
+            marginTop: '90px'
+          }}
+        >
+          <img 
+            src="/images/CompanyLogos/visa.png" 
+            alt="Visa"
+            style={{ height: '50px', width: 'auto' }}
+          />
+          <img 
+            src="/images/CompanyLogos/deloitte.png" 
+            alt="Deloitte"
+            style={{ height: '40px', width: 'auto' }}
+          />
+          <img 
+            src="/images/CompanyLogos/americanex.png" 
+            alt="American Express"
+            style={{ height: '60px', width: 'auto' }}
+          />
+          <img 
+            src="/images/CompanyLogos/cisco.png" 
+            alt="Cisco"
+            style={{ height: '50px', width: 'auto' }}
+          />
+          <img 
+            src="/images/CompanyLogos/walmart.png" 
+            alt="Walmart"
+            style={{ height: '50px', width: 'auto' }}
+          />
+        </div>
       </section>
     </div>
   );

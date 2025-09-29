@@ -9,6 +9,7 @@ export function TimelineAnimation() {
       const line7 = document.querySelector('.line-7') as HTMLElement;
       const iceCreamSocialText = document.querySelector('.ice-cream-social-text') as HTMLElement;
       const iceCreamSocialDate = document.querySelector('.ice-cream-social-date') as HTMLElement;
+      const meetTheBoardLocation = document.querySelector('.meet-the-board-location') as HTMLElement;
       const prismContainer = document.querySelector('.prism-container') as HTMLElement;
       const appsDueText = document.querySelector('.applications-due-text') as HTMLElement;
       const tbdText = document.querySelector('.applications-due-tbd') as HTMLElement;
@@ -28,6 +29,10 @@ export function TimelineAnimation() {
       
       if (iceCreamSocialDate) {
         iceCreamSocialDate.style.opacity = isHovering ? '0' : '1';
+      }
+      
+      if (meetTheBoardLocation) {
+        meetTheBoardLocation.style.opacity = isHovering ? '0' : '1';
       }
       
       if (prismContainer) {
@@ -229,12 +234,14 @@ export function TimelineAnimation() {
       const line4 = document.querySelector('.line-4') as HTMLElement;
       const pmPanelText = document.querySelector('.pm-panel-text') as HTMLElement;
       const pmPanelDate = document.querySelector('.pm-panel-date') as HTMLElement;
+      const pmPanelLocation = document.querySelector('.pm-panel-location') as HTMLElement;
       const applicationsDueText = document.querySelector('.applications-due-text') as HTMLElement;
       const applicationsDueTbd = document.querySelector('.applications-due-tbd') as HTMLElement;
       const iceCreamSocialPrismContainer = document.querySelector('.ice-cream-social-prism-container') as HTMLElement;
       const iceCreamSocialText = document.querySelector('.ice-cream-social-text') as HTMLElement;
       const iceCreamSocialDate = document.querySelector('.ice-cream-social-date') as HTMLElement;
       const iceCreamSocialInvite = document.querySelector('.ice-cream-social-invite') as HTMLElement;
+      const meetTheBoardLocation = document.querySelector('.meet-the-board-location') as HTMLElement;
       const iceCreamSocialHoverParagraph = document.querySelector('.ice-cream-social-paragraph') as HTMLElement;
       
       if (line7) {
@@ -255,6 +262,10 @@ export function TimelineAnimation() {
       
       if (pmPanelDate) {
         pmPanelDate.style.opacity = isHovering ? '0' : '1';
+      }
+      
+      if (pmPanelLocation) {
+        pmPanelLocation.style.opacity = isHovering ? '0' : '1';
       }
       
       if (applicationsDueText) {
@@ -287,6 +298,10 @@ export function TimelineAnimation() {
         iceCreamSocialInvite.style.transform = isHovering ? 'translateY(-200px) translateX(-50%)' : 'translateY(0) translateX(-50%)';
       }
       
+      if (meetTheBoardLocation) {
+        meetTheBoardLocation.style.opacity = isHovering ? '0' : '1';
+      }
+      
       if (iceCreamSocialHoverParagraph) {
         if (isHovering) {
           iceCreamSocialHoverParagraph.style.opacity = '1';
@@ -304,6 +319,7 @@ export function TimelineAnimation() {
       const pmPanelPrismContainer = document.querySelector('.pm-panel-prism-container') as HTMLElement;
       const pmPanelText = document.querySelector('.pm-panel-text') as HTMLElement;
       const pmPanelDate = document.querySelector('.pm-panel-date') as HTMLElement;
+      const pmPanelLocation = document.querySelector('.pm-panel-location') as HTMLElement;
       const pmPanelHoverParagraph = document.querySelector('.pm-panel-paragraph') as HTMLElement;
       
       if (line3) {
@@ -338,6 +354,10 @@ export function TimelineAnimation() {
       
       if (pmPanelDate) {
         pmPanelDate.style.transform = isHovering ? 'translateY(-200px) translateX(-50%)' : 'translateY(0) translateX(-50%)';
+      }
+      
+      if (pmPanelLocation) {
+        pmPanelLocation.style.opacity = isHovering ? '0' : '1';
       }
       
       if (pmPanelHoverParagraph) {
@@ -440,6 +460,7 @@ export function TimelineAnimation() {
       const infoSessionsPrismContainer = document.querySelector('.info-sessions-prism-container') as HTMLElement;
       const infoSessionsText = document.querySelector('.info-sessions-text') as HTMLElement;
       const infoSessionsDate = document.querySelector('.info-sessions-date') as HTMLElement;
+      const infoSessionsLocation = document.querySelector('.info-sessions-location') as HTMLElement;
       const infoSessionsHoverParagraph = document.querySelector('.info-sessions-paragraph') as HTMLElement;
       
       if (line1) {
@@ -474,6 +495,10 @@ export function TimelineAnimation() {
       
       if (infoSessionsDate) {
         infoSessionsDate.style.transform = isHovering ? 'translateY(-100px) translateX(-50%)' : 'translateY(0) translateX(-50%)';
+      }
+      
+      if (infoSessionsLocation) {
+        infoSessionsLocation.style.opacity = isHovering ? '0' : '1';
       }
       
       if (infoSessionsHoverParagraph) {
@@ -1177,7 +1202,7 @@ export function TimelineAnimation() {
              style={{
                position: 'absolute',
                left: '-547.5px', // Same x position as Line 1
-               top: '-10px', // 17.5px above Line 1 (0px - 17.5px)
+               top: '-50px', // 17.5px above Line 1 (0px - 17.5px)
                transform: 'translateX(-50%)', // Centers the text div on the line
                alignSelf: 'stretch',
                color: '#3A3A3A',
@@ -1199,7 +1224,7 @@ export function TimelineAnimation() {
              style={{
                position: 'absolute',
                left: '-547.5px', // Same x position as Line 6
-               top: '-30px', // 3px above Interviews (230px - 3px)
+               top: '-70px', // 3px above Interviews (230px - 3px)
                transform: 'translateX(-50%)', // Centers the text div on the line
                alignSelf: 'stretch',
                color: '#3A3A3A',
@@ -1213,7 +1238,7 @@ export function TimelineAnimation() {
                transition: 'transform 0.6s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.5s ease'
              }}
            >
-             TBD
+             Wed, 10/1 @ 12am
            </div>
 
            {/* Applications Open Hover Paragraph - appears during animation */}
@@ -1222,7 +1247,7 @@ export function TimelineAnimation() {
              style={{
                position: 'absolute',
                left: '-547.5px', // Same x position as Line 1
-               top: '15px', // Below the Applications Open text
+               top: '-25px', // Below the Applications Open text
                transform: 'translateX(-50%)',
                width: '300px',
                color: '#3A3A3A',
@@ -1246,9 +1271,9 @@ export function TimelineAnimation() {
              style={{
                position: 'absolute',
                left: '-547.5px', // Equivalent to x1="470.5" * 2 (scaled)
-               top: '25px', // Equivalent to y2="17.5" * 2 (scaled)
+               top: '-15px', // Equivalent to y2="17.5" * 2 (scaled)
                width: '1px',
-               height: '200px', // Height calculated from y1-y2 scaled
+               height: '240px', // Height calculated from y1-y2 scaled
                backgroundColor: 'black',
                transition: 'opacity 0.5s ease'
              }}
@@ -1298,7 +1323,31 @@ export function TimelineAnimation() {
                zIndex: 10
              }}
            >
-             TBD
+             Mon, 10/6 @ 6 & 7pm
+           </div>
+
+           {/* Info Sessions Location */}
+           <div 
+             className="info-sessions-location"
+             style={{
+               position: 'absolute',
+               left: '-388px', // Same x position as Line 4
+               top: '60px', // Above the Applications Due text
+               transform: 'translateX(-50%)', // Centers the text div on the line
+               alignSelf: 'stretch',
+               color: '#3A3A3A',
+               textAlign: 'center',
+               fontFamily: '"M PLUS 1"',
+               fontSize: '16px',
+               fontStyle: 'normal',
+               fontWeight: 400,
+               lineHeight: 'normal',
+               whiteSpace: 'nowrap', // Prevents text wrapping
+               transition: 'transform 0.6s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.5s ease',
+               zIndex: 10
+             }}
+           >
+            Wellman 106
            </div>
 
            {/* Info Sessions Hover Paragraph - appears during animation */}
@@ -1331,9 +1380,9 @@ export function TimelineAnimation() {
              style={{
                position: 'absolute',
                left: '-388px', // x1="160" * 2
-               top: '65px', // y2="139" * 2
+               top: '95px', // y2="139" * 2
                width: '1px',
-               height: '211px', // (350.5-139) * 2
+               height: '180px', // (350.5-139) * 2
                backgroundColor: 'black',
                transition: 'opacity 0.5s ease'
              }}
@@ -1383,7 +1432,31 @@ export function TimelineAnimation() {
                zIndex: 10
              }}
            >
-             TBD
+             October 7th, 7:30-8:30 PM
+           </div>
+
+            {/* PM Panel & Workshop Location */}
+            <div 
+              className="pm-panel-location"
+              style={{
+               position: 'absolute',
+               left: '-197px', // Same x position as Line 4
+               top: '105px', // Above the Applications Due text
+               transform: 'translateX(-50%)', // Centers the text div on the line
+               alignSelf: 'stretch',
+               color: '#3A3A3A',
+               textAlign: 'center',
+               fontFamily: '"M PLUS 1"',
+               fontSize: '16px',
+               fontStyle: 'normal',
+               fontWeight: 400,
+               lineHeight: 'normal',
+               whiteSpace: 'nowrap', // Prevents text wrapping
+               transition: 'transform 0.6s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.5s ease',
+               zIndex: 10
+             }}
+           >
+             Wellman 212
            </div>
 
            {/* PM Panel & Workshop Hover Paragraph - appears during animation */}
@@ -1454,7 +1527,7 @@ export function TimelineAnimation() {
                zIndex: 10
              }}
            >
-             TBD
+             Sat 10/11 @ 11am
            </div>
 
            <div 
@@ -1477,7 +1550,7 @@ export function TimelineAnimation() {
                zIndex: 10
              }}
            >
-             (By invite)
+             (Invite Only)
            </div>
 
            {/* Product Pitch Hover Paragraph - appears during animation */}
@@ -1510,9 +1583,9 @@ export function TimelineAnimation() {
              style={{
                position: 'absolute',
                left: '-197px', // x1="353" * 2
-               top: '120px', // y2="302.5" * 2
+               top: '145px', // y2="302.5" * 2
                width: '1px',
-               height: '234px', // (427-302.5) * 2
+               height: '210px', // (427-302.5) * 2
                backgroundColor: 'black',
                transition: 'opacity 0.5s ease'
              }}
@@ -1563,7 +1636,7 @@ export function TimelineAnimation() {
                zIndex: 10
              }}
            >
-             TBD
+             Wed, 10/8 @ 11:59pm
            </div>
 
            {/* Hover Paragraph - appears below during animation */}
@@ -1651,7 +1724,7 @@ export function TimelineAnimation() {
                zIndex: 10
              }}
            >
-             TBD
+             Fri, 10/10 @ 6:30pm
            </div>
 
            {/* Second Social (By invite) Text */}
@@ -1675,7 +1748,7 @@ export function TimelineAnimation() {
                zIndex: 10
              }}
            >
-             TLC ####
+             (Invite Only)
            </div>
 
            {/* Second Social Hover Paragraph - appears during animation */}
@@ -1737,7 +1810,7 @@ export function TimelineAnimation() {
                zIndex: 10
              }}
            >
-             (By invite)
+             (Invite Only)
            </div>
 
            {/* Interviews Text - 5px above (By invite) */}
@@ -1785,7 +1858,7 @@ export function TimelineAnimation() {
                zIndex: 10
              }}
            >
-             TBD
+             Sun, 10/12
            </div>
 
            {/* Interviews Hover Paragraph - appears during animation */}
@@ -1831,9 +1904,9 @@ export function TimelineAnimation() {
              style={{
                position: 'absolute',
                left: '-50px', // x1="596" * 2
-               top: '224px', // y2="186" * 2
+               top: '244px', // y2="186" * 2
                width: '1px',
-               height: '200px', // (491-186) * 2
+               height: '180px', // (491-186) * 2
                backgroundColor: 'black',
                transition: 'opacity 0.5s ease'
              }}
@@ -1861,7 +1934,7 @@ export function TimelineAnimation() {
                zIndex: 10
              }}
            >
-             Ice Cream Social
+             Meet the Board
            </div>
 
            <div 
@@ -1884,7 +1957,31 @@ export function TimelineAnimation() {
                zIndex: 10
              }}
            >
-             TBD
+             Tue, 10/7 @ 8:45pm
+           </div>
+
+           {/* TBD Text above Applications Due */}
+           <div 
+             className="meet-the-board-location"
+             style={{
+               position: 'absolute',
+               left: '-50px', // Same x position as Line 4
+               top: '210px', // Above the Applications Due text
+               transform: 'translateX(-50%)', // Centers the text div on the line
+               alignSelf: 'stretch',
+               color: '#3A3A3A',
+               textAlign: 'center',
+               fontFamily: '"M PLUS 1"',
+               fontSize: '16px',
+               fontStyle: 'normal',
+               fontWeight: 400,
+               lineHeight: 'normal',
+               whiteSpace: 'nowrap', // Prevents text wrapping
+               transition: 'transform 0.6s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.5s ease',
+               zIndex: 10
+             }}
+           >
+             YoloBerry Yogurt
            </div>
 
            {/* Ice Cream Social Hover Paragraph - appears during animation */}
@@ -1908,7 +2005,7 @@ export function TimelineAnimation() {
                zIndex: 10
              }}
            >
-             Connect with fellow product enthusiasts over ice cream and build lasting relationships in our community.
+             Connect with our board members over ice cream and learn more about our community.
            </div>
 
            {/* Line 8 */}
