@@ -316,6 +316,7 @@ export function TimelineAnimation() {
       const line7 = document.querySelector('.line-7') as HTMLElement;
       const iceCreamSocialText = document.querySelector('.ice-cream-social-text') as HTMLElement;
       const iceCreamSocialDate = document.querySelector('.ice-cream-social-date') as HTMLElement;
+      const meetTheBoardLocation = document.querySelector('.meet-the-board-location') as HTMLElement;
       const pmPanelPrismContainer = document.querySelector('.pm-panel-prism-container') as HTMLElement;
       const pmPanelText = document.querySelector('.pm-panel-text') as HTMLElement;
       const pmPanelDate = document.querySelector('.pm-panel-date') as HTMLElement;
@@ -336,6 +337,10 @@ export function TimelineAnimation() {
       
       if (iceCreamSocialDate) {
         iceCreamSocialDate.style.opacity = isHovering ? '0' : '1';
+      }
+      
+      if (meetTheBoardLocation) {
+        meetTheBoardLocation.style.opacity = isHovering ? '0' : '1';
       }
       
       if (pmPanelPrismContainer) {
@@ -1480,7 +1485,7 @@ export function TimelineAnimation() {
                zIndex: 10
              }}
            >
-             Learn from industry leaders and sharpen your product management skills through hands-on workshops and panel discussions.
+             Learn from industry leaders and sharpen your product management skills through a hands-on workshop and panel discussion.
            </div>
 
            {/* Product Pitch Text - positioned relative to Product Pitch path */}
@@ -1574,7 +1579,7 @@ export function TimelineAnimation() {
                zIndex: 10
              }}
            >
-             Present your innovative product ideas and receive valuable feedback from industry experts and fellow participants.
+             An hour long experience of what you’ll be introduced to during the Fellowship.
            </div>
 
            {/* Line 3 */}
@@ -1772,7 +1777,7 @@ export function TimelineAnimation() {
                zIndex: 10
              }}
            >
-             Get to know the board members blah blah blah.
+             Get to know the board members and prospective fellows including yourself that could join Product Space this fall.
            </div>
 
            {/* Line 5 */}
