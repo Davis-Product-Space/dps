@@ -11,28 +11,30 @@ export default function HomeNewPage() {
     <div className="min-h-screen bg-white">
       {/* Header Section */}
       <header 
-        className="relative mx-auto"
+        className="relative mx-auto w-full px-4"
         style={{
           width: '100%',
           height: '1251px',
-          maxWidth: '100vw'
+          maxWidth: '1440px'
         }}
       >
         {/* Main Text */}
         <div 
-          className="absolute left-1/2 transform -translate-x-1/2"
+          className="absolute left-1/2 transform -translate-x-1/2 px-4"
           style={{
-            top: '177px'
+            top: '177px',
+            width: '100%',
+            maxWidth: '1200px'
           }}
         >
           <h1 
-            className="text-center whitespace-nowrap"
+            className="text-center font-inter font-semibold leading-tight
+                       text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl
+                       whitespace-normal sm:whitespace-nowrap"
             style={{
               fontFamily: 'Inter, sans-serif',
-              fontSize: '80px',
               fontStyle: 'normal',
-              fontWeight: 600,
-              lineHeight: '97.5px'
+              fontWeight: 600
             }}
           >
             <span style={{ color: '#3A3A3A' }}>Your Pathway to </span>
@@ -51,26 +53,30 @@ export default function HomeNewPage() {
         
         {/* Homepage PS Logo SVG */}
         <div 
-          className="absolute"
+          className="absolute
+                     top-[180px] sm:top-[220px] md:top-[350px] lg:top-[350px] xl:top-[350px]"
           style={{
-            left: '440px', // Left edge positioned exactly 519.42px from left side of page
-            top: '350px', // 177px (text position) + 80px = 257px
-            zIndex: 3 // Ensures it appears above both background SVGs
+            left: '30.56%', // 440px / 1440px = 30.56% for perfect desktop positioning
+            zIndex: 3,
+            width: '47.78%', // 688px / 1440px = 47.78% for perfect desktop sizing
+            height: '627px',
+            maxWidth: '688px',
+            maxHeight: '627px'
           }}
         >
           <img 
             src="/images/homepage_ps_logo.svg" 
             alt="Product Space Logo"
             style={{
-              width: '688px',
-              height: '627px'
+              width: '100%',
+              height: '100%'
             }}
           />
         </div>
         
-        {/* Homepage Background SVG */}
+        {/* Homepage Background SVG - Hidden on mobile */}
         <div 
-          className="absolute left-1/2 transform -translate-x-1/2"
+          className="absolute left-1/2 transform -translate-x-1/2 hidden md:block"
           style={{
             top: '717px', // 177px (text position) + 540px = 717px
             zIndex: 2 // Ensures it appears below the gradient SVG
@@ -86,9 +92,9 @@ export default function HomeNewPage() {
           />
         </div>
         
-        {/* Homepage Background Gradient SVG - Layer Above */}
+        {/* Homepage Background Gradient SVG - Layer Above - Hidden on mobile */}
         <div 
-          className="absolute left-1/2 transform -translate-x-1/2"
+          className="absolute left-1/2 transform -translate-x-1/2 hidden md:block"
           style={{
             top: '717px', // Same position as background SVG
             zIndex: 1 // Ensures it appears above the background SVG
