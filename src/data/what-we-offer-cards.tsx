@@ -13,7 +13,7 @@ export interface WhatWeOfferPhase {
 
 export const whatWeOfferPhases: WhatWeOfferPhase[] = [
   {
-    key: "fellowship-overview",
+    key: "fellowship",
     sectionTitle: "Fellowship",
     cards: [
       {
@@ -99,6 +99,36 @@ export const whatWeOfferPhases: WhatWeOfferPhase[] = [
         icon: "/images/cohort.svg", 
         title: "Ongoing Support",
         description: "Join our alumni community for continued career support and networking opportunities."
+      }
+    ]
+  },
+  {
+    key: "mentorship-program",
+    sectionTitle: "Mentorship Program",
+    cards: [
+      {
+        id: "one-on-one",
+        icon: "/images/learn_product.svg",
+        title: "One-on-One Guidance",
+        description: "Receive personalized mentorship from senior PMs to accelerate your career growth."
+      },
+      {
+        id: "industry-insights", 
+        icon: "/images/case_studies.svg",
+        title: "Industry Insights",
+        description: "Gain valuable insights and advice from experienced PMs across different companies."
+      },
+      {
+        id: "goal-setting",
+        icon: "/images/calendar.svg", 
+        title: "Goal Setting",
+        description: "Work with mentors to set and achieve your PM career objectives."
+      },
+      {
+        id: "feedback-loop",
+        icon: "/images/cohort.svg",
+        title: "Feedback Loop", 
+        description: "Regular check-ins and constructive feedback to improve your PM skills."
       }
     ]
   }

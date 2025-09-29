@@ -37,7 +37,7 @@ export default function ScrollBar({ targetRef, totalItems = 3 }: ScrollBarProps)
   return (
     <div className="absolute top-1/2 right-[-2rem] translate-y-[-50%] flex flex-col items-center gap-2 z-50 text-white font-medium text-xs tracking-wide">
       {/* current card number */}
-      <div className="text-[#e06287]">{`0${activeIndex + 1}`}</div>
+      <div className="text-[#e06287]">{`0${Math.max(1, activeIndex + 1 - 6)}`}</div>
 
       {/* scroll track */}
       <div className="relative w-[1.5px] h-[425px] bg-white/20 overflow-hidden rounded-full">
@@ -48,7 +48,7 @@ export default function ScrollBar({ targetRef, totalItems = 3 }: ScrollBarProps)
       </div>
 
       {/* total cards */}
-      <div className="text-[#765df2]">{String(totalItems).padStart(2, "0")}</div>
+      <div className="text-[#765df2]">04</div>
     </div>
   );
 }
