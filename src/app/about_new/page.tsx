@@ -42,14 +42,9 @@ export default function AboutNewPage() {
           }}
         />
         
-        {/* Text positioned exactly as specified */}
+        {/* Text centered in the middle of the screen */}
         <div 
-          className="relative z-10"
-          style={{
-            position: 'absolute',
-            top: '185.25px',
-            left: '327px'
-          }}
+          className="relative z-10 flex items-center justify-center w-full h-full px-8"
         >
           <h1 
             style={{
@@ -58,7 +53,8 @@ export default function AboutNewPage() {
               fontSize: '60px',
               fontStyle: 'normal',
               fontWeight: 600,
-              lineHeight: '73.125px'
+              lineHeight: '73.125px',
+              textAlign: 'center'
             }}
           >
             Meet Davis Product Space!
@@ -120,9 +116,9 @@ export default function AboutNewPage() {
             </h2>
           </div>
         </div>
-        <div className="flex justify-center">
-          <div style={{ width: '1440px' }}>
-            <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-[25px] w-full" style={{ paddingLeft: '203px', paddingRight: '202px' }}>
+        <div className="flex justify-center px-4 sm:px-8 md:px-16 lg:px-32">
+          <div className="w-full max-w-5xl">
+            <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8 w-full justify-items-center">
               {board.map((member, i) => (
                 <FlipProfile key={i} {...member} />
               ))}
@@ -131,18 +127,19 @@ export default function AboutNewPage() {
         </div>
       </section>
       <section
+        className="flex justify-center px-4 sm:px-8 md:px-16 lg:px-32"
         style={{
-          display: 'flex',
-          padding: '150px 210px',
+          paddingTop: '150px',
+          paddingBottom: '150px',
           alignItems: 'center',
           gap: '10px',
           alignSelf: 'stretch'
         }}
       >
           <div
+            className="w-full max-w-5xl"
             style={{
               display: 'flex',
-              width: '1020px',
               flexDirection: 'column',
               alignItems: 'center',
               gap: '52px'
@@ -178,7 +175,7 @@ export default function AboutNewPage() {
                >
                  Team {team.teamName}
                </h3>
-               <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-[25px] w-full">
+               <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-[25px] w-full justify-items-center">
                  {team.members.map((member, i: number) => (
                    <FlipProfile key={`${team.teamName}-${i}`} {...member} />
                  ))}
