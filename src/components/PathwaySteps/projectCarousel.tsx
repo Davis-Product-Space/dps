@@ -403,6 +403,7 @@ export default function ProjectCarousel({ projectTiles }: ProjectCarouselProps) 
             top: 0,
             left: '50%',
             transform: 'translateX(-50%)',
+            pointerEvents: 'auto',
             width: '950px',
             height: '100%'
           }}
