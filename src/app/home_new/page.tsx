@@ -75,7 +75,7 @@ export default function HomeNewPage() {
             }}
           />
         </div>
-
+        
         {/* Mobile Scroll Arrow Button - Only visible on mobile/small screens */}
         <button 
           className="absolute left-1/2 transform -translate-x-1/2 block md:hidden
@@ -188,11 +188,11 @@ export default function HomeNewPage() {
                                text-2xl sm:text-3xl md:text-4xl lg:text-4xl xl:text-4xl
                                leading-tight mb-8"
                    style={{
-                     color: '#3A3A3A',
-                     fontFamily: 'Inter, sans-serif',
-                     fontStyle: 'normal',
+                  color: '#3A3A3A',
+                  fontFamily: 'Inter, sans-serif',
+                  fontStyle: 'normal',
                      fontWeight: 600
-                   }}>
+                }}>
                   What Is Product Management?
                 </h2>
               }
@@ -281,10 +281,10 @@ export default function HomeNewPage() {
 
         {/* Fixed Centered Box at bottom of page - Desktop only */}
         <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2"
-             style={{
+          style={{
                bottom: '50px',
                zIndex: 10
-             }}
+          }}
         >
           <div
             style={{
@@ -358,6 +358,7 @@ export default function HomeNewPage() {
       
       {/* New Section - 50px below the box */}
       <section 
+        className="timeline-section-mobile"
         style={{
           position: 'relative', // Enable absolute positioning for children
           display: 'flex',
@@ -423,7 +424,7 @@ export default function HomeNewPage() {
             marginBottom: '0px'
           }}
         >
-          <TimelineAnimation />
+        <TimelineAnimation />
         </div>
         
         <style jsx>{`
@@ -452,13 +453,40 @@ export default function HomeNewPage() {
               display: block !important;
               z-index: 10 !important;
             }
+            .timeline-section-mobile {
+              height: 600px !important;
+            }
+            .whatweoffer-heading-mobile {
+              font-size: 24px !important;
+              line-height: 28px !important;
+              position: absolute !important;
+              left: 50% !important;
+              transform: translateX(-200%) !important;
+              width: auto !important;
+              display: block !important;
+              z-index: 10 !important;
+            }
+            .whatweoffer-section-mobile {
+              transform: translateY(-800px) !important;
+              height: auto !important;
+              min-height: 1200px !important;
+            }
+            .mobile-whatweoffer-transform {
+              position: fixed !important;
+              top: -700px !important;
+              left: 20px !important;
+              transform: none !important;
+            }
+            .where-weve-gone-mobile {
+              transform: translateY(-1000px) !important;
+            }
           }
         `}</style>
       </section>
 
               {/* What we Offer Section */}
               <section 
-                className="relative mx-auto"
+                className="relative mx-auto whatweoffer-section-mobile"
                 style={{
                   width: '1440px',
                   height: '3097px'
@@ -466,6 +494,7 @@ export default function HomeNewPage() {
               >
         {/* What we Offer Heading */}
         <h2 
+          className="whatweoffer-heading-mobile"
           style={{
             alignSelf: 'stretch',
             color: '#3A3A3A',
@@ -480,6 +509,27 @@ export default function HomeNewPage() {
             left: '0',
             right: '0',
             margin: 0
+          }}
+        >
+          What We Offer
+        </h2>
+        
+        {/* Mobile-only What We Offer Heading */}
+        <h2 
+          className="block md:hidden mobile-whatweoffer-transform"
+          style={{
+            color: '#3A3A3A',
+            textAlign: 'left',
+            fontFamily: 'Inter',
+            fontSize: '20px',
+            fontStyle: 'normal',
+            fontWeight: 600,
+            lineHeight: '24px',
+            position: 'absolute',
+            top: '-120px',
+            left: '125px',
+            margin: 0,
+            zIndex: 10
           }}
         >
           What We Offer
