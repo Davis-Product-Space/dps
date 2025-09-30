@@ -373,6 +373,7 @@ export default function HomeNewPage() {
       >
         {/* Recruitment Timeline Heading */}
         <h2 
+          className="timeline-heading-mobile"
           style={{
             alignSelf: 'stretch',
             color: '#3A3A3A',
@@ -434,11 +435,22 @@ export default function HomeNewPage() {
             }
             .text-mobile-left {
               font-size: 12px !important;
-              transform: translateX(calc(-105% - 10px)) translateY(-100px) !important;
+              transform: translateX(calc(-105% - 10px)) translateY(-120px) !important;
             }
             .text-mobile-left-second-line {
               display: inline-block;
               transform: translateX(0px) !important;
+            }
+            .timeline-heading-mobile {
+              font-size: 18px !important;
+              line-height: 22px !important;
+              top: 80px !important;
+              position: absolute !important;
+              left: 50% !important;
+              transform: translateX(-120%) !important;
+              width: auto !important;
+              display: block !important;
+              z-index: 10 !important;
             }
           }
         `}</style>
