@@ -322,11 +322,12 @@ export default function Navbar() {
           >
             About
           </Link>
+          {/* TODO: Change to href="/application" on Oct 1st midnight*/}
           <Link
-            href="/application"
+            href="/coming_soon_application"
             onClick={() => setMenuOpen(false)}
             className={`transition-all ${
-              pathname === '/application' ? "font-bold underline" : "hover:font-bold"
+              pathname === '/application' || pathname === '/coming_soon_application' ? "font-bold underline" : "hover:font-bold"
             }`}
           >
             Apply

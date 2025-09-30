@@ -25,7 +25,7 @@ export const fallProjects: Project[] = [
     onViewDesigns: "https://www.figma.com/design/NpSpSjGK3GUjdE9eaxqpWx/Sync-Mockups?node-id=2161-433&t=skRW3kG8nYiVjYDc-1"
   },
   {
-    svgSrc: "/images/Capstones/Fall24/ScrapsDisplay.svg",
+    svgSrc: "/images/Capstones/Fall24/ScrapsDisplay.png",
     title: "Scraps",
     groupMembers: "Abirami Kathiresan, Krisha Bhat, Nicole Yanuaria, Sruthi Sridhar, Wing Lai",
     shortDescription: "Showcase your moods and moments on Instagram - your way.",
