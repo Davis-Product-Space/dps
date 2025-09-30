@@ -453,7 +453,7 @@ export default function Step1Page() {
              
              {/* Second sub div */}
              <Link
-               href="/application"
+               href="/coming_soon_application"
                style={{
                  display: 'flex',
                  padding: '12px 20px',

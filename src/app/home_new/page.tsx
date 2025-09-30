@@ -486,10 +486,9 @@ export default function HomeNewPage() {
 
               {/* What we Offer Section */}
               <section 
-                className="relative mx-auto whatweoffer-section-mobile"
+                className="relative mx-auto whatweoffer-section-mobile h-[1100px] md:h-[3097px]"
                 style={{
-                  width: '1440px',
-                  height: '3097px'
+                  width: '1440px'
                 }}
               >
         {/* What we Offer Heading */}
@@ -539,20 +538,21 @@ export default function HomeNewPage() {
         <WhatWeOffer />
       </section>
       
-      {/* Where We've Gone Section */}
-      <section 
-        className="relative w-full"
-        style={{
-          height: '675px',
-          background: '#FAF6FC',
-          display: 'flex',
-          padding: '150px 0',
-          flexDirection: 'column',
-          alignItems: 'flex-start',
-          gap: '25px',
-          alignSelf: 'stretch'
-        }}
-      >
+      {/* Where We've Gone Section - Hidden on Mobile */}
+      <div className="hidden md:block">
+        <section 
+          className="relative w-full"
+          style={{
+            height: '675px',
+            background: '#FAF6FC',
+            display: 'flex',
+            padding: '150px 0',
+            flexDirection: 'column',
+            alignItems: 'flex-start',
+            gap: '25px',
+            alignSelf: 'stretch'
+          }}
+        >
         {/* Where We've Gone Text */}
         <div 
           style={{
@@ -644,7 +644,8 @@ export default function HomeNewPage() {
             style={{ height: '50px', width: 'auto' }}
           />
         </div>
-      </section>
+        </section>
+      </div>
     </div>
   );
 }
