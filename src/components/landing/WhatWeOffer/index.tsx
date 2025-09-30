@@ -8,6 +8,7 @@ export function WhatWeOffer() {
     <div className="relative w-full" style={{ paddingBottom: '150px' }}>
       {/* Main Container */}
       <div 
+        className="whatweoffer-mobile-scale"
         style={{
           position: 'relative',
           width: '1440px',
@@ -16,7 +17,7 @@ export function WhatWeOffer() {
         }}
       >
         {/* Left Side - Fellowship Staircase */}
-        <div style={{ 
+        <div className="staircase-mobile-left" style={{ 
           position: 'absolute',
           left: '53px',
           top: '300px' // Move staircase further down
@@ -32,7 +33,7 @@ export function WhatWeOffer() {
         </div>
 
         {/* Left Side - Capstone Staircase */}
-        <div style={{ 
+        <div className="staircase-mobile-left" style={{ 
           position: 'absolute',
           left: '53px',
           top: '1020px' // 1000px + 20px = 1020px below Fellowship staircase
@@ -48,7 +49,7 @@ export function WhatWeOffer() {
         </div>
 
         {/* Left Side - Client Staircase */}
-        <div style={{ 
+        <div className="staircase-mobile-left" style={{ 
           position: 'absolute',
           left: '53px',
           top: '1720px' // Move way down + 20px
@@ -64,7 +65,7 @@ export function WhatWeOffer() {
         </div>
 
         {/* Left Side - Product Staircase */}
-        <div style={{ 
+        <div className="staircase-mobile-left product-staircase-mobile" style={{ 
           position: 'absolute',
           left: '-20px', // Moved further left (past the left edge)
           top: '2420px' // Moved down an additional 100px
@@ -169,6 +170,23 @@ export function WhatWeOffer() {
           ))}
         </div>
       </div>
+      
+      <style jsx>{`
+        @media (max-width: 767px) {
+          .whatweoffer-mobile-scale {
+            transform: scale(0.4) translateX(-200%) translateY(-410px) !important;
+            transform-origin: top center !important;
+            width: 100% !important;
+            margin-bottom: 200px !important;
+          }
+          .staircase-mobile-left {
+            transform: translateX(-800px) !important;
+          }
+          .product-staircase-mobile {
+            transform: translateX(-760px) scale(0.85) !important;
+          }
+        }
+      `}</style>
     </div>
   );
 }
