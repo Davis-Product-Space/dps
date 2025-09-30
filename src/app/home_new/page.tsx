@@ -362,7 +362,7 @@ export default function HomeNewPage() {
             margin: 0
           }}
         >
-          Interested in joining our fellowship? Something about check out the timeline below to see our recruitment week schedule but im really bad at writing these kind of text on the spot
+          Interested in joining our fellowship? Something about check out the timeline below!
         </p>
         <TimelineAnimation />
       </section>

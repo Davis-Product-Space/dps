@@ -180,7 +180,17 @@ function ProjectTile({ svgSrc, title, groupMembers, shortDescription, onViewPitc
               borderRadius: '20px',
               border: '0.5px solid #66417B',
               background: '#FFF',
-              cursor: 'pointer'
+              cursor: 'pointer',
+              transition: 'all 0.2s ease'
+            }}
+            //bolds text on hover
+            onMouseEnter={(e) => {
+              const textElement = e.currentTarget.querySelector('div');
+              if (textElement) textElement.style.fontWeight = '600';
+            }}
+            onMouseLeave={(e) => {
+              const textElement = e.currentTarget.querySelector('div');
+              if (textElement) textElement.style.fontWeight = '400';
             }}
           >
             <div
@@ -212,8 +222,19 @@ function ProjectTile({ svgSrc, title, groupMembers, shortDescription, onViewPitc
           {/* View Designs Button */}
           <a
             href={onViewDesigns}
+            target="_blank"
+            rel="noopener noreferrer"
             className="flex items-center gap-4 px-5 py-3 rounded-2xl cursor-pointer 
-            bg-[#66417B] text-white hover:bg-purple-800 transition-colors duration-200"
+            bg-[#66417B] text-white transition-colors duration-200"
+            //bolds text on hover
+            onMouseEnter={(e) => {
+              const textElement = e.currentTarget.querySelector('div');
+              if (textElement) textElement.style.fontWeight = '600';
+            }}
+            onMouseLeave={(e) => {
+              const textElement = e.currentTarget.querySelector('div');
+              if (textElement) textElement.style.fontWeight = '400';
+            }}
           >
             <div
               style={{
@@ -396,77 +417,66 @@ export default function ProjectCarousel({ projectTiles }: ProjectCarouselProps) 
           </div>
         </div>
 
-        {/* Overlay to position nav buttons relative to centered middle frame (950px wide) */}
+        {/* Left Navigation Button - positioned without blocking overlay */}
         <div
+          onClick={goToPrevious}
           style={{
+            display: 'flex',
+            padding: '10px',
+            alignItems: 'center',
+            gap: '15px',
+            borderRadius: '20px',
+            background: '#66417B',
+            cursor: 'pointer',
             position: 'absolute',
-            top: 0,
             left: '50%',
-            transform: 'translateX(-50%)',
-            pointerEvents: 'auto',
-            width: '950px',
-            height: '100%'
+            transform: 'translateX(-50%) translateY(-50%)',
+            top: '50%',
+            marginLeft: '-475px', // Half of 950px to position at left edge
+            zIndex: 10
           }}
         >
-          {/* Left Navigation Button - 15px left from middle frame's edge */}
-          <div
-            onClick={goToPrevious}
-            style={{
-              display: 'flex',
-              padding: '10px',
-              alignItems: 'center',
-              gap: '15px',
-              borderRadius: '20px',
-              background: '#66417B',
-              cursor: 'pointer',
-              position: 'absolute',
-              left: '-15px',
-              top: '50%',
-              transform: 'translateY(-50%)',
-              zIndex: 10
-            }}
+          <svg 
+            xmlns="http://www.w3.org/2000/svg" 
+            width="28.8" 
+            height="28.8" 
+            viewBox="0 0 29 30" 
+            fill="none"
           >
-            <svg 
-              xmlns="http://www.w3.org/2000/svg" 
-              width="28.8" 
-              height="28.8" 
-              viewBox="0 0 29 30" 
-              fill="none"
-            >
-              <circle cx="14.4" cy="14.4" r="14.4" transform="matrix(-1 0 0 1 29 0.600098)" fill="#A674C4"/>
-              <path d="M17.48 8.52002L11 15L17.48 21.48" stroke="#FAF6FC" strokeWidth="1.44" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
-          </div>
+            <circle cx="14.4" cy="14.4" r="14.4" transform="matrix(-1 0 0 1 29 0.600098)" fill="#A674C4"/>
+            <path d="M17.48 8.52002L11 15L17.48 21.48" stroke="#FAF6FC" strokeWidth="1.44" strokeLinecap="round" strokeLinejoin="round"/>
+          </svg>
+        </div>
 
-          {/* Right Navigation Button - 15px right from middle frame's edge */}
-          <div
-            onClick={goToNext}
-            style={{
-              display: 'flex',
-              padding: '10px',
-              alignItems: 'center',
-              gap: '15px',
-              borderRadius: '20px',
-              background: '#66417B',
-              cursor: 'pointer',
-              position: 'absolute',
-              right: '-15px',
-              top: '50%',
-              transform: 'translateY(-50%)',
-              zIndex: 10
-            }}
+        {/* Right Navigation Button - positioned without blocking overlay */}
+        <div
+          onClick={goToNext}
+          style={{
+            display: 'flex',
+            padding: '10px',
+            alignItems: 'center',
+            gap: '15px',
+            borderRadius: '20px',
+            background: '#66417B',
+            cursor: 'pointer',
+            position: 'absolute',
+            left: '50%',
+            transform: 'translateX(-50%) translateY(-50%)',
+            top: '50%',
+            marginLeft: '475px', // Half of 950px to position at right edge
+            zIndex: 10
+          }}
+        >
+          <svg 
+            xmlns="http://www.w3.org/2000/svg" 
+            width="28.8" 
+            height="28.8" 
+            viewBox="0 0 29 30" 
+            fill="none"
           >
-            <svg 
-              xmlns="http://www.w3.org/2000/svg" 
-              width="28.8" 
-              height="28.8" 
-              viewBox="0 0 29 30" 
-              fill="none"
-            >
-              <circle cx="14.4" cy="15.0001" r="14.4" fill="#A674C4"/>
-              <path d="M11.5195 8.52002L17.9995 15L11.5195 21.48" stroke="#FAF6FC" strokeWidth="1.44" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
-          </div>
+            <circle cx="14.4" cy="15.0001" r="14.4" fill="#A674C4"/>
+            <path d="M11.5195 8.52002L17.9995 15L11.5195 21.48" stroke="#FAF6FC" strokeWidth="1.44" strokeLinecap="round" strokeLinejoin="round"/>
+          </svg>
         </div>
       </div>
     </div>

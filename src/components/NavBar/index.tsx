@@ -28,18 +28,18 @@ export default function Navbar() {
     setPathwayDropdownOpen(false);
   }, [pathname]);
 
-  // Check if we're on home, about, or join pages
-  const isTransparentNavbar = pathname === '/about_new' || pathname === '/join' || pathname === '/application';
+  // Check if we're on home, about, join, or application pages
+  const isTransparentNavbar = pathname === '/home_new' || pathname === '/about_new' || pathname === '/join' || pathname === '/application';
   // Check if we're specifically on the home page
   const isHomePage = pathname === '/home_new';
 
   return (
     <nav 
-      className="fixed md:absolute top-0 left-0 w-full z-50"
+      className="fixed md:absolute top-0 left-0 w-full z-50 bg-white md:bg-transparent"
       style={{
-        backgroundColor: isTransparentNavbar ? 'white' : 'white',
+        backgroundColor: isTransparentNavbar ? 'transparent' : 'white',
         borderTop: isTransparentNavbar ? 'none' : '1px solid #3A3A3A',
-        borderBottom: '1px solid #3A3A3A'
+        borderBottom: isTransparentNavbar ? 'none' : '1px solid #3A3A3A'
       }}
     >
       <div className="flex items-center justify-between px-6 sm:px-[7.5rem] py-4">
