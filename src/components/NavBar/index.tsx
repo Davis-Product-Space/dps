@@ -90,8 +90,8 @@ export default function Navbar() {
                         zIndex: 1000,
                         backgroundColor: isHomePage ? 'white' : (isTransparentNavbar ? '#3A3A3A' : 'white'),
                         borderRadius: isTransparentNavbar ? '12px' : '8px',
-                        boxShadow: isHomePage ? '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)' : (isTransparentNavbar ? 'none' : '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)'),
-                        border: isTransparentNavbar ? '1px solid #3A3A3A' : '1px solid #e5e7eb',
+                        boxShadow: isHomePage ? '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)' : (isTransparentNavbar ? 'none' : '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)'),
+                        border: isHomePage ? '1px solid #d1d5db' : (isTransparentNavbar ? '1px solid #3A3A3A' : '1px solid #e5e7eb'),
                         padding: '16px 24px'
                       }}
                     >
@@ -121,7 +121,7 @@ export default function Navbar() {
                             >
                               <div
                                 style={{
-                                  color: isTransparentNavbar ? 'white' : '#2A2A2A',
+                                  color: isHomePage ? '#2A2A2A' : (isTransparentNavbar ? 'white' : '#2A2A2A'),
                                   fontFamily: '"M PLUS 1", sans-serif',
                                   fontSize: '18px',
                                   fontStyle: 'normal',
@@ -156,7 +156,7 @@ export default function Navbar() {
                             >
                               <div
                                 style={{
-                                  color: isTransparentNavbar ? 'white' : '#2A2A2A',
+                                  color: isHomePage ? '#2A2A2A' : (isTransparentNavbar ? 'white' : '#2A2A2A'),
                                   fontFamily: '"M PLUS 1", sans-serif',
                                   fontSize: '18px',
                                   fontStyle: 'normal',
@@ -191,7 +191,7 @@ export default function Navbar() {
                             >
                               <div
                                 style={{
-                                  color: isTransparentNavbar ? 'white' : '#2A2A2A',
+                                  color: isHomePage ? '#2A2A2A' : (isTransparentNavbar ? 'white' : '#2A2A2A'),
                                   fontFamily: '"M PLUS 1", sans-serif',
                                   fontSize: '18px',
                                   fontStyle: 'normal',
@@ -226,7 +226,7 @@ export default function Navbar() {
                             >
                               <div
                                 style={{
-                                  color: isTransparentNavbar ? 'white' : '#2A2A2A',
+                                  color: isHomePage ? '#2A2A2A' : (isTransparentNavbar ? 'white' : '#2A2A2A'),
                                   fontFamily: '"M PLUS 1", sans-serif',
                                   fontSize: '18px',
                                   fontStyle: 'normal',
