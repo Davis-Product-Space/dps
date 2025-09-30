@@ -45,7 +45,7 @@ export default function Footer() {
         }}
       />
       <div 
-        className="relative w-full"
+        className="relative w-full footer-container"
         style={{
           height: '348px',
           backgroundColor: pageBackgroundColor
@@ -55,7 +55,7 @@ export default function Footer() {
         <img
           src="/images/black-logo.svg"
           alt="Product Space Logo"
-          className="absolute"
+          className="absolute footer-logo"
           style={{
             top: '37px',
             left: '56px'
@@ -64,7 +64,7 @@ export default function Footer() {
         
         {/* Product Space Text */}
         <div
-          className="absolute"
+          className="absolute footer-title"
           style={{
             top: '100px',
             left: '56px',
@@ -82,7 +82,7 @@ export default function Footer() {
         
         {/* Catchphrase Text */}
         <div
-          className="absolute"
+          className="absolute footer-catchphrase"
           style={{
             top: '132px',
             left: '56px',
@@ -99,7 +99,7 @@ export default function Footer() {
         
         {/* Copyright Text */}
         <div
-          className="absolute"
+          className="absolute footer-copyright"
           style={{
             top: '222px',
             left: '56px',
@@ -116,7 +116,7 @@ export default function Footer() {
         
         {/* About Column */}
         <div
-          className="absolute"
+          className="absolute footer-about"
           style={{
             top: '38px',
             left: '1008px'
@@ -213,7 +213,7 @@ export default function Footer() {
         
         {/* Connect Column */}
         <div
-          className="absolute"
+          className="absolute footer-connect"
           style={{
             top: '38px',
             left: '1248px'
@@ -279,6 +279,24 @@ export default function Footer() {
             </a>
           </div>
         </div>
+        <style jsx>{`
+          @media (max-width: 767px) {
+            .footer-container { height: 180px !important; }
+            .footer-logo { top: 8px !important; left: 12px !important; transform: scale(0.6); transform-origin: top left; }
+            .footer-title { top: 46px !important; left: 12px !important; font-size: 11px !important; line-height: 14px !important; text-align: left !important; }
+            .footer-catchphrase { top: 60px !important; left: 12px !important; font-size: 10px !important; line-height: 12px !important; text-align: left !important; }
+            /* Move About/Connect to top-right */
+            .footer-about { top: 8px !important; right: 76px !important; left: auto !important; text-align: right; }
+            .footer-about div, .footer-about span { font-size: 10px !important; line-height: 12px !important; }
+            .footer-about .mt-2 { margin-top: 10px !important; }
+            .footer-about .space-y-4 > * + * { margin-top: 0px !important; }
+            .footer-connect { top: 8px !important; right: 10px !important; left: auto !important; transform: none; text-align: right; }
+            .footer-connect div, .footer-connect span { font-size: 10px !important; line-height: 12px !important; }
+            .footer-connect .mt-2 { margin-top: 10px !important; }
+            .footer-connect .space-y-4 > * + * { margin-top: 0px !important; }
+            .footer-copyright { top: 146px !important; left: 12px !important; font-size: 9.5px !important; line-height: 12px !important; width: calc(100vw - 24px) !important; white-space: normal !important; text-align: left !important; }
+          }
+        `}</style>
       </div>
     </footer>
   );
