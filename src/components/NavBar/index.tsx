@@ -37,14 +37,14 @@ export default function Navbar() {
     <nav 
       className="fixed md:absolute top-0 left-0 w-full z-50"
       style={{
-        backgroundColor: isTransparentNavbar ? 'transparent' : 'white',
+        backgroundColor: isTransparentNavbar ? 'white' : 'white',
         borderTop: isTransparentNavbar ? 'none' : '1px solid #3A3A3A',
         borderBottom: '1px solid #3A3A3A'
       }}
     >
       <div className="flex items-center justify-between px-6 sm:px-[7.5rem] py-4">
         {/* Logo */}
-        <div className="flex items-center -ml-8">
+        <div className="flex items-center md:-ml-8" style={{ marginLeft: '0px' }}>
           <Link href="/" className="flex items-center">
             <Logo className="w-8 h-8" />
           </Link>
@@ -304,34 +304,33 @@ export default function Navbar() {
       {/* Mobile Menu Overlay */}
       {menuOpen && (
         <div className="fixed inset-0 bg-white opacity-[85%] z-40 flex flex-col items-center justify-center space-y-8 text-[22px] text-gray-800 font-medium md:hidden">
-          {navLinks.map(({ name, href }) => {
-            const isActive = pathname === href;
-            const linkClass = `transition-all ${
-              isActive ? "font-bold underline" : "hover:font-bold"
-            }`;
-
-            return href.startsWith("http") ? (
-              <a
-                key={name}
-                href={href}
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={() => setMenuOpen(false)}
-                className={linkClass}
-              >
-                {name}
-              </a>
-            ) : (
-              <Link
-                key={name}
-                href={href}
-                onClick={() => setMenuOpen(false)}
-                className={linkClass}
-              >
-                {name}
-              </Link>
-            );
-          })}
+          <Link
+            href="/home_new"
+            onClick={() => setMenuOpen(false)}
+            className={`transition-all ${
+              pathname === '/home_new' ? "font-bold underline" : "hover:font-bold"
+            }`}
+          >
+            Home
+          </Link>
+          <Link
+            href="/about_new"
+            onClick={() => setMenuOpen(false)}
+            className={`transition-all ${
+              pathname === '/about_new' ? "font-bold underline" : "hover:font-bold"
+            }`}
+          >
+            About
+          </Link>
+          <Link
+            href="/application"
+            onClick={() => setMenuOpen(false)}
+            className={`transition-all ${
+              pathname === '/application' ? "font-bold underline" : "hover:font-bold"
+            }`}
+          >
+            Apply
+          </Link>
         </div>
       )}
     </nav>
