@@ -38,13 +38,13 @@ export default function AboutNewPage() {
             backgroundImage: 'url(/images/capstone-pic.png)',
             backgroundSize: 'cover',
             backgroundPosition: 'center',
-            backgroundRepeat: 'no-repeat'
           }}
         />
         
-        {/* Text centered in the middle of the screen */}
+        {/* Text positioned 10% from the top of the screen */}
         <div 
-          className="relative z-10 flex items-center justify-center w-full h-full px-8"
+          className="relative z-10 flex justify-center w-full h-full px-8"
+          style={{ paddingTop: '20vh' }}
         >
           <h1 
             style={{

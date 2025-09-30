@@ -17,37 +17,35 @@ interface ProjectCarouselProps {
 }
 
 function ProjectTile({ svgSrc, title, groupMembers, shortDescription, onViewPitchDeck, onViewDesigns }: ProjectTileProps) {
-  const [imageDimensions, setImageDimensions] = useState({ width: 950, height: 618 });
+  const [isMobile, setIsMobile] = useState(false);
   const imgRef = useRef<HTMLImageElement>(null);
 
+  // Fixed dimensions for consistent card sizing
+  const cardDimensions = {
+    desktop: { width: 950, height: 618, imageHeight: 325 },
+    mobile: { width: 350, height: 450, imageHeight: 200 }
+  };
+
+  // Check if screen is mobile size
   useEffect(() => {
-    const img = imgRef.current;
-    if (img) {
-      img.onload = () => {
-        const maxWidth = 950;
-        const maxHeight = 610;
-        const aspectRatio = img.naturalWidth / img.naturalHeight;
-        
-        let width = maxWidth;
-        let height = maxWidth / aspectRatio;
-        
-        if (height > maxHeight) {
-          height = maxHeight;
-          width = maxHeight * aspectRatio;
-        }
-        
-        setImageDimensions({ width, height });
-      };
-    }
-  }, [svgSrc]);
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  const currentDimensions = isMobile ? cardDimensions.mobile : cardDimensions.desktop;
 
   return (
     <div
       style={{
         display: 'flex',
         flexDirection: 'column',
-        width: `${imageDimensions.width}px`,
-        height: `${Math.min(imageDimensions.height + 293, 618)}px`,
+        width: `${currentDimensions.width}px`,
+        height: `${currentDimensions.height}px`,
         borderRadius: '15px',
         overflow: 'hidden',
         position: 'relative',
@@ -58,12 +56,12 @@ function ProjectTile({ svgSrc, title, groupMembers, shortDescription, onViewPitc
       {/* SVG Image */}
       <div
         style={{
-          width: `${imageDimensions.width}px`,
-          height: `${imageDimensions.height}px`,
+          width: `${currentDimensions.width}px`,
+          height: `${currentDimensions.imageHeight}px`,
           display: 'flex',
           justifyContent: 'center',
           alignItems: 'center',
-          boxShadow: '0 8px 10px 0 rgba(0, 0, 0, 0.25)'
+          boxShadow: isMobile ? 'none' : '0 8px 10px 0 rgba(0, 0, 0, 0.25)'
         }}
       >
         <img 
@@ -71,9 +69,9 @@ function ProjectTile({ svgSrc, title, groupMembers, shortDescription, onViewPitc
           src={svgSrc} 
           alt={title} 
           style={{ 
-            width: `${imageDimensions.width}px`,
-            height: `${imageDimensions.height}px`,
-            objectFit: 'contain'
+            width: `${currentDimensions.width}px`,
+            height: `${currentDimensions.imageHeight}px`,
+            objectFit: 'cover'
           }} 
         />
       </div>
@@ -81,11 +79,13 @@ function ProjectTile({ svgSrc, title, groupMembers, shortDescription, onViewPitc
       {/* Overlay Component (overlaps bottom of SVG) */}
       <div
         style={{
-          background: 'linear-gradient(180deg, rgba(255, 255, 255, 0.00) 6.31%, #FFF 25.1%, #FFF 68.25%)',
+          background: isMobile 
+            ? 'linear-gradient(180deg, rgba(255, 255, 255, 0.00) 0%, rgba(255, 255, 255, 0.00) 15%, #FFF 40%, #FFF 100%)'
+            : 'linear-gradient(180deg, rgba(255, 255, 255, 0.00) 6.31%, #FFF 25.1%, #FFF 68.25%)',
           display: 'flex',
-          width: `${imageDimensions.width}px`,
-          height: '293px',
-          padding: '30px 50px',
+          width: `${currentDimensions.width}px`,
+          height: `${currentDimensions.height - currentDimensions.imageHeight}px`,
+          padding: isMobile ? '20px 30px' : '30px 50px',
           flexDirection: 'column',
           justifyContent: 'flex-end',
           alignItems: 'flex-start',
@@ -118,7 +118,7 @@ function ProjectTile({ svgSrc, title, groupMembers, shortDescription, onViewPitc
               style={{
                 color: '#3A3A3A',
                 fontFamily: 'Inter',
-                fontSize: '40px',
+                fontSize: isMobile ? '28px' : '40px',
                 fontStyle: 'normal',
                 fontWeight: 600,
                 lineHeight: 'normal',
@@ -132,7 +132,7 @@ function ProjectTile({ svgSrc, title, groupMembers, shortDescription, onViewPitc
               style={{
                 color: '#3A3A3A',
                 fontFamily: '"M PLUS 1"',
-                fontSize: '17.5px',
+                fontSize: isMobile ? '14px' : '17.5px',
                 fontStyle: 'normal',
                 fontWeight: 400,
                 lineHeight: 'normal',
@@ -148,7 +148,7 @@ function ProjectTile({ svgSrc, title, groupMembers, shortDescription, onViewPitc
             style={{
               color: '#3A3A3A',
               fontFamily: '"M PLUS 1"',
-              fontSize: '22.5px',
+              fontSize: isMobile ? '16px' : '22.5px',
               fontStyle: 'normal',
               fontWeight: 400,
               lineHeight: 'normal',
@@ -174,9 +174,9 @@ function ProjectTile({ svgSrc, title, groupMembers, shortDescription, onViewPitc
             rel="noopener noreferrer"
             style={{
               display: 'flex',
-              padding: '10px 20px',
+              padding: isMobile ? '8px 16px' : '10px 20px',
               alignItems: 'center',
-              gap: '15px',
+              gap: isMobile ? '10px' : '15px',
               borderRadius: '20px',
               border: '0.5px solid #66417B',
               background: '#FFF',
@@ -198,10 +198,10 @@ function ProjectTile({ svgSrc, title, groupMembers, shortDescription, onViewPitc
                 color: '#66417B',
                 textAlign: 'center',
                 fontFamily: '"M PLUS 1"',
-                fontSize: '16px',
+                fontSize: isMobile ? '14px' : '16px',
                 fontStyle: 'normal',
                 fontWeight: 400,
-                lineHeight: '22.5px'
+                lineHeight: isMobile ? '20px' : '22.5px'
               }}
             >
               View Pitch Deck
@@ -209,8 +209,8 @@ function ProjectTile({ svgSrc, title, groupMembers, shortDescription, onViewPitc
             
             <svg 
               xmlns="http://www.w3.org/2000/svg" 
-              width="28.8" 
-              height="28.8" 
+              width={isMobile ? "24" : "28.8"} 
+              height={isMobile ? "24" : "28.8"} 
               viewBox="0 0 29 29" 
               fill="none"
             >
@@ -224,8 +224,17 @@ function ProjectTile({ svgSrc, title, groupMembers, shortDescription, onViewPitc
             href={onViewDesigns}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-4 px-5 py-3 rounded-2xl cursor-pointer 
-            bg-[#66417B] text-white transition-colors duration-200"
+            style={{
+              display: 'flex',
+              padding: isMobile ? '8px 16px' : '12px 20px',
+              alignItems: 'center',
+              gap: isMobile ? '10px' : '16px',
+              borderRadius: '16px',
+              cursor: 'pointer',
+              background: '#66417B',
+              color: '#FAF6FC',
+              transition: 'all 0.2s ease'
+            }}
             //bolds text on hover
             onMouseEnter={(e) => {
               const textElement = e.currentTarget.querySelector('div');
@@ -241,10 +250,10 @@ function ProjectTile({ svgSrc, title, groupMembers, shortDescription, onViewPitc
                 color: '#FAF6FC',
                 textAlign: 'center',
                 fontFamily: '"M PLUS 1"',
-                fontSize: '16px',
+                fontSize: isMobile ? '14px' : '16px',
                 fontStyle: 'normal',
                 fontWeight: 400,
-                lineHeight: '22.5px'
+                lineHeight: isMobile ? '20px' : '22.5px'
               }}
             >
               View Designs
@@ -252,8 +261,8 @@ function ProjectTile({ svgSrc, title, groupMembers, shortDescription, onViewPitc
             
             <svg 
               xmlns="http://www.w3.org/2000/svg" 
-              width="28.8" 
-              height="28.8" 
+              width={isMobile ? "24" : "28.8"} 
+              height={isMobile ? "24" : "28.8"} 
               viewBox="0 0 30 29" 
               fill="none"
             >
@@ -271,11 +280,23 @@ export default function ProjectCarousel({ projectTiles }: ProjectCarouselProps) 
   const [currentIndex, setCurrentIndex] = useState(1); // Start at 1 because we add a duplicate at the beginning
   const [tileWidths, setTileWidths] = useState<number[]>([]);
   const [isTransitioning, setIsTransitioning] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
   const tileRefs = useRef<(HTMLDivElement | null)[]>([]);
 
   const tileGapPx = 78;
   const viewportWidthPx = 1440;
   const maxTileWidthPx = 950;
+
+  // Check if screen is mobile size
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768); // md breakpoint
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   // Create infinite loop by duplicating tiles
   // Memoize so the array identity is stable across renders
@@ -337,6 +358,46 @@ export default function ProjectCarousel({ projectTiles }: ProjectCarouselProps) 
     setCurrentIndex((prevIndex) => prevIndex + 1);
   };
 
+  // Mobile layout: Static stacked cards
+  if (isMobile) {
+    return (
+      <div
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+          width: '100%',
+          maxWidth: '100vw',
+          padding: '0 16px',
+          gap: '40px',
+          alignItems: 'center',
+          justifyContent: 'center'
+        }}
+      >
+        {projectTiles.map((tile, index) => (
+          <div
+            key={`mobile-${tile.title}-${index}`}
+            style={{
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+              width: '100%'
+            }}
+          >
+            <ProjectTile
+              svgSrc={tile.svgSrc}
+              title={tile.title}
+              groupMembers={tile.groupMembers}
+              shortDescription={tile.shortDescription}
+              onViewPitchDeck={tile.onViewPitchDeck}
+              onViewDesigns={tile.onViewDesigns}
+            />
+          </div>
+        ))}
+      </div>
+    );
+  }
+
+  // Desktop layout: Carousel (original implementation)
   return (
     <div
       style={{
