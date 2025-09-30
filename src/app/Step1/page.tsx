@@ -386,17 +386,45 @@ export default function Step1Page() {
                    alignSelf: 'stretch'
                  }}
                >
-                 {/* 2x4 Grid of mentor images */}
-                 {speakers.map((speaker, index) => (
-                   <div key={index} style={{ width: '225px', height: '225px' }}>
-                     <FlipProfile 
-                       name={speaker.name}
-                       title={`${speaker.title} @ ${speaker.company}`}
-                       imageSrc={speaker.imageSrc}
-                       backImageSrc={speaker.backImageSrc}
-                     />
-                   </div>
-                 ))}
+                {/* 2x4 Grid of mentor images */}
+                {/**
+                 * Temporarily removing speaker cards.
+                 * {speakers.map((speaker, index) => (
+                 *   <div key={index} style={{ width: '225px', height: '225px' }}>
+                 *     <FlipProfile 
+                 *       name={speaker.name}
+                 *       title={`${speaker.title} @ ${speaker.company}`}
+                 *       imageSrc={speaker.imageSrc}
+                 *       backImageSrc={speaker.backImageSrc}
+                 *     />
+                 *   </div>
+                 * ))}
+                 */}
+
+                {/* Centered placeholder text */}
+                <div
+                  style={{
+                    gridColumn: '1 / -1',
+                    display: 'flex',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    height: '225px'
+                  }}
+                >
+                  <span
+                    style={{
+                      color: '#3A3A3A',
+                      textAlign: 'center',
+                      fontFamily: 'Inter',
+                      fontSize: '40px',
+                      fontStyle: 'normal',
+                      fontWeight: 600,
+                      lineHeight: '48.75px'
+                    }}
+                  >
+                    Speakers revealed soon!
+                  </span>
+                </div>
                </div>
           </div>
           
