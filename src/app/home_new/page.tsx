@@ -67,12 +67,60 @@ export default function HomeNewPage() {
           <img 
             src="/images/homepage_ps_logo.svg" 
             alt="Product Space Logo"
+            className="w-full h-full object-contain
+                       scale-110 sm:scale-105 md:scale-100 lg:scale-100 xl:scale-100"
             style={{
               width: '100%',
               height: '100%'
             }}
           />
         </div>
+
+        {/* Mobile Scroll Arrow Button - Only visible on mobile/small screens */}
+        <button 
+          className="absolute left-1/2 transform -translate-x-1/2 block md:hidden
+                     w-12 h-12 bg-gradient-to-r from-[#D5A6D8] to-[#66417B] 
+                     rounded-full flex items-center justify-center
+                     shadow-lg hover:shadow-xl transition-all duration-300
+                     hover:scale-105 active:scale-95"
+          style={{
+            top: '680px', // Moved further down for better spacing
+            zIndex: 10
+          }}
+          onClick={() => {
+            // Scroll to TextReveal section with precise positioning
+            const textRevealSection = document.querySelector('section:nth-of-type(2)');
+            if (textRevealSection) {
+              const rect = textRevealSection.getBoundingClientRect();
+              const scrollTop = window.pageYOffset + rect.top - 3000; // 100px offset from top
+              window.scrollTo({
+                top: scrollTop,
+                behavior: 'smooth'
+              });
+            }
+          }}
+        >
+          {/* Down Arrow SVG with animation */}
+          <svg 
+            width="24" 
+            height="24" 
+            viewBox="0 0 24 24" 
+            fill="none" 
+            xmlns="http://www.w3.org/2000/svg"
+            className="text-white animate-bounce"
+            style={{
+              animation: 'bounce 2s infinite'
+            }}
+          >
+            <path 
+              d="M12 5V19M12 19L5 12M12 19L19 12" 
+              stroke="white" 
+              strokeWidth="2.5" 
+              strokeLinecap="round" 
+              strokeLinejoin="round"
+            />
+          </svg>
+        </button>
         
         {/* Homepage Background SVG - Hidden on mobile */}
         <div 
@@ -121,7 +169,7 @@ export default function HomeNewPage() {
       >
         <div 
           className="relative mx-auto w-full px-4
-                     mt-4 sm:mt-6 md:mt-0
+                     -mt-[200px] sm:-mt-[150px] md:mt-0
                      md:absolute md:left-1/2 md:transform md:-translate-x-1/2
                      md:top-[50px] lg:top-[50px] xl:top-[50px]"
           style={{
@@ -166,7 +214,7 @@ export default function HomeNewPage() {
         </div>
         
         {/* Our Mission Box - Mobile: Below TextReveal, Desktop: Fixed at bottom */}
-        <div className="block md:hidden mb-8 mt-[175px]">
+        <div className="block md:hidden mb-8 -mt-[100px]">
           <div
             className="mx-auto max-w-md"
             style={{
@@ -346,6 +394,7 @@ export default function HomeNewPage() {
         
         {/* Recruitment Timeline Description */}
         <p 
+          className="text-mobile-left"
           style={{
             width: '900px',
             color: '#3A3A3A',
@@ -362,9 +411,37 @@ export default function HomeNewPage() {
             margin: 0
           }}
         >
-          Interested in joining our fellowship? Something about check out the timeline below to see our recruitment week schedule but im really bad at writing these kind of text on the spot
+          Interested in joining our fellowship? Something about check out the<br />
+          <span className="text-mobile-left-second-line">timeline below to see our recruitment week schedule </span>
         </p>
-        <TimelineAnimation />
+        <div 
+          className="w-full timeline-mobile-scale"
+          style={{
+            transform: 'scale(1)',
+            transformOrigin: 'center',
+            marginBottom: '0px'
+          }}
+        >
+          <TimelineAnimation />
+        </div>
+        
+        <style jsx>{`
+          @media (max-width: 767px) {
+            .timeline-mobile-scale {
+              transform: scale(0.30) translateX(calc(-120% + 40px)) translateY(350px) !important;
+              transform-origin: center !important;
+              margin-bottom: 48px !important;
+            }
+            .text-mobile-left {
+              font-size: 12px !important;
+              transform: translateX(calc(-105% - 10px)) translateY(-100px) !important;
+            }
+            .text-mobile-left-second-line {
+              display: inline-block;
+              transform: translateX(0px) !important;
+            }
+          }
+        `}</style>
       </section>
 
               {/* What we Offer Section */}
