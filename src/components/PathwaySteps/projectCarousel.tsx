@@ -17,14 +17,9 @@ interface ProjectCarouselProps {
 }
 
 function ProjectTile({ svgSrc, title, groupMembers, shortDescription, onViewPitchDeck, onViewDesigns }: ProjectTileProps) {
+  const [imageDimensions, setImageDimensions] = useState({ width: 950, height: 618 });
   const [isMobile, setIsMobile] = useState(false);
   const imgRef = useRef<HTMLImageElement>(null);
-
-  // Fixed dimensions for consistent card sizing
-  const cardDimensions = {
-    desktop: { width: 950, height: 618, imageHeight: 325 },
-    mobile: { width: 350, height: 450, imageHeight: 200 }
-  };
 
   // Check if screen is mobile size
   useEffect(() => {
@@ -37,15 +32,42 @@ function ProjectTile({ svgSrc, title, groupMembers, shortDescription, onViewPitc
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
-  const currentDimensions = isMobile ? cardDimensions.mobile : cardDimensions.desktop;
+  useEffect(() => {
+    const img = imgRef.current;
+    if (img) {
+      img.onload = () => {
+        if (isMobile) {
+          // Fixed dimensions for mobile (like Hone card)
+          setImageDimensions({ width: 350, height: 200 });
+        } else {
+          // Dynamic sizing for desktop (original implementation)
+          const maxWidth = 950;
+          const maxHeight = 610;
+          const aspectRatio = img.naturalWidth / img.naturalHeight;
+          
+          let width = maxWidth;
+          let height = maxWidth / aspectRatio;
+          
+          if (height > maxHeight) {
+            height = maxHeight;
+            width = maxHeight * aspectRatio;
+          }
+          
+          setImageDimensions({ width, height });
+        }
+      };
+    }
+  }, [svgSrc, isMobile]);
 
   return (
     <div
       style={{
         display: 'flex',
         flexDirection: 'column',
-        width: `${currentDimensions.width}px`,
-        height: `${currentDimensions.height}px`,
+        width: `${imageDimensions.width}px`,
+        height: isMobile 
+          ? `${imageDimensions.height + 250}px` 
+          : `${Math.min(imageDimensions.height + 293, 618)}px`,
         borderRadius: '15px',
         overflow: 'hidden',
         position: 'relative',
@@ -56,12 +78,12 @@ function ProjectTile({ svgSrc, title, groupMembers, shortDescription, onViewPitc
       {/* SVG Image */}
       <div
         style={{
-          width: `${currentDimensions.width}px`,
-          height: `${currentDimensions.imageHeight}px`,
+          width: `${imageDimensions.width}px`,
+          height: `${imageDimensions.height}px`,
           display: 'flex',
           justifyContent: 'center',
           alignItems: 'center',
-          boxShadow: isMobile ? 'none' : '0 8px 10px 0 rgba(0, 0, 0, 0.25)'
+          boxShadow: '0 8px 10px 0 rgba(0, 0, 0, 0.25)'
         }}
       >
         <img 
@@ -69,9 +91,10 @@ function ProjectTile({ svgSrc, title, groupMembers, shortDescription, onViewPitc
           src={svgSrc} 
           alt={title} 
           style={{ 
-            width: `${currentDimensions.width}px`,
-            height: `${currentDimensions.imageHeight}px`,
-            objectFit: 'cover'
+            width: `${imageDimensions.width}px`,
+            height: `${imageDimensions.height}px`,
+            objectFit: isMobile ? 'cover' : 'contain',
+            objectPosition: isMobile ? 'top' : 'center'
           }} 
         />
       </div>
@@ -83,8 +106,8 @@ function ProjectTile({ svgSrc, title, groupMembers, shortDescription, onViewPitc
             ? 'linear-gradient(180deg, rgba(255, 255, 255, 0.00) 0%, rgba(255, 255, 255, 0.00) 15%, #FFF 40%, #FFF 100%)'
             : 'linear-gradient(180deg, rgba(255, 255, 255, 0.00) 6.31%, #FFF 25.1%, #FFF 68.25%)',
           display: 'flex',
-          width: `${currentDimensions.width}px`,
-          height: `${currentDimensions.height - currentDimensions.imageHeight}px`,
+          width: `${imageDimensions.width}px`,
+          height: isMobile ? '250px' : '293px',
           padding: isMobile ? '20px 30px' : '30px 50px',
           flexDirection: 'column',
           justifyContent: 'flex-end',
