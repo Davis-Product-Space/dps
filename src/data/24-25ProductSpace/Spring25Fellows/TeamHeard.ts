@@ -1,6 +1,6 @@
 export const heardTeam = [
     {
-        name: "Ken",
+        name: "Ken Hoang",
         title: "4th Year, Food Sci",
         imageSrc: "images/SpringFellows/Heard/Ken.png",
         backImageSrc: "",
@@ -8,7 +8,7 @@ export const heardTeam = [
         coffeechatLink: "",
     },
     {
-        name: "Sambhav",
+        name: "Sambhav Agarwal",
         title: "2nd Year, Comp Sci",
         imageSrc: "images/SpringFellows/Heard/Sambhav.png",
         backImageSrc: "",
@@ -16,7 +16,7 @@ export const heardTeam = [
         coffeechatLink: "",
     },
     {
-        name: "Adrian",
+        name: "Adrian Rizo",
         title: "4th Year, Poly Sci",
         imageSrc: "images/SpringFellows/Heard/Adrian.png",
         backImageSrc: "",        
@@ -24,7 +24,7 @@ export const heardTeam = [
         coffeechatLink: "",
     },
     {
-        name: "Andrew",
+        name: "Andrew Fojas",
         title: "3rd Year, Comp Sci",
         imageSrc: "images/SpringFellows/Heard/Andrew.png",
         backImageSrc: "",        

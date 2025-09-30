@@ -11,10 +11,10 @@ export default function HomeNewPage() {
     <div className="min-h-screen bg-white">
       {/* Header Section */}
       <header 
-        className="relative mx-auto w-full px-4"
+        className="relative mx-auto w-full px-4
+                   h-[800px] sm:h-[950px] md:h-[1100px] lg:h-[1251px] xl:h-[1251px]"
         style={{
           width: '100%',
-          height: '1251px',
           maxWidth: '1440px'
         }}
       >
@@ -113,37 +113,38 @@ export default function HomeNewPage() {
       
       {/* Second Section - What is Product Management */}
       <section 
-        className="relative mx-auto"
+        className="relative mx-auto w-full px-4
+                   min-h-[800px] sm:min-h-[1000px] md:min-h-[1500px] lg:h-[2000px] xl:h-[2000px]"
         style={{
-          width: '1440px',
-          height: '2000px', // Increased height to add more space below TextReveal
+          maxWidth: '1440px'
         }}
       >
         <div 
-          className="absolute left-1/2 transform -translate-x-1/2"
+          className="relative mx-auto w-full px-4
+                     mt-4 sm:mt-6 md:mt-0
+                     md:absolute md:left-1/2 md:transform md:-translate-x-1/2
+                     md:top-[50px] lg:top-[50px] xl:top-[50px]"
           style={{
-            top: '50px', // Position text 50px from top of this section
-            width: '1200px' // Stretch the textbox width
+            maxWidth: '1200px' // Stretch the textbox width
           }}
         >
           <div
+            className="w-full"
             style={{
-              width: '100%',
               maxWidth: '1200px'
             }}
           >
             <TextReveal
               heading={
-                <h2 style={{
-                  color: '#3A3A3A',
-                  textAlign: 'center',
-                  fontFamily: 'Inter, sans-serif',
-                  fontSize: '40px',
-                  fontStyle: 'normal',
-                  fontWeight: 600,
-                  lineHeight: '48.75px',
-                  marginBottom: '30px'
-                }}>
+                <h2 className="text-center font-inter font-semibold
+                               text-2xl sm:text-3xl md:text-4xl lg:text-4xl xl:text-4xl
+                               leading-tight mb-8"
+                   style={{
+                     color: '#3A3A3A',
+                     fontFamily: 'Inter, sans-serif',
+                     fontStyle: 'normal',
+                     fontWeight: 600
+                   }}>
                   What Is Product Management?
                 </h2>
               }
@@ -164,13 +165,78 @@ export default function HomeNewPage() {
           </div>
         </div>
         
-        {/* Fixed Centered Box at bottom of page */}
-        <div 
-          className="absolute left-1/2 transform -translate-x-1/2"
-          style={{
-            bottom: '50px', // 50px from bottom of viewport
-            zIndex: 10 // Ensure it appears above other content
-          }}
+        {/* Our Mission Box - Mobile: Below TextReveal, Desktop: Fixed at bottom */}
+        <div className="block md:hidden mb-8 mt-[175px]">
+          <div
+            className="mx-auto max-w-md"
+            style={{
+              borderRadius: '30px',
+              background: '#FAF6FC',
+              boxShadow: '0 6px 6px 0 rgba(0, 0, 0, 0.25)',
+              display: 'flex',
+              padding: '30px',
+              flexDirection: 'column',
+              alignItems: 'center',
+              gap: '20px'
+            }}
+          >
+            {/* Our Mission Title */}
+            <h2 
+              className="text-center font-inter font-semibold
+                         text-2xl sm:text-3xl md:text-4xl"
+              style={{
+                color: '#3A3A3A',
+                fontFamily: 'Inter',
+                fontStyle: 'normal',
+                fontWeight: 600,
+                lineHeight: '1.2',
+                margin: 0
+              }}
+            >
+              Our Mission
+            </h2>
+            
+            {/* Mission Description */}
+            <p 
+              className="text-center text-sm sm:text-base md:text-lg"
+              style={{
+                color: '#3A3A3A',
+                fontFamily: '"M PLUS 1"',
+                fontStyle: 'normal',
+                fontWeight: 400,
+                lineHeight: '1.4',
+                margin: 0
+              }}
+            >
+              At Product Space, we're a national community of students with a mission to become the world's next generation of product leaders.
+            </p>
+            
+            {/* Meet the Team Link */}
+            <a 
+              href="/about_new"
+              className="text-center text-sm sm:text-base font-bold"
+              style={{
+                color: '#3A3A3A',
+                fontFamily: '"M PLUS 1"',
+                fontStyle: 'normal',
+                fontWeight: 700,
+                lineHeight: '1.4',
+                textDecoration: 'none',
+                cursor: 'pointer',
+                margin: 0
+              }}
+            >
+              Meet the Team &gt;
+            </a>
+          </div>
+        </div>
+
+        {/* Fixed Centered Box at bottom of page - Desktop only */}
+        <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2"
+             style={{
+               bottom: '50px',
+               zIndex: 10
+             }}
         >
           <div
             style={{

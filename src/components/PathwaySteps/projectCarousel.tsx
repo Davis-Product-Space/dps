@@ -1,14 +1,15 @@
 "use client";
 
 import { useState, useEffect, useRef, useMemo } from 'react';
+import Link from "next/link";
 
 interface ProjectTileProps {
   svgSrc: string;
   title: string;
   groupMembers: string;
   shortDescription: string;
-  onViewPitchDeck?: () => void;
-  onViewDesigns?: () => void;
+  onViewPitchDeck?: string;
+  onViewDesigns?: string;
 }
 
 interface ProjectCarouselProps {
@@ -167,8 +168,10 @@ function ProjectTile({ svgSrc, title, groupMembers, shortDescription, onViewPitc
           }}
         >
           {/* View Pitch Deck Button */}
-          <div
-            onClick={onViewPitchDeck}
+          <a
+            href={onViewPitchDeck}
+            target="_blank"
+            rel="noopener noreferrer"
             style={{
               display: 'flex',
               padding: '10px 20px',
@@ -204,20 +207,13 @@ function ProjectTile({ svgSrc, title, groupMembers, shortDescription, onViewPitc
               <circle cx="14.4" cy="14.6" r="14.4" fill="#66417B"/>
               <path d="M11.52 8.11987L18 14.5999L11.52 21.0799" stroke="white" strokeWidth="1.44" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
-          </div>
+          </a>
           
           {/* View Designs Button */}
-          <div
-            onClick={onViewDesigns}
-            style={{
-              borderRadius: '20px',
-              background: '#66417B',
-              display: 'flex',
-              padding: '10px 20px',
-              alignItems: 'center',
-              gap: '15px',
-              cursor: 'pointer'
-            }}
+          <a
+            href={onViewDesigns}
+            className="flex items-center gap-4 px-5 py-3 rounded-2xl cursor-pointer 
+            bg-[#66417B] text-white hover:bg-purple-800 transition-colors duration-200"
           >
             <div
               style={{
@@ -243,7 +239,7 @@ function ProjectTile({ svgSrc, title, groupMembers, shortDescription, onViewPitc
               <circle cx="15.1998" cy="14.6" r="14.4" fill="#A674C4"/>
               <path d="M12.3198 8.11987L18.7998 14.5999L12.3198 21.0799" stroke="#FAF6FC" strokeWidth="1.44" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
-          </div>
+          </a>
         </div>
       </div>
     </div>

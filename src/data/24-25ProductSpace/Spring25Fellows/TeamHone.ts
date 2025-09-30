@@ -1,6 +1,6 @@
 export const honeTeam = [
     {
-        name: "Amelia",
+        name: "Amelia Uytingco",
         title: "3rd Year, Econ",
         imageSrc: "images/SpringFellows/Hone/Amelia.png",
         backImageSrc: "",
@@ -8,7 +8,7 @@ export const honeTeam = [
         coffeechatLink: "",
     },
     {
-        name: "Cindy",
+        name: "Cindy Xing",
         title: "1st Year, E Eng",
         imageSrc: "images/SpringFellows/Hone/Cindy.png",
         backImageSrc: "",
@@ -16,7 +16,7 @@ export const honeTeam = [
         coffeechatLink: "",
     },
     {
-        name: "Taiki",
+        name: "Taiki Lowe",
         title: "3rd Year, Cog Sci",
         imageSrc: "images/SpringFellows/Hone/Taiki.png",
         backImageSrc: "",
@@ -24,7 +24,7 @@ export const honeTeam = [
         coffeechatLink: "",
     },
     {
-        name: "Zayd",
+        name: "Zayd Musa",
         title: "1st Year, Comp Sci",
         imageSrc: "images/SpringFellows/Hone/Zayd.png",
         backImageSrc: "",

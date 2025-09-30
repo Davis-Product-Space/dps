@@ -29,15 +29,15 @@ export function TextReveal({
 
           {/* animated paragraph */}
           <div 
-            className="text-center space-y-4 flex flex-col items-center"
+            className="text-center space-y-4 flex flex-col items-center
+                       text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl
+                       font-semibold leading-tight"
             style={{
               color: '#3A3A3A',
               textAlign: 'center',
               fontFamily: '"M PLUS 1"',
-              fontSize: '32px',
               fontStyle: 'normal',
-              fontWeight: 600,
-              lineHeight: '48.75px'
+              fontWeight: 600
             }}
           >
             {content.map((chunk, idx) => {
