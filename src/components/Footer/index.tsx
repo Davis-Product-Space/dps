@@ -19,13 +19,15 @@ export default function Footer() {
         return LIGHT_PURPLE; // Light purple background for about pages
       case '/':
       case '/home_new':
-        return WHITE; // White background for home
+        return LIGHT_PURPLE; // Light purple background for home
       case '/Step1':
         return LIGHT_PURPLE; // Light purple for step pages
       case '/Step2':
         return LIGHT_PURPLE; // Light purple for step pages
       case '/Step3':
         return LIGHT_PURPLE; // Light purple for step pages
+      case '/Step4':
+        return WHITE
       default:
         return LIGHT_PURPLE; // Default fallback color
     }
