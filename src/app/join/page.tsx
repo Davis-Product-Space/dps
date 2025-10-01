@@ -16,7 +16,7 @@ export default function JoinNewPage() {
     },
     {
       question: "How long is the fellowship?",
-      answer: "The fellowship runs for one academic quarter, typically 10-12 weeks."
+      answer: "The fall fellowship will run for 8 weeks encompassing all workshops and the capstone project."
     },
     {
       question: "What are the requirements?",
