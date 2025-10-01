@@ -1437,7 +1437,7 @@ export function TimelineAnimation() {
                zIndex: 10
              }}
            >
-             October 7th, 7:30-8:30 PM
+             Tue, 10/7 @ 7:30PM
            </div>
 
             {/* PM Panel & Workshop Location */}

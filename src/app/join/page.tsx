@@ -59,7 +59,7 @@ export default function JoinNewPage() {
         </div>
         {/* TODO: Change to href="/application" on Oct 1st midnight*/}
         <Link 
-          href="/coming_soon_application"
+          href="/application"
           className="absolute top-[312.125px] left-1/2 transform -translate-x-1/2 z-10 inline-flex px-5 py-3 items-center gap-[15px] rounded-[20px] bg-[#66417B] hover:bg-[#5a3769] transition-colors cursor-pointer"
         >
           <span className="text-[#FAF6FC] text-center font-['M_PLUS_1'] text-[22.5px] font-normal leading-[22.5px]">
