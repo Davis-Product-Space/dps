@@ -8,9 +8,11 @@ import { WhatWeOffer } from "@/components/landing/WhatWeOffer";
 export default function HomeNewPage() {
 
   return (
-    <div className="min-h-screen bg-white">
-      {/* Header Section */}
-      <header 
+    <div className="min-h-screen bg-white flex flex-col">
+      {/* Main Content Wrapper */}
+      <main className="flex-grow">
+        {/* Header Section */}
+        <header 
         className="relative mx-auto w-full px-4
                    h-[800px] sm:h-[950px] md:h-[1100px] lg:h-[1251px] xl:h-[1251px]"
         style={{
@@ -469,6 +471,8 @@ export default function HomeNewPage() {
               transform: translateY(-800px) !important;
               height: auto !important;
               min-height: 1200px !important;
+              padding: 0 10px !important;
+              padding-bottom: 100px !important;
             }
             .mobile-whatweoffer-transform {
               position: fixed !important;
@@ -479,17 +483,25 @@ export default function HomeNewPage() {
             .where-weve-gone-mobile {
               transform: translateY(-1000px) !important;
             }
+            .mobile-spacing-adjustment {
+              margin-top: -200px !important;
+            }
           }
         `}</style>
       </section>
 
               {/* What we Offer Section */}
-              <section 
-                className="relative mx-auto whatweoffer-section-mobile h-[900px] md:h-[2500px]"
-                style={{
-                  width: '1440px'
-                }}
-              >
+      <section 
+        className="relative mx-auto whatweoffer-section-mobile"
+        style={{
+          width: '100%',
+          maxWidth: '1440px',
+          padding: '0 20px',
+          boxSizing: 'border-box',
+          minHeight: '900px',
+          paddingBottom: '100px'
+        }}
+      >
         {/* What we Offer Heading */}
         <h2 
           className="whatweoffer-heading-mobile"
@@ -512,7 +524,7 @@ export default function HomeNewPage() {
           What We Offer
         </h2>
         
-        {/* Mobile-only What We Offer Heading */}
+        {/* Mobile-only What We Offer Heading 
         <h2 
           className="block md:hidden mobile-whatweoffer-transform"
           style={{
@@ -531,10 +543,15 @@ export default function HomeNewPage() {
           }}
         >
           What We Offer
-        </h2>
+        </h2>*/}
         
         {/* WhatWeOffer Component */}
-        <WhatWeOffer />
+        <div style={{ 
+          position: 'relative',
+          top: '250px'
+        }}>
+          <WhatWeOffer />
+        </div>
       </section>
       
       {/* Where We've Gone Section - Hidden on Mobile */}
@@ -645,6 +662,7 @@ export default function HomeNewPage() {
         </div>
         </section>
       </div>
+      </main>
     </div>
   );
 }
