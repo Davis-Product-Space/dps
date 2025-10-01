@@ -36,7 +36,7 @@ export function WhatWeOffer() {
         <div className="staircase-mobile-left" style={{ 
           position: 'absolute',
           left: '53px',
-          top: '1020px' // 1000px + 20px = 1020px below Fellowship staircase
+          top: '1080px' // Moved down 60px total
         }}>
           <img 
             src="/images/CapstoneStaircase.svg" 
@@ -52,7 +52,7 @@ export function WhatWeOffer() {
         <div className="staircase-mobile-left" style={{ 
           position: 'absolute',
           left: '53px',
-          top: '1720px' // Move way down + 20px
+          top: '1915px' // Moved down 195px total
         }}>
           <img 
             src="/images/Client_Staricase.png" 
@@ -60,22 +60,6 @@ export function WhatWeOffer() {
             style={{
               width: '517px',
               height: '427px'
-            }}
-          />
-        </div>
-
-        {/* Left Side - Product Staircase */}
-        <div className="staircase-mobile-left product-staircase-mobile" style={{ 
-          position: 'absolute',
-          left: '-20px', // Moved further left (past the left edge)
-          top: '2420px' // Moved down an additional 100px
-        }}>
-          <img 
-            src="/images/Product_Staricase.svg" 
-            alt="Product Staircase"
-            style={{
-              width: '620px', // Made bigger (increased from 517px)
-              height: '512px' // Made bigger (increased from 427px)
             }}
           />
         </div>
@@ -181,9 +165,6 @@ export function WhatWeOffer() {
           }
           .staircase-mobile-left {
             transform: translateX(-800px) !important;
-          }
-          .product-staircase-mobile {
-            transform: translateX(-760px) scale(0.85) !important;
           }
         }
       `}</style>

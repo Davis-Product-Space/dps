@@ -216,41 +216,6 @@ export default function Navbar() {
                               </div>
                             </Link>
                           </div>
-                          
-                          {/* Step 4 */}
-                          <div>
-                            <Link 
-                              href="/Step4"
-                              className="block"
-                              onClick={() => setPathwayDropdownOpen(false)}
-                            >
-                              <div
-                                style={{
-                                  color: isHomePage ? '#2A2A2A' : (isTransparentNavbar ? 'white' : '#2A2A2A'),
-                                  fontFamily: '"M PLUS 1", sans-serif',
-                                  fontSize: '18px',
-                                  fontStyle: 'normal',
-                                  fontWeight: 400,
-                                  lineHeight: 'normal',
-                                  marginBottom: '4px'
-                                }}
-                              >
-                                Step 4: Product
-                              </div>
-                              <div
-                                style={{
-                                  color: '#9966B7',
-                                  fontFamily: '"M PLUS 1", sans-serif',
-                                  fontSize: '14px',
-                                  fontStyle: 'normal',
-                                  fontWeight: 400,
-                                  lineHeight: '32px'
-                                }}
-                              >
-                                Working Product Management
-                              </div>
-                            </Link>
-                          </div>
                         </div>
                     </div>
                   </div>

@@ -197,7 +197,6 @@ export default function HomeNewPage() {
                 </h2>
               }
               content={[
-                "A product manager is the CEO of a product.",
                 "A product manager communicate with users to understand their needs.",
                 "A product manager come up with solutions that address them.",
                 "A product manager collaborate with designers, engineers, and marketers.",
@@ -486,7 +485,7 @@ export default function HomeNewPage() {
 
               {/* What we Offer Section */}
               <section 
-                className="relative mx-auto whatweoffer-section-mobile h-[1100px] md:h-[3097px]"
+                className="relative mx-auto whatweoffer-section-mobile h-[900px] md:h-[2500px]"
                 style={{
                   width: '1440px'
                 }}
