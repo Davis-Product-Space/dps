@@ -22,6 +22,7 @@ export default function ApplicationPage() {
               border: '1px solid #ccc',
             }}
           />
+
         </div>
       </section>
     </main>
