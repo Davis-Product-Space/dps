@@ -387,21 +387,19 @@ export default function Step1Page() {
                  }}
                >
                 {/* 2x4 Grid of mentor images */}
-                {/**
-                 * Temporarily removing speaker cards.
-                 * {speakers.map((speaker, index) => (
-                 *   <div key={index} style={{ width: '225px', height: '225px' }}>
-                 *     <FlipProfile 
-                 *       name={speaker.name}
-                 *       title={`${speaker.title} @ ${speaker.company}`}
-                 *       imageSrc={speaker.imageSrc}
-                 *       backImageSrc={speaker.backImageSrc}
-                 *     />
-                 *   </div>
-                 * ))}
-                 */}
+                {speakers.map((speaker, index) => (
+                  <div key={index} style={{ width: '225px', height: '225px' }}>
+                    <FlipProfile 
+                      name={speaker.name}
+                      title={`${speaker.title} @ ${speaker.company}`}
+                      imageSrc={speaker.imageSrc}
+                      backImageSrc={speaker.backImageSrc}
+                    />
+                  </div>
+                ))}
 
-                {/* Centered placeholder text */}
+                {/* Centered placeholder text - Commented out */}
+                {/**
                 <div
                   style={{
                     gridColumn: '1 / -1',
@@ -425,7 +423,8 @@ export default function Step1Page() {
                     Speakers revealed soon!
                   </span>
                 </div>
-               </div>
+                */}
+              </div>
           </div>
           
           {/*4rd div*/}
