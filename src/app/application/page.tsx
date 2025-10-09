@@ -4,14 +4,14 @@ export default function ApplicationPage() {
       <section className="mt-[150px] flex-grow">
         <div className="text-center px-5 md:px-0">
           <h1 className="text-4xl font-bold text-[#3A3A3A] mb-4">
-            Fellowship Application
+            Fellowship Application are closed
           </h1>
           <p className="text-lg text-[#3A3A3A]">
             Thank you for showing interest in our Fellowship! Apply below!
           </p>
         </div>
 
-        {/* Foreground content */}
+        {/* Foreground content 
         <div className="relative py-10 px-5 md:px-20 w-full">
           <iframe
             className="airtable-embed w-full"
@@ -22,8 +22,9 @@ export default function ApplicationPage() {
               border: '1px solid #ccc',
             }}
           />
-
+          
         </div>
+        */}
       </section>
     </main>
   );
