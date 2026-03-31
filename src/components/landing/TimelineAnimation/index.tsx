@@ -1243,7 +1243,7 @@ export function TimelineAnimation() {
                transition: 'transform 0.6s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.5s ease'
              }}
            >
-             Wed, 10/1 @ 12am
+             Mon, 3/30 @ 12am
            </div>
 
            {/* Applications Open Hover Paragraph - appears during animation */}
@@ -1328,7 +1328,7 @@ export function TimelineAnimation() {
                zIndex: 10
              }}
            >
-             Mon, 10/6 @ 6 & 7pm
+             Mon, 4/6 @ 6-8pm
            </div>
 
            {/* Info Sessions Location */}
@@ -1352,7 +1352,7 @@ export function TimelineAnimation() {
                zIndex: 10
              }}
            >
-            Wellman 106
+            Wellman 26
            </div>
 
            {/* Info Sessions Hover Paragraph - appears during animation */}
@@ -1414,7 +1414,7 @@ export function TimelineAnimation() {
                zIndex: 10
              }}
            >
-             PM Panel & Workshop
+             Intern Panel
            </div>
 
            <div 
@@ -1437,7 +1437,7 @@ export function TimelineAnimation() {
                zIndex: 10
              }}
            >
-             Tue, 10/7 @ 7:30PM
+             Tue, 4/7 @ 8-9pm
            </div>
 
             {/* PM Panel & Workshop Location */}
@@ -1461,7 +1461,7 @@ export function TimelineAnimation() {
                zIndex: 10
              }}
            >
-             Wellman 212
+             Wellman 201
            </div>
 
            {/* PM Panel & Workshop Hover Paragraph - appears during animation */}
@@ -1532,7 +1532,7 @@ export function TimelineAnimation() {
                zIndex: 10
              }}
            >
-             Sat 10/11 @ 11am
+             Sat 4/11 @ 12-1pm
            </div>
 
            <div 
@@ -1641,7 +1641,7 @@ export function TimelineAnimation() {
                zIndex: 10
              }}
            >
-             Wed, 10/8 @ 11:59pm
+             Wed, 4/8 @ 11:59pm
            </div>
 
            {/* Hover Paragraph - appears below during animation */}
@@ -1705,7 +1705,7 @@ export function TimelineAnimation() {
                zIndex: 10
              }}
            >
-             Second Social
+             Social Night
            </div>
 
            {/* Date/Time Text - 3px above Second Social */}
@@ -1729,7 +1729,7 @@ export function TimelineAnimation() {
                zIndex: 10
              }}
            >
-             Fri, 10/10 @ 6:30pm
+             Fri, 4/10 @ 6pm
            </div>
 
            {/* Second Social (By invite) Text */}
@@ -1863,7 +1863,7 @@ export function TimelineAnimation() {
                zIndex: 10
              }}
            >
-             Sun, 10/12
+             Sun, 4/12
            </div>
 
            {/* Interviews Hover Paragraph - appears during animation */}
@@ -1905,7 +1905,7 @@ export function TimelineAnimation() {
            />
 
            {/* Line 7 - ice cream social */}
-           <div 
+           {/* <div
              style={{
                position: 'absolute',
                left: '-50px', // x1="596" * 2
@@ -1916,10 +1916,10 @@ export function TimelineAnimation() {
                transition: 'opacity 0.5s ease'
              }}
              className="line-7"
-           />
+           /> */}
 
-           {/* Ice Cream Social Text - positioned near the Ice Cream Social shape */}
-           <div 
+           {/* Meet the Board event - commented out, not used this cycle */}
+           {/* <div
              className="ice-cream-social-text"
              style={{
                position: 'absolute',
@@ -1942,7 +1942,7 @@ export function TimelineAnimation() {
              Meet the Board
            </div>
 
-           <div 
+           <div
              className="ice-cream-social-date"
              style={{
                position: 'absolute',
@@ -1965,8 +1965,7 @@ export function TimelineAnimation() {
              Tue, 10/7 @ 8:45pm
            </div>
 
-           {/* TBD Text above Applications Due */}
-           <div 
+           <div
              className="meet-the-board-location"
              style={{
                position: 'absolute',
@@ -1989,8 +1988,7 @@ export function TimelineAnimation() {
              YoloBerry Yogurt
            </div>
 
-           {/* Ice Cream Social Hover Paragraph - appears during animation */}
-           <div 
+           <div
              className="ice-cream-social-paragraph"
              style={{
                position: 'absolute',
@@ -2011,7 +2009,7 @@ export function TimelineAnimation() {
              }}
            >
              Connect with our board members over ice cream and learn more about our community.
-           </div>
+           </div> */}
 
            {/* Line 8 */}
            <div 

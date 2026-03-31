@@ -126,7 +126,8 @@ export default function AboutNewPage() {
           </div>
         </div>
       </section>
-      <section
+      {/* Meet the Spring 2025 Fellows - commented out, not used this cycle */}
+      {/* <section
         className="flex justify-center px-4 sm:px-8 md:px-16 lg:px-32"
         style={{
           paddingTop: '150px',
@@ -158,7 +159,7 @@ export default function AboutNewPage() {
              >
                Meet the Spring 2025 Fellows!
              </h2>
-           
+
            {spring25Teams.map((team, teamIndex) => (
              <div key={teamIndex} style={{ alignSelf: 'stretch' }}>
                <h3
@@ -182,9 +183,9 @@ export default function AboutNewPage() {
                </div>
              </div>
            ))}
-          
+
          </div>
-     </section>
+     </section> */}
 
         
         {/* New section below Fellows */}
