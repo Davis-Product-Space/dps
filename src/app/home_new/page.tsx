@@ -1,11 +1,25 @@
 'use client';
 
-import React from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { TextReveal } from "@/components/landing/TextReveal";
 import { TimelineAnimation } from "@/components/landing/TimelineAnimation";
 import { WhatWeOffer } from "@/components/landing/WhatWeOffer";
+import InteractivePSLogo from "@/components/landing/InteractivePSLogo";
 
 export default function HomeNewPage() {
+  const timelineSectionRef = useRef<HTMLElement>(null);
+  const [timelineScale, setTimelineScale] = useState(1);
+
+  useEffect(() => {
+    const el = timelineSectionRef.current;
+    if (!el) return;
+    const observer = new ResizeObserver((entries) => {
+      const width = entries[0].contentRect.width;
+      setTimelineScale(Math.min(width / 1440, 1));
+    });
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <div className="min-h-screen bg-white flex flex-col">
@@ -66,9 +80,7 @@ export default function HomeNewPage() {
             maxHeight: '627px'
           }}
         >
-          <img 
-            src="/images/homepage_ps_logo.svg" 
-            alt="Product Space Logo"
+          <InteractivePSLogo
             className="w-full h-full object-contain
                        scale-110 sm:scale-105 md:scale-100 lg:scale-100 xl:scale-100"
             style={{
@@ -358,105 +370,74 @@ export default function HomeNewPage() {
       </section>
       
       {/* New Section - 50px below the box */}
-      <section 
-        className="timeline-section-mobile"
+      <section
+        ref={timelineSectionRef}
         style={{
-          position: 'relative', // Enable absolute positioning for children
-          display: 'flex',
-          width: '1440px',
-          height: '1411px',
-          flexDirection: 'column',
-          alignItems: 'center',
+          position: 'relative',
+          width: '100%',
+          height: `${1411 * timelineScale}px`,
           background: '#FAF6FC',
-          marginTop: '50px', // 50px spacing from previous content
-          marginLeft: 'auto',
-          marginRight: 'auto'
+          marginTop: '50px',
+          overflow: 'hidden'
         }}
       >
-        {/* Recruitment Timeline Heading */}
-        <h2 
-          className="timeline-heading-mobile"
+        <div
           style={{
-            alignSelf: 'stretch',
-            color: '#3A3A3A',
-            textAlign: 'center',
-            fontFamily: 'Inter',
-            fontSize: '40px',
-            fontStyle: 'normal',
-            fontWeight: 600,
-            lineHeight: '48.75px',
+            transform: `scale(${timelineScale})`,
+            transformOrigin: 'top center',
+            width: '1440px',
             position: 'absolute',
-            top: '150px',
-            left: '0',
-            right: '0',
-            margin: 0
-          }}
-        >
-          Recruitment Timeline
-        </h2>
-        
-        {/* Recruitment Timeline Description */}
-        <p 
-          className="text-mobile-left"
-          style={{
-            width: '900px',
-            color: '#3A3A3A',
-            textAlign: 'center',
-            fontFamily: '"M PLUS 1"',
-            fontSize: '22.5px',
-            fontStyle: 'normal',
-            fontWeight: 400,
-            lineHeight: '32px',
-            position: 'absolute',
-            top: '223.75px', // 150px + 48.75px (heading line-height) + 25px gap
             left: '50%',
-            transform: 'translateX(-50%)',
-            margin: 0
+            marginLeft: '-720px',
+            height: '1411px'
           }}
         >
-          Interested in joining our fellowship? Something about check out the<br />
-          <span className="text-mobile-left-second-line">timeline below to see our recruitment week schedule </span>
-        </p>
-        <div 
-          className="w-full timeline-mobile-scale"
-          style={{
-            transform: 'scale(1)',
-            transformOrigin: 'center',
-            marginBottom: '0px'
-          }}
-        >
-        <TimelineAnimation />
+          {/* Recruitment Timeline Heading */}
+          <h2
+            style={{
+              alignSelf: 'stretch',
+              color: '#3A3A3A',
+              textAlign: 'center',
+              fontFamily: 'Inter',
+              fontSize: '40px',
+              fontStyle: 'normal',
+              fontWeight: 600,
+              lineHeight: '48.75px',
+              position: 'absolute',
+              top: '150px',
+              left: '0',
+              right: '0',
+              margin: 0
+            }}
+          >
+            Recruitment Timeline
+          </h2>
+
+          {/* Recruitment Timeline Description */}
+          <p
+            style={{
+              width: '900px',
+              color: '#3A3A3A',
+              textAlign: 'center',
+              fontFamily: '"M PLUS 1"',
+              fontSize: '22.5px',
+              fontStyle: 'normal',
+              fontWeight: 400,
+              lineHeight: '32px',
+              position: 'absolute',
+              top: '223.75px',
+              left: '50%',
+              transform: 'translateX(-50%)',
+              margin: 0
+            }}
+          >
+            Interested in joining our fellowship? Hover over our timeline steps to learn more!<br />
+          </p>
+          <TimelineAnimation />
         </div>
-        
+
         <style jsx>{`
           @media (max-width: 767px) {
-            .timeline-mobile-scale {
-              transform: scale(0.30) translateX(calc(-120% + 40px)) translateY(350px) !important;
-              transform-origin: center !important;
-              margin-bottom: 48px !important;
-            }
-            .text-mobile-left {
-              font-size: 12px !important;
-              transform: translateX(calc(-105% - 10px)) translateY(-120px) !important;
-            }
-            .text-mobile-left-second-line {
-              display: inline-block;
-              transform: translateX(0px) !important;
-            }
-            .timeline-heading-mobile {
-              font-size: 18px !important;
-              line-height: 22px !important;
-              top: 80px !important;
-              position: absolute !important;
-              left: 50% !important;
-              transform: translateX(-120%) !important;
-              width: auto !important;
-              display: block !important;
-              z-index: 10 !important;
-            }
-            .timeline-section-mobile {
-              height: 600px !important;
-            }
             .whatweoffer-heading-mobile {
               font-size: 24px !important;
               line-height: 28px !important;
