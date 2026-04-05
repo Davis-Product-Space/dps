@@ -243,7 +243,7 @@ function ProjectTile({ svgSrc, title, groupMembers, shortDescription, onViewPitc
           </a>
           
           {/* View Designs Button */}
-          <a
+          {onViewDesigns && <a
             href={onViewDesigns}
             target="_blank"
             rel="noopener noreferrer"
@@ -292,7 +292,7 @@ function ProjectTile({ svgSrc, title, groupMembers, shortDescription, onViewPitc
               <circle cx="15.1998" cy="14.6" r="14.4" fill="#A674C4"/>
               <path d="M12.3198 8.11987L18.7998 14.5999L12.3198 21.0799" stroke="#FAF6FC" strokeWidth="1.44" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
-          </a>
+          </a>}
         </div>
       </div>
     </div>
