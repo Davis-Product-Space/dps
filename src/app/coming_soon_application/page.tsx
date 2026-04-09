@@ -7,7 +7,7 @@ export default function ComingSoonApplicationPage() {
             Fellowship Application
           </h1>
           <p className="text-lg text-[#3A3A3A]">
-            Sit tight! Applications drop on Oct 1st!
+            Applications have now closed. Thank you for applying.
           </p>
         </div>
       </section>
