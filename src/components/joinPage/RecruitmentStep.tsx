@@ -10,35 +10,18 @@ export default function RecruitmentStep({ title, description }: RecruitmentStepP
     <motion.div 
       whileHover={{ x: 6 }}
       transition={{ type: "spring", stiffness: 350, damping: 20 }}
-      className="flex justify-between items-center transition-opacity"
-      style={{
-        display: 'flex',
-        width: '1064px',
-        justifyContent: 'space-between',
-        alignItems: 'center'
-      }}
+      className="flex flex-col md:flex-row md:justify-between items-start md:items-center w-full max-w-[1064px] gap-2 md:gap-8 transition-opacity py-3 border-b border-[#3A3A3A]/10 last:border-b-0"
     >
       {/* Left text box - Step title */}
       <h3 
-        className="font-inter text-[32px] font-semibold leading-[48.75px]"
-        style={{ 
-          color: '#3A3A3A',
-          whiteSpace: 'nowrap',
-          flexShrink: 0
-        }}
+        className="font-inter text-xl sm:text-2xl md:text-[32px] font-semibold leading-tight text-[#3A3A3A] shrink-0"
       >
         {title}
       </h3>
       
-      {/* Right text box - Description with 90px gap */}
+      {/* Right text box - Description */}
       <p 
-        className="font-['M_PLUS_1'] text-[22.5px] font-normal leading-[32px]"
-        style={{ 
-          color: '#3A3A3A',
-          width: '644px',
-          flexShrink: 0,
-          marginLeft: '90px'
-        }}
+        className="font-['M_PLUS_1'] text-sm sm:text-base md:text-[22.5px] font-normal leading-relaxed text-[#3A3A3A] w-full md:w-[644px] md:ml-8"
         dangerouslySetInnerHTML={{
           __html: description.replace(
             /"([^"]+)"/g, 

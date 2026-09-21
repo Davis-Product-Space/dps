@@ -45,56 +45,30 @@ export default function AboutNewPage() {
           }}
         />
         
-        {/* Text positioned 10% from the top of the screen */}
+        {/* Text positioned centered in viewport */}
         <div 
-          className="relative z-10 flex justify-center w-full h-full px-8"
-          style={{ paddingTop: '20vh' }}
+          className="relative z-10 flex justify-center items-center w-full h-full px-4 sm:px-8"
         >
           <motion.h1 
             initial={{ opacity: 0, y: 30, filter: "blur(4px)" }}
             animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
             transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1] }}
-            style={{
-              color: '#FFF',
-              fontFamily: 'Inter',
-              fontSize: '60px',
-              fontStyle: 'normal',
-              fontWeight: 600,
-              lineHeight: '73.125px',
-              textAlign: 'center'
-            }}
+            className="text-white font-inter text-3xl sm:text-5xl md:text-[60px] font-semibold leading-tight text-center max-w-4xl drop-shadow-md"
           >
             Meet Davis Product Space!
           </motion.h1>
         </div>
       </div>
       <ScrollReveal direction="up" distance={25}>
-        <section className="flex justify-center" style={{ marginTop: '90px' }}>
-          <div style={{ width: '900px' }}>
+        <section className="flex justify-center px-4 mt-16 md:mt-[90px]">
+          <div className="w-full max-w-[900px] text-center">
             <h2 
-              style={{
-                color: '#3A3A3A',
-                textAlign: 'center',
-                fontFamily: 'Inter',
-                fontSize: '40px',
-                fontStyle: 'normal',
-                fontWeight: 600,
-                lineHeight: '48.75px'
-              }}
+              className="text-[#3A3A3A] font-inter text-2xl sm:text-3xl md:text-[40px] font-semibold leading-tight"
             >
               Who We Are
             </h2>
             <p 
-              style={{
-                color: '#3A3A3A',
-                textAlign: 'center',
-                fontFamily: 'var(--font-m-plus-1)',
-                fontSize: '22.5px',
-                fontStyle: 'normal',
-                fontWeight: 400,
-                lineHeight: '32px',
-                marginTop: '10px'
-              }}
+              className="text-[#3A3A3A] font-['M_PLUS_1'] text-base sm:text-lg md:text-[22.5px] font-normal leading-relaxed mt-3"
             >
               At Product Space, we're a national community of students with a mission to become the world's next generation of product leaders.
             </p>
@@ -102,26 +76,17 @@ export default function AboutNewPage() {
         </section>
       </ScrollReveal>
 
-      <section style={{ marginTop: '31px' }}>
+      <section className="mt-8 md:mt-[31px]">
           <ImageMarqueeDemo />
       </section>
       
-      {/* New section 184px below marquee */}
+      {/* New section below marquee */}
       <ScrollReveal direction="up" distance={30}>
-        <section style={{ marginTop: '184px' }}>
-          <div className="flex justify-center">
-            <div style={{ width: '900px' }}>
+        <section className="mt-16 md:mt-[184px]">
+          <div className="flex justify-center px-4">
+            <div className="w-full max-w-[900px] text-center mb-8 md:mb-[71px]">
               <h2 
-                style={{
-                  color: '#000000',
-                  textAlign: 'center',
-                  fontFamily: 'Inter',
-                  fontSize: '36px',
-                  fontStyle: 'normal',
-                  fontWeight: 600,
-                  lineHeight: '48.75px',
-                  marginBottom: '71px'
-                }}
+                className="text-[#000000] font-inter text-2xl sm:text-3xl md:text-[36px] font-semibold leading-tight"
               >
                 Meet the Board!
               </h2>
@@ -129,7 +94,7 @@ export default function AboutNewPage() {
           </div>
           <div className="flex justify-center px-4 sm:px-8 md:px-16 lg:px-32">
             <div className="w-full max-w-5xl">
-              <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8 w-full justify-items-center">
+              <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-6 md:gap-8 w-full justify-items-center">
                 {board.map((member, i) => (
                   <FlipProfile key={i} {...member} />
                 ))}
@@ -202,28 +167,19 @@ export default function AboutNewPage() {
         
         {/* New section below Fellows */}
         <ScrollReveal direction="up" distance={30}>
-          <section className="flex flex-col justify-center" style={{ marginTop: '180px' }}>
-            <div className="flex justify-center">
-              <div style={{ width: '900px' }}>
+          <section className="flex flex-col justify-center mt-16 md:mt-[180px] overflow-hidden">
+            <div className="flex justify-center px-4">
+              <div className="w-full max-w-[900px] text-center mb-8 md:mb-[71px]">
                 <h2 
-                  style={{
-                    color: '#3A3A3A',
-                    textAlign: 'center',
-                    fontFamily: 'Inter',
-                    fontSize: '40px',
-                    fontStyle: 'normal',
-                    fontWeight: 600,
-                    lineHeight: '48.75px',
-                    marginBottom: '71px'
-                  }}
+                  className="text-[#3A3A3A] font-inter text-2xl sm:text-3xl md:text-[40px] font-semibold leading-tight"
                 >
                   Here are the Spring Projects!
                 </h2>
               </div>
             </div>
-            <div className="flex justify-center">
+            <div className="flex justify-center w-full overflow-x-auto pb-4">
               <ProjectCarousel 
-                    projectTiles={springProjects}
+                projectTiles={springProjects}
               /> 
             </div>
           </section>

@@ -21,14 +21,18 @@ export function WhatWeOffer() {
       >
         {/* Row 1: Fellowship */}
         <ScrollReveal direction="up" distance={30}>
-          <div style={{
-            display: 'flex',
-            alignItems: 'center',
-            marginBottom: '100px',
-            gap: '50px'
-          }}>
+          <div 
+            className="whatweoffer-row"
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              marginBottom: '100px',
+              gap: '50px'
+            }}
+          >
             {/* Fellowship Image */}
             <motion.div 
+              className="whatweoffer-staircase-img"
               style={{ flex: '0 0 auto', maxWidth: '40%' }}
               animate={{ y: [-4, 4, -4] }}
               transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
@@ -47,6 +51,7 @@ export function WhatWeOffer() {
             {/* Fellowship Content */}
             <div style={{ flex: '1', minWidth: '0' }}>
               <h3 
+                className="whatweoffer-section-title"
                 style={{
                   color: '#3A3A3A',
                   fontFamily: 'Inter',
@@ -63,6 +68,7 @@ export function WhatWeOffer() {
               </h3>
               
               <div 
+                className="whatweoffer-card-grid"
                 style={{
                   display: 'grid',
                   gridTemplateColumns: '1fr 1fr',
@@ -134,14 +140,18 @@ export function WhatWeOffer() {
 
         {/* Row 2: Capstone */}
         <ScrollReveal direction="up" distance={30} delay={0.1}>
-          <div style={{
-            display: 'flex',
-            alignItems: 'center',
-            marginBottom: '100px',
-            gap: '50px'
-          }}>
+          <div 
+            className="whatweoffer-row"
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              marginBottom: '100px',
+              gap: '50px'
+            }}
+          >
             {/* Capstone Image */}
             <motion.div 
+              className="whatweoffer-staircase-img"
               style={{ flex: '0 0 auto', maxWidth: '40%' }}
               animate={{ y: [4, -4, 4] }}
               transition={{ duration: 7.5, repeat: Infinity, ease: "easeInOut" }}
@@ -160,6 +170,7 @@ export function WhatWeOffer() {
             {/* Capstone Content */}
             <div style={{ flex: '1', minWidth: '0' }}>
               <h3 
+                className="whatweoffer-section-title"
                 style={{
                   color: '#3A3A3A',
                   fontFamily: 'Inter',
@@ -176,6 +187,7 @@ export function WhatWeOffer() {
               </h3>
               
               <div 
+                className="whatweoffer-card-grid"
                 style={{
                   display: 'grid',
                   gridTemplateColumns: '1fr 1fr',
@@ -247,14 +259,18 @@ export function WhatWeOffer() {
 
         {/* Row 3: Client */}
         <ScrollReveal direction="up" distance={30} delay={0.15}>
-          <div style={{
-            display: 'flex',
-            alignItems: 'center',
-            marginBottom: '100px',
-            gap: '50px'
-          }}>
+          <div 
+            className="whatweoffer-row"
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              marginBottom: '100px',
+              gap: '50px'
+            }}
+          >
             {/* Client Image */}
             <motion.div 
+              className="whatweoffer-staircase-img"
               style={{ flex: '0 0 auto', maxWidth: '40%' }}
               animate={{ y: [-4, 4, -4] }}
               transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
@@ -273,6 +289,7 @@ export function WhatWeOffer() {
             {/* Client Content */}
             <div style={{ flex: '1', minWidth: '0' }}>
               <h3 
+                className="whatweoffer-section-title"
                 style={{
                   color: '#3A3A3A',
                   fontFamily: 'Inter',
@@ -289,6 +306,7 @@ export function WhatWeOffer() {
               </h3>
               
               <div 
+                className="whatweoffer-card-grid"
                 style={{
                   display: 'grid',
                   gridTemplateColumns: '1fr 1fr',
@@ -362,36 +380,39 @@ export function WhatWeOffer() {
       <style jsx>{`
         @media (max-width: 767px) {
           .whatweoffer-mobile-scale {
-            transform: scale(0.8) translateY(-100px) !important;
-            transform-origin: top center !important;
             width: 100% !important;
-            margin-bottom: 200px !important;
-            padding: 0 20px !important;
+            padding: 0 12px !important;
           }
           
-          /* Hide images on mobile */
-          .whatweoffer-mobile-scale img {
+          /* Only hide the large staircase illustrations on mobile, keep card icons visible */
+          .whatweoffer-staircase-img {
             display: none !important;
           }
           
           /* Make content take full width on mobile */
-          .whatweoffer-mobile-scale > div {
+          .whatweoffer-row {
             flex-direction: column !important;
             align-items: center !important;
             text-align: center !important;
+            gap: 24px !important;
+            margin-bottom: 60px !important;
           }
           
-          .whatweoffer-mobile-scale > div > div:last-child {
-            flex: 1 !important;
-            width: 100% !important;
-            max-width: 100% !important;
+          .whatweoffer-card-grid {
+            grid-template-columns: 1fr !important;
+            gap: 16px !important;
+          }
+
+          .whatweoffer-section-title {
+            font-size: 26px !important;
+            line-height: 32px !important;
+            margin-bottom: 16px !important;
           }
         }
         
         @media (min-width: 768px) and (max-width: 1024px) {
-          .whatweoffer-mobile-scale {
-            transform: scale(0.9) !important;
-            transform-origin: top center !important;
+          .whatweoffer-card-grid {
+            gap: 16px !important;
           }
         }
       `}</style>

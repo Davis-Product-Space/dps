@@ -32,85 +32,75 @@ export default function HomeNewPage() {
       <main className="flex-grow">
         {/* Header Section */}
         <header 
-        className="relative mx-auto w-full px-4
-                   h-[800px] sm:h-[950px] md:h-[1100px] lg:h-[1251px] xl:h-[1251px]"
-        style={{
-          width: '100%',
-          maxWidth: '1440px'
-        }}
-      >
-        {/* Main Text */}
-        <motion.div 
-          className="absolute left-1/2 transform -translate-x-1/2 px-4"
+          className="relative mx-auto w-full px-4
+                     h-[680px] sm:h-[820px] md:h-[1100px] lg:h-[1251px]"
           style={{
-            top: '177px',
             width: '100%',
-            maxWidth: '1200px'
-          }}
-          initial={{ opacity: 0, y: 35, filter: "blur(5px)" }}
-          animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-          transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-        >
-          <h1 
-            className="text-center font-inter font-semibold leading-tight
-                       text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl
-                       whitespace-normal sm:whitespace-nowrap"
-            style={{
-              fontFamily: 'Inter, sans-serif',
-              fontStyle: 'normal',
-              fontWeight: 600
-            }}
-          >
-            <span style={{ color: '#3A3A3A' }}>Your Pathway to </span>
-            <span 
-              style={{
-                background: 'linear-gradient(75deg, #D5A6D8 9.75%, #A674C4 33.03%, #66417B 87.51%)',
-                backgroundClip: 'text',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent'
-              }}
-            >
-              Product.
-            </span>
-          </h1>
-        </motion.div>
-        
-        {/* Homepage PS Logo SVG */}
-        <div 
-          className="absolute
-                     top-[180px] sm:top-[220px] md:top-[350px] lg:top-[350px] xl:top-[350px]"
-          style={{
-            left: '30.56%', // 440px / 1440px = 30.56% for perfect desktop positioning
-            zIndex: 3,
-            width: '47.78%', // 688px / 1440px = 47.78% for perfect desktop sizing
-            height: '627px',
-            maxWidth: '688px',
-            maxHeight: '627px'
+            maxWidth: '1440px'
           }}
         >
-          <InteractivePSLogo
-            className="w-full h-full object-contain
-                       scale-110 sm:scale-105 md:scale-100 lg:scale-100 xl:scale-100"
+          {/* Main Text */}
+          <motion.div 
+            className="absolute left-1/2 transform -translate-x-1/2 px-4 top-[120px] sm:top-[140px] md:top-[177px]"
             style={{
               width: '100%',
-              height: '100%'
+              maxWidth: '1200px'
             }}
-          />
-        </div>
-        
-        {/* Mobile Scroll Arrow Button - Only visible on mobile/small screens */}
-        <motion.button 
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.92 }}
-          transition={{ type: "spring", stiffness: 400, damping: 15 }}
-          className="absolute left-1/2 transform -translate-x-1/2 block md:hidden
-                     w-12 h-12 bg-gradient-to-r from-[#D5A6D8] to-[#66417B] 
-                     rounded-full flex items-center justify-center
-                     shadow-lg hover:shadow-xl transition-all duration-300"
-          style={{
-            top: '680px', // Moved further down for better spacing
-            zIndex: 10
-          }}
+            initial={{ opacity: 0, y: 35, filter: "blur(5px)" }}
+            animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+            transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
+          >
+            <h1 
+              className="text-center font-inter font-semibold leading-tight
+                         text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl
+                         whitespace-normal sm:whitespace-nowrap"
+              style={{
+                fontFamily: 'Inter, sans-serif',
+                fontStyle: 'normal',
+                fontWeight: 600
+              }}
+            >
+              <span style={{ color: '#3A3A3A' }}>Your Pathway to </span>
+              <span 
+                style={{
+                  background: 'linear-gradient(75deg, #D5A6D8 9.75%, #A674C4 33.03%, #66417B 87.51%)',
+                  backgroundClip: 'text',
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent'
+                }}
+              >
+                Product.
+              </span>
+            </h1>
+          </motion.div>
+          
+          {/* Homepage PS Logo SVG */}
+          <div 
+            className="absolute z-10
+                       top-[220px] sm:top-[250px] md:top-[350px]
+                       left-1/2 -translate-x-1/2 md:translate-x-0 md:left-[30.56%]
+                       w-[88vw] max-w-[340px] sm:max-w-[460px] md:w-[47.78%] md:max-w-[688px]
+                       h-auto max-h-[627px] aspect-[688/627]"
+          >
+            <InteractivePSLogo
+              className="w-full h-full object-contain"
+              style={{
+                width: '100%',
+                height: '100%'
+              }}
+            />
+          </div>
+          
+          {/* Mobile Scroll Arrow Button - Only visible on mobile/small screens */}
+          <motion.button 
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.92 }}
+            transition={{ type: "spring", stiffness: 400, damping: 15 }}
+            className="absolute left-1/2 transform -translate-x-1/2 block md:hidden
+                       w-11 h-11 bg-gradient-to-r from-[#D5A6D8] to-[#66417B] 
+                       rounded-full flex items-center justify-center
+                       shadow-lg hover:shadow-xl transition-all duration-300
+                       top-[570px] sm:top-[680px] md:top-[680px] z-20"
           onClick={() => {
             // Scroll to TextReveal section with precise positioning
             const textRevealSection = document.querySelector('section:nth-of-type(2)');
@@ -475,202 +465,102 @@ export default function HomeNewPage() {
           </p>
           <TimelineAnimation />
         </div>
-
-        <style jsx>{`
-          @media (max-width: 767px) {
-            .whatweoffer-heading-mobile {
-              font-size: 24px !important;
-              line-height: 28px !important;
-              position: absolute !important;
-              left: 50% !important;
-              transform: translateX(-200%) !important;
-              width: auto !important;
-              display: block !important;
-              z-index: 10 !important;
-            }
-            .whatweoffer-section-mobile {
-              transform: translateY(-800px) !important;
-              height: auto !important;
-              min-height: 1200px !important;
-              padding: 0 10px !important;
-              padding-bottom: 100px !important;
-            }
-            .mobile-whatweoffer-transform {
-              position: fixed !important;
-              top: -700px !important;
-              left: 20px !important;
-              transform: none !important;
-            }
-            .where-weve-gone-mobile {
-              transform: translateY(-1000px) !important;
-            }
-            .mobile-spacing-adjustment {
-              margin-top: -200px !important;
-            }
-          }
-        `}</style>
       </section>
 
-              {/* What we Offer Section */}
+      {/* What we Offer Section */}
       <section 
-        className="relative mx-auto whatweoffer-section-mobile"
-        style={{
-          width: '100%',
-          maxWidth: '1440px',
-          padding: '0 20px',
-          boxSizing: 'border-box',
-          minHeight: '900px',
-          paddingBottom: '100px'
-        }}
+        className="relative mx-auto w-full max-w-[1440px] px-4 md:px-8 py-16 md:py-24"
       >
         {/* What we Offer Heading */}
-        <h2 
-          className="whatweoffer-heading-mobile"
-          style={{
-            alignSelf: 'stretch',
-            color: '#3A3A3A',
-            textAlign: 'center',
-            fontFamily: 'Inter',
-            fontSize: '40px',
-            fontStyle: 'normal',
-            fontWeight: 600,
-            lineHeight: '48.75px',
-            position: 'absolute',
-            top: '150px',
-            left: '0',
-            right: '0',
-            margin: 0
-          }}
-        >
-          What We Offer
-        </h2>
-        
-        {/* Mobile-only What We Offer Heading 
-        <h2 
-          className="block md:hidden mobile-whatweoffer-transform"
-          style={{
-            color: '#3A3A3A',
-            textAlign: 'left',
-            fontFamily: 'Inter',
-            fontSize: '20px',
-            fontStyle: 'normal',
-            fontWeight: 600,
-            lineHeight: '24px',
-            position: 'absolute',
-            top: '-120px',
-            left: '125px',
-            margin: 0,
-            zIndex: 10
-          }}
-        >
-          What We Offer
-        </h2>*/}
+        <ScrollReveal direction="up" distance={20}>
+          <h2 
+            className="text-center font-inter font-semibold text-3xl sm:text-4xl text-[#3A3A3A] mb-8 md:mb-14"
+          >
+            What We Offer
+          </h2>
+        </ScrollReveal>
         
         {/* WhatWeOffer Component */}
-        <div style={{ 
-          position: 'relative',
-          top: '250px'
-        }}>
+        <div className="relative w-full">
           <WhatWeOffer />
         </div>
       </section>
       
-      {/* Where We've Gone Section - Hidden on Mobile */}
-      <div className="hidden md:block">
+      {/* Where We've Gone Section - Active on All Devices */}
+      <div className="w-full">
         <section 
-          className="relative w-full"
-          style={{
-            height: '675px',
-            background: '#FAF6FC',
-            display: 'flex',
-            padding: '150px 0',
-            flexDirection: 'column',
-            alignItems: 'flex-start',
-            gap: '25px',
-            alignSelf: 'stretch'
-          }}
+          className="relative w-full bg-[#FAF6FC] flex flex-col items-center gap-6 py-12 md:py-[150px]"
         >
         {/* Where We've Gone Text */}
         <ScrollReveal direction="up" distance={20} className="w-full">
-          <div 
-            style={{
-              alignSelf: 'stretch',
-              color: '#3A3A3A',
-              textAlign: 'center',
-              fontFamily: 'Inter',
-              fontSize: '40px',
-              fontStyle: 'normal',
-              fontWeight: 600,
-              lineHeight: '48.75px'
-            }}
+          <h2 
+            className="text-center font-inter font-semibold text-2xl sm:text-3xl md:text-[40px] text-[#3A3A3A]"
           >
             Where We've Gone
-          </div>
+          </h2>
         </ScrollReveal>
         
         {/* Continuous Studio Marquee Container */}
-        <div className="relative w-full overflow-hidden mt-10">
+        <div className="relative w-full overflow-hidden mt-6 md:mt-10">
           {/* Gradient Edge Masks for seamless fade */}
-          <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-24 md:w-44 bg-gradient-to-r from-[#FAF6FC] to-transparent z-10" />
-          <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-24 md:w-44 bg-gradient-to-l from-[#FAF6FC] to-transparent z-10" />
+          <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-16 sm:w-28 md:w-44 bg-gradient-to-r from-[#FAF6FC] to-transparent z-10" />
+          <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-16 sm:w-28 md:w-44 bg-gradient-to-l from-[#FAF6FC] to-transparent z-10" />
 
           {/* First Row Marquee (rolls left) */}
-          <div className="animate-marquee-continuous flex items-center py-4">
+          <div className="animate-marquee-continuous flex items-center py-2 md:py-4">
             {[
-              { src: "/images/CompanyLogos/tesla.png", alt: "Tesla", height: "75px" },
-              { src: "/images/CompanyLogos/northrop.png", alt: "Northrop Grumman", height: "50px" },
-              { src: "/images/CompanyLogos/amazon.png", alt: "Amazon", height: "50px" },
-              { src: "/images/CompanyLogos/oracle.png", alt: "Oracle", height: "50px" },
-              { src: "/images/CompanyLogos/servicenow.png", alt: "ServiceNow", height: "50px" },
+              { src: "/images/CompanyLogos/tesla.png", alt: "Tesla" },
+              { src: "/images/CompanyLogos/northrop.png", alt: "Northrop Grumman" },
+              { src: "/images/CompanyLogos/amazon.png", alt: "Amazon" },
+              { src: "/images/CompanyLogos/oracle.png", alt: "Oracle" },
+              { src: "/images/CompanyLogos/servicenow.png", alt: "ServiceNow" },
               // Repeated for infinite loop
-              { src: "/images/CompanyLogos/tesla.png", alt: "Tesla", height: "75px" },
-              { src: "/images/CompanyLogos/northrop.png", alt: "Northrop Grumman", height: "50px" },
-              { src: "/images/CompanyLogos/amazon.png", alt: "Amazon", height: "50px" },
-              { src: "/images/CompanyLogos/oracle.png", alt: "Oracle", height: "50px" },
-              { src: "/images/CompanyLogos/servicenow.png", alt: "ServiceNow", height: "50px" },
+              { src: "/images/CompanyLogos/tesla.png", alt: "Tesla" },
+              { src: "/images/CompanyLogos/northrop.png", alt: "Northrop Grumman" },
+              { src: "/images/CompanyLogos/amazon.png", alt: "Amazon" },
+              { src: "/images/CompanyLogos/oracle.png", alt: "Oracle" },
+              { src: "/images/CompanyLogos/servicenow.png", alt: "ServiceNow" },
             ].map((logo, index) => (
               <motion.div
                 key={`row1-${index}`}
                 whileHover={{ scale: 1.1, y: -4 }}
                 transition={{ type: "spring", stiffness: 350, damping: 18 }}
-                className="shrink-0 mx-10 cursor-pointer flex items-center justify-center"
+                className="shrink-0 mx-6 sm:mx-8 md:mx-10 cursor-pointer flex items-center justify-center"
               >
                 <img 
                   src={logo.src} 
                   alt={logo.alt} 
-                  style={{ height: logo.height, width: 'auto', objectFit: 'contain' }} 
-                  className="transition-all duration-200 hover:drop-shadow-md"
+                  className="h-7 sm:h-10 md:h-12 w-auto object-contain transition-all duration-200 hover:drop-shadow-md" 
                 />
               </motion.div>
             ))}
           </div>
 
           {/* Second Row Marquee (rolls right) */}
-          <div className="animate-marquee-continuous-reverse flex items-center py-4 mt-6">
+          <div className="animate-marquee-continuous-reverse flex items-center py-2 md:py-4 mt-4 md:mt-6">
             {[
-              { src: "/images/CompanyLogos/visa.png", alt: "Visa", height: "50px" },
-              { src: "/images/CompanyLogos/deloitte.png", alt: "Deloitte", height: "40px" },
-              { src: "/images/CompanyLogos/americanex.png", alt: "American Express", height: "60px" },
-              { src: "/images/CompanyLogos/cisco.png", alt: "Cisco", height: "50px" },
-              { src: "/images/CompanyLogos/walmart.png", alt: "Walmart", height: "50px" },
+              { src: "/images/CompanyLogos/visa.png", alt: "Visa" },
+              { src: "/images/CompanyLogos/deloitte.png", alt: "Deloitte" },
+              { src: "/images/CompanyLogos/americanex.png", alt: "American Express" },
+              { src: "/images/CompanyLogos/cisco.png", alt: "Cisco" },
+              { src: "/images/CompanyLogos/walmart.png", alt: "Walmart" },
               // Repeated for infinite loop
-              { src: "/images/CompanyLogos/visa.png", alt: "Visa", height: "50px" },
-              { src: "/images/CompanyLogos/deloitte.png", alt: "Deloitte", height: "40px" },
-              { src: "/images/CompanyLogos/americanex.png", alt: "American Express", height: "60px" },
-              { src: "/images/CompanyLogos/cisco.png", alt: "Cisco", height: "50px" },
-              { src: "/images/CompanyLogos/walmart.png", alt: "Walmart", height: "50px" },
+              { src: "/images/CompanyLogos/visa.png", alt: "Visa" },
+              { src: "/images/CompanyLogos/deloitte.png", alt: "Deloitte" },
+              { src: "/images/CompanyLogos/americanex.png", alt: "American Express" },
+              { src: "/images/CompanyLogos/cisco.png", alt: "Cisco" },
+              { src: "/images/CompanyLogos/walmart.png", alt: "Walmart" },
             ].map((logo, index) => (
               <motion.div
                 key={`row2-${index}`}
                 whileHover={{ scale: 1.1, y: -4 }}
                 transition={{ type: "spring", stiffness: 350, damping: 18 }}
-                className="shrink-0 mx-10 cursor-pointer flex items-center justify-center"
+                className="shrink-0 mx-6 sm:mx-8 md:mx-10 cursor-pointer flex items-center justify-center"
               >
                 <img 
                   src={logo.src} 
                   alt={logo.alt} 
-                  style={{ height: logo.height, width: 'auto', objectFit: 'contain' }} 
-                  className="transition-all duration-200 hover:drop-shadow-md"
+                  className="h-6 sm:h-9 md:h-11 w-auto object-contain transition-all duration-200 hover:drop-shadow-md" 
                 />
               </motion.div>
             ))}

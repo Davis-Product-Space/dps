@@ -290,23 +290,38 @@ export default function Navbar() {
         </div>
 
         {/* Hamburger (Mobile Only) */}
-        <button
-          className="md:hidden ml-auto z-50"
+        <motion.button
+          whileTap={{ scale: 0.9 }}
+          className="md:hidden ml-auto z-50 p-2 text-[#3A3A3A] focus:outline-none"
           onClick={toggleMenu}
-          aria-label="Toggle Menu"
+          aria-label={menuOpen ? "Close Menu" : "Open Menu"}
         >
-          <NavMenu className="w-7 h-7" />
-        </button>
+          {menuOpen ? (
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          ) : (
+            <NavMenu className="w-7 h-7" />
+          )}
+        </motion.button>
       </div>
 
       {/* Mobile Menu Overlay */}
       {menuOpen && (
-        <div className="fixed inset-0 bg-white opacity-[85%] z-40 flex flex-col items-center justify-center space-y-8 text-[22px] text-gray-800 font-medium md:hidden">
+        <motion.div 
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -20 }}
+          transition={{ duration: 0.25, ease: "easeOut" }}
+          className="fixed inset-0 top-[65px] bg-white/95 backdrop-blur-xl z-40 flex flex-col items-center px-6 py-8 space-y-6 text-[20px] text-gray-800 font-medium md:hidden overflow-y-auto"
+          style={{ minHeight: 'calc(100vh - 65px)' }}
+        >
           <Link
             href="/home_new"
             onClick={() => setMenuOpen(false)}
-            className={`transition-all ${
-              pathname === '/home_new' ? "font-bold underline" : "hover:font-bold"
+            className={`transition-colors py-2 ${
+              pathname === '/home_new' ? "text-[#66417B] font-bold" : "hover:text-[#66417B]"
             }`}
           >
             Home
@@ -314,8 +329,8 @@ export default function Navbar() {
           <Link
             href="/about_new"
             onClick={() => setMenuOpen(false)}
-            className={`transition-all ${
-              pathname === '/about_new' ? "font-bold underline" : "hover:font-bold"
+            className={`transition-colors py-2 ${
+              pathname === '/about_new' ? "text-[#66417B] font-bold" : "hover:text-[#66417B]"
             }`}
           >
             About
@@ -323,13 +338,78 @@ export default function Navbar() {
           <Link
             href="/join"
             onClick={() => setMenuOpen(false)}
-            className={`transition-all ${
-              pathname === '/join' ? "font-bold underline" : "hover:font-bold"
+            className={`transition-colors py-2 ${
+              pathname === '/join' ? "text-[#66417B] font-bold" : "hover:text-[#66417B]"
             }`}
           >
             Join
           </Link>
-        </div>
+
+          {/* Mobile Pathway Accordion */}
+          <div className="w-full max-w-xs flex flex-col items-center border-t border-b border-gray-100 py-4 my-2">
+            <button
+              onClick={togglePathwayDropdown}
+              className="flex items-center space-x-2 text-[20px] text-gray-800 font-medium py-1"
+            >
+              <span>Pathway</span>
+              <svg 
+                width="14" 
+                height="14" 
+                viewBox="0 0 12 12" 
+                fill="none"
+                className={`transition-transform duration-200 ${pathwayDropdownOpen ? 'rotate-180' : ''}`}
+              >
+                <path d="M3 4.5L6 7.5L9 4.5" stroke="#3A3A3A" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </button>
+            {pathwayDropdownOpen && (
+              <motion.div 
+                initial={{ opacity: 0, height: 0 }}
+                animate={{ opacity: 1, height: "auto" }}
+                className="flex flex-col items-center space-y-3 pt-3 text-[16px] text-gray-600"
+              >
+                <Link 
+                  href="/Step1" 
+                  onClick={() => setMenuOpen(false)}
+                  className="hover:text-[#66417B] transition-colors"
+                >
+                  Step 1: Fellowship
+                </Link>
+                <Link 
+                  href="/Step2" 
+                  onClick={() => setMenuOpen(false)}
+                  className="hover:text-[#66417B] transition-colors"
+                >
+                  Step 2: Capstone
+                </Link>
+                <Link 
+                  href="/Step3" 
+                  onClick={() => setMenuOpen(false)}
+                  className="hover:text-[#66417B] transition-colors"
+                >
+                  Step 3: Client
+                </Link>
+              </motion.div>
+            )}
+          </div>
+
+          {/* Mobile Join Us Button */}
+          <div className="pt-2 w-full max-w-xs flex justify-center">
+            <Link 
+              href="/join"
+              onClick={() => setMenuOpen(false)}
+              className="flex items-center justify-center w-full px-6 py-3.5 text-white font-medium shadow-[0_4px_14px_rgba(102,65,123,0.25)] rounded-[20px]"
+              style={{
+                backgroundColor: '#66417B',
+                fontFamily: '"M PLUS 1", sans-serif',
+                fontSize: '16px'
+              }}
+            >
+              <span className="mr-2">Join us!</span>
+              <ArrowIcon className="w-6 h-6" />
+            </Link>
+          </div>
+        </motion.div>
       )}
     </nav>
   );

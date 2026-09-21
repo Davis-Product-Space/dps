@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from "react";
 import CoffeeIcon from "@/assets/icons/Coffee.svg";
 import LinkedInIcon from "@/assets/icons/linkedin.svg";
 import { motion } from "framer-motion";
@@ -19,19 +22,24 @@ export default function BoardCard({
   linkedinLink,
   coffeechatLink,
 }: BoardCardProps) {
+  const [isFlipped, setIsFlipped] = useState(false);
+
   return (
     <motion.div 
       whileHover={{ y: -6 }}
       transition={{ type: "spring", stiffness: 350, damping: 20 }}
-      className="flex flex-col items-start text-left w-[160px] sm:w-[215px]"
+      className="flex flex-col items-start text-left w-[145px] min-[380px]:w-[160px] sm:w-[215px] cursor-pointer"
+      onClick={() => setIsFlipped(prev => !prev)}
     >
       {/* Flipping Card Container */}
       <div
-        className="relative w-[160px] sm:w-[215px] h-[160px] sm:h-[215px] mb-3 group"
+        className="relative w-[145px] min-[380px]:w-[160px] sm:w-[215px] h-[145px] min-[380px]:h-[160px] sm:h-[215px] mb-3 group"
         style={{ perspective: "1000px" }}
       >
         <div
-          className="relative w-full h-full transition-transform duration-700 ease-in-out group-hover:[transform:rotateY(180deg)]"
+          className={`relative w-full h-full transition-transform duration-700 ease-in-out group-hover:[transform:rotateY(180deg)] ${
+            isFlipped ? "[transform:rotateY(180deg)]" : ""
+          }`}
           style={{ transformStyle: "preserve-3d" }}
         >
           {/* Front side */}

@@ -19,14 +19,7 @@ export default function FAQInstance({ question, answer }: FAQInstanceProps) {
     <motion.div
       whileHover={{ y: -3, boxShadow: '0 8px 24px -4px rgba(102, 65, 123, 0.12)' }}
       transition={{ type: "spring", stiffness: 400, damping: 25 }}
-      className="w-full rounded-lg border transition-colors duration-200"
-      style={{
-        width: '456px',
-        gridRow: '1 / span 1',
-        gridColumn: '1 / span 1',
-        backgroundColor: '#FFFFFF',
-        border: '1px solid #E0E0E0',
-      }}
+      className="w-full max-w-[480px] rounded-xl bg-white border border-[#E0E0E0] shadow-sm transition-colors duration-200 overflow-hidden"
     >
       {/* Collapsible Button */}
       <button

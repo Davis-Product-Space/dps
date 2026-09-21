@@ -41,13 +41,12 @@ export default function JoinNewPage() {
   ];
   
   return (
-    <main className="min-h-screen bg-[#FDFAFF] text-[#3a3a3a] flex flex-col items-center justify-center relative">
+    <main className="min-h-screen bg-[#FDFAFF] text-[#3a3a3a] flex flex-col items-center justify-center relative overflow-x-hidden">
       <AmbientGlow />
       
       {/* 1. background image */}
       <section 
-        className="relative w-[1549px] h-[1023px] flex-shrink-0"
-        style={{ aspectRatio: "374/247" }}
+        className="relative w-full max-w-[1549px] h-[480px] sm:h-[620px] md:h-[800px] lg:h-[900px] flex-shrink-0 overflow-hidden flex flex-col items-center justify-center"
       >
         {/* Background image that spans the entire section */}
         <img
@@ -56,217 +55,135 @@ export default function JoinNewPage() {
           className="absolute inset-0 w-full h-full object-cover"
         />
         
-        {/* Content overlay - you can add text or other elements here */}
-        <div className="absolute top-[225.25px] left-1/2 transform -translate-x-1/2 z-10 text-center">
+        {/* Content overlay */}
+        <div className="relative z-10 text-center px-4 flex flex-col items-center">
           <motion.h1 
             initial={{ opacity: 0, y: 30, filter: "blur(4px)" }}
             animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
             transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1] }}
-            className="text-white font-inter text-[60px] font-semibold leading-[73.125px]"
+            className="text-white font-inter text-3xl sm:text-5xl md:text-[60px] font-semibold leading-tight drop-shadow-md"
           >
             Join Product Space!
           </motion.h1>
-        </div>
-        {/* TODO: Change to href="/application" on Oct 1st midnight*/}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.85, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
-          whileHover={{ scale: 1.04, y: -2 }}
-          whileTap={{ scale: 0.96 }}
-          className="absolute top-[312.125px] left-1/2 transform -translate-x-1/2 z-10"
-        >
-          <Link 
-            href="/application"
-            className="inline-flex px-5 py-3 items-center gap-[15px] rounded-[20px] bg-[#66417B] hover:bg-[#5a3769] transition-colors cursor-pointer shadow-[0_6px_20px_rgba(102,65,123,0.3)]"
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.85, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
+            whileHover={{ scale: 1.04, y: -2 }}
+            whileTap={{ scale: 0.96 }}
+            className="mt-6 sm:mt-8"
           >
-            <span className="text-[#FAF6FC] text-center font-['M_PLUS_1'] text-[22.5px] font-normal leading-[22.5px]">
-              Fellowship Applications Open!
-            </span>
-            <ArrowIcon className="w-8 h-8" style={{ minWidth: '32px', minHeight: '32px', transform: 'translateY(2px)' }} />
-          </Link>
-        </motion.div>
+            <Link 
+              href="/application"
+              className="inline-flex px-5 py-3 items-center gap-3 sm:gap-[15px] rounded-[20px] bg-[#66417B] hover:bg-[#5a3769] transition-colors cursor-pointer shadow-[0_6px_20px_rgba(102,65,123,0.3)]"
+            >
+              <span className="text-[#FAF6FC] text-center font-['M_PLUS_1'] text-base sm:text-xl md:text-[22.5px] font-normal leading-normal">
+                Fellowship Applications Open!
+              </span>
+              <ArrowIcon className="w-6 h-6 sm:w-8 sm:h-8" style={{ minWidth: '24px', minHeight: '24px', transform: 'translateY(1px)' }} />
+            </Link>
+          </motion.div>
+        </div>
       </section>
 
       {/* 2. Recruitment Timeline Section*/}
       <section
-        style={{
-          display: 'flex',
-          padding: '150px 0',
-          flexDirection: 'column',
-          alignItems: 'center',
-          gap: '50px',
-          alignSelf: 'stretch',
-          background: '#FAF6FC'
-        }}
+        className="w-full flex flex-col items-center py-16 md:py-[150px] px-4 bg-[#FAF6FC] overflow-hidden"
       >
-        <ScrollReveal direction="up" distance={25}>
-          <div
-            style={{
-              display: 'flex',
-              flexDirection: 'column',
-              alignItems: 'center',
-              gap: '25px',
-              alignSelf: 'stretch'
-            }}
-          >
-            <h2
-              style={{
-                alignSelf: 'stretch',
-                color: '#3A3A3A',
-                textAlign: 'center',
-                fontFamily: 'Inter',
-                fontSize: '40px',
-                fontStyle: 'normal',
-                fontWeight: 600,
-                lineHeight: '48.75px'
-              }}
-            >
+        <ScrollReveal direction="up" distance={25} className="w-full">
+          <div className="flex flex-col items-center gap-4 md:gap-6 text-center max-w-3xl mx-auto mb-8 md:mb-12">
+            <h2 className="font-inter text-2xl sm:text-3xl md:text-[40px] font-semibold text-[#3A3A3A] leading-tight">
               Recruitment Timeline
             </h2>
-            
-            <p
-              style={{
-                width: '900px',
-                color: '#3A3A3A',
-                textAlign: 'center',
-                fontFamily: '"M PLUS 1"',
-                fontSize: '22.5px',
-                fontStyle: 'normal',
-                fontWeight: 400,
-                lineHeight: '32px'
-              }}
-            >
+            <p className="font-['M_PLUS_1'] text-base sm:text-lg md:text-[22.5px] text-[#3A3A3A] leading-relaxed">
               Interested in joining our fellowship? Hover over our timeline steps to learn more!
             </p>
           </div>
         </ScrollReveal>
         
-        <div
-          style={{
-            height: '821px',
-            alignSelf: 'stretch',
-          }}
-        >
-          <div style={{ transform: 'translateY(-400px)' }}>
-            <TimelineAnimation />
+        {/* Timeline Container with horizontal scroll on mobile */}
+        <div className="w-full max-w-[1440px] overflow-x-auto pb-6 scrollbar-thin">
+          <div className="min-w-[1100px] md:min-w-full flex justify-center">
+            <div style={{ height: '821px', width: '1440px', position: 'relative' }}>
+              <div style={{ transform: 'translateY(-400px)' }}>
+                <TimelineAnimation />
+              </div>
+            </div>
           </div>
         </div>
       </section>
       
       {/* 3. Recruitment Process Section*/}
-      <ScrollReveal direction="up" distance={30}>
-        <section 
-          className="mt-[71px] mb-[71px]"
-          style={{
-            padding: '0 88px'
-          }}
-        >
+      <ScrollReveal direction="up" distance={30} className="w-full max-w-6xl">
+        <section className="my-12 md:my-[71px] px-4 sm:px-6 md:px-8">
           <motion.div
             whileHover={{ y: -4, boxShadow: '0 16px 36px 0 rgba(102, 65, 123, 0.18)' }}
             transition={{ type: "spring", stiffness: 300, damping: 20 }}
-            style={{
-              display: 'flex',
-              padding: '50px 100px',
-              flexDirection: 'column',
-              alignItems: 'center',
-              gap: '25px',
-              borderRadius: '30px',
-              background: '#FAF6FC',
-              boxShadow: '0 6px 6px 0 rgba(0, 0, 0, 0.25)'
-            }}
+            className="w-full p-6 sm:p-10 md:p-[50px_80px] flex flex-col items-center gap-6 md:gap-8 rounded-[30px] bg-[#FAF6FC] shadow-[0_6px_6px_0_rgba(0,0,0,0.25)]"
           >
-            <h2 
-              className="text-center font-inter text-[40px] font-semibold leading-[48.75px]"
-              style={{ color: '#3A3A3A' }}
-            >
+            <h2 className="text-center font-inter text-2xl sm:text-3xl md:text-[40px] font-semibold text-[#3A3A3A] leading-tight">
               Recruitment Process
             </h2>
 
             {/* Process Details Section */}
-            <div 
-              className="flex flex-col items-start"
-              style={{
-                display: 'flex',
-                width: '1064px',
-                flexDirection: 'column',
-                alignItems: 'flex-start',
-                gap: '21px',
-                color: '#3a3a3a'
-              }}
-            >
-            {/* Step List Map*/}
-            <RecruitmentStep 
-              title="Step 1: Questionnaire"
-              description="Answer 2 300 word questions on the application form by Oct 8th so we can get to know you! This should take about 30 minutes to complete."
-            />
-            
-            <RecruitmentStep 
-              title="Step 2: Product Pitch"
-              description="After reading your applications, we will invite you to an hour-long product pitch session where you'll get a preview of what you'll do during the fellowship!"
-            />
-            
-            <RecruitmentStep 
-            title="Step 3: Interviews"
-            description="If we think you'd be a good fit after the Product Pitch, you'll be asked to schedule a short interview as the final stage of the recruitment."
-            />
-          
-            <RecruitmentStep 
-              title="Step 4: Confirmation"
-              description="If you're accepted, you'll receive an email asking you to confirm your place in the fellowship. Reply to the email to officially join Product Space!"
-            />
-          </div>
+            <div className="w-full flex flex-col items-start gap-4 sm:gap-6 text-[#3a3a3a]">
+              <RecruitmentStep 
+                title="Step 1: Questionnaire"
+                description="Answer 2 300 word questions on the application form by Oct 8th so we can get to know you! This should take about 30 minutes to complete."
+              />
+              <RecruitmentStep 
+                title="Step 2: Product Pitch"
+                description="After reading your applications, we will invite you to an hour-long product pitch session where you'll get a preview of what you'll do during the fellowship!"
+              />
+              <RecruitmentStep 
+                title="Step 3: Interviews"
+                description="If we think you'd be a good fit after the Product Pitch, you'll be asked to schedule a short interview as the final stage of the recruitment."
+              />
+              <RecruitmentStep 
+                title="Step 4: Confirmation"
+                description="If you're accepted, you'll receive an email asking you to confirm your place in the fellowship. Reply to the email to officially join Product Space!"
+              />
+            </div>
           </motion.div>
         </section>
       </ScrollReveal>
 
       {/* 4. Middle of Page Image*/}
-      <ScrollReveal direction="up" distance={20}>
-        <section>
+      <ScrollReveal direction="up" distance={20} className="w-full">
+        <section className="w-full">
           <img
             src="/images/join-mid-page-pic.png"
             alt="Join middle page image"
-            className="w-full"
+            className="w-full h-auto object-cover max-h-[600px]"
           />
         </section>
       </ScrollReveal>
 
       {/* 5. FAQ Section*/}
-      <ScrollReveal direction="up" distance={30}>
-        <section
-          style={{
-            width: '1440px',
-            flexShrink: 0,
-            background: '#FAF6FC',
-            paddingBottom: '150px'
-        }}>
+      <ScrollReveal direction="up" distance={30} className="w-full">
+        <section className="w-full bg-[#FAF6FC] py-16 md:py-[150px] px-4">
           {/* Title */}
-          <h2 
-            className="text-center font-inter text-[40px] font-semibold leading-[48.75px] text-[#3A3A3A]"
-            style={{ paddingTop: '150px' }}
-          >
+          <h2 className="text-center font-inter text-2xl sm:text-3xl md:text-[40px] font-semibold text-[#3A3A3A] leading-tight mb-8 md:mb-12">
             Frequently Asked Questions
           </h2>
 
           {/* Map of 6 components */}
-          <div 
-            className="mt-[33px] grid grid-cols-2 gap-x-[152px] gap-y-[37px] w-[1064px] mx-auto"
-          >
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-x-12 lg:gap-x-20 md:gap-y-6 w-full max-w-5xl mx-auto">
             {faqs.map((faq, index) => (
-              <div key={index} className="col-auto row-auto">
+              <div key={index} className="w-full flex justify-center">
                 <FAQInstance question={faq.question} answer={faq.answer} />
               </div> 
             ))}
           </div>
 
           {/* Subtitle */}
-          <h3 className="mt-[90px] text-center font-inter text-[32px] font-semibold leading-[48.75px] text-[#3A3A3A]">
+          <h3 className="mt-12 md:mt-20 text-center font-inter text-xl sm:text-2xl md:text-[32px] font-semibold text-[#3A3A3A]">
             Still have questions?
           </h3>
 
           {/* Textbox */}
-          <div className="mt-[30px] flex justify-center">
-            <p className="w-[900px] font-['M_PLUS_1'] text-[22.5px] not-italic font-normal leading-[32px] text-[#3A3A3A]">
+          <div className="mt-4 md:mt-8 flex justify-center px-4">
+            <p className="w-full max-w-3xl text-center font-['M_PLUS_1'] text-sm sm:text-base md:text-[22.5px] font-normal leading-relaxed text-[#3A3A3A]">
               Schedule a coffee chat with one of our board members{" "}
               <Link
                 href="/about_new#section3"
