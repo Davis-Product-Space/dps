@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 interface FAQInstanceProps {
   question: string;
@@ -15,8 +16,10 @@ export default function FAQInstance({ question, answer }: FAQInstanceProps) {
   };
 
   return (
-    <div
-      className="w-full rounded-lg border transition-all duration-200 hover:shadow-md"
+    <motion.div
+      whileHover={{ y: -3, boxShadow: '0 8px 24px -4px rgba(102, 65, 123, 0.12)' }}
+      transition={{ type: "spring", stiffness: 400, damping: 25 }}
+      className="w-full rounded-lg border transition-colors duration-200"
       style={{
         width: '456px',
         gridRow: '1 / span 1',
@@ -28,7 +31,7 @@ export default function FAQInstance({ question, answer }: FAQInstanceProps) {
       {/* Collapsible Button */}
       <button
         onClick={toggleExpanded}
-        className="flex items-center justify-between w-full p-4 rounded-lg"
+        className="flex items-center justify-between w-full p-4 rounded-lg cursor-pointer"
         style={{
           minHeight: '60px',
         }}
@@ -50,38 +53,39 @@ export default function FAQInstance({ question, answer }: FAQInstanceProps) {
             background: 'linear-gradient(135deg, #9965B7 0%, #7a4e94 100%)',
           }}
         >
-          <span 
-            className="text-white font-bold text-lg transition-transform duration-200"
-            style={{
-              transform: isExpanded ? 'rotate(45deg)' : 'rotate(0deg)',
-            }}
+          <motion.span 
+            className="text-white font-bold text-lg inline-block"
+            animate={{ rotate: isExpanded ? 45 : 0 }}
+            transition={{ type: "spring", stiffness: 350, damping: 20 }}
           >
             +
-          </span>
+          </motion.span>
         </div>
       </button>
       
       {/* Answer - Collapsible */}
-      <div
-        className="overflow-hidden transition-all duration-300 ease-in-out"
-        style={{
-          maxHeight: isExpanded ? '200px' : '0px',
-          opacity: isExpanded ? 1 : 0,
-        }}
-      >
-        <div 
-          className="px-4 pb-4"
-        >
-          <p 
-            className="font-['M_PLUS_1'] text-[16px] font-normal leading-[24px] pt-2"
-            style={{ 
-              color: '#000000'
-            }}
+      <AnimatePresence initial={false}>
+        {isExpanded && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+            className="overflow-hidden"
           >
-            {answer}
-          </p>
-        </div>
-      </div>
-    </div>
+            <div className="px-4 pb-4">
+              <p 
+                className="font-['M_PLUS_1'] text-[16px] font-normal leading-[24px] pt-2"
+                style={{ 
+                  color: '#000000'
+                }}
+              >
+                {answer}
+              </p>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </motion.div>
   );
 }

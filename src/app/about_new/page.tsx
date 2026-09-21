@@ -1,13 +1,14 @@
 "use client";
 
 import { useRef } from "react";
+import { motion } from "framer-motion";
 import { ImageMarqueeDemo } from "@/components/AboutPage/Marquee_new/image-marquee";
 // Import the AnimatedProjects component from its file
 import { AnimatedProjects } from "@/components/AboutPage/AnimateProjects";
 // Import the projects data from your data file
 import { projects } from "@/data/24-25ProductSpace/projects-info";
 
-import { board } from "@/data/25-26ProductSpace/board";
+import { board } from "@/data/26-27ProductSpace/board";
 import { declassifyTeam } from "@/data/24-25ProductSpace/Spring25Fellows/TeamDeClassify";
 import { heardTeam } from "@/data/24-25ProductSpace/Spring25Fellows/TeamHeard";
 import { honeTeam } from "@/data/24-25ProductSpace/Spring25Fellows/TeamHone";
@@ -19,6 +20,8 @@ import ProfileGrid from "@/components/AboutPage/ProfileGrid";
 
 import ProjectCarousel from "@/components/PathwaySteps/projectCarousel";
 import { springProjects } from "@/data/24-25ProductSpace/capstones/springProjects";
+import { ScrollReveal } from "@/components/motion/ScrollReveal";
+import { AmbientGlow } from "@/components/motion/AmbientGlow";
 
 
 export default function AboutNewPage() {
@@ -30,6 +33,7 @@ export default function AboutNewPage() {
   ];
   return (
     <div className="w-full bg-[#FAF6FC]" style={{ paddingBottom: '150px' }}>
+      <AmbientGlow />
       <div className="relative w-full h-screen overflow-hidden">
         {/* Background Image */}
         <div 
@@ -46,7 +50,10 @@ export default function AboutNewPage() {
           className="relative z-10 flex justify-center w-full h-full px-8"
           style={{ paddingTop: '20vh' }}
         >
-          <h1 
+          <motion.h1 
+            initial={{ opacity: 0, y: 30, filter: "blur(4px)" }}
+            animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+            transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1] }}
             style={{
               color: '#FFF',
               fontFamily: 'Inter',
@@ -58,74 +65,79 @@ export default function AboutNewPage() {
             }}
           >
             Meet Davis Product Space!
-          </h1>
+          </motion.h1>
         </div>
       </div>
-      <section className="flex justify-center" style={{ marginTop: '90px' }}>
-        <div style={{ width: '900px' }}>
-          <h2 
-            style={{
-              color: '#3A3A3A',
-              textAlign: 'center',
-              fontFamily: 'Inter',
-              fontSize: '40px',
-              fontStyle: 'normal',
-              fontWeight: 600,
-              lineHeight: '48.75px'
-            }}
-          >
-            Who We Are
-          </h2>
-          <p 
-            style={{
-              color: '#3A3A3A',
-              textAlign: 'center',
-              fontFamily: 'var(--font-m-plus-1)',
-              fontSize: '22.5px',
-              fontStyle: 'normal',
-              fontWeight: 400,
-              lineHeight: '32px',
-              marginTop: '10px'
-            }}
-          >
-            At Product Space, we're a national community of students with a mission to become the world's next generation of product leaders.
-          </p>
-        </div>
-      </section>
+      <ScrollReveal direction="up" distance={25}>
+        <section className="flex justify-center" style={{ marginTop: '90px' }}>
+          <div style={{ width: '900px' }}>
+            <h2 
+              style={{
+                color: '#3A3A3A',
+                textAlign: 'center',
+                fontFamily: 'Inter',
+                fontSize: '40px',
+                fontStyle: 'normal',
+                fontWeight: 600,
+                lineHeight: '48.75px'
+              }}
+            >
+              Who We Are
+            </h2>
+            <p 
+              style={{
+                color: '#3A3A3A',
+                textAlign: 'center',
+                fontFamily: 'var(--font-m-plus-1)',
+                fontSize: '22.5px',
+                fontStyle: 'normal',
+                fontWeight: 400,
+                lineHeight: '32px',
+                marginTop: '10px'
+              }}
+            >
+              At Product Space, we're a national community of students with a mission to become the world's next generation of product leaders.
+            </p>
+          </div>
+        </section>
+      </ScrollReveal>
+
       <section style={{ marginTop: '31px' }}>
           <ImageMarqueeDemo />
       </section>
       
       {/* New section 184px below marquee */}
-      <section style={{ marginTop: '184px' }}>
-        <div className="flex justify-center">
-          <div style={{ width: '900px' }}>
-            <h2 
-              style={{
-                color: '#000000',
-                textAlign: 'center',
-                fontFamily: 'Inter',
-                fontSize: '36px',
-                fontStyle: 'normal',
-                fontWeight: 600,
-                lineHeight: '48.75px',
-                marginBottom: '71px'
-              }}
-            >
-              Meet the Board!
-            </h2>
-          </div>
-        </div>
-        <div className="flex justify-center px-4 sm:px-8 md:px-16 lg:px-32">
-          <div className="w-full max-w-5xl">
-            <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8 w-full justify-items-center">
-              {board.map((member, i) => (
-                <FlipProfile key={i} {...member} />
-              ))}
+      <ScrollReveal direction="up" distance={30}>
+        <section style={{ marginTop: '184px' }}>
+          <div className="flex justify-center">
+            <div style={{ width: '900px' }}>
+              <h2 
+                style={{
+                  color: '#000000',
+                  textAlign: 'center',
+                  fontFamily: 'Inter',
+                  fontSize: '36px',
+                  fontStyle: 'normal',
+                  fontWeight: 600,
+                  lineHeight: '48.75px',
+                  marginBottom: '71px'
+                }}
+              >
+                Meet the Board!
+              </h2>
             </div>
           </div>
-        </div>
-      </section>
+          <div className="flex justify-center px-4 sm:px-8 md:px-16 lg:px-32">
+            <div className="w-full max-w-5xl">
+              <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8 w-full justify-items-center">
+                {board.map((member, i) => (
+                  <FlipProfile key={i} {...member} />
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+      </ScrollReveal>
       {/* Meet the Spring 2025 Fellows - commented out, not used this cycle */}
       {/* <section
         className="flex justify-center px-4 sm:px-8 md:px-16 lg:px-32"
@@ -189,31 +201,33 @@ export default function AboutNewPage() {
 
         
         {/* New section below Fellows */}
-        <section className="flex flex-col justify-center" style={{ marginTop: '180px' }}>
-          <div className="flex justify-center">
-            <div style={{ width: '900px' }}>
-              <h2 
-                style={{
-                  color: '#3A3A3A',
-                  textAlign: 'center',
-                  fontFamily: 'Inter',
-                  fontSize: '40px',
-                  fontStyle: 'normal',
-                  fontWeight: 600,
-                  lineHeight: '48.75px',
-                  marginBottom: '71px'
-                }}
-              >
-                Here are the Spring Projects!
-              </h2>
+        <ScrollReveal direction="up" distance={30}>
+          <section className="flex flex-col justify-center" style={{ marginTop: '180px' }}>
+            <div className="flex justify-center">
+              <div style={{ width: '900px' }}>
+                <h2 
+                  style={{
+                    color: '#3A3A3A',
+                    textAlign: 'center',
+                    fontFamily: 'Inter',
+                    fontSize: '40px',
+                    fontStyle: 'normal',
+                    fontWeight: 600,
+                    lineHeight: '48.75px',
+                    marginBottom: '71px'
+                  }}
+                >
+                  Here are the Spring Projects!
+                </h2>
+              </div>
             </div>
-          </div>
-          <div className="flex justify-center">
-            <ProjectCarousel 
-                  projectTiles={springProjects}
-            /> 
-          </div>
-        </section>
+            <div className="flex justify-center">
+              <ProjectCarousel 
+                    projectTiles={springProjects}
+              /> 
+            </div>
+          </section>
+        </ScrollReveal>
     </div>
   );
 }

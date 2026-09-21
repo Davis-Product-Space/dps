@@ -1243,7 +1243,7 @@ export function TimelineAnimation() {
                transition: 'transform 0.6s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.5s ease'
              }}
            >
-             Mon, 3/30 @ 12am
+             Wed, 9/30
            </div>
 
            {/* Applications Open Hover Paragraph - appears during animation */}
@@ -1328,7 +1328,7 @@ export function TimelineAnimation() {
                zIndex: 10
              }}
            >
-             Mon, 4/6 @ 6-8pm
+             Mon, 10/5 @ 6 & 7pm
            </div>
 
            {/* Info Sessions Location */}
@@ -1437,7 +1437,7 @@ export function TimelineAnimation() {
                zIndex: 10
              }}
            >
-             Tue, 4/7 @ 8-9pm
+             Tue, 10/6 @ 8-9pm
            </div>
 
             {/* PM Panel & Workshop Location */}
@@ -1532,7 +1532,7 @@ export function TimelineAnimation() {
                zIndex: 10
              }}
            >
-             Sat 4/11 @ 12-1pm
+             Sat, 10/10 @ 12-2pm
            </div>
 
            <div 
@@ -1641,7 +1641,7 @@ export function TimelineAnimation() {
                zIndex: 10
              }}
            >
-             Wed, 4/8 @ 11:59pm
+             Wed, 10/7 @ 11:59pm
            </div>
 
            {/* Hover Paragraph - appears below during animation */}
@@ -1729,7 +1729,7 @@ export function TimelineAnimation() {
                zIndex: 10
              }}
            >
-             Fri, 4/10 @ 6pm
+             Fri, 10/9 @ 7 or 8pm
            </div>
 
            {/* Second Social (By invite) Text */}
@@ -1863,7 +1863,7 @@ export function TimelineAnimation() {
                zIndex: 10
              }}
            >
-             Sun, 4/12
+             Sun, 10/11
            </div>
 
            {/* Interviews Hover Paragraph - appears during animation */}

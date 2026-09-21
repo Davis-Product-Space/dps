@@ -1,3 +1,5 @@
+import { motion } from "framer-motion";
+
 interface RecruitmentStepProps {
   title: string;
   description: string;
@@ -5,8 +7,10 @@ interface RecruitmentStepProps {
 
 export default function RecruitmentStep({ title, description }: RecruitmentStepProps) {
   return (
-    <div 
-      className="flex justify-between items-center"
+    <motion.div 
+      whileHover={{ x: 6 }}
+      transition={{ type: "spring", stiffness: 350, damping: 20 }}
+      className="flex justify-between items-center transition-opacity"
       style={{
         display: 'flex',
         width: '1064px',
@@ -42,6 +46,6 @@ export default function RecruitmentStep({ title, description }: RecruitmentStepP
           )
         }}
       />
-    </div>
+    </motion.div>
   );
 }

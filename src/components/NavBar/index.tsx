@@ -6,9 +6,9 @@ import NavMenu from "@/assets/icons/nav-menu.svg";
 import ArrowIcon from "@/assets/icons/arrow_function.svg";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 const navLinks = [
-
   { name: "Home", href: "/home_new" },
   { name: "About", href: "/about_new" },
   { name: "Join", href: "/join" },
@@ -19,6 +19,16 @@ export default function Navbar() {
   const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
   const [pathwayDropdownOpen, setPathwayDropdownOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
+    };
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const toggleMenu = () => setMenuOpen((prev) => !prev);
   const togglePathwayDropdown = () => setPathwayDropdownOpen((prev) => !prev);
@@ -35,20 +45,37 @@ export default function Navbar() {
 
   return (
     <nav 
-      className="fixed md:absolute top-0 left-0 w-full z-50 bg-white md:bg-transparent"
+      className="fixed top-0 left-0 w-full z-50 transition-all duration-300 ease-out"
       style={{
-        backgroundColor: isTransparentNavbar ? 'transparent' : 'white',
+        backgroundColor: scrolled
+          ? 'rgba(255, 255, 255, 0.88)'
+          : isTransparentNavbar
+          ? 'transparent'
+          : 'white',
+        backdropFilter: scrolled ? 'blur(14px)' : 'none',
+        WebkitBackdropFilter: scrolled ? 'blur(14px)' : 'none',
+        boxShadow: scrolled ? '0 4px 20px -4px rgba(102, 65, 123, 0.08)' : 'none',
         borderTop: isTransparentNavbar ? 'none' : '1px solid #3A3A3A',
-        borderBottom: isTransparentNavbar ? 'none' : '1px solid #3A3A3A'
+        borderBottom: scrolled
+          ? '1px solid rgba(166, 116, 196, 0.2)'
+          : isTransparentNavbar
+          ? 'none'
+          : '1px solid #3A3A3A',
       }}
     >
       <div className="flex items-center justify-between px-6 sm:px-[7.5rem] py-4">
         {/* Logo */}
-        <div className="flex items-center md:-ml-8" style={{ marginLeft: '0px' }}>
+        <motion.div
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+          transition={{ type: "spring", stiffness: 300, damping: 20 }}
+          className="flex items-center md:-ml-8"
+          style={{ marginLeft: '0px' }}
+        >
           <Link href="/" className="flex items-center">
             <Logo className="w-8 h-8" />
           </Link>
-        </div>
+        </motion.div>
 
         {/* Right Side Navigation Group */}
         <div className="hidden md:flex items-center space-x-8">
@@ -241,19 +268,25 @@ export default function Navbar() {
           </div>
 
           {/* Join Us Button */}
-          <Link 
-            href="/join"
-            className="flex items-center px-6 py-3 text-white font-medium transition-all hover:opacity-90"
-            style={{
-              backgroundColor: '#66417B',
-              borderRadius: '20px',
-              fontFamily: '"M PLUS 1", sans-serif',
-              fontSize: '16px'
-            }}
+          <motion.div
+            whileHover={{ scale: 1.04, y: -1 }}
+            whileTap={{ scale: 0.96 }}
+            transition={{ type: "spring", stiffness: 400, damping: 20 }}
           >
-            <span className="mr-2 -mt-0.5">Join us!</span>
-            <ArrowIcon className="w-8 h-8" style={{ minWidth: '32px', minHeight: '32px' }} />
-          </Link>
+            <Link 
+              href="/join"
+              className="flex items-center px-6 py-3 text-white font-medium shadow-[0_4px_14px_rgba(102,65,123,0.25)] hover:shadow-[0_6px_20px_rgba(102,65,123,0.35)] transition-shadow"
+              style={{
+                backgroundColor: '#66417B',
+                borderRadius: '20px',
+                fontFamily: '"M PLUS 1", sans-serif',
+                fontSize: '16px'
+              }}
+            >
+              <span className="mr-2 -mt-0.5">Join us!</span>
+              <ArrowIcon className="w-8 h-8" style={{ minWidth: '32px', minHeight: '32px' }} />
+            </Link>
+          </motion.div>
         </div>
 
         {/* Hamburger (Mobile Only) */}
@@ -287,15 +320,14 @@ export default function Navbar() {
           >
             About
           </Link>
-          {/* TODO: Change to href="/application" on Oct 1st midnight*/}
           <Link
-            href="/application"
+            href="/join"
             onClick={() => setMenuOpen(false)}
             className={`transition-all ${
-              pathname === '/application' || pathname === '/coming_soon_application' ? "font-bold underline" : "hover:font-bold"
+              pathname === '/join' ? "font-bold underline" : "hover:font-bold"
             }`}
           >
-            Apply
+            Join
           </Link>
         </div>
       )}

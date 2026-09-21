@@ -1,5 +1,6 @@
 import CoffeeIcon from "@/assets/icons/Coffee.svg";
 import LinkedInIcon from "@/assets/icons/linkedin.svg";
+import { motion } from "framer-motion";
 
 interface BoardCardProps {
   imageSrc?: string;
@@ -19,7 +20,11 @@ export default function BoardCard({
   coffeechatLink,
 }: BoardCardProps) {
   return (
-    <div className="flex flex-col items-start text-left w-[160px] sm:w-[215px]">
+    <motion.div 
+      whileHover={{ y: -6 }}
+      transition={{ type: "spring", stiffness: 350, damping: 20 }}
+      className="flex flex-col items-start text-left w-[160px] sm:w-[215px]"
+    >
       {/* Flipping Card Container */}
       <div
         className="relative w-[160px] sm:w-[215px] h-[160px] sm:h-[215px] mb-3 group"
@@ -97,6 +102,6 @@ export default function BoardCard({
           )}
         </div>
    
-    </div>
+    </motion.div>
   );
 }

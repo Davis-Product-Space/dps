@@ -2,6 +2,7 @@
 
 import { useState, CSSProperties } from 'react';
 import { useRouter } from 'next/navigation';
+import { motion, useMotionValue, useSpring } from 'framer-motion';
 
 type HoveredPart = null | 'fellowship' | 'capstone' | 'client';
 
@@ -27,6 +28,24 @@ export default function InteractivePSLogo({ className, style }: InteractivePSLog
   const [hoveredPart, setHoveredPart] = useState<HoveredPart>(null);
   const router = useRouter();
 
+  const mouseX = useMotionValue(0);
+  const mouseY = useMotionValue(0);
+  const rotateX = useSpring(mouseY, { stiffness: 120, damping: 18 });
+  const rotateY = useSpring(mouseX, { stiffness: 120, damping: 18 });
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    const x = e.clientX - rect.left - rect.width / 2;
+    const y = e.clientY - rect.top - rect.height / 2;
+    mouseX.set(x / 30);
+    mouseY.set(-y / 30);
+  };
+
+  const handleMouseLeave = () => {
+    mouseX.set(0);
+    mouseY.set(0);
+  };
+
   const getGroupStyle = (part: Exclude<HoveredPart, null>): CSSProperties => ({
     filter: hoveredPart === null
       ? 'none'
@@ -42,13 +61,35 @@ export default function InteractivePSLogo({ className, style }: InteractivePSLog
   };
 
   return (
-    <svg
-      viewBox="0 0 688 627"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      className={className}
-      style={style}
+    <motion.div
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
+      style={{
+        perspective: 1000,
+        rotateX,
+        rotateY,
+        width: '100%',
+        height: '100%',
+        display: 'inline-block',
+      }}
+      animate={{
+        y: [-6, 6, -6],
+      }}
+      transition={{
+        y: {
+          duration: 6,
+          repeat: Infinity,
+          ease: "easeInOut",
+        },
+      }}
     >
+      <svg
+        viewBox="0 0 688 627"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        className={className}
+        style={style}
+      >
       {/* Shadows - always visible */}
       <g opacity="0.7">
         <g opacity="0.75" filter="url(#filter0_f_118_7)">
@@ -362,5 +403,6 @@ export default function InteractivePSLogo({ className, style }: InteractivePSLog
         </linearGradient>
       </defs>
     </svg>
+    </motion.div>
   );
 }

@@ -2,6 +2,8 @@
 
 import React from 'react';
 import { whatWeOfferPhases } from '@/data/what-we-offer-cards';
+import { motion } from 'framer-motion';
+import { ScrollReveal } from '@/components/motion/ScrollReveal';
 
 export function WhatWeOffer() {
   return (
@@ -18,286 +20,343 @@ export function WhatWeOffer() {
         }}
       >
         {/* Row 1: Fellowship */}
-        <div style={{
-          display: 'flex',
-          alignItems: 'center',
-          marginBottom: '100px',
-          gap: '50px'
-        }}>
-          {/* Fellowship Image */}
-          <div style={{ flex: '0 0 auto', maxWidth: '40%' }}>
-            <img 
-              src="/images/fellowship_staircase.svg" 
-              alt="Fellowship Staircase"
-              style={{
-                width: '100%',
-                height: 'auto',
-                maxWidth: '517px'
-              }}
-            />
-          </div>
-          
-          {/* Fellowship Content */}
-          <div style={{ flex: '1', minWidth: '0' }}>
-            <h3 
-              style={{
-                color: '#3A3A3A',
-                fontFamily: 'Inter',
-                fontSize: '32px',
-                fontStyle: 'normal',
-                fontWeight: 600,
-                lineHeight: '39px',
-                marginBottom: '25px',
-                textAlign: 'center',
-                width: '100%'
-              }}
+        <ScrollReveal direction="up" distance={30}>
+          <div style={{
+            display: 'flex',
+            alignItems: 'center',
+            marginBottom: '100px',
+            gap: '50px'
+          }}>
+            {/* Fellowship Image */}
+            <motion.div 
+              style={{ flex: '0 0 auto', maxWidth: '40%' }}
+              animate={{ y: [-4, 4, -4] }}
+              transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
             >
-              {whatWeOfferPhases[0].sectionTitle}
-            </h3>
+              <img 
+                src="/images/fellowship_staircase.svg" 
+                alt="Fellowship Staircase"
+                style={{
+                  width: '100%',
+                  height: 'auto',
+                  maxWidth: '517px'
+                }}
+              />
+            </motion.div>
             
-            <div 
-              style={{
-                display: 'grid',
-                gridTemplateColumns: '1fr 1fr',
-                gap: '20px'
-              }}
-            >
-              {whatWeOfferPhases[0].cards.map((card) => (
-                <div key={card.id} style={{
-                  display: 'flex',
-                  padding: '21px 25px',
-                  flexDirection: 'column',
-                  alignItems: 'center',
-                  gap: '11px',
-                  borderRadius: '10px',
-                  background: '#FAF6FC',
-                  textAlign: 'center'
-                }}>
-                  <img 
-                    src={card.icon}
-                    alt={card.title}
-                    style={{
-                      width: '69px',
-                      height: '68px'
+            {/* Fellowship Content */}
+            <div style={{ flex: '1', minWidth: '0' }}>
+              <h3 
+                style={{
+                  color: '#3A3A3A',
+                  fontFamily: 'Inter',
+                  fontSize: '32px',
+                  fontStyle: 'normal',
+                  fontWeight: 600,
+                  lineHeight: '39px',
+                  marginBottom: '25px',
+                  textAlign: 'center',
+                  width: '100%'
+                }}
+              >
+                {whatWeOfferPhases[0].sectionTitle}
+              </h3>
+              
+              <div 
+                style={{
+                  display: 'grid',
+                  gridTemplateColumns: '1fr 1fr',
+                  gap: '20px'
+                }}
+              >
+                {whatWeOfferPhases[0].cards.map((card) => (
+                  <motion.div 
+                    key={card.id}
+                    whileHover={{ 
+                      y: -6, 
+                      scale: 1.02,
+                      boxShadow: '0 16px 30px -8px rgba(102, 65, 123, 0.16)' 
                     }}
-                  />
-                  <h4 style={{
-                    color: '#3A3A3A',
-                    textAlign: 'center',
-                    fontFamily: '"M PLUS 1"',
-                    fontSize: '22.5px',
-                    fontStyle: 'normal',
-                    fontWeight: 700,
-                    lineHeight: '32px',
-                    margin: 0
-                  }}>
-                    {card.title}
-                  </h4>
-                  <p style={{
-                    color: '#3A3A3A',
-                    textAlign: 'center',
-                    fontFamily: '"M PLUS 1"',
-                    fontSize: '18px',
-                    fontStyle: 'normal',
-                    fontWeight: 400,
-                    lineHeight: 'normal',
-                    margin: 0
-                  }}>
-                    {card.description}
-                  </p>
-                </div>
-              ))}
+                    transition={{ type: "spring", stiffness: 350, damping: 20 }}
+                    style={{
+                      display: 'flex',
+                      padding: '21px 25px',
+                      flexDirection: 'column',
+                      alignItems: 'center',
+                      gap: '11px',
+                      borderRadius: '10px',
+                      background: '#FAF6FC',
+                      textAlign: 'center',
+                      cursor: 'default',
+                      transition: 'background-color 0.2s ease',
+                    }}
+                  >
+                    <motion.img 
+                      whileHover={{ scale: 1.1, rotate: [0, -3, 3, 0] }}
+                      transition={{ duration: 0.3 }}
+                      src={card.icon}
+                      alt={card.title}
+                      style={{
+                        width: '69px',
+                        height: '68px'
+                      }}
+                    />
+                    <h4 style={{
+                      color: '#3A3A3A',
+                      textAlign: 'center',
+                      fontFamily: '"M PLUS 1"',
+                      fontSize: '22.5px',
+                      fontStyle: 'normal',
+                      fontWeight: 700,
+                      lineHeight: '32px',
+                      margin: 0
+                    }}>
+                      {card.title}
+                    </h4>
+                    <p style={{
+                      color: '#3A3A3A',
+                      textAlign: 'center',
+                      fontFamily: '"M PLUS 1"',
+                      fontSize: '18px',
+                      fontStyle: 'normal',
+                      fontWeight: 400,
+                      lineHeight: 'normal',
+                      margin: 0
+                    }}>
+                      {card.description}
+                    </p>
+                  </motion.div>
+                ))}
+              </div>
             </div>
           </div>
-        </div>
+        </ScrollReveal>
 
         {/* Row 2: Capstone */}
-        <div style={{
-          display: 'flex',
-          alignItems: 'center',
-          marginBottom: '100px',
-          gap: '50px'
-        }}>
-          {/* Capstone Image */}
-          <div style={{ flex: '0 0 auto', maxWidth: '40%' }}>
-            <img 
-              src="/images/CapstoneStaircase.svg" 
-              alt="Capstone Staircase"
-              style={{
-                width: '100%',
-                height: 'auto',
-                maxWidth: '517px'
-              }}
-            />
-          </div>
-          
-          {/* Capstone Content */}
-          <div style={{ flex: '1', minWidth: '0' }}>
-            <h3 
-              style={{
-                color: '#3A3A3A',
-                fontFamily: 'Inter',
-                fontSize: '32px',
-                fontStyle: 'normal',
-                fontWeight: 600,
-                lineHeight: '39px',
-                marginBottom: '25px',
-                textAlign: 'center',
-                width: '100%'
-              }}
+        <ScrollReveal direction="up" distance={30} delay={0.1}>
+          <div style={{
+            display: 'flex',
+            alignItems: 'center',
+            marginBottom: '100px',
+            gap: '50px'
+          }}>
+            {/* Capstone Image */}
+            <motion.div 
+              style={{ flex: '0 0 auto', maxWidth: '40%' }}
+              animate={{ y: [4, -4, 4] }}
+              transition={{ duration: 7.5, repeat: Infinity, ease: "easeInOut" }}
             >
-              {whatWeOfferPhases[1].sectionTitle}
-            </h3>
+              <img 
+                src="/images/CapstoneStaircase.svg" 
+                alt="Capstone Staircase"
+                style={{
+                  width: '100%',
+                  height: 'auto',
+                  maxWidth: '517px'
+                }}
+              />
+            </motion.div>
             
-            <div 
-              style={{
-                display: 'grid',
-                gridTemplateColumns: '1fr 1fr',
-                gap: '20px'
-              }}
-            >
-              {whatWeOfferPhases[1].cards.map((card) => (
-                <div key={card.id} style={{
-                  display: 'flex',
-                  padding: '21px 25px',
-                  flexDirection: 'column',
-                  alignItems: 'center',
-                  gap: '11px',
-                  borderRadius: '10px',
-                  background: '#FAF6FC',
-                  textAlign: 'center'
-                }}>
-                  <img 
-                    src={card.icon}
-                    alt={card.title}
-                    style={{
-                      width: '69px',
-                      height: '68px'
+            {/* Capstone Content */}
+            <div style={{ flex: '1', minWidth: '0' }}>
+              <h3 
+                style={{
+                  color: '#3A3A3A',
+                  fontFamily: 'Inter',
+                  fontSize: '32px',
+                  fontStyle: 'normal',
+                  fontWeight: 600,
+                  lineHeight: '39px',
+                  marginBottom: '25px',
+                  textAlign: 'center',
+                  width: '100%'
+                }}
+              >
+                {whatWeOfferPhases[1].sectionTitle}
+              </h3>
+              
+              <div 
+                style={{
+                  display: 'grid',
+                  gridTemplateColumns: '1fr 1fr',
+                  gap: '20px'
+                }}
+              >
+                {whatWeOfferPhases[1].cards.map((card) => (
+                  <motion.div 
+                    key={card.id}
+                    whileHover={{ 
+                      y: -6, 
+                      scale: 1.02,
+                      boxShadow: '0 16px 30px -8px rgba(102, 65, 123, 0.16)' 
                     }}
-                  />
-                  <h4 style={{
-                    color: '#3A3A3A',
-                    textAlign: 'center',
-                    fontFamily: '"M PLUS 1"',
-                    fontSize: '22.5px',
-                    fontStyle: 'normal',
-                    fontWeight: 700,
-                    lineHeight: '32px',
-                    margin: 0
-                  }}>
-                    {card.title}
-                  </h4>
-                  <p style={{
-                    color: '#3A3A3A',
-                    textAlign: 'center',
-                    fontFamily: '"M PLUS 1"',
-                    fontSize: '18px',
-                    fontStyle: 'normal',
-                    fontWeight: 400,
-                    lineHeight: 'normal',
-                    margin: 0
-                  }}>
-                    {card.description}
-                  </p>
-                </div>
-              ))}
+                    transition={{ type: "spring", stiffness: 350, damping: 20 }}
+                    style={{
+                      display: 'flex',
+                      padding: '21px 25px',
+                      flexDirection: 'column',
+                      alignItems: 'center',
+                      gap: '11px',
+                      borderRadius: '10px',
+                      background: '#FAF6FC',
+                      textAlign: 'center',
+                      cursor: 'default',
+                      transition: 'background-color 0.2s ease',
+                    }}
+                  >
+                    <motion.img 
+                      whileHover={{ scale: 1.1, rotate: [0, -3, 3, 0] }}
+                      transition={{ duration: 0.3 }}
+                      src={card.icon}
+                      alt={card.title}
+                      style={{
+                        width: '69px',
+                        height: '68px'
+                      }}
+                    />
+                    <h4 style={{
+                      color: '#3A3A3A',
+                      textAlign: 'center',
+                      fontFamily: '"M PLUS 1"',
+                      fontSize: '22.5px',
+                      fontStyle: 'normal',
+                      fontWeight: 700,
+                      lineHeight: '32px',
+                      margin: 0
+                    }}>
+                      {card.title}
+                    </h4>
+                    <p style={{
+                      color: '#3A3A3A',
+                      textAlign: 'center',
+                      fontFamily: '"M PLUS 1"',
+                      fontSize: '18px',
+                      fontStyle: 'normal',
+                      fontWeight: 400,
+                      lineHeight: 'normal',
+                      margin: 0
+                    }}>
+                      {card.description}
+                    </p>
+                  </motion.div>
+                ))}
+              </div>
             </div>
           </div>
-        </div>
+        </ScrollReveal>
 
         {/* Row 3: Client */}
-        <div style={{
-          display: 'flex',
-          alignItems: 'center',
-          marginBottom: '100px',
-          gap: '50px'
-        }}>
-          {/* Client Image */}
-          <div style={{ flex: '0 0 auto', maxWidth: '40%' }}>
-            <img 
-              src="/images/Client_Staricase.png" 
-              alt="Client Staircase"
-              style={{
-                width: '100%',
-                height: 'auto',
-                maxWidth: '517px'
-              }}
-            />
-          </div>
-          
-          {/* Client Content */}
-          <div style={{ flex: '1', minWidth: '0' }}>
-            <h3 
-              style={{
-                color: '#3A3A3A',
-                fontFamily: 'Inter',
-                fontSize: '32px',
-                fontStyle: 'normal',
-                fontWeight: 600,
-                lineHeight: '39px',
-                marginBottom: '25px',
-                textAlign: 'center',
-                width: '100%'
-              }}
+        <ScrollReveal direction="up" distance={30} delay={0.15}>
+          <div style={{
+            display: 'flex',
+            alignItems: 'center',
+            marginBottom: '100px',
+            gap: '50px'
+          }}>
+            {/* Client Image */}
+            <motion.div 
+              style={{ flex: '0 0 auto', maxWidth: '40%' }}
+              animate={{ y: [-4, 4, -4] }}
+              transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
             >
-              {whatWeOfferPhases[2].sectionTitle}
-            </h3>
+              <img 
+                src="/images/Client_Staricase.png" 
+                alt="Client Staircase"
+                style={{
+                  width: '100%',
+                  height: 'auto',
+                  maxWidth: '517px'
+                }}
+              />
+            </motion.div>
             
-            <div 
-              style={{
-                display: 'grid',
-                gridTemplateColumns: '1fr 1fr',
-                gap: '20px'
-              }}
-            >
-              {whatWeOfferPhases[2].cards.map((card) => (
-                <div key={card.id} style={{
-                  display: 'flex',
-                  padding: '21px 25px',
-                  flexDirection: 'column',
-                  alignItems: 'center',
-                  gap: '11px',
-                  borderRadius: '10px',
-                  background: '#FAF6FC',
-                  textAlign: 'center'
-                }}>
-                  <img 
-                    src={card.icon}
-                    alt={card.title}
-                    style={{
-                      width: '69px',
-                      height: '68px'
+            {/* Client Content */}
+            <div style={{ flex: '1', minWidth: '0' }}>
+              <h3 
+                style={{
+                  color: '#3A3A3A',
+                  fontFamily: 'Inter',
+                  fontSize: '32px',
+                  fontStyle: 'normal',
+                  fontWeight: 600,
+                  lineHeight: '39px',
+                  marginBottom: '25px',
+                  textAlign: 'center',
+                  width: '100%'
+                }}
+              >
+                {whatWeOfferPhases[2].sectionTitle}
+              </h3>
+              
+              <div 
+                style={{
+                  display: 'grid',
+                  gridTemplateColumns: '1fr 1fr',
+                  gap: '20px'
+                }}
+              >
+                {whatWeOfferPhases[2].cards.map((card) => (
+                  <motion.div 
+                    key={card.id}
+                    whileHover={{ 
+                      y: -6, 
+                      scale: 1.02,
+                      boxShadow: '0 16px 30px -8px rgba(102, 65, 123, 0.16)' 
                     }}
-                  />
-                  <h4 style={{
-                    color: '#3A3A3A',
-                    textAlign: 'center',
-                    fontFamily: '"M PLUS 1"',
-                    fontSize: '22.5px',
-                    fontStyle: 'normal',
-                    fontWeight: 700,
-                    lineHeight: '32px',
-                    margin: 0
-                  }}>
-                    {card.title}
-                  </h4>
-                  <p style={{
-                    color: '#3A3A3A',
-                    textAlign: 'center',
-                    fontFamily: '"M PLUS 1"',
-                    fontSize: '18px',
-                    fontStyle: 'normal',
-                    fontWeight: 400,
-                    lineHeight: 'normal',
-                    margin: 0
-                  }}>
-                    {card.description}
-                  </p>
-                </div>
-              ))}
+                    transition={{ type: "spring", stiffness: 350, damping: 20 }}
+                    style={{
+                      display: 'flex',
+                      padding: '21px 25px',
+                      flexDirection: 'column',
+                      alignItems: 'center',
+                      gap: '11px',
+                      borderRadius: '10px',
+                      background: '#FAF6FC',
+                      textAlign: 'center',
+                      cursor: 'default',
+                      transition: 'background-color 0.2s ease',
+                    }}
+                  >
+                    <motion.img 
+                      whileHover={{ scale: 1.1, rotate: [0, -3, 3, 0] }}
+                      transition={{ duration: 0.3 }}
+                      src={card.icon}
+                      alt={card.title}
+                      style={{
+                        width: '69px',
+                        height: '68px'
+                      }}
+                    />
+                    <h4 style={{
+                      color: '#3A3A3A',
+                      textAlign: 'center',
+                      fontFamily: '"M PLUS 1"',
+                      fontSize: '22.5px',
+                      fontStyle: 'normal',
+                      fontWeight: 700,
+                      lineHeight: '32px',
+                      margin: 0
+                    }}>
+                      {card.title}
+                    </h4>
+                    <p style={{
+                      color: '#3A3A3A',
+                      textAlign: 'center',
+                      fontFamily: '"M PLUS 1"',
+                      fontSize: '18px',
+                      fontStyle: 'normal',
+                      fontWeight: 400,
+                      lineHeight: 'normal',
+                      margin: 0
+                    }}>
+                      {card.description}
+                    </p>
+                  </motion.div>
+                ))}
+              </div>
             </div>
           </div>
-        </div>
+        </ScrollReveal>
       </div>
       
       <style jsx>{`

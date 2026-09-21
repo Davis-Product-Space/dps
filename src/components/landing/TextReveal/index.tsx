@@ -1,6 +1,36 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 
+function RevealWord({
+  word,
+  index,
+  lineIndex,
+  progress,
+  isLast,
+}: {
+  word: string;
+  index: number;
+  lineIndex: number;
+  progress: any;
+  isLast: boolean;
+}) {
+  const baseStart = 0.2;
+  const offset = (lineIndex * 20 + index) / 150;
+  const start = baseStart + offset;
+  const end = start + 4 / 150;
+  const opacity = useTransform(progress, [start, end], [0.25, 1]);
+  const y = useTransform(progress, [start, end], [6, 0]);
+
+  return (
+    <motion.span
+      style={{ opacity, y }}
+      className={`inline-block ${isLast ? "" : "mr-2"}`}
+    >
+      {word}
+    </motion.span>
+  );
+}
+
 export function TextReveal({
   heading,
   content,
@@ -20,6 +50,7 @@ export function TextReveal({
             <motion.div
               style={{
                 opacity: useTransform(scrollYProgress, [0.05, 0.15], [0.3, 1]),
+                y: useTransform(scrollYProgress, [0.05, 0.15], [10, 0]),
               }}
               className="text-[1.5rem] md:text-[2.75rem] font-semibold leading-tight bg-gradient-to-r from-[#E06287] to-[#765DF2] bg-clip-text text-transparent transition-transform duration-300 text-center"
             >
@@ -45,23 +76,16 @@ export function TextReveal({
                 const words = chunk.split(" ");
                 return (
                   <div key={`line-${idx}`} className="flex justify-center items-center w-full flex-wrap">
-                    {words.map((word, i) => {
-                      const baseStart = 0.2;
-                      const offset = (idx * 20 + i) / 150; // Adjusted for line-based spacing
-                      const start = baseStart + offset;
-                      const end = start + 3 / 150; // Wider span for each word reveal
-                      const opacity = useTransform(scrollYProgress, [start, end], [0.3, 1]);
-
-                      return (
-                        <motion.span
-                          key={`${word}-${i}`}
-                          style={{ opacity }}
-                          className={i < words.length - 1 ? "mr-2" : ""}
-                        >
-                          {word}
-                        </motion.span>
-                      );
-                    })}
+                    {words.map((word, i) => (
+                      <RevealWord
+                        key={`${word}-${i}`}
+                        word={word}
+                        index={i}
+                        lineIndex={idx}
+                        progress={scrollYProgress}
+                        isLast={i === words.length - 1}
+                      />
+                    ))}
                   </div>
                 );
               } else {
@@ -71,6 +95,7 @@ export function TextReveal({
                     className="flex justify-center items-center w-full"
                     style={{
                       opacity: useTransform(scrollYProgress, [0.85, 0.95], [0.3, 1]),
+                      y: useTransform(scrollYProgress, [0.85, 0.95], [8, 0]),
                     }}
                   >
                     {chunk}
