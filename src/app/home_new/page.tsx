@@ -194,7 +194,7 @@ export default function HomeNewPage() {
       {/* Second Section - What is Product Management */}
       <section 
         className="relative mx-auto w-full px-4
-                   min-h-[800px] sm:min-h-[1000px] md:min-h-[1500px] lg:h-[2000px] xl:h-[2000px]"
+                   min-h-[800px] sm:min-h-[1000px] md:min-h-[2000px] lg:h-[2200px] xl:h-[2200px]"
         style={{
           maxWidth: '1440px'
         }}
@@ -202,8 +202,7 @@ export default function HomeNewPage() {
         <div 
           className="relative mx-auto w-full px-4
                      -mt-[200px] sm:-mt-[150px] md:mt-0
-                     md:absolute md:left-1/2 md:transform md:-translate-x-1/2
-                     md:top-[50px] lg:top-[50px] xl:top-[50px]"
+                     md:pt-[50px]"
           style={{
             maxWidth: '1200px' // Stretch the textbox width
           }}
@@ -245,10 +244,9 @@ export default function HomeNewPage() {
         </div>
         
         {/* Our Mission Box - Mobile: Below TextReveal, Desktop: Fixed at bottom */}
-        <div className="block md:hidden mb-8 -mt-[100px]">
-          <ScrollReveal direction="up" distance={25}>
+        <div className="block md:hidden mb-8 mt-[150px]">
             <motion.div
-              whileHover={{ y: -6, scale: 1.015, boxShadow: '0 16px 30px 0 rgba(102, 65, 123, 0.2)' }}
+              whileHover={{ scale: 1.015, boxShadow: '0 16px 30px 0 rgba(102, 65, 123, 0.2)' }}
               transition={{ type: "spring", stiffness: 300, damping: 20 }}
               className="mx-auto max-w-md"
               style={{
@@ -313,19 +311,17 @@ export default function HomeNewPage() {
                 Meet the Team &gt;
               </motion.a>
             </motion.div>
-          </ScrollReveal>
         </div>
 
-        {/* Fixed Centered Box at bottom of page - Desktop only */}
+        {/* Static centered box at the bottom of the section - Desktop only */}
         <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2"
           style={{
-               bottom: '50px',
+               bottom: '0px',
                zIndex: 10
           }}
         >
-          <ScrollReveal direction="up" distance={30}>
             <motion.div
-              whileHover={{ y: -6, scale: 1.01, boxShadow: '0 20px 40px -10px rgba(102, 65, 123, 0.25)' }}
+              whileHover={{ scale: 1.01, boxShadow: '0 20px 40px -10px rgba(102, 65, 123, 0.25)' }}
               transition={{ type: "spring", stiffness: 300, damping: 20 }}
               style={{
                 borderRadius: '30px',
@@ -395,7 +391,6 @@ export default function HomeNewPage() {
                 Meet the Team &gt;
               </motion.a>
             </motion.div>
-          </ScrollReveal>
         </div>
       </section>
       

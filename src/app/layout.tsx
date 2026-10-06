@@ -35,7 +35,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${inter.variable} ${mPlus1.variable}`}>
-      <body className="bg-[#FDFAFF] text-[#3A3A3A] font-sans overflow-x-hidden">
+      <body className="bg-[#FDFAFF] text-[#3A3A3A] font-sans overflow-x-clip">
           <Navbar />
         <main className="min-h-screen relative flex flex-col">
           <div className="flex-grow">{children}</div>

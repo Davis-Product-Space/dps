@@ -39,7 +39,7 @@ export default function Navbar() {
   }, [pathname]);
 
   // Check if we're on home, about, join, or application pages
-  const isTransparentNavbar = pathname === '/home_new' || pathname === '/about_new' || pathname === '/join' || pathname === '/application';
+  const isTransparentNavbar = pathname === '/home_new' || pathname === '/about_new' || pathname === '/join' || pathname === '/application' || pathname === '/client-application';
   // Check if we're specifically on the home page
   const isHomePage = pathname === '/home_new';
 

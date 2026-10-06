@@ -85,14 +85,16 @@ export default function BoardCard({
         <p className="text-[16px] sm:text-[18px] font-medium text-[#3A3A3A] mr-auto">
           {name}
         </p>
-        <a
-          href={linkedinLink || "https://linkedin.com"}
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="LinkedIn"
-        >
-          <LinkedInIcon className="w-[20px] sm:w-[24px] h-[20px] sm:h-[24.4px] text-[#3A3A3A] relative pl-[4px]" />
-        </a>
+        {linkedinLink && (
+          <a
+            href={linkedinLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`${name} on LinkedIn`}
+          >
+            <LinkedInIcon className="w-[20px] sm:w-[24px] h-[20px] sm:h-[24.4px] text-[#3A3A3A] relative pl-[4px]" />
+          </a>
+        )}
       </div>
         <div className="flex justify-between w-full items-center mb-1">
           <p className="text-[12px] sm:text-[14px] font-normal mt-1 text-[#3A3A3A] leading-[24px] sm:leading-[30px]">

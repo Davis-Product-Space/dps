@@ -5,7 +5,7 @@ export const board = [
       imageSrc: "images/25-26Board/Zayd.png",
       backImageSrc: "images/25-26Board/funny/Zayd.jpeg",
       linkedinLink: "https://www.linkedin.com/in/zayd-musa/",
-      coffeechatLink: "https://calendly.com/zamusa-ucdavis/ps-coffee-chat",
+      coffeechatLink: "https://calendar.app.google/Yw7m8Ndw3mMJto7k6",
     },
     {
       name: "Amala Valiveti",
@@ -13,7 +13,7 @@ export const board = [
       imageSrc: "images/25-26Board/Amala.jpg",
       backImageSrc: "images/25-26Board/funny/Amala.jpg",
       linkedinLink: "https://www.linkedin.com/in/amalavaliveti/",
-      coffeechatLink: "https://calendly.com/avaliveti-ucdavis/30min",
+      coffeechatLink: "https://calendar.app.google/L2co3w7X6QCQEtAFA",
     },
   {
       name: "Abirami Kathiresan",
@@ -45,7 +45,7 @@ export const board = [
     imageSrc: "images/25-26Board/Armaan.jpg",
     backImageSrc: "images/25-26Board/funny/Armaan.jpg",
     linkedinLink: "https://www.linkedin.com/in/armaan-bhardwaj-1181b5218/",
-    coffeechatLink: "https://calendly.com/arbhardwaj-ucdavis/30min",
+    coffeechatLink: "https://calendly.com/arbhardwaj-ucdavis/30min?back=1&month=2026-09&date=2026-09-26",
 },
 {
     name: "Ashwin Charles",
@@ -53,7 +53,7 @@ export const board = [
     imageSrc: "images/26-27Board/Ashwin.png",
     backImageSrc: "images/26-27Board/Funny/Ashwin.jpeg",
     linkedinLink: "https://www.linkedin.com/in/",
-    coffeechatLink: "",
+    coffeechatLink: "https://calendly.com/ajcharles-ucdavis/30min",
 },
 {
     name: "Ananya Singh",
@@ -61,7 +61,7 @@ export const board = [
     imageSrc: "images/26-27Board/Ananya.jpeg",
     backImageSrc: "images/26-27Board/Funny/Ananya.jpeg",
     linkedinLink: "https://www.linkedin.com/in/ananyasinghas/",
-    coffeechatLink: "",
+    coffeechatLink: "https://calendar.app.google/e5m59EJfLQfCcoMG8",
 },
 {
     name: "Marina Avagyan",
@@ -69,7 +69,7 @@ export const board = [
     imageSrc: "images/26-27Board/Marina.png",
     backImageSrc: "images/26-27Board/Funny/Marina.jpeg",
     linkedinLink: "https://www.linkedin.com/in/marina-avagyan/",
-    coffeechatLink: "",
+    coffeechatLink: "https://calendly.com/mavagyan-ucdavis/30min",
 },
 {
   name: "Raj Dutta",
@@ -85,6 +85,12 @@ export const board = [
   imageSrc: "images/26-27Board/Frankie.png",
   backImageSrc: "",
   linkedinLink: "https://www.linkedin.com/in/francois-presta-8b2863255/",
-  coffeechatLink: "",
+  coffeechatLink: "https://calendly.com/fpresta-ucdavis/new-meeting",
+},
+{
+  name: "Suhana Pulugurta",
+  title: "Internal Affairs",
+  linkedinLink: "https://www.linkedin.com/in/suhana-pulugurta/",
+  coffeechatLink: "https://calendar.app.google/RYg1oLmepbjSTdSc6",
 },
 ];

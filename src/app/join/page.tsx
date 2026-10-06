@@ -69,19 +69,31 @@ export default function JoinNewPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.85, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
-            whileHover={{ scale: 1.04, y: -2 }}
-            whileTap={{ scale: 0.96 }}
-            className="mt-6 sm:mt-8"
+            className="mt-6 sm:mt-8 flex flex-col sm:flex-row items-center justify-center gap-4"
           >
-            <Link 
-              href="/application"
-              className="inline-flex px-5 py-3 items-center gap-3 sm:gap-[15px] rounded-[20px] bg-[#66417B] hover:bg-[#5a3769] transition-colors cursor-pointer shadow-[0_6px_20px_rgba(102,65,123,0.3)]"
-            >
-              <span className="text-[#FAF6FC] text-center font-['M_PLUS_1'] text-base sm:text-xl md:text-[22.5px] font-normal leading-normal">
-                Fellowship Applications Open!
-              </span>
-              <ArrowIcon className="w-6 h-6 sm:w-8 sm:h-8" style={{ minWidth: '24px', minHeight: '24px', transform: 'translateY(1px)' }} />
-            </Link>
+            <motion.div whileHover={{ scale: 1.04, y: -2 }} whileTap={{ scale: 0.96 }}>
+              <Link
+                href="/application"
+                className="inline-flex px-5 py-3 items-center gap-3 sm:gap-[15px] rounded-[20px] bg-[#66417B] hover:bg-[#5a3769] transition-colors cursor-pointer shadow-[0_6px_20px_rgba(102,65,123,0.3)]"
+              >
+                <span className="text-[#FAF6FC] text-center font-['M_PLUS_1'] text-base sm:text-xl md:text-[22.5px] font-normal leading-normal">
+                  Fellowship Applications Open!
+                </span>
+                <ArrowIcon className="w-6 h-6 sm:w-8 sm:h-8" style={{ minWidth: '24px', minHeight: '24px', transform: 'translateY(1px)' }} />
+              </Link>
+            </motion.div>
+
+            <motion.div whileHover={{ scale: 1.04, y: -2 }} whileTap={{ scale: 0.96 }}>
+              <Link
+                href="/client-application"
+                className="inline-flex px-5 py-3 items-center gap-3 sm:gap-[15px] rounded-[20px] bg-[#66417B] hover:bg-[#5a3769] transition-colors cursor-pointer shadow-[0_6px_20px_rgba(102,65,123,0.3)]"
+              >
+                <span className="text-[#FAF6FC] text-center font-['M_PLUS_1'] text-base sm:text-xl md:text-[22.5px] font-normal leading-normal">
+                  Client Applications Open!
+                </span>
+                <ArrowIcon className="w-6 h-6 sm:w-8 sm:h-8" style={{ minWidth: '24px', minHeight: '24px', transform: 'translateY(1px)' }} />
+              </Link>
+            </motion.div>
           </motion.div>
         </div>
       </section>

@@ -1,4 +1,4 @@
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform, type MotionValue } from "framer-motion";
 import { useRef } from "react";
 
 function RevealWord({
@@ -11,20 +11,20 @@ function RevealWord({
   word: string;
   index: number;
   lineIndex: number;
-  progress: any;
+  progress: MotionValue<number>;
   isLast: boolean;
 }) {
-  const baseStart = 0.2;
+  const baseStart = 0.16;
   const offset = (lineIndex * 20 + index) / 150;
   const start = baseStart + offset;
-  const end = start + 4 / 150;
-  const opacity = useTransform(progress, [start, end], [0.25, 1]);
-  const y = useTransform(progress, [start, end], [6, 0]);
+  const end = start + 3 / 150;
+  const opacity = useTransform(progress, [start, end], [0.3, 1]);
 
   return (
     <motion.span
-      style={{ opacity, y }}
-      className={`inline-block ${isLast ? "" : "mr-2"}`}
+      data-reveal-word
+      style={{ opacity }}
+      className={isLast ? "" : "mr-2"}
     >
       {word}
     </motion.span>
@@ -39,18 +39,27 @@ export function TextReveal({
   content: (string | React.ReactNode)[];
 }) {
   const containerRef = useRef(null);
-  const { scrollYProgress } = useScroll({ target: containerRef });
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    // Measure only the distance where the section is pinned. The default
+    // viewport offsets advance progress before the sticky section reaches the
+    // top and after it starts leaving, which lets the page escape too early.
+    offset: ["start start", "end end"],
+  });
 
   return (
-    <div ref={containerRef} className="relative h-[300vh] sm:h-[200vh]">
-      <div className="sticky top-0 h-screen flex items-center justify-center">
+    <div
+      ref={containerRef}
+      data-text-reveal
+      className="relative h-[300vh] sm:h-[240vh] lg:h-[220vh]"
+    >
+      <div className="sticky top-0 h-screen supports-[height:100svh]:h-[100svh] flex items-center justify-center">
         <div className="w-full space-y-6 px-2 md:px-4">
           {/* animated heading if provided */}
           {heading && (
             <motion.div
               style={{
                 opacity: useTransform(scrollYProgress, [0.05, 0.15], [0.3, 1]),
-                y: useTransform(scrollYProgress, [0.05, 0.15], [10, 0]),
               }}
               className="text-[1.5rem] md:text-[2.75rem] font-semibold leading-tight bg-gradient-to-r from-[#E06287] to-[#765DF2] bg-clip-text text-transparent transition-transform duration-300 text-center"
             >
@@ -92,10 +101,12 @@ export function TextReveal({
                 return (
                   <motion.div
                     key={`jsx-${idx}`}
+                    data-reveal-final
                     className="flex justify-center items-center w-full"
                     style={{
-                      opacity: useTransform(scrollYProgress, [0.85, 0.95], [0.3, 1]),
-                      y: useTransform(scrollYProgress, [0.85, 0.95], [8, 0]),
+                      // Finish before the sticky interval ends so the completed
+                      // statement remains visible briefly before normal scroll resumes.
+                      opacity: useTransform(scrollYProgress, [0.78, 0.9], [0.3, 1]),
                     }}
                   >
                     {chunk}
