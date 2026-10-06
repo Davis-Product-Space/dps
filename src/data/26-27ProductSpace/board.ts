@@ -29,7 +29,7 @@ export const board = [
       imageSrc: "images/25-26Board/Raq.png",
       backImageSrc: "images/25-26Board/funny/raq.png",
       linkedinLink: "https://www.linkedin.com/in/raquib-alam",
-      coffeechatLink: "https://calendar.app.google/fsM3PwSkcbDwj2Xd6",
+      coffeechatLink: "https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1UaiSMq3maBMuVMG0LnrdeqkOHMd0DaAAQ-qTprUDlAaSFPYZOvZnrfyx3WrvQ-Yz-ihyv1vl6",
 },
 {
       name: "Leland Nguyen",
