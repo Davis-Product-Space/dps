@@ -1,13 +1,123 @@
 'use client';
 
 import React, { useRef, useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
+import { motion, useReducedMotion } from 'framer-motion';
 import { TextReveal } from "@/components/landing/TextReveal";
 import { TimelineAnimation } from "@/components/landing/TimelineAnimation";
 import { WhatWeOffer } from "@/components/landing/WhatWeOffer";
 import InteractivePSLogo from "@/components/landing/InteractivePSLogo";
 import { ScrollReveal } from "@/components/motion/ScrollReveal";
 import { AmbientGlow } from "@/components/motion/AmbientGlow";
+
+const heroLeadWords = ["Your", "Pathway", "to"];
+
+function HeroHeadline() {
+  const prefersReducedMotion = useReducedMotion();
+  const ease = [0.22, 1, 0.36, 1] as const;
+
+  return (
+    <h1
+      aria-label="Your Pathway to Product."
+      className="text-center font-inter font-semibold leading-tight
+                 text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl
+                 whitespace-normal sm:whitespace-nowrap"
+      style={{
+        fontFamily: 'Inter, sans-serif',
+        fontStyle: 'normal',
+        fontWeight: 600,
+      }}
+    >
+      <span
+        aria-hidden="true"
+        className="inline-flex flex-wrap items-baseline justify-center gap-x-[0.22em]"
+      >
+        {heroLeadWords.map((word, index) => (
+          <motion.span
+            key={word}
+            className="inline-block text-[#3A3A3A]"
+            initial={
+              prefersReducedMotion
+                ? false
+                : { opacity: 0, y: 24, filter: 'blur(12px)' }
+            }
+            animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+            transition={{
+              duration: prefersReducedMotion ? 0 : 0.72,
+              delay: prefersReducedMotion ? 0 : 0.12 + index * 0.16,
+              ease,
+            }}
+          >
+            {word}
+          </motion.span>
+        ))}
+
+        <span className="relative inline-block pb-[0.08em]">
+          <motion.span
+            className="inline-block"
+            initial={
+              prefersReducedMotion
+                ? false
+                : {
+                    opacity: 0,
+                    y: 18,
+                    clipPath: 'inset(0 100% 0 0)',
+                    filter: 'blur(8px)',
+                  }
+            }
+            animate={{
+              opacity: 1,
+              y: 0,
+              clipPath: 'inset(0 0% 0 0)',
+              filter: 'blur(0px)',
+            }}
+            transition={{
+              duration: prefersReducedMotion ? 0 : 1.05,
+              delay: prefersReducedMotion ? 0 : 0.62,
+              ease,
+            }}
+            style={{
+              background:
+                'linear-gradient(75deg, #D5A6D8 9.75%, #A674C4 33.03%, #66417B 87.51%)',
+              backgroundClip: 'text',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+            }}
+          >
+            Product.
+          </motion.span>
+
+          <motion.span
+            aria-hidden="true"
+            className="absolute bottom-0 left-[3%] h-[3px] w-[94%] origin-left rounded-full
+                       bg-gradient-to-r from-[#D5A6D8] via-[#A674C4] to-[#66417B]"
+            initial={prefersReducedMotion ? false : { scaleX: 0, opacity: 0 }}
+            animate={{ scaleX: 1, opacity: 0.8 }}
+            transition={{
+              duration: prefersReducedMotion ? 0 : 0.72,
+              delay: prefersReducedMotion ? 0 : 1.35,
+              ease,
+            }}
+          />
+
+          {!prefersReducedMotion && (
+            <motion.span
+              aria-hidden="true"
+              className="absolute -right-[0.1em] top-[0.13em] h-[0.78em] w-[3px] rounded-full bg-[#A674C4]"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: [0, 1, 1, 0] }}
+              transition={{
+                duration: 1.15,
+                delay: 0.62,
+                times: [0, 0.12, 0.78, 1],
+                ease: 'linear',
+              }}
+            />
+          )}
+        </span>
+      </span>
+    </h1>
+  );
+}
 
 
 export default function HomeNewPage() {
@@ -40,39 +150,15 @@ export default function HomeNewPage() {
           }}
         >
           {/* Main Text */}
-          <motion.div 
+          <div
             className="absolute left-1/2 transform -translate-x-1/2 px-4 top-[120px] sm:top-[140px] md:top-[177px]"
             style={{
               width: '100%',
               maxWidth: '1200px'
             }}
-            initial={{ opacity: 0, y: 35, filter: "blur(5px)" }}
-            animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-            transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
           >
-            <h1 
-              className="text-center font-inter font-semibold leading-tight
-                         text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl
-                         whitespace-normal sm:whitespace-nowrap"
-              style={{
-                fontFamily: 'Inter, sans-serif',
-                fontStyle: 'normal',
-                fontWeight: 600
-              }}
-            >
-              <span style={{ color: '#3A3A3A' }}>Your Pathway to </span>
-              <span 
-                style={{
-                  background: 'linear-gradient(75deg, #D5A6D8 9.75%, #A674C4 33.03%, #66417B 87.51%)',
-                  backgroundClip: 'text',
-                  WebkitBackgroundClip: 'text',
-                  WebkitTextFillColor: 'transparent'
-                }}
-              >
-                Product.
-              </span>
-            </h1>
-          </motion.div>
+            <HeroHeadline />
+          </div>
           
           {/* Homepage PS Logo SVG */}
           <div 

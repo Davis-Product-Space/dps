@@ -46,7 +46,7 @@ export default function JoinNewPage() {
       
       {/* 1. background image */}
       <section 
-        className="relative w-full max-w-[1549px] h-[480px] sm:h-[620px] md:h-[800px] lg:h-[900px] flex-shrink-0 overflow-hidden flex flex-col items-center justify-center"
+        className="relative w-full max-w-[1549px] h-[480px] sm:h-[620px] md:h-[800px] lg:h-[900px] flex-shrink-0 overflow-hidden flex flex-col items-center justify-start pt-20 sm:pt-24 md:pt-28"
       >
         {/* Background image that spans the entire section */}
         <img
@@ -69,29 +69,29 @@ export default function JoinNewPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.85, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
-            className="mt-6 sm:mt-8 flex flex-col sm:flex-row items-center justify-center gap-4"
+            className="mt-3 w-full max-w-[370px] sm:mt-6 sm:max-w-none md:mt-8 flex flex-row items-stretch justify-center gap-2 sm:gap-4"
           >
-            <motion.div whileHover={{ scale: 1.04, y: -2 }} whileTap={{ scale: 0.96 }}>
+            <motion.div className="flex min-w-0 flex-1 sm:flex-none" whileHover={{ scale: 1.04, y: -2 }} whileTap={{ scale: 0.96 }}>
               <Link
                 href="/application"
-                className="inline-flex px-5 py-3 items-center gap-3 sm:gap-[15px] rounded-[20px] bg-[#66417B] hover:bg-[#5a3769] transition-colors cursor-pointer shadow-[0_6px_20px_rgba(102,65,123,0.3)]"
+                className="inline-flex w-full px-3 py-2 items-center justify-center gap-2 sm:w-auto sm:px-5 sm:py-3 sm:gap-[15px] rounded-xl sm:rounded-[20px] bg-[#66417B] hover:bg-[#5a3769] transition-colors cursor-pointer shadow-[0_6px_20px_rgba(102,65,123,0.3)]"
               >
-                <span className="text-[#FAF6FC] text-center font-['M_PLUS_1'] text-base sm:text-xl md:text-[22.5px] font-normal leading-normal">
+                <span className="text-[#FAF6FC] text-center font-['M_PLUS_1'] text-xs leading-tight sm:text-xl sm:leading-normal md:text-[22.5px] font-normal">
                   Fellowship Applications Open!
                 </span>
-                <ArrowIcon className="w-6 h-6 sm:w-8 sm:h-8" style={{ minWidth: '24px', minHeight: '24px', transform: 'translateY(1px)' }} />
+                <ArrowIcon className="w-5 h-5 shrink-0 sm:w-8 sm:h-8" style={{ transform: 'translateY(1px)' }} />
               </Link>
             </motion.div>
 
-            <motion.div whileHover={{ scale: 1.04, y: -2 }} whileTap={{ scale: 0.96 }}>
+            <motion.div className="flex min-w-0 flex-1 sm:flex-none" whileHover={{ scale: 1.04, y: -2 }} whileTap={{ scale: 0.96 }}>
               <Link
                 href="/client-application"
-                className="inline-flex px-5 py-3 items-center gap-3 sm:gap-[15px] rounded-[20px] bg-[#66417B] hover:bg-[#5a3769] transition-colors cursor-pointer shadow-[0_6px_20px_rgba(102,65,123,0.3)]"
+                className="inline-flex w-full px-3 py-2 items-center justify-center gap-2 sm:w-auto sm:px-5 sm:py-3 sm:gap-[15px] rounded-xl sm:rounded-[20px] bg-[#66417B] hover:bg-[#5a3769] transition-colors cursor-pointer shadow-[0_6px_20px_rgba(102,65,123,0.3)]"
               >
-                <span className="text-[#FAF6FC] text-center font-['M_PLUS_1'] text-base sm:text-xl md:text-[22.5px] font-normal leading-normal">
+                <span className="text-[#FAF6FC] text-center font-['M_PLUS_1'] text-xs leading-tight sm:text-xl sm:leading-normal md:text-[22.5px] font-normal">
                   Client Applications Open!
                 </span>
-                <ArrowIcon className="w-6 h-6 sm:w-8 sm:h-8" style={{ minWidth: '24px', minHeight: '24px', transform: 'translateY(1px)' }} />
+                <ArrowIcon className="w-5 h-5 shrink-0 sm:w-8 sm:h-8" style={{ transform: 'translateY(1px)' }} />
               </Link>
             </motion.div>
           </motion.div>
